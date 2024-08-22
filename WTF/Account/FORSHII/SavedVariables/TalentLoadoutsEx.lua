@@ -1,0 +1,351 @@
+
+TalentLoadoutEx = {
+["DEATHKNIGHT"] = {
+{
+{
+["name"] = "M+",
+["text"] = "1111111111011100011110201102111010020110101000010110110100111011021201220210111100110",
+["icon"] = 1029718,
+["isLegacy"] = true,
+},
+{
+["name"] = "Raid",
+["text"] = "1111111110011100011110201102101110020110101000010110110100110111021201212210111010110",
+["icon"] = 1928595,
+["isLegacy"] = true,
+},
+{
+["name"] = "Fyrakk",
+["text"] = "1111111110011100011110201102101110001110101000210110110100110111021211220210111100110",
+["icon"] = 1029718,
+["isLegacy"] = true,
+},
+},
+},
+["WARRIOR"] = {
+[3] = {
+{
+["icon"] = 971080,
+["text"] = "11110110111101110110110111011200002010220011110021121101002112210120110011111110020011000@171@178",
+["name"] = "Raid ST",
+["isLegacy"] = true,
+},
+{
+["icon"] = 839979,
+["text"] = "11110110111101110111110111011200010010201111011020121001011112201120110111111010020011000@171@178",
+["name"] = "M+",
+["isLegacy"] = true,
+},
+{
+["icon"] = 3636845,
+["text"] = "11110110111101110110110111011201000010200111110021121101012112201120110011111110020011000@171@178",
+["name"] = "raidxd",
+["isLegacy"] = true,
+},
+},
+},
+["ROGUE"] = {
+[2] = {
+},
+},
+["Option"] = {
+["IsEnabledPvp"] = true,
+},
+["DEMONHUNTER"] = {
+{
+{
+["name"] = "the bois",
+["text"] = "BEkAzqt9tQbK6xteCyjwasgfTKJJRSCSSiIRSSAAAAAAASJEJkk0kkWaREQaiSLSSEA",
+["pvp1"] = 811,
+["icon"] = 1392953,
+["pvp2"] = 812,
+},
+{
+["name"] = "M+ bois",
+["pvp2"] = 812,
+["text"] = "BEkAzqt9tQbK6xteCyjwasgfTKJJRSCSSiIRSSAAAAAAASJEJkk0kkWaREQaiSLSSEA",
+["icon"] = 1392953,
+["pvp1"] = 811,
+},
+{
+["name"] = "M+ bois",
+["pvp2"] = 812,
+["text"] = "BEkAzqt9tQbK6xteCyjwasgfTCABJgQAAAAAAAACAIBkGgEAAAA",
+["icon"] = 1392953,
+["pvp1"] = 811,
+},
+},
+{
+{
+["icon"] = 134400,
+["name"] = "Raid",
+["isExpanded"] = true,
+},
+{
+["name"] = "Raid def",
+["text"] = "BUkAzqt9tQbK6xteCyjwasgfTCAiQSiIJIJJRIJlIEaJSOQIhkEJRLSIhEAAAAQSSA",
+["icon"] = 5342929,
+["pvp1"] = 815,
+["pvp3"] = 1948,
+["pvp2"] = 814,
+},
+{
+["name"] = "Raid dps",
+["text"] = "BUkAzqt9tQbK6xteCyjwasgfTCASikkIkgkkQIJtkQiWCJJScAEJJkEJhEAAAAQSCA",
+["icon"] = 5342929,
+["pvp1"] = 815,
+["pvp3"] = 1948,
+["pvp2"] = 814,
+},
+{
+["name"] = "raid blaster st",
+["pvp2"] = 814,
+["pvp3"] = 1948,
+["text"] = "BUkAzqt9tQbK6xteCyjwasgfTCAiQSiIJIJRESSJCiWikDkIhkEJRLSIhEAAAAQSSA",
+["icon"] = 1392952,
+["pvp1"] = 815,
+},
+{
+["name"] = "raid blaster aoe",
+["text"] = "BUkAzqt9tQbK6xteCyjwasgfTCAIkkISCSSEhk0SCJaJSOQiEERS0SSIhEAAAAQSSA",
+["icon"] = 3752258,
+["pvp1"] = 815,
+["pvp3"] = 1948,
+["pvp2"] = 814,
+},
+{
+["icon"] = 134400,
+["name"] = "M+",
+["isExpanded"] = true,
+},
+{
+["name"] = "Blaster",
+["text"] = "BUkAzqt9tQbK6xteCyjwasgfTCASikkIkgkESIJtkgolQSiEHAplkQSkESAAAAAJJA",
+["icon"] = 1029718,
+["pvp1"] = 815,
+["pvp3"] = 1948,
+["pvp2"] = 814,
+},
+{
+["name"] = "- FB Spread",
+["text"] = "BUkAzqt9tQbK6xteCyjwasgfTCAiIJJCJIJhEItkIJaJRSiEHAplk0kkWSIBAAAAkEA",
+["icon"] = 3601538,
+["pvp1"] = 815,
+["pvp3"] = 1948,
+["pvp2"] = 814,
+},
+{
+["name"] = "-SpB",
+["text"] = "BUkAzqt9tQbK6xteCyjwasgfTCAiIJJCJIJhESSLJSolQSIxBQaJJkkWSIBAAAAkkA",
+["icon"] = 1411832,
+["pvp1"] = 815,
+["pvp3"] = 1948,
+["pvp2"] = 814,
+},
+},
+},
+["SHAMAN"] = {
+{
+},
+{
+},
+{
+},
+},
+["DRUID"] = {
+[3] = {
+},
+},
+["MONK"] = {
+{
+{
+["name"] = "M+",
+["text"] = "111101101011011110011022201000111112121110201100112210111012020200022020011200001110@1958@666",
+["icon"] = 4640498,
+["isLegacy"] = true,
+},
+{
+["name"] = "Raid",
+["text"] = "111101111010011110011022201000111112120110201110212210121012020200022020011200001110@1958@666",
+["icon"] = 627605,
+["isLegacy"] = true,
+},
+{
+["name"] = "Raid ST",
+["text"] = "111101101010011110011022201000110112121110201111212201121022020200120020011201001102@1958@666",
+["icon"] = 606551,
+["isLegacy"] = true,
+},
+},
+[3] = {
+},
+},
+["PALADIN"] = {
+[2] = {
+{
+["text"] = "BIEAomTTpSA9oX6huYLb5nP3r3SaJkiodAtIJKNJJSEJSAAACAAAAAAAg4AJJkESQSKCINAICAgACQA",
+["name"] = "M+ SW",
+["icon"] = 135880,
+},
+{
+["icon"] = 575534,
+["text"] = "1111101010211110111012111120200211010002122110010101101011101002020012121112100101",
+["name"] = "Raid",
+["isLegacy"] = true,
+},
+{
+["text"] = "BIEAomTTpSA9oX6huYLb5nP3r3SaJSKyBKHQLSiSTSiEESAAACAAAAAAAgEJJkEEkkiAJAgIgAIgAE",
+["name"] = "Gnarl",
+["icon"] = 134400,
+},
+{
+["text"] = "BIEAomTTpSA9oX6huYLb5nP3r3SaJSKSK0iko0kkIBhEAAgAAAAAAAAIRSCJBBJpIQCAICIACIAB",
+["name"] = "Igira",
+["icon"] = 999950,
+},
+{
+["text"] = "BIEAomTTpSA9oX6huYLb5nP3rXSKJSKSK0iko0kkIBhEAAgAAAAAAAAIRSCJBBJpIQCAICIACIAB",
+["name"] = "Volocross",
+["icon"] = 1044090,
+},
+{
+["icon"] = 1122136,
+["text"] = "1111111010211110211002111120200211010002112110010101101011111002020012120111100101@90@93@92",
+["name"] = "Larodar",
+["isLegacy"] = true,
+},
+{
+["icon"] = 1778226,
+["text"] = "1111111010211110211002111120200211010002112110010101101011101002020012120111100111@90@93@92",
+["name"] = "Council",
+["isLegacy"] = true,
+},
+{
+["icon"] = 1044089,
+["text"] = "1111111010211110211002111120200211010002112110010101101011111002020012120111100101@90@93@92",
+["name"] = "Nymue",
+["isLegacy"] = true,
+},
+{
+["name"] = "Smolderon",
+["text"] = "BIEAomTTpSA9oX6huYLb5nP3r3SKJSKiyB0iEaNJJHIBhEAAgAAAAAAAAIRk0kgEkkiQSCAICAgACQA",
+["icon"] = 838813,
+["pvp1"] = 90,
+["pvp3"] = 92,
+["pvp2"] = 93,
+},
+{
+["name"] = "Tindral",
+["pvp1"] = 90,
+["icon"] = 1390944,
+["text"] = "BIEAomTTpSA9oX6huYLb5nP3r3SaJRKiCiko1kkcAJgEAAgAAAAAAAAIRkUkISQSKCSSDAiAAIgAE",
+["pvp3"] = 92,
+["pvp2"] = 93,
+},
+{
+["name"] = "Fyrakk",
+["pvp2"] = 93,
+["pvp3"] = 92,
+["text"] = "BIEAomTTpSA9oX6huYLb5nP3r3SkEpIaHQLSo1kkIJBSAAACAAAAAAAgERSRiIBJpIIJNAgAAIgAE",
+["icon"] = 4777836,
+["pvp1"] = 90,
+},
+{
+["icon"] = 3636845,
+["text"] = "1111101100211111211212111020101211001002122100010001001012101002020012120111101111",
+["name"] = "M+ spiteful",
+["isLegacy"] = true,
+},
+{
+["icon"] = 134400,
+["name"] = "Abberus",
+["isExpanded"] = true,
+},
+{
+["name"] = "Magmorax",
+["pvp1"] = 90,
+["icon"] = 5161746,
+["text"] = "BIEAomTTpSA9oX6huYLb5nP3r3SKJSKi2B0iko1kkcgEESAAACAAAAAAAgERCJQSkkigkAAiAAIgAE",
+["pvp3"] = 92,
+["pvp2"] = 93,
+},
+{
+["name"] = "Kazzara",
+["pvp1"] = 90,
+["icon"] = 5161745,
+["text"] = "BIEAomTTpSA9oX6huYLb5nP3r3SKJSKyBaHQLSiWTSiEESAAACAAAAAAAgERSTCSQSKCSCAICAgACQA",
+["pvp3"] = 92,
+["pvp2"] = 93,
+},
+{
+["name"] = "Sarkareth",
+["pvp1"] = 90,
+["icon"] = 5161750,
+["text"] = "BIEAomTTpSA9oX6huYLb5nP3r3SaJkmodAtIJKNJJSEJSAAACAAAAAAAg4AJJkESQSKCINAICAgACQA",
+["pvp3"] = 92,
+["pvp2"] = 93,
+},
+{
+["name"] = "Experiments",
+["pvp1"] = 90,
+["icon"] = 5161744,
+["text"] = "BIEAomTTpSA9oX6huYLb5nP3r3SKJSKi2BOQLSiWTSiEESAAACAAAAAAAgERCJIJkkigkAAiAAIgAE",
+["pvp3"] = 92,
+["pvp2"] = 93,
+},
+{
+["name"] = "Rashok",
+["pvp1"] = 90,
+["icon"] = 5161749,
+["text"] = "BIEAomTTpSA9oX6huYLb5nP3r3SESKimD0iko1kkkERIBAAIAAAAAAAASEJNJIBJpIIJFAICAgACQA",
+["pvp3"] = 92,
+["pvp2"] = 93,
+},
+{
+["name"] = "Zskarn",
+["pvp1"] = 90,
+["icon"] = 5161752,
+["text"] = "BIEAomTTpSA9oX6huYLb5nP3r3SESaimD0iko1kkkERIBAAIAAAAAAAASEJkAJRSKCSSBAiAAIgAE",
+["pvp3"] = 92,
+["pvp2"] = 93,
+},
+{
+["name"] = "Neltharion",
+["pvp1"] = 90,
+["icon"] = 5161747,
+["text"] = "BIEAomTTpSA9oX6huYLb5nP3r3SaJSKi2B0iko1kkIRESAAACAAAAAAAgERCJIJkkigkAAiAAIgAE",
+["pvp3"] = 92,
+["pvp2"] = 93,
+},
+{
+["name"] = "Vault",
+["isExpanded"] = false,
+["icon"] = 1044088,
+},
+{
+["name"] = "Terros",
+["pvp2"] = 93,
+["pvp3"] = 92,
+["text"] = "BIEAomTTpSA9oX6huYLb5nP3r3SKJRKiGtIJaNJJkEIBAAIAAAAAAAASEJFJiEkkigkAAiAAIgAE",
+["icon"] = 4630366,
+["pvp1"] = 90,
+},
+{
+["name"] = "Sennarth",
+["pvp2"] = 93,
+["pvp3"] = 92,
+["text"] = "BIEAomTTpSA9oX6huYLb5nP3r3SaJRKiGtIJaNJJHQCIBAAIAAAAAAAASEJkISCJpIIJAgIAACIAB",
+["icon"] = 4630365,
+["pvp1"] = 90,
+},
+{
+["name"] = "Diurna",
+["pvp1"] = 90,
+["icon"] = 1044089,
+["text"] = "BIEAomTTpSA9oX6huYLb5nP3r3SaJkio5AtIJaNJJHIRESAAACAAAAAAAgEJJEQSkkigkAAiAAIgAE",
+["pvp3"] = 92,
+["pvp2"] = 93,
+},
+},
+},
+}

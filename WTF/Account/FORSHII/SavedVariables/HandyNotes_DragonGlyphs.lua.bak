@@ -1,0 +1,43 @@
+
+HandyNotes_DragonGlyphsDB = {
+["profileKeys"] = {
+["Sevdarkblue - Tarren Mill"] = "Sevdarkblue - Tarren Mill",
+["Sevenruu - Tarren Mill"] = "Sevenruu - Tarren Mill",
+["Sevdh - Tarren Mill"] = "Sevdh - Tarren Mill",
+["Sevenroll - Tarren Mill"] = "Sevenroll - Tarren Mill",
+["Sevwar - Tarren Mill"] = "Sevwar - Tarren Mill",
+["Lftwgldshare - Draenor"] = "Lftwgldshare - Draenor",
+["Sevdk - Draenor"] = "Sevdk - Draenor",
+["Sevdk - Tarren Mill"] = "Sevdk - Tarren Mill",
+["Sevdeekaytwo - Tarren Mill"] = "Sevdeekaytwo - Tarren Mill",
+["Sneakysev - Ravencrest"] = "Sneakysev - Ravencrest",
+["Sevensides - Tarren Mill"] = "Sevensides - Tarren Mill",
+["Sevenroll - Kazzak"] = "Sevenroll - Kazzak",
+},
+["profiles"] = {
+["Sevdarkblue - Tarren Mill"] = {
+},
+["Sevenruu - Tarren Mill"] = {
+},
+["Sevdh - Tarren Mill"] = {
+},
+["Sevenroll - Tarren Mill"] = {
+},
+["Sevwar - Tarren Mill"] = {
+},
+["Lftwgldshare - Draenor"] = {
+},
+["Sevdk - Draenor"] = {
+},
+["Sevdk - Tarren Mill"] = {
+},
+["Sevdeekaytwo - Tarren Mill"] = {
+},
+["Sneakysev - Ravencrest"] = {
+},
+["Sevensides - Tarren Mill"] = {
+},
+["Sevenroll - Kazzak"] = {
+},
+},
+}

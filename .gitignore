@@ -1,0 +1,21 @@
+BlizzardError.exe
+.flavor.info
+.curseclient
+Cache
+Errors
+Logs
+Fonts
+Screenshots
+d3d12.dll
+dxilconv7.dll
+Wow.exe
+Utils
+.Utils
+WTF/Config.wtf
+WTF/SavedVariables
+WTF/Account/FORSHII/*.*
+WTF/Account/FORSHII/Tarren Mill
+WTF/Account/FORSHII/SavedVariables/Broker_Everything.lua
+WTF/Account/FORSHII/SavedVariables/Broker_Everything.lua.bak
+WTF/Account/FORSHII/SavedVariables/SavedInstances.lua
+WTF/Account/FORSHII/SavedVariables/SavedInstances.lua.bak

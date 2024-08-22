@@ -1,0 +1,4 @@
+
+CompactVendorDB = {
+["ListItemScale"] = 1,
+}

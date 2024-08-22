@@ -1,0 +1,65 @@
+
+HandyNotes_ShadowlandsTreasuresDB = {
+	["profileKeys"] = {
+		["Sevdh - Draenor"] = "Sevdh - Draenor",
+		["Sevenroll - Draenor"] = "Sevenroll - Draenor",
+		["Sevdh - Tarren Mill"] = "Sevdh - Tarren Mill",
+		["Sevmonkthree - Valdrakken"] = "Sevmonkthree - Valdrakken",
+		["Sevdk - Valdrakken"] = "Sevdk - Valdrakken",
+		["Sevdh - Valdrakken"] = "Sevdh - Valdrakken",
+		["Sevenroll - Tarren Mill"] = "Sevenroll - Tarren Mill",
+		["Sevdk - Draenor"] = "Sevdk - Draenor",
+		["Sevenroll - Koranos"] = "Sevenroll - Koranos",
+		["Sevwartwo - Valdrakken"] = "Sevwartwo - Valdrakken",
+		["Sneakysev - Ravencrest"] = "Sneakysev - Ravencrest",
+		["Sevensides - Tarren Mill"] = "Sevensides - Tarren Mill",
+		["Nimshot - Ravencrest"] = "Nimshot - Ravencrest",
+	},
+	["profiles"] = {
+		["Sevdh - Draenor"] = {
+		},
+		["Sevenroll - Draenor"] = {
+			["zonesHidden"] = {
+				[1961] = true,
+				[52] = true,
+				[1525] = true,
+				[1543] = true,
+				[1533] = true,
+				[1565] = true,
+				[1536] = true,
+			},
+		},
+		["Sevdh - Tarren Mill"] = {
+		},
+		["Sevmonkthree - Valdrakken"] = {
+		},
+		["Sevdk - Valdrakken"] = {
+		},
+		["Sevdh - Valdrakken"] = {
+		},
+		["Sevenroll - Tarren Mill"] = {
+			["zonesHidden"] = {
+				[1961] = true,
+				[1536] = true,
+				[52] = true,
+				[1525] = true,
+				[1970] = true,
+				[1533] = true,
+				[1565] = true,
+				[1543] = true,
+			},
+		},
+		["Sevdk - Draenor"] = {
+		},
+		["Sevenroll - Koranos"] = {
+		},
+		["Sevwartwo - Valdrakken"] = {
+		},
+		["Sneakysev - Ravencrest"] = {
+		},
+		["Sevensides - Tarren Mill"] = {
+		},
+		["Nimshot - Ravencrest"] = {
+		},
+	},
+}

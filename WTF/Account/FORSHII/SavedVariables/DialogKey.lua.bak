@@ -1,0 +1,20 @@
+
+DialogKeyDFDB = {
+["profileKeys"] = {
+["Sevdarkblue - Tarren Mill"] = "Default",
+["Sevenruu - Tarren Mill"] = "Default",
+["Sevdh - Tarren Mill"] = "Default",
+["Sevenroll - Tarren Mill"] = "Default",
+["Sevdk - Tarren Mill"] = "Default",
+["Sevdeekaytwo - Tarren Mill"] = "Default",
+["Sevwar - Tarren Mill"] = "Default",
+["Sevenroll - Kazzak"] = "Default",
+["Sevensides - Tarren Mill"] = "Default",
+["Lftwgldshare - Draenor"] = "Default",
+},
+["global"] = {
+["dontClickSummons"] = true,
+["dontClickDuels"] = true,
+["dontClickReleases"] = true,
+},
+}
