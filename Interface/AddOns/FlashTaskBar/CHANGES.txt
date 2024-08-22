@@ -1,0 +1,10 @@
+tag 6b15724196da88125d953f36f7bf9f7075d45ad7 v11.0.0.111
+Author:	Tercio Jose <terciob19@hotmail.com>
+Date:	Sun Jul 28 11:23:38 2024 -0300
+
+commit 3e2b22b11eade35e45b5ff40e598cef5dedc6214
+Author: Tercio Jose <terciob19@hotmail.com>
+Date:   Sun Jul 28 11:23:26 2024 -0300
+
+    Fixed logout issue with wow 11
+

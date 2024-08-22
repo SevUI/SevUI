@@ -1,0 +1,7 @@
+## Interface: 90001
+## Title: Screen Overlay: |cff69ccf0Enhanced|r
+## Version: 2.6.0 - Patch: 9.0
+## Author: HiroYakamura
+## Notes: Variable Screen Overlay (Grid) used for Addon alignment - Type /soe for help
+
+Screen Overlay Enhanced.lua

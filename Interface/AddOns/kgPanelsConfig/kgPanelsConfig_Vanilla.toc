@@ -1,0 +1,21 @@
+## Interface: 11403
+## LoadOnDemand: 1
+## Notes: Configuration for kgPanels
+## Title: kgPanelsConfig
+## Author: kagaro, EvilElvis
+## X-Category: Interface Enhancements
+## Dependencies: kgPanels
+## Version: 1.4.6
+## IconTexture: 133006
+## X-License: All Rights Reserved
+## X-Email: sal.scotto@gmail.com
+## OptionalDeps: Ace3, LibSharedMedia-3.0, AceGUI-3.0-SharedMediaWidgets
+
+embeds.xml
+Locales.xml
+
+kgPanelsConfig.lua
+kgPanelGuideFrame.lua
+ArtHelper.lua
+PanelHelper.lua
+LayoutHelper.lua

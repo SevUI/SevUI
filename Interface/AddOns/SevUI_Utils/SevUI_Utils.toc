@@ -1,0 +1,11 @@
+## Interface: 90200
+## Title: SevUI_Utils
+
+libs\LibStub\LibStub.lua
+libs\CallbackHandler-1.0\CallbackHandler-1.0.lua
+embeds.xml
+
+SevUI_Utils.lua
+SevUI_UIScale.lua
+SevUI_Chat_EditBox_Font.lua
+SevUI_Events.lua

@@ -1,0 +1,19 @@
+## Interface: 100207, 110000, 110002
+## Title: elWigo
+## Notes: nil
+## Author: Mono
+## Version: v1.4
+## DefaultState: disabled
+## SavedVariables: ElWigoDB
+## Dependencies: BigWigs
+## OptionalDeps: WeakAuras
+
+libs.xml
+
+Core.lua
+Utils.lua 
+
+BigWigs.lua
+UI.lua
+WA.lua
+Options.lua

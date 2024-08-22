@@ -1,0 +1,8 @@
+## Interface: 100207
+## Title: Masque: |cffffffffFlatSquares|r
+## Version: 1.0.16
+## Author: erjo__
+## Notes: FlatSquares skin for Masque.
+## Dependencies: Masque
+
+FlatSquares.lua

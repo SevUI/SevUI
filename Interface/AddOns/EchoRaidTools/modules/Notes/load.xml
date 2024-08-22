@@ -1,0 +1,14 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/
+..\FrameXML\UI.xsd">
+
+
+    <Script file="Notes.lua"/>
+	<Script file="NotesModule.lua"/>
+    <Script file="SavedSettings.lua"/>
+    <Script file="Options.lua"/>
+    <Script file="Types.lua"/>
+    <Script file="EventHandling.lua"/>
+
+    <Script file="Notes Templates\notesTemplate.lua" />
+    <Include file="Notes Templates\notesTemplate.xml" />
+</Ui>

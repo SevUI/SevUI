@@ -1,0 +1,172 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/
+..\FrameXML\UI.xsd">
+    
+    <Frame name="EchoRaidTools_NoteFrame" virtual="true" mixin="EchoRaidTools_NoteFrameMixin"
+    enableMouseMotion="true" resizable="true" movable="true">
+        <Size x="200" y="200"/>
+        <ResizeBounds>
+            <minResize x="40" y="40"/>
+        </ResizeBounds>
+        <Layers>
+            <Layer level="BACKGROUND">
+                <Texture parentKey="BG" setAllPoints="true">
+                    <Color r="1" g="1" b="1" a="1"/>
+                </Texture>
+            </Layer>
+        </Layers>
+        <Frames>
+            <Frame parentKey="ParentFrame" clipChildren="true" setAllPoints="true">
+                <Layers>
+                    <Layer level="OVERLAY">
+                        <FontString parentKey="Text" inherits="GameFontHighlight"
+                        justifyH="LEFT" justifyV="TOP" nonspacewrap="true">
+                            <Color r="0.75" g="0.75" b="0.75" a="1"/>
+                            <Anchors>
+                                <Anchor point="TOPLEFT" x="2" y="-2"/>
+                            </Anchors>
+                        </FontString>
+                    </Layer>
+                </Layers>
+            </Frame>
+            <Button parentKey="ResizeButton" inherits="EchoRaidTools_ResizeButton" alpha="0"> <!--frameStrata="DIALOG"--> 
+				<Size x="22" y="22"/>
+				<Anchors>
+					<Anchor point="BOTTOMRIGHT" x="-1" y="1"/>
+				</Anchors>
+			</Button>
+            <Frame parentKey="Border" drawLayer="OVERLAY" frameLevel="100" inherits="BackdropTemplate" hidden="false" setAllPoints="true"/>
+			<Frame parentKey="Glow" drawLayer="OVERLAY" frameLevel="100" hidden="true" setAllPoints="true"/>
+        </Frames>
+        <Scripts>
+            <OnEnter method="OnEnter"/>
+            <OnLeave method="OnLeave"/>
+            <OnLoad method="OnLoad"/>
+            <OnMouseDown method="OnMouseDown"/>
+            <OnMouseUp method="OnMouseUp"/>
+        </Scripts>
+    </Frame>
+    
+    <Button name="EchoRaidTools_ResizeButton" mixin="EchoRaidTools_ResizeButtonMixin" virtual="true">
+        <Size x="16" y="16"/>
+        <Anchors>
+            <Anchor point="BOTTOMRIGHT" x="0" y="0"/>
+        </Anchors>
+		<NormalTexture file="Interface\ChatFrame\UI-ChatIM-SizeGrabber-Up"/>
+		<HighlightTexture file="Interface\ChatFrame\UI-ChatIM-SizeGrabber-Highlight"/>
+		<PushedTexture file="Interface\ChatFrame\UI-ChatIM-SizeGrabber-Down"/>
+        <Scripts>
+			<OnEnter method="OnEnter"/>
+			<OnLeave method="OnLeave"/>
+			<OnMouseDown method="OnMouseDown"/>
+			<OnMouseUp method="OnMouseUp"/>
+		</Scripts>
+    </Button>
+
+    <Frame name="EchoRaidToolsConfig_NotesEditBox" inherits="EchoRaidToolsConfig_ScrollingEditBoxTemplate"
+    mixin="EchoRaidToolsConfig_NotesEditBoxMixin" virtual="true">
+        <Scripts>
+            <OnLoad method="PostLoad" inherit="append"/>
+        </Scripts>
+    </Frame>
+    
+    <Button name="EchoRaidTools_NotesButtonFrame" inherits="EchoRaidTools_Treeview_Button" mixin="EchoRaidTools_NotesButtonFrameMixin" virtual="true">
+        <Frames> 
+            <Button parentKey="UpDownFrame" inherits="EchorRaidTools_UpDownFrame">
+                <Anchors>
+                    <Anchor point="LEFT" x="0"/>
+                </Anchors>
+            </Button>
+            <CheckButton parentKey="CheckButton" inherits="EchoRaidTools_CheckButtonTemplate">
+                <Size x="18" y="18"/>
+                <Anchors>   
+                    <Anchor point="LEFT" x="20"/>
+                </Anchors>
+            </CheckButton>
+            <Button parentKey="DeleteButton" inherits="EchoRaidTools_MainMenu_DeleteButtonTemplate">
+                <Anchors>
+                    <Anchor point="RIGHT"/>
+                </Anchors>
+            </Button>
+            <Button parentKey="CopyButton" inherits="EchoRaidTools_MainMenu_CopyButtonTemplate">
+                <Anchors>
+                    <Anchor point="RIGHT" relativePoint="LEFT" relativeKey="$parent.DeleteButton"/>
+                </Anchors>
+            </Button>
+            <Button parentKey="RenameButton" inherits="EchoRaidTools_MainMenu_RenameButtonTemplate" mixin="EchoRaidTools_NotesTemplate_RenameButtonMixin">
+                <Anchors>
+                    <Anchor point="RIGHT" relativePoint="LEFT" relativeKey="$parent.CopyButton"/>
+                </Anchors>
+                <Scripts>
+                    <OnClick method="OnClick"/>
+                </Scripts>
+            </Button>
+            <EditBox parentKey="EditBox" numeric="false" multiLine="false" autoFocus="false" justifyH="left"
+            hidden="true" inherits="EchoRaidToolsConfig_EditboxTemplate" mixin="EchoRaidTools_NotesTemplate_EditBoxMixin">
+                <FontString justifyH="LEFT" inherits="GameFontNormalTiny"/>
+                <Size x="190" y="25"/>
+                <Anchors>
+                    <Anchor point="LEFT" relativeKey="$parent.ButtonText"/>
+                    <Anchor point="RIGHT" relativeKey="$parent.RenameButton" relativePoint="LEFT" x="-2"/>
+                    <!--Anchor point="LEFT" x="4"/>
+                    <Anchor point="RIGHT" relativePoint="LEFT" relativeKey="$parent.RenameButton" x="-3"/-->
+                </Anchors>
+                <Scripts>
+                    <OnEscapePressed method="OnEscapePressed"/>
+                    <OnEnterPressed method="OnEnterPressed"/>
+                    <OnEditFocusLost method="OnEditFocusLost"/>
+                </Scripts>
+            </EditBox>
+        </Frames>
+        <Layers>
+            <Layer level="BACKGROUND" textureSubLevel="1">
+                <Texture parentKey="ReceivedTexture" alphaMode="ADD" atlas="UI-Frame-Kyrian-Subtitle" alpha="0.5" hidden="true">
+                    <Anchors>
+                        <Anchor point="TOPLEFT" relativePoint="TOPRIGHT" x="-70"/>
+                        <Anchor point="BOTTOMRIGHT"/>
+                    </Anchors>
+                    <TexCoords left="0" right="0.5" top="0" bottom="1"/>
+                </Texture>
+            </Layer>
+            <Layer level="BACKGROUND" textureSubLevel="2">
+                <Texture parentKey="SelectedTexture" atlas="groupfinder-button-select" setAllPoints="true" alphaMode="ADD" alpha="0.4" hidden="true"/>
+            </Layer>
+        </Layers>
+        <Scripts>
+            <OnLoad method="NotesButtonFrameAdditionalLoad" inherit="append"/>
+        </Scripts>
+    </Button>
+
+    <Frame name="EchoRaidTools_NotesNodeFrame" inherits="EchoRaidTools_Treeview_Node" mixin="EchoRaidTools_NotesNodeFrameMixin" virtual="true">
+        <Frames>
+            <Button parentKey="AddButton" inherits="EchoRaidTools_MainMenu_AddButtonTemplate" > <!--frameStrata="TOOLTIP" mixin="EchoRaidTools_MainMenu_ExpandButton_AddButtonMixin"-->
+                <Size x="15" y="15"/>
+                <Anchors>
+                    <Anchor point="LEFT" relativePoint="RIGHT" relativeKey="$parent.Button.ButtonText" x="3"/>
+                </Anchors>
+                <!--Scripts>
+                    <OnClick method="OnClick" inherit="append"/>
+                </Scripts-->
+            </Button>
+        </Frames>
+        <Scripts>
+            <OnLoad method="NotesNodeFrameAdditionalLoad" inherit="append"/>
+        </Scripts>
+    </Frame>
+
+    <Button name="EchoRaidTools_NotesNavigationAddButtonFrame" inherits="EchoRaidTools_Treeview_Button" virtual="true"><!-- mixin="EchoRaidTools_NotesNavigationAddButtonFrameMixin" -->
+        <Layers>
+            <Layer level="BACKGROUND" textureSubLevel="2">
+                <Texture parentKey="SelectedTexture" atlas="CreditsScreen-Highlight" setAllPoints="true" alphaMode="ADD" alpha="0.4"> <!--heartofazeroth-list-item-selected-->
+                    <TexCoords left="0.5" right="1" top="0" bottom="1"/>
+                    <Anchors>
+                        <Anchor point="TOPLEFT" x="-3" y="-1"/>
+                        <Anchor point="BOTTOMRIGHT" x="0" y="1"/>
+                    </Anchors>
+                </Texture>
+            </Layer>
+        </Layers>
+        <Scripts>
+            <!--OnLoad method="AdditionalLoad" inherit="append"/-->
+        </Scripts>
+    </Button>
+</Ui>

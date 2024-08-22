@@ -1,0 +1,18 @@
+tag e29bb32d73ad4e2aba941a9539b5d7869e6421a0 1.4.0-release
+Author:	fonsecag <39708885+monopsony@users.noreply.github.com>
+Date:	Fri Aug 16 19:40:13 2024 +0200
+
+commit 0033a06a6cb11e821a23f7ee8f148e53285b6f7c
+Author: fonsecag <39708885+monopsony@users.noreply.github.com>
+Date:   Fri Aug 16 19:30:59 2024 +0200
+
+    toc update
+
+commit 0238622d1ead8f478f7bc658e1ac80f796c93a9f
+Author: fonsecag <39708885+monopsony@users.noreply.github.com>
+Date:   Fri Aug 16 19:29:59 2024 +0200
+
+    Can now select any expansion
+    
+    Should be future-proof, idk why I selected shit manually before, it's kinda dumb
+
