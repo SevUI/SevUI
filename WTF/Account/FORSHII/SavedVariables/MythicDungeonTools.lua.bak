@@ -13,81 +13,18 @@ MythicDungeonToolsDB = {
 ["Nimshot - Ravencrest"] = "Nimshot - Ravencrest",
 ["Sevenroll - Tarren Mill"] = "Sevenroll - Tarren Mill",
 ["Sevdk - Valdrakken"] = "Sevdk - Valdrakken",
-["Sevwar - Tarren Mill"] = "Sevwar - Tarren Mill",
+["Sevenroll - Kazzak"] = "Sevenroll - Kazzak",
 ["Lftwgldshare - Draenor"] = "Lftwgldshare - Draenor",
 ["Sevdk - Draenor"] = "Sevdk - Draenor",
-["Sevdk - Tarren Mill"] = "Sevdk - Tarren Mill",
 ["Sevdeekaytwo - Tarren Mill"] = "Sevdeekaytwo - Tarren Mill",
+["Sevdk - Tarren Mill"] = "Sevdk - Tarren Mill",
 ["Sevwartwo - Valdrakken"] = "Sevwartwo - Valdrakken",
 ["Sevensides - Tarren Mill"] = "Sevensides - Tarren Mill",
-["Sevenroll - Kazzak"] = "Sevenroll - Kazzak",
+["Sevwar - Tarren Mill"] = "Sevwar - Tarren Mill",
 },
 ["global"] = {
 ["anchorTo"] = "CENTER",
-["colorPaletteInfo"] = {
-["customPaletteValues"] = {
-{
-1,
-1,
-1,
-},
-{
-1,
-1,
-1,
-},
-{
-1,
-1,
-1,
-},
-{
-1,
-1,
-1,
-},
-{
-1,
-1,
-1,
-},
-{
-1,
-1,
-1,
-},
-{
-1,
-1,
-1,
-},
-{
-1,
-1,
-1,
-},
-{
-1,
-1,
-1,
-},
-{
-1,
-1,
-1,
-},
-{
-1,
-1,
-1,
-},
-{
-1,
-1,
-1,
-},
-},
-},
+["currentDungeonIdx"] = 43,
 ["anchorFrom"] = "CENTER",
 ["minimap"] = {
 ["minimapPos"] = 309.2608234801882,
@@ -3839,11 +3776,13 @@ nil,
 [17] = {
 3,
 },
-[36] = {
-18,
-},
 [10] = {
 9,
+},
+[19] = {
+13,
+1,
+12,
 },
 [38] = {
 7,
@@ -3860,10 +3799,8 @@ nil,
 5,
 7,
 },
-[19] = {
-13,
-1,
-12,
+[36] = {
+18,
 },
 },
 {
@@ -6462,18 +6399,18 @@ nil,
 [28] = {
 4,
 },
-[29] = {
-3,
-},
 [22] = {
 9,
 3,
 },
+["color"] = "3effff",
 [26] = {
 },
 [30] = {
 },
-["color"] = "3effff",
+[29] = {
+3,
+},
 },
 {
 [27] = {
@@ -13868,15 +13805,12 @@ nil,
 1,
 2,
 },
-[30] = {
-2,
+[23] = {
+4,
 },
 ["color"] = "3eff3e",
 [14] = {
 5,
-},
-[23] = {
-4,
 },
 [5] = {
 16,
@@ -13897,6 +13831,9 @@ nil,
 9,
 47,
 46,
+},
+[30] = {
+2,
 },
 },
 {
@@ -15964,8 +15901,71 @@ nil,
 },
 },
 },
-["currentDungeonIdx"] = 43,
 ["scale"] = 1.6099365234375,
+["colorPaletteInfo"] = {
+["customPaletteValues"] = {
+{
+1,
+1,
+1,
+},
+{
+1,
+1,
+1,
+},
+{
+1,
+1,
+1,
+},
+{
+1,
+1,
+1,
+},
+{
+1,
+1,
+1,
+},
+{
+1,
+1,
+1,
+},
+{
+1,
+1,
+1,
+},
+{
+1,
+1,
+1,
+},
+{
+1,
+1,
+1,
+},
+{
+1,
+1,
+1,
+},
+{
+1,
+1,
+1,
+},
+{
+1,
+1,
+1,
+},
+},
+},
 ["version"] = 4410,
 ["xoffset"] = -175.8403167724609,
 ["nonFullscreenScale"] = 1.6099365234375,

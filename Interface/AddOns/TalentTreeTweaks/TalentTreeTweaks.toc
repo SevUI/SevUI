@@ -3,7 +3,7 @@
 ## Author: Numy
 ## IconTexture: Interface\Addons\TalentTreeTweaks\media\icon
 ## Notes: Various improvements and addition to the Dragonflight talent tree UI
-## Version: v1.12.12
+## Version: v1.12.13
 ## X-Curse-Project-ID: 678792
 ## SavedVariables: TalentTreeTweaksDB
 ## OptionalDeps: TalentTreeViewer_Loader

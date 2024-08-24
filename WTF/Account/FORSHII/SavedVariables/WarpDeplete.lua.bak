@@ -1059,40 +1059,6 @@ WarpDepleteDB = {
 },
 ["Sevensides - Tarren Mill"] = {
 ["timings"] = {
-[1841] = {
-[20] = {
-[9] = {
-["best"] = {
-150.7519999999786,
-472.2509999999893,
-697.2010000000009,
-1010.24099999998,
-},
-["last"] = {
-177.0660000000062,
-540.7379999999976,
-743.9539999999979,
-1050.396000000008,
-},
-},
-},
-[21] = {
-[10] = {
-["best"] = {
-254.9259999999777,
-750.7369999999646,
-1035.079999999958,
-1469.262999999977,
-},
-["last"] = {
-254.9259999999777,
-750.7369999999646,
-1035.079999999958,
-1469.262999999977,
-},
-},
-},
-},
 [2519] = {
 [17] = {
 [10] = {
@@ -1125,6 +1091,40 @@ WarpDepleteDB = {
 563.8019999999669,
 897.3669999999693,
 1244.387999999977,
+},
+},
+},
+},
+[1841] = {
+[20] = {
+[9] = {
+["best"] = {
+150.7519999999786,
+472.2509999999893,
+697.2010000000009,
+1010.24099999998,
+},
+["last"] = {
+177.0660000000062,
+540.7379999999976,
+743.9539999999979,
+1050.396000000008,
+},
+},
+},
+[21] = {
+[10] = {
+["best"] = {
+254.9259999999777,
+750.7369999999646,
+1035.079999999958,
+1469.262999999977,
+},
+["last"] = {
+254.9259999999777,
+750.7369999999646,
+1035.079999999958,
+1469.262999999977,
 },
 },
 },
@@ -1203,14 +1203,14 @@ WarpDepleteDB = {
 ["Nimshot - Ravencrest"] = "Default",
 ["Sevenroll - Tarren Mill"] = "SevUI",
 ["Sevdk - Valdrakken"] = "Default",
-["Sevwar - Tarren Mill"] = "SevUI",
+["Sevenroll - Kazzak"] = "Default",
 ["Lftwgldshare - Draenor"] = "Default",
 ["Sevdk - Draenor"] = "Default",
-["Sevdk - Tarren Mill"] = "SevUI",
 ["Sevdeekaytwo - Tarren Mill"] = "SevUI",
+["Sevdk - Tarren Mill"] = "SevUI",
 ["Sevwartwo - Valdrakken"] = "Default",
 ["Sevensides - Tarren Mill"] = "SevUI",
-["Sevenroll - Kazzak"] = "Default",
+["Sevwar - Tarren Mill"] = "SevUI",
 },
 ["profiles"] = {
 ["Default"] = {
@@ -1226,10 +1226,10 @@ WarpDepleteDB = {
 ["keyDetailsFont"] = "PT Sans Narrow",
 ["bar1FontSize"] = 20,
 ["forcesTexture"] = "SevSLStatus",
-["timerFont"] = "PT Sans Narrow",
 ["frameY"] = 256.0159606933594,
-["keyDetailsFontSize"] = 20,
 ["deathsFont"] = "PT_Sans_Narrow",
+["keyDetailsFontSize"] = 20,
+["timerFont"] = "PT Sans Narrow",
 ["forcesFont"] = "PT Sans Narrow",
 ["bar3Font"] = "PT Sans Narrow",
 ["forcesFontSize"] = 20,

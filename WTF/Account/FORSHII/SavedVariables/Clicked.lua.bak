@@ -17,14 +17,14 @@ ClickedDB = {
 ["Nimshot - Ravencrest"] = "HUNTER",
 ["Sevdh - Valdrakken"] = "DEMONHUNTER",
 ["Sevdk - Valdrakken"] = "DEATHKNIGHT",
-["Sevwar - Tarren Mill"] = "SevUI",
+["Sevenroll - Kazzak"] = "MONK",
 ["Lftwgldshare - Draenor"] = "MONK",
 ["Sevdk - Draenor"] = "DEATHKNIGHT",
-["Sevdk - Tarren Mill"] = "SevUI",
 ["Sevdeekaytwo - Tarren Mill"] = "SevUI",
+["Sevdk - Tarren Mill"] = "SevUI",
 ["Sevwartwo - Valdrakken"] = "WARRIOR",
 ["Sevensides - Tarren Mill"] = "SevUI",
-["Sevenroll - Kazzak"] = "MONK",
+["Sevwar - Tarren Mill"] = "SevUI",
 },
 ["profiles"] = {
 ["HUNTER"] = {

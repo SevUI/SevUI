@@ -1,8 +1,9 @@
 # TomTom
 
-## [v4.0.2-release](https://github.com/jnwhiteh/TomTom/tree/v4.0.2-release) (2024-08-22)
-[Full Changelog](https://github.com/jnwhiteh/TomTom/commits/v4.0.2-release) [Previous Releases](https://github.com/jnwhiteh/TomTom/releases)
+## [v4.0.3-release](https://github.com/jnwhiteh/TomTom/tree/v4.0.3-release) (2024-08-23)
+[Full Changelog](https://github.com/jnwhiteh/TomTom/commits/v4.0.3-release) [Previous Releases](https://github.com/jnwhiteh/TomTom/releases)
 
+- Respect the set closest waypoint setting  
 - Fix auto quest tracking  
 - Stupid vscode  
 - Update HereBeDragons embedded library  
@@ -697,4 +698,3 @@
 - * Updated Astrolabe to fix coroutine issues  
 - Zerofill the minutes also  
 - Modified TTA to be a X:XX countdown to avoid having to pluralise minutes/seconds  
-- * Updated to Astrolabe-coroutine branch  

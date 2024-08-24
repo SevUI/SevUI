@@ -13,4 +13,6 @@ if L then
 	L.ebonstone_golem = "Schwarzsteingolem"
 	L.earthen_guardian = "Irdener Wächter"
 	L.infinite_agent = "Ewiger Agent"
+
+	L.door_open_desc = "Zeigt eine Leiste mit der Zeitangabe, wann die verschollenen Zwerge die Tür hinter Bromach öffnen."
 end

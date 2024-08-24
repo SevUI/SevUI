@@ -11,20 +11,83 @@ MythicDungeonToolsDB = {
 ["Sevdarkblue - Tarren Mill"] = "Sevdarkblue - Tarren Mill",
 ["Sevenruu - Tarren Mill"] = "Sevenruu - Tarren Mill",
 ["Nimshot - Ravencrest"] = "Nimshot - Ravencrest",
-["Sevenroll - Kazzak"] = "Sevenroll - Kazzak",
+["Sevwar - Tarren Mill"] = "Sevwar - Tarren Mill",
 ["Sevdk - Valdrakken"] = "Sevdk - Valdrakken",
-["Sevdk - Tarren Mill"] = "Sevdk - Tarren Mill",
+["Sevdeekaytwo - Tarren Mill"] = "Sevdeekaytwo - Tarren Mill",
 ["Lftwgldshare - Draenor"] = "Lftwgldshare - Draenor",
 ["Sevdk - Draenor"] = "Sevdk - Draenor",
-["Sevdeekaytwo - Tarren Mill"] = "Sevdeekaytwo - Tarren Mill",
-["Sevwar - Tarren Mill"] = "Sevwar - Tarren Mill",
+["Sevdk - Tarren Mill"] = "Sevdk - Tarren Mill",
+["Sevenroll - Kazzak"] = "Sevenroll - Kazzak",
 ["Sevwartwo - Valdrakken"] = "Sevwartwo - Valdrakken",
 ["Sevensides - Tarren Mill"] = "Sevensides - Tarren Mill",
 ["Sevenroll - Tarren Mill"] = "Sevenroll - Tarren Mill",
 },
 ["global"] = {
 ["anchorTo"] = "CENTER",
-["scale"] = 1.6099365234375,
+["colorPaletteInfo"] = {
+["customPaletteValues"] = {
+{
+1,
+1,
+1,
+},
+{
+1,
+1,
+1,
+},
+{
+1,
+1,
+1,
+},
+{
+1,
+1,
+1,
+},
+{
+1,
+1,
+1,
+},
+{
+1,
+1,
+1,
+},
+{
+1,
+1,
+1,
+},
+{
+1,
+1,
+1,
+},
+{
+1,
+1,
+1,
+},
+{
+1,
+1,
+1,
+},
+{
+1,
+1,
+1,
+},
+{
+1,
+1,
+1,
+},
+},
+},
 ["anchorFrom"] = "CENTER",
 ["minimap"] = {
 ["minimapPos"] = 309.2608234801882,
@@ -3769,13 +3832,11 @@ nil,
 [17] = {
 3,
 },
-[19] = {
-13,
-1,
-12,
-},
 [36] = {
 18,
+},
+[10] = {
+9,
 },
 [38] = {
 7,
@@ -3792,8 +3853,10 @@ nil,
 5,
 7,
 },
-[10] = {
-9,
+[19] = {
+13,
+1,
+12,
 },
 },
 {
@@ -6390,18 +6453,18 @@ nil,
 [28] = {
 4,
 },
-["color"] = "3effff",
 [29] = {
+3,
+},
+[22] = {
+9,
 3,
 },
 [26] = {
 },
 [30] = {
 },
-[22] = {
-9,
-3,
-},
+["color"] = "3effff",
 },
 {
 [27] = {
@@ -13934,6 +13997,16 @@ true,
 1,
 2,
 },
+[30] = {
+2,
+},
+["color"] = "3eff3e",
+[14] = {
+5,
+},
+[23] = {
+4,
+},
 [5] = {
 16,
 28,
@@ -13953,16 +14026,6 @@ true,
 9,
 47,
 46,
-},
-["color"] = "3eff3e",
-[14] = {
-5,
-},
-[30] = {
-2,
-},
-[23] = {
-4,
 },
 },
 {
@@ -15901,71 +15964,8 @@ nil,
 },
 },
 },
-["colorPaletteInfo"] = {
-["customPaletteValues"] = {
-{
-1,
-1,
-1,
-},
-{
-1,
-1,
-1,
-},
-{
-1,
-1,
-1,
-},
-{
-1,
-1,
-1,
-},
-{
-1,
-1,
-1,
-},
-{
-1,
-1,
-1,
-},
-{
-1,
-1,
-1,
-},
-{
-1,
-1,
-1,
-},
-{
-1,
-1,
-1,
-},
-{
-1,
-1,
-1,
-},
-{
-1,
-1,
-1,
-},
-{
-1,
-1,
-1,
-},
-},
-},
 ["currentDungeonIdx"] = 43,
+["scale"] = 1.6099365234375,
 ["version"] = 4410,
 ["xoffset"] = -175.8403167724609,
 ["currentDifficulty"] = 2,

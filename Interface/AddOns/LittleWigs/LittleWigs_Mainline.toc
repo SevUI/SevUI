@@ -23,9 +23,9 @@
 
 ## Dependencies: BigWigs
 ## LoadOnDemand: 1
-## Version: v11.0.15
+## Version: v11.0.17
 
-## X-BigWigs-Minimum: 352
+## X-BigWigs-Minimum: 355
 ## X-BigWigs-LoadOn-InstanceId: 2648,2649,2651,2652,2660,2661,2662,2669, 2664,2679,2680,2681,2683,2684,2685,2686,2687,2688,2689,2690
 WarWithin\modules.xml
 Delves\modules.xml

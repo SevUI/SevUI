@@ -1059,24 +1059,6 @@ WarpDepleteDB = {
 },
 ["Sevensides - Tarren Mill"] = {
 ["timings"] = {
-[1754] = {
-[20] = {
-[10] = {
-["best"] = {
-253.9120000000112,
-563.8019999999669,
-897.3669999999693,
-1213.949000000022,
-},
-["last"] = {
-253.9120000000112,
-563.8019999999669,
-897.3669999999693,
-1244.387999999977,
-},
-},
-},
-},
 [1841] = {
 [20] = {
 [9] = {
@@ -1125,6 +1107,24 @@ WarpDepleteDB = {
 925.4729999999981,
 236.8189999999886,
 1203.217000000004,
+},
+},
+},
+},
+[1754] = {
+[20] = {
+[10] = {
+["best"] = {
+253.9120000000112,
+563.8019999999669,
+897.3669999999693,
+1213.949000000022,
+},
+["last"] = {
+253.9120000000112,
+563.8019999999669,
+897.3669999999693,
+1244.387999999977,
 },
 },
 },
@@ -1201,13 +1201,13 @@ WarpDepleteDB = {
 ["Sevdarkblue - Tarren Mill"] = "SevUI",
 ["Sevenruu - Tarren Mill"] = "SevUI",
 ["Nimshot - Ravencrest"] = "Default",
-["Sevenroll - Kazzak"] = "Default",
+["Sevwar - Tarren Mill"] = "SevUI",
 ["Sevdk - Valdrakken"] = "Default",
-["Sevdk - Tarren Mill"] = "SevUI",
+["Sevdeekaytwo - Tarren Mill"] = "SevUI",
 ["Lftwgldshare - Draenor"] = "Default",
 ["Sevdk - Draenor"] = "Default",
-["Sevdeekaytwo - Tarren Mill"] = "SevUI",
-["Sevwar - Tarren Mill"] = "SevUI",
+["Sevdk - Tarren Mill"] = "SevUI",
+["Sevenroll - Kazzak"] = "Default",
 ["Sevwartwo - Valdrakken"] = "Default",
 ["Sevensides - Tarren Mill"] = "SevUI",
 ["Sevenroll - Tarren Mill"] = "SevUI",
@@ -1229,14 +1229,14 @@ WarpDepleteDB = {
 ["bar1Font"] = "PT Sans Narrow",
 ["bar3FontSize"] = 21,
 ["keyDetailsFontSize"] = 20,
-["timerFont"] = "PT Sans Narrow",
+["frameY"] = 256.0159606933594,
 ["forcesFont"] = "PT Sans Narrow",
 ["forcesFontSize"] = 20,
 ["bar3Font"] = "PT Sans Narrow",
 ["bar3Texture"] = "SevSLStatus",
 ["bar1Texture"] = "SevSLStatus",
+["timerFont"] = "PT Sans Narrow",
 ["deathsFont"] = "PT_Sans_Narrow",
-["frameY"] = 256.0159606933594,
 ["bar1FontSize"] = 20,
 ["bar2Texture"] = "SevSLStatus",
 ["keyFont"] = "PT Sans Narrow",

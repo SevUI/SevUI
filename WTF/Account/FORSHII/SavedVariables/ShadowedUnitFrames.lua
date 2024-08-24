@@ -16,14 +16,14 @@ ShadowedUFDB = {
 ["Nimshot - Ravencrest"] = "Default",
 ["Sevenroll - Tarren Mill"] = "SevUI2",
 ["Sevdk - Valdrakken"] = "Default",
-["Sevenroll - Kazzak"] = "Default",
+["Sevwar - Tarren Mill"] = "SevUI2",
 ["Lftwgldshare - Draenor"] = "Default",
 ["Sevdk - Draenor"] = "Default",
-["Sevdeekaytwo - Tarren Mill"] = "SevUI2",
 ["Sevdk - Tarren Mill"] = "SevUI",
+["Sevdeekaytwo - Tarren Mill"] = "SevUI2",
 ["Sevwartwo - Valdrakken"] = "Default",
 ["Sevensides - Tarren Mill"] = "SevUI2",
-["Sevwar - Tarren Mill"] = "SevUI2",
+["Sevenroll - Kazzak"] = "Default",
 },
 ["global"] = {
 ["infoID"] = 3,
@@ -174,10 +174,10 @@ ShadowedUFDB = {
 ["g"] = 0.93,
 ["r"] = 0.93,
 },
-["yellow"] = {
-["b"] = 0,
-["g"] = 0.93,
-["r"] = 0.93,
+["healAbsorb"] = {
+["b"] = 1,
+["g"] = 0.47,
+["r"] = 0.68,
 },
 ["aggro"] = {
 ["b"] = 0,
@@ -195,10 +195,10 @@ ShadowedUFDB = {
 ["g"] = 0.9,
 ["r"] = 0.2,
 },
-["offline"] = {
-["b"] = 0.5,
-["g"] = 0.5,
-["r"] = 0.5,
+["yellow"] = {
+["b"] = 0,
+["g"] = 0.93,
+["r"] = 0.93,
 },
 ["enemyUnattack"] = {
 ["b"] = 0.2,
@@ -225,10 +225,10 @@ ShadowedUFDB = {
 ["g"] = 0.75,
 ["r"] = 0.93,
 },
-["healAbsorb"] = {
-["b"] = 1,
-["g"] = 0.47,
-["r"] = 0.68,
+["offline"] = {
+["b"] = 0.5,
+["g"] = 0.5,
+["r"] = 0.5,
 },
 ["inc"] = {
 ["b"] = 0.23,
@@ -271,11 +271,8 @@ ShadowedUFDB = {
 ["anchorPoint"] = "RT",
 ["anchorTo"] = "$parent",
 },
-["pet"] = {
-["y"] = -205,
-["point"] = "CENTER",
-["relativePoint"] = "CENTER",
-["anchorTo"] = "#SUFUnitplayer",
+["pettarget"] = {
+["anchorPoint"] = "C",
 },
 ["arenapet"] = {
 ["anchorPoint"] = "RB",
@@ -347,8 +344,10 @@ ShadowedUFDB = {
 ["anchorPoint"] = "TL",
 ["anchorTo"] = "#SUFUnitfocus",
 },
-["pettarget"] = {
-["anchorPoint"] = "C",
+["targettarget"] = {
+["y"] = -4,
+["anchorTo"] = "#SUFUnittarget",
+["anchorPoint"] = "BC",
 },
 ["maintanktarget"] = {
 ["anchorPoint"] = "RT",
@@ -362,10 +361,11 @@ ShadowedUFDB = {
 ["mainassist"] = {
 ["anchorPoint"] = "C",
 },
-["targettarget"] = {
-["y"] = -4,
-["anchorTo"] = "#SUFUnittarget",
-["anchorPoint"] = "BC",
+["pet"] = {
+["y"] = -205,
+["point"] = "CENTER",
+["relativePoint"] = "CENTER",
+["anchorTo"] = "#SUFUnitplayer",
 },
 ["battlegroundpet"] = {
 ["anchorPoint"] = "RB",
@@ -438,14 +438,21 @@ nil,
 ["text"] = "[name]",
 },
 },
-["portrait"] = {
-["type"] = "3D",
-["alignment"] = "LEFT",
-["fullAfter"] = 100,
-["height"] = 0.5,
-["fullBefore"] = 0,
-["order"] = 15,
-["width"] = 0.22,
+["indicators"] = {
+["raidTarget"] = {
+["y"] = 0,
+["x"] = 0,
+["anchorTo"] = "$parent",
+["anchorPoint"] = "C",
+["size"] = 20,
+},
+["class"] = {
+["y"] = 0,
+["x"] = 0,
+["anchorTo"] = "$parent",
+["anchorPoint"] = "BL",
+["size"] = 16,
+},
 },
 ["healthBar"] = {
 ["colorType"] = "class",
@@ -497,21 +504,8 @@ nil,
 ["size"] = 0,
 },
 },
-["indicators"] = {
-["raidTarget"] = {
-["y"] = 0,
-["x"] = 0,
-["anchorTo"] = "$parent",
-["anchorPoint"] = "C",
-["size"] = 20,
-},
-["class"] = {
-["y"] = 0,
-["x"] = 0,
-["anchorTo"] = "$parent",
-["anchorPoint"] = "BL",
-["size"] = 16,
-},
+["highlight"] = {
+["size"] = 10,
 },
 ["altPowerBar"] = {
 ["height"] = 0.4,
@@ -526,8 +520,14 @@ nil,
 ["background"] = true,
 ["order"] = 20,
 },
-["highlight"] = {
-["size"] = 10,
+["portrait"] = {
+["type"] = "3D",
+["alignment"] = "LEFT",
+["fullAfter"] = 100,
+["height"] = 0.5,
+["fullBefore"] = 0,
+["order"] = 15,
+["width"] = 0.22,
 },
 },
 ["mainassisttarget"] = {
@@ -542,14 +542,21 @@ nil,
 ["text"] = "[(()afk() )][name]",
 },
 },
-["portrait"] = {
-["type"] = "3D",
-["alignment"] = "LEFT",
-["fullAfter"] = 100,
-["height"] = 0.5,
-["fullBefore"] = 0,
-["order"] = 15,
-["width"] = 0.22,
+["indicators"] = {
+["raidTarget"] = {
+["y"] = 0,
+["x"] = 0,
+["anchorTo"] = "$parent",
+["anchorPoint"] = "C",
+["size"] = 20,
+},
+["class"] = {
+["y"] = 0,
+["x"] = 0,
+["anchorTo"] = "$parent",
+["anchorPoint"] = "BL",
+["size"] = 16,
+},
 },
 ["healthBar"] = {
 ["colorType"] = "class",
@@ -601,21 +608,8 @@ nil,
 ["size"] = 0,
 },
 },
-["indicators"] = {
-["raidTarget"] = {
-["y"] = 0,
-["x"] = 0,
-["anchorTo"] = "$parent",
-["anchorPoint"] = "C",
-["size"] = 20,
-},
-["class"] = {
-["y"] = 0,
-["x"] = 0,
-["anchorTo"] = "$parent",
-["anchorPoint"] = "BL",
-["size"] = 16,
-},
+["highlight"] = {
+["size"] = 10,
 },
 ["altPowerBar"] = {
 ["height"] = 0.4,
@@ -630,8 +624,14 @@ nil,
 ["background"] = true,
 ["order"] = 20,
 },
-["highlight"] = {
-["size"] = 10,
+["portrait"] = {
+["type"] = "3D",
+["alignment"] = "LEFT",
+["fullAfter"] = 100,
+["height"] = 0.5,
+["fullBefore"] = 0,
+["order"] = 15,
+["width"] = 0.22,
 },
 },
 ["targettargettarget"] = {
@@ -875,14 +875,21 @@ nil,
 ["text"] = "[name]",
 },
 },
-["portrait"] = {
-["type"] = "3D",
-["alignment"] = "LEFT",
-["fullAfter"] = 100,
-["height"] = 0.5,
-["fullBefore"] = 0,
-["order"] = 15,
-["width"] = 0.22,
+["indicators"] = {
+["raidTarget"] = {
+["y"] = 0,
+["x"] = 0,
+["anchorTo"] = "$parent",
+["anchorPoint"] = "C",
+["size"] = 20,
+},
+["class"] = {
+["y"] = 0,
+["x"] = 0,
+["anchorTo"] = "$parent",
+["anchorPoint"] = "BL",
+["size"] = 16,
+},
 },
 ["healthBar"] = {
 ["colorType"] = "class",
@@ -934,21 +941,8 @@ nil,
 ["size"] = 0,
 },
 },
-["indicators"] = {
-["raidTarget"] = {
-["y"] = 0,
-["x"] = 0,
-["anchorTo"] = "$parent",
-["anchorPoint"] = "C",
-["size"] = 20,
-},
-["class"] = {
-["y"] = 0,
-["x"] = 0,
-["anchorTo"] = "$parent",
-["anchorPoint"] = "BL",
-["size"] = 16,
-},
+["highlight"] = {
+["size"] = 10,
 },
 ["altPowerBar"] = {
 ["height"] = 0.4,
@@ -963,8 +957,14 @@ nil,
 ["background"] = true,
 ["order"] = 20,
 },
-["highlight"] = {
-["size"] = 10,
+["portrait"] = {
+["type"] = "3D",
+["alignment"] = "LEFT",
+["fullAfter"] = 100,
+["height"] = 0.5,
+["fullBefore"] = 0,
+["order"] = 15,
+["width"] = 0.22,
 },
 },
 ["raid"] = {
@@ -1270,14 +1270,21 @@ nil,
 ["text"] = "[(()afk() )][name]",
 },
 },
-["portrait"] = {
-["type"] = "3D",
-["alignment"] = "LEFT",
-["fullAfter"] = 100,
-["height"] = 0.5,
-["fullBefore"] = 0,
-["order"] = 15,
-["width"] = 0.22,
+["indicators"] = {
+["raidTarget"] = {
+["y"] = 0,
+["x"] = 0,
+["anchorTo"] = "$parent",
+["anchorPoint"] = "C",
+["size"] = 20,
+},
+["class"] = {
+["y"] = 0,
+["x"] = 0,
+["anchorTo"] = "$parent",
+["anchorPoint"] = "BL",
+["size"] = 16,
+},
 },
 ["healthBar"] = {
 ["colorType"] = "class",
@@ -1329,21 +1336,8 @@ nil,
 ["size"] = 0,
 },
 },
-["indicators"] = {
-["raidTarget"] = {
-["y"] = 0,
-["x"] = 0,
-["anchorTo"] = "$parent",
-["anchorPoint"] = "C",
-["size"] = 20,
-},
-["class"] = {
-["y"] = 0,
-["x"] = 0,
-["anchorTo"] = "$parent",
-["anchorPoint"] = "BL",
-["size"] = 16,
-},
+["highlight"] = {
+["size"] = 10,
 },
 ["altPowerBar"] = {
 ["height"] = 0.4,
@@ -1358,8 +1352,14 @@ nil,
 ["background"] = true,
 ["order"] = 20,
 },
-["highlight"] = {
-["size"] = 10,
+["portrait"] = {
+["type"] = "3D",
+["alignment"] = "LEFT",
+["fullAfter"] = 100,
+["height"] = 0.5,
+["fullBefore"] = 0,
+["order"] = 15,
+["width"] = 0.22,
 },
 },
 ["party"] = {
@@ -1532,8 +1532,18 @@ nil,
 ["height"] = 1.2,
 },
 ["hideSemiRaid"] = false,
-["unitsPerColumn"] = 5,
 ["attribAnchorPoint"] = "BOTTOM",
+["text"] = {
+{
+["text"] = "[(()afk() )][name]",
+},
+[3] = {
+["text"] = "[level( )][perpp]",
+},
+[5] = {
+["text"] = "[(()afk() )][name]",
+},
+},
 ["emptyBar"] = {
 ["order"] = 0,
 ["background"] = true,
@@ -1547,17 +1557,7 @@ nil,
 ["mouseover"] = true,
 ["size"] = 5,
 },
-["text"] = {
-{
-["text"] = "[(()afk() )][name]",
-},
-[3] = {
-["text"] = "[level( )][perpp]",
-},
-[5] = {
-["text"] = "[(()afk() )][name]",
-},
-},
+["unitsPerColumn"] = 5,
 ["fader"] = {
 ["height"] = 0.5,
 },
@@ -1587,14 +1587,21 @@ nil,
 ["text"] = "[(()afk() )][name]",
 },
 },
-["portrait"] = {
-["type"] = "3D",
-["alignment"] = "LEFT",
-["fullAfter"] = 100,
-["height"] = 0.5,
-["fullBefore"] = 0,
-["order"] = 15,
-["width"] = 0.22,
+["indicators"] = {
+["raidTarget"] = {
+["y"] = 0,
+["x"] = 0,
+["anchorTo"] = "$parent",
+["anchorPoint"] = "C",
+["size"] = 20,
+},
+["class"] = {
+["y"] = 0,
+["x"] = 0,
+["anchorTo"] = "$parent",
+["anchorPoint"] = "BL",
+["size"] = 16,
+},
 },
 ["healthBar"] = {
 ["colorType"] = "class",
@@ -1646,21 +1653,8 @@ nil,
 ["size"] = 0,
 },
 },
-["indicators"] = {
-["raidTarget"] = {
-["y"] = 0,
-["x"] = 0,
-["anchorTo"] = "$parent",
-["anchorPoint"] = "C",
-["size"] = 20,
-},
-["class"] = {
-["y"] = 0,
-["x"] = 0,
-["anchorTo"] = "$parent",
-["anchorPoint"] = "BL",
-["size"] = 16,
-},
+["highlight"] = {
+["size"] = 10,
 },
 ["altPowerBar"] = {
 ["height"] = 0.4,
@@ -1675,8 +1669,14 @@ nil,
 ["background"] = true,
 ["order"] = 20,
 },
-["highlight"] = {
-["size"] = 10,
+["portrait"] = {
+["type"] = "3D",
+["alignment"] = "LEFT",
+["fullAfter"] = 100,
+["height"] = 0.5,
+["fullBefore"] = 0,
+["order"] = 15,
+["width"] = 0.22,
 },
 },
 ["focus"] = {
@@ -2133,14 +2133,21 @@ nil,
 ["text"] = "[name]",
 },
 },
-["portrait"] = {
-["type"] = "3D",
-["alignment"] = "LEFT",
-["fullAfter"] = 100,
-["height"] = 0.5,
-["fullBefore"] = 0,
-["order"] = 15,
-["width"] = 0.22,
+["indicators"] = {
+["raidTarget"] = {
+["y"] = 0,
+["x"] = 0,
+["anchorTo"] = "$parent",
+["anchorPoint"] = "C",
+["size"] = 20,
+},
+["class"] = {
+["y"] = 0,
+["x"] = 0,
+["anchorTo"] = "$parent",
+["anchorPoint"] = "BL",
+["size"] = 16,
+},
 },
 ["healthBar"] = {
 ["colorType"] = "class",
@@ -2192,21 +2199,8 @@ nil,
 ["size"] = 0,
 },
 },
-["indicators"] = {
-["raidTarget"] = {
-["y"] = 0,
-["x"] = 0,
-["anchorTo"] = "$parent",
-["anchorPoint"] = "C",
-["size"] = 20,
-},
-["class"] = {
-["y"] = 0,
-["x"] = 0,
-["anchorTo"] = "$parent",
-["anchorPoint"] = "BL",
-["size"] = 16,
-},
+["highlight"] = {
+["size"] = 10,
 },
 ["altPowerBar"] = {
 ["height"] = 0.4,
@@ -2221,8 +2215,14 @@ nil,
 ["background"] = true,
 ["order"] = 20,
 },
-["highlight"] = {
-["size"] = 10,
+["portrait"] = {
+["type"] = "3D",
+["alignment"] = "LEFT",
+["fullAfter"] = 100,
+["height"] = 0.5,
+["fullBefore"] = 0,
+["order"] = 15,
+["width"] = 0.22,
 },
 },
 ["boss"] = {
@@ -2674,14 +2674,21 @@ nil,
 ["text"] = "[name]",
 },
 },
-["portrait"] = {
-["type"] = "3D",
-["alignment"] = "LEFT",
-["fullAfter"] = 100,
-["height"] = 0.5,
-["fullBefore"] = 0,
-["order"] = 15,
-["width"] = 0.22,
+["indicators"] = {
+["raidTarget"] = {
+["y"] = 0,
+["x"] = 0,
+["anchorTo"] = "$parent",
+["anchorPoint"] = "C",
+["size"] = 20,
+},
+["class"] = {
+["y"] = 0,
+["x"] = 0,
+["anchorTo"] = "$parent",
+["anchorPoint"] = "BL",
+["size"] = 16,
+},
 },
 ["healthBar"] = {
 ["colorType"] = "class",
@@ -2733,21 +2740,8 @@ nil,
 ["size"] = 0,
 },
 },
-["indicators"] = {
-["raidTarget"] = {
-["y"] = 0,
-["x"] = 0,
-["anchorTo"] = "$parent",
-["anchorPoint"] = "C",
-["size"] = 20,
-},
-["class"] = {
-["y"] = 0,
-["x"] = 0,
-["anchorTo"] = "$parent",
-["anchorPoint"] = "BL",
-["size"] = 16,
-},
+["highlight"] = {
+["size"] = 10,
 },
 ["altPowerBar"] = {
 ["height"] = 0.4,
@@ -2762,8 +2756,14 @@ nil,
 ["background"] = true,
 ["order"] = 20,
 },
-["highlight"] = {
-["size"] = 10,
+["portrait"] = {
+["type"] = "3D",
+["alignment"] = "LEFT",
+["fullAfter"] = 100,
+["height"] = 0.5,
+["fullBefore"] = 0,
+["order"] = 15,
+["width"] = 0.22,
 },
 },
 ["bosstargettarget"] = {
@@ -2782,14 +2782,21 @@ nil,
 ["text"] = "[name]",
 },
 },
-["portrait"] = {
-["type"] = "3D",
-["alignment"] = "LEFT",
-["fullAfter"] = 100,
-["height"] = 0.5,
-["fullBefore"] = 0,
-["order"] = 15,
-["width"] = 0.22,
+["indicators"] = {
+["raidTarget"] = {
+["y"] = 0,
+["x"] = 0,
+["anchorTo"] = "$parent",
+["anchorPoint"] = "C",
+["size"] = 20,
+},
+["class"] = {
+["y"] = 0,
+["x"] = 0,
+["anchorTo"] = "$parent",
+["anchorPoint"] = "BL",
+["size"] = 16,
+},
 },
 ["healthBar"] = {
 ["colorType"] = "class",
@@ -2841,21 +2848,8 @@ nil,
 ["size"] = 0,
 },
 },
-["indicators"] = {
-["raidTarget"] = {
-["y"] = 0,
-["x"] = 0,
-["anchorTo"] = "$parent",
-["anchorPoint"] = "C",
-["size"] = 20,
-},
-["class"] = {
-["y"] = 0,
-["x"] = 0,
-["anchorTo"] = "$parent",
-["anchorPoint"] = "BL",
-["size"] = 16,
-},
+["highlight"] = {
+["size"] = 10,
 },
 ["altPowerBar"] = {
 ["height"] = 0.4,
@@ -2870,19 +2864,6 @@ nil,
 ["background"] = true,
 ["order"] = 20,
 },
-["highlight"] = {
-["size"] = 10,
-},
-},
-["pettarget"] = {
-["text"] = {
-[3] = {
-["text"] = "[perpp]",
-},
-[5] = {
-["text"] = "[name]",
-},
-},
 ["portrait"] = {
 ["type"] = "3D",
 ["alignment"] = "LEFT",
@@ -2891,312 +2872,6 @@ nil,
 ["fullBefore"] = 0,
 ["order"] = 15,
 ["width"] = 0.22,
-},
-["healthBar"] = {
-["colorType"] = "class",
-["order"] = 10,
-["background"] = true,
-["reactionType"] = "npc",
-["height"] = 1.2,
-},
-["emptyBar"] = {
-["order"] = 0,
-["background"] = true,
-["height"] = 1,
-["reactionType"] = "none",
-},
-["auras"] = {
-["buffs"] = {
-["anchorPoint"] = "BL",
-["y"] = 0,
-["x"] = 0,
-["size"] = 16,
-},
-["debuffs"] = {
-["anchorPoint"] = "BL",
-["y"] = 0,
-["x"] = 0,
-["size"] = 16,
-},
-},
-["castBar"] = {
-["time"] = {
-["enabled"] = true,
-["x"] = -1,
-["anchorTo"] = "$parent",
-["y"] = 0,
-["anchorPoint"] = "CRI",
-["size"] = 0,
-},
-["height"] = 0.6,
-["order"] = 40,
-["background"] = true,
-["icon"] = "HIDE",
-["name"] = {
-["y"] = 0,
-["x"] = 1,
-["anchorTo"] = "$parent",
-["rank"] = true,
-["anchorPoint"] = "CLI",
-["enabled"] = true,
-["size"] = 0,
-},
-},
-["indicators"] = {
-["raidTarget"] = {
-["y"] = 0,
-["x"] = 0,
-["anchorTo"] = "$parent",
-["anchorPoint"] = "C",
-["size"] = 20,
-},
-},
-["altPowerBar"] = {
-["height"] = 0.4,
-["background"] = true,
-["order"] = 100,
-},
-["width"] = 190,
-["height"] = 30,
-["powerBar"] = {
-["colorType"] = "type",
-["height"] = 0.7,
-["background"] = true,
-["order"] = 20,
-},
-["highlight"] = {
-["size"] = 10,
-},
-},
-["bosstarget"] = {
-["text"] = {
-nil,
-{
-["text"] = "[curhp]",
-},
-{
-["text"] = "",
-},
-{
-["text"] = "",
-},
-{
-["text"] = "[name]",
-},
-},
-["portrait"] = {
-["type"] = "3D",
-["alignment"] = "LEFT",
-["fullAfter"] = 100,
-["height"] = 0.5,
-["fullBefore"] = 0,
-["order"] = 15,
-["width"] = 0.22,
-},
-["healthBar"] = {
-["colorType"] = "class",
-["order"] = 10,
-["background"] = true,
-["reactionType"] = "npc",
-["height"] = 1.2,
-},
-["emptyBar"] = {
-["order"] = 0,
-["background"] = true,
-["height"] = 1,
-["reactionType"] = "none",
-},
-["auras"] = {
-["buffs"] = {
-["anchorPoint"] = "BL",
-["y"] = 0,
-["x"] = 0,
-["size"] = 16,
-},
-["debuffs"] = {
-["anchorPoint"] = "BL",
-["y"] = 0,
-["x"] = 0,
-["size"] = 16,
-},
-},
-["castBar"] = {
-["time"] = {
-["enabled"] = true,
-["x"] = -1,
-["anchorTo"] = "$parent",
-["y"] = 0,
-["anchorPoint"] = "CRI",
-["size"] = 0,
-},
-["height"] = 0.6,
-["order"] = 40,
-["background"] = true,
-["icon"] = "HIDE",
-["name"] = {
-["y"] = 0,
-["x"] = 1,
-["anchorTo"] = "$parent",
-["rank"] = true,
-["anchorPoint"] = "CLI",
-["enabled"] = true,
-["size"] = 0,
-},
-},
-["indicators"] = {
-["raidTarget"] = {
-["y"] = 0,
-["x"] = 0,
-["anchorTo"] = "$parent",
-["anchorPoint"] = "C",
-["size"] = 20,
-},
-["class"] = {
-["y"] = 0,
-["x"] = 0,
-["anchorTo"] = "$parent",
-["anchorPoint"] = "BL",
-["size"] = 16,
-},
-},
-["altPowerBar"] = {
-["height"] = 0.4,
-["background"] = true,
-["order"] = 100,
-},
-["width"] = 90,
-["height"] = 25,
-["powerBar"] = {
-["colorType"] = "type",
-["height"] = 0.6,
-["background"] = true,
-["order"] = 20,
-},
-["highlight"] = {
-["size"] = 10,
-},
-},
-["focustarget"] = {
-["highlight"] = {
-["height"] = 0.5,
-["size"] = 10,
-},
-["range"] = {
-["height"] = 0.5,
-},
-["auras"] = {
-["height"] = 0.5,
-["debuffs"] = {
-["anchorPoint"] = "BL",
-["y"] = 0,
-["x"] = 0,
-["size"] = 16,
-},
-["buffs"] = {
-["anchorPoint"] = "BL",
-["y"] = 0,
-["x"] = 0,
-["size"] = 16,
-},
-},
-["castBar"] = {
-["time"] = {
-["enabled"] = true,
-["x"] = -1,
-["anchorTo"] = "$parent",
-["y"] = 0,
-["anchorPoint"] = "CRI",
-["size"] = 0,
-},
-["height"] = 0.6,
-["order"] = 40,
-["background"] = true,
-["icon"] = "HIDE",
-["name"] = {
-["y"] = 0,
-["x"] = 1,
-["anchorTo"] = "$parent",
-["rank"] = true,
-["anchorPoint"] = "CLI",
-["enabled"] = true,
-["size"] = 0,
-},
-},
-["auraIndicators"] = {
-["height"] = 0.5,
-},
-["powerBar"] = {
-["colorType"] = "type",
-["height"] = 0.6,
-["background"] = true,
-["order"] = 20,
-},
-["enabled"] = false,
-["healthBar"] = {
-["colorType"] = "class",
-["order"] = 10,
-["background"] = true,
-["reactionType"] = "npc",
-["height"] = 1.2,
-},
-["emptyBar"] = {
-["order"] = 0,
-["background"] = true,
-["height"] = 1,
-["reactionType"] = "none",
-},
-["width"] = 120,
-["altPowerBar"] = {
-["height"] = 0.4,
-["background"] = true,
-["order"] = 100,
-},
-["fader"] = {
-["height"] = 0.5,
-},
-["height"] = 25,
-["portrait"] = {
-["type"] = "3D",
-["alignment"] = "RIGHT",
-["fullAfter"] = 100,
-["height"] = 0.5,
-["fullBefore"] = 0,
-["order"] = 15,
-["width"] = 0.22,
-},
-["text"] = {
-{
-["text"] = "[(()afk() )][name]",
-},
-{
-["text"] = "[curhp]",
-},
-{
-["text"] = "",
-},
-{
-["text"] = "",
-},
-{
-["text"] = "[(()afk() )][name]",
-},
-},
-["indicators"] = {
-["raidTarget"] = {
-["y"] = 0,
-["x"] = 0,
-["anchorTo"] = "$parent",
-["anchorPoint"] = "C",
-["size"] = 20,
-},
-["class"] = {
-["y"] = 0,
-["x"] = 0,
-["anchorTo"] = "$parent",
-["anchorPoint"] = "BL",
-["size"] = 16,
-},
-["height"] = 0.5,
 },
 },
 ["pet"] = {
@@ -3341,7 +3016,104 @@ nil,
 ["width"] = 0.22,
 },
 },
-["partypet"] = {
+["bosstarget"] = {
+["text"] = {
+nil,
+{
+["text"] = "[curhp]",
+},
+{
+["text"] = "",
+},
+{
+["text"] = "",
+},
+{
+["text"] = "[name]",
+},
+},
+["indicators"] = {
+["raidTarget"] = {
+["y"] = 0,
+["x"] = 0,
+["anchorTo"] = "$parent",
+["anchorPoint"] = "C",
+["size"] = 20,
+},
+["class"] = {
+["y"] = 0,
+["x"] = 0,
+["anchorTo"] = "$parent",
+["anchorPoint"] = "BL",
+["size"] = 16,
+},
+},
+["healthBar"] = {
+["colorType"] = "class",
+["order"] = 10,
+["background"] = true,
+["reactionType"] = "npc",
+["height"] = 1.2,
+},
+["emptyBar"] = {
+["order"] = 0,
+["background"] = true,
+["height"] = 1,
+["reactionType"] = "none",
+},
+["auras"] = {
+["buffs"] = {
+["anchorPoint"] = "BL",
+["y"] = 0,
+["x"] = 0,
+["size"] = 16,
+},
+["debuffs"] = {
+["anchorPoint"] = "BL",
+["y"] = 0,
+["x"] = 0,
+["size"] = 16,
+},
+},
+["castBar"] = {
+["time"] = {
+["enabled"] = true,
+["x"] = -1,
+["anchorTo"] = "$parent",
+["y"] = 0,
+["anchorPoint"] = "CRI",
+["size"] = 0,
+},
+["height"] = 0.6,
+["order"] = 40,
+["background"] = true,
+["icon"] = "HIDE",
+["name"] = {
+["y"] = 0,
+["x"] = 1,
+["anchorTo"] = "$parent",
+["rank"] = true,
+["anchorPoint"] = "CLI",
+["enabled"] = true,
+["size"] = 0,
+},
+},
+["highlight"] = {
+["size"] = 10,
+},
+["altPowerBar"] = {
+["height"] = 0.4,
+["background"] = true,
+["order"] = 100,
+},
+["width"] = 90,
+["height"] = 25,
+["powerBar"] = {
+["colorType"] = "type",
+["height"] = 0.6,
+["background"] = true,
+["order"] = 20,
+},
 ["portrait"] = {
 ["type"] = "3D",
 ["alignment"] = "LEFT",
@@ -3350,6 +3122,261 @@ nil,
 ["fullBefore"] = 0,
 ["order"] = 15,
 ["width"] = 0.22,
+},
+},
+["focustarget"] = {
+["highlight"] = {
+["height"] = 0.5,
+["size"] = 10,
+},
+["range"] = {
+["height"] = 0.5,
+},
+["auras"] = {
+["height"] = 0.5,
+["debuffs"] = {
+["anchorPoint"] = "BL",
+["y"] = 0,
+["x"] = 0,
+["size"] = 16,
+},
+["buffs"] = {
+["anchorPoint"] = "BL",
+["y"] = 0,
+["x"] = 0,
+["size"] = 16,
+},
+},
+["castBar"] = {
+["time"] = {
+["enabled"] = true,
+["x"] = -1,
+["anchorTo"] = "$parent",
+["y"] = 0,
+["anchorPoint"] = "CRI",
+["size"] = 0,
+},
+["height"] = 0.6,
+["order"] = 40,
+["background"] = true,
+["icon"] = "HIDE",
+["name"] = {
+["y"] = 0,
+["x"] = 1,
+["anchorTo"] = "$parent",
+["rank"] = true,
+["anchorPoint"] = "CLI",
+["enabled"] = true,
+["size"] = 0,
+},
+},
+["auraIndicators"] = {
+["height"] = 0.5,
+},
+["powerBar"] = {
+["colorType"] = "type",
+["height"] = 0.6,
+["background"] = true,
+["order"] = 20,
+},
+["enabled"] = false,
+["healthBar"] = {
+["colorType"] = "class",
+["order"] = 10,
+["background"] = true,
+["reactionType"] = "npc",
+["height"] = 1.2,
+},
+["emptyBar"] = {
+["order"] = 0,
+["background"] = true,
+["height"] = 1,
+["reactionType"] = "none",
+},
+["width"] = 120,
+["altPowerBar"] = {
+["height"] = 0.4,
+["background"] = true,
+["order"] = 100,
+},
+["fader"] = {
+["height"] = 0.5,
+},
+["height"] = 25,
+["portrait"] = {
+["type"] = "3D",
+["alignment"] = "RIGHT",
+["fullAfter"] = 100,
+["height"] = 0.5,
+["fullBefore"] = 0,
+["order"] = 15,
+["width"] = 0.22,
+},
+["text"] = {
+{
+["text"] = "[(()afk() )][name]",
+},
+{
+["text"] = "[curhp]",
+},
+{
+["text"] = "",
+},
+{
+["text"] = "",
+},
+{
+["text"] = "[(()afk() )][name]",
+},
+},
+["indicators"] = {
+["raidTarget"] = {
+["y"] = 0,
+["x"] = 0,
+["anchorTo"] = "$parent",
+["anchorPoint"] = "C",
+["size"] = 20,
+},
+["class"] = {
+["y"] = 0,
+["x"] = 0,
+["anchorTo"] = "$parent",
+["anchorPoint"] = "BL",
+["size"] = 16,
+},
+["height"] = 0.5,
+},
+},
+["targettarget"] = {
+["width"] = 414,
+["portrait"] = {
+["type"] = "3D",
+["alignment"] = "RIGHT",
+["fullAfter"] = 100,
+["height"] = 0.5,
+["fullBefore"] = 0,
+["order"] = 15,
+["width"] = 0.22,
+},
+["healthBar"] = {
+["colorType"] = "class",
+["order"] = 10,
+["background"] = true,
+["reactionType"] = "npc",
+["height"] = 1,
+},
+["emptyBar"] = {
+["order"] = 0,
+["class"] = false,
+["reactionType"] = "none",
+["background"] = true,
+["backgroundColor"] = {
+["b"] = 0,
+["g"] = 0,
+["r"] = 0,
+},
+["height"] = 1,
+},
+["range"] = {
+["height"] = 0.5,
+},
+["auras"] = {
+["height"] = 0.5,
+["debuffs"] = {
+["anchorPoint"] = "BL",
+["y"] = 0,
+["x"] = 0,
+["size"] = 16,
+},
+["buffs"] = {
+["anchorPoint"] = "BL",
+["y"] = 0,
+["x"] = 0,
+["size"] = 16,
+},
+},
+["castBar"] = {
+["time"] = {
+["enabled"] = true,
+["x"] = -1,
+["anchorTo"] = "$parent",
+["y"] = 0,
+["anchorPoint"] = "CRI",
+["size"] = 0,
+},
+["height"] = 0.6,
+["order"] = 40,
+["background"] = true,
+["icon"] = "HIDE",
+["name"] = {
+["y"] = 0,
+["x"] = 1,
+["anchorTo"] = "$parent",
+["rank"] = true,
+["anchorPoint"] = "CLI",
+["enabled"] = true,
+["size"] = 0,
+},
+},
+["text"] = {
+nil,
+{
+["text"] = "[( )perhp]",
+},
+{
+["text"] = "[perpp]",
+},
+{
+["text"] = "[curpp]",
+},
+},
+["altPowerBar"] = {
+["height"] = 0.4,
+["background"] = true,
+["order"] = 100,
+},
+["indicators"] = {
+["raidTarget"] = {
+["y"] = 0,
+["x"] = 0,
+["anchorTo"] = "$parent",
+["anchorPoint"] = "C",
+["size"] = 20,
+},
+["class"] = {
+["y"] = 0,
+["x"] = 0,
+["anchorTo"] = "$parent",
+["anchorPoint"] = "BL",
+["size"] = 16,
+},
+["height"] = 0.5,
+},
+["height"] = 24,
+["auraIndicators"] = {
+["height"] = 0.5,
+},
+["powerBar"] = {
+["enabled"] = false,
+["colorType"] = "type",
+["height"] = 0.6,
+["background"] = true,
+["order"] = 20,
+},
+["highlight"] = {
+["height"] = 0.5,
+["size"] = 30,
+},
+},
+["partypet"] = {
+["indicators"] = {
+["raidTarget"] = {
+["y"] = 0,
+["x"] = 0,
+["anchorTo"] = "$parent",
+["anchorPoint"] = "C",
+["size"] = 20,
+},
 },
 ["auras"] = {
 ["buffs"] = {
@@ -3401,8 +3428,14 @@ nil,
 ["reactionType"] = "npc",
 ["height"] = 1.2,
 },
-["highlight"] = {
-["size"] = 10,
+["portrait"] = {
+["type"] = "3D",
+["alignment"] = "LEFT",
+["fullAfter"] = 100,
+["height"] = 0.5,
+["fullBefore"] = 0,
+["order"] = 15,
+["width"] = 0.22,
 },
 ["emptyBar"] = {
 ["order"] = 0,
@@ -3420,14 +3453,8 @@ nil,
 ["healAbsorb"] = {
 ["cap"] = 1,
 },
-["indicators"] = {
-["raidTarget"] = {
-["y"] = 0,
-["x"] = 0,
-["anchorTo"] = "$parent",
-["anchorPoint"] = "C",
-["size"] = 20,
-},
+["highlight"] = {
+["size"] = 10,
 },
 ["text"] = {
 nil,
@@ -3457,14 +3484,21 @@ nil,
 ["text"] = "[(()afk() )][name]",
 },
 },
-["portrait"] = {
-["type"] = "3D",
-["alignment"] = "LEFT",
-["fullAfter"] = 100,
-["height"] = 0.5,
-["fullBefore"] = 0,
-["order"] = 15,
-["width"] = 0.22,
+["indicators"] = {
+["raidTarget"] = {
+["y"] = 0,
+["x"] = 0,
+["anchorTo"] = "$parent",
+["anchorPoint"] = "C",
+["size"] = 20,
+},
+["class"] = {
+["y"] = 0,
+["x"] = 0,
+["anchorTo"] = "$parent",
+["anchorPoint"] = "BL",
+["size"] = 16,
+},
 },
 ["healthBar"] = {
 ["colorType"] = "class",
@@ -3516,21 +3550,8 @@ nil,
 ["size"] = 0,
 },
 },
-["indicators"] = {
-["raidTarget"] = {
-["y"] = 0,
-["x"] = 0,
-["anchorTo"] = "$parent",
-["anchorPoint"] = "C",
-["size"] = 20,
-},
-["class"] = {
-["y"] = 0,
-["x"] = 0,
-["anchorTo"] = "$parent",
-["anchorPoint"] = "BL",
-["size"] = 16,
-},
+["highlight"] = {
+["size"] = 10,
 },
 ["altPowerBar"] = {
 ["height"] = 0.4,
@@ -3545,8 +3566,14 @@ nil,
 ["background"] = true,
 ["order"] = 20,
 },
-["highlight"] = {
-["size"] = 10,
+["portrait"] = {
+["type"] = "3D",
+["alignment"] = "LEFT",
+["fullAfter"] = 100,
+["height"] = 0.5,
+["fullBefore"] = 0,
+["order"] = 15,
+["width"] = 0.22,
 },
 },
 ["player"] = {
@@ -3786,17 +3813,24 @@ nil,
 ["y"] = 8,
 ["size"] = 14,
 },
-["druidBar"] = {
-["order"] = 70,
+["emptyBar"] = {
+["reactionType"] = "none",
+["class"] = false,
+["height"] = 1,
 ["background"] = true,
-["height"] = 0.4,
+["backgroundColor"] = {
+["b"] = 0,
+["g"] = 0,
+["r"] = 0,
+},
+["order"] = 0,
 },
 ["highlight"] = {
 ["debuff"] = false,
-["mouseover"] = false,
-["height"] = 0.5,
-["attention"] = false,
 ["alpha"] = 1,
+["height"] = 0.5,
+["mouseover"] = false,
+["attention"] = false,
 ["size"] = 1,
 },
 ["healAbsorb"] = {
@@ -3850,18 +3884,7 @@ nil,
 ["y"] = 6,
 ["size"] = 12,
 },
-["emptyBar"] = {
-["order"] = 0,
-["class"] = false,
-["reactionType"] = "none",
-["background"] = true,
-["backgroundColor"] = {
-["b"] = 0,
-["g"] = 0,
-["r"] = 0,
-},
-["height"] = 1,
-},
+["height"] = 38,
 ["width"] = 238,
 ["chi"] = {
 ["enabled"] = false,
@@ -3912,7 +3935,11 @@ nil,
 ["y"] = 6,
 ["size"] = 12,
 },
-["height"] = 38,
+["druidBar"] = {
+["order"] = 70,
+["background"] = true,
+["height"] = 0.4,
+},
 },
 ["mainassist"] = {
 ["indicators"] = {
@@ -4088,48 +4115,45 @@ nil,
 ["cap"] = 1,
 },
 },
-["targettarget"] = {
-["width"] = 414,
-["portrait"] = {
-["type"] = "3D",
-["alignment"] = "RIGHT",
-["fullAfter"] = 100,
-["height"] = 0.5,
-["fullBefore"] = 0,
-["order"] = 15,
-["width"] = 0.22,
+["pettarget"] = {
+["text"] = {
+[3] = {
+["text"] = "[perpp]",
+},
+[5] = {
+["text"] = "[name]",
+},
+},
+["indicators"] = {
+["raidTarget"] = {
+["y"] = 0,
+["x"] = 0,
+["anchorTo"] = "$parent",
+["anchorPoint"] = "C",
+["size"] = 20,
+},
 },
 ["healthBar"] = {
 ["colorType"] = "class",
 ["order"] = 10,
 ["background"] = true,
 ["reactionType"] = "npc",
-["height"] = 1,
+["height"] = 1.2,
 },
 ["emptyBar"] = {
-["height"] = 1,
-["class"] = false,
 ["order"] = 0,
 ["background"] = true,
-["backgroundColor"] = {
-["b"] = 0,
-["g"] = 0,
-["r"] = 0,
-},
+["height"] = 1,
 ["reactionType"] = "none",
 },
-["range"] = {
-["height"] = 0.5,
-},
 ["auras"] = {
-["height"] = 0.5,
-["debuffs"] = {
+["buffs"] = {
 ["anchorPoint"] = "BL",
 ["y"] = 0,
 ["x"] = 0,
 ["size"] = 16,
 },
-["buffs"] = {
+["debuffs"] = {
 ["anchorPoint"] = "BL",
 ["y"] = 0,
 ["x"] = 0,
@@ -4159,54 +4183,30 @@ nil,
 ["size"] = 0,
 },
 },
-["text"] = {
-nil,
-{
-["text"] = "[( )perhp]",
-},
-{
-["text"] = "[perpp]",
-},
-{
-["text"] = "[curpp]",
-},
+["highlight"] = {
+["size"] = 10,
 },
 ["altPowerBar"] = {
 ["height"] = 0.4,
 ["background"] = true,
 ["order"] = 100,
 },
-["indicators"] = {
-["raidTarget"] = {
-["y"] = 0,
-["x"] = 0,
-["anchorTo"] = "$parent",
-["anchorPoint"] = "C",
-["size"] = 20,
-},
-["class"] = {
-["y"] = 0,
-["x"] = 0,
-["anchorTo"] = "$parent",
-["anchorPoint"] = "BL",
-["size"] = 16,
-},
-["height"] = 0.5,
-},
-["height"] = 24,
-["auraIndicators"] = {
-["height"] = 0.5,
-},
+["width"] = 190,
+["height"] = 30,
 ["powerBar"] = {
-["enabled"] = false,
 ["colorType"] = "type",
-["height"] = 0.6,
+["height"] = 0.7,
 ["background"] = true,
 ["order"] = 20,
 },
-["highlight"] = {
+["portrait"] = {
+["type"] = "3D",
+["alignment"] = "LEFT",
+["fullAfter"] = 100,
 ["height"] = 0.5,
-["size"] = 30,
+["fullBefore"] = 0,
+["order"] = 15,
+["width"] = 0.22,
 },
 },
 ["battlegroundpet"] = {
@@ -4311,9 +4311,15 @@ nil,
 },
 },
 ["arena"] = {
-["highlight"] = {
+["portrait"] = {
+["enabled"] = true,
+["type"] = "class",
+["alignment"] = "LEFT",
+["fullAfter"] = 50,
 ["height"] = 0.5,
-["size"] = 10,
+["fullBefore"] = 0,
+["order"] = 15,
+["width"] = 0.22,
 },
 ["range"] = {
 ["height"] = 0.5,
@@ -4401,6 +4407,10 @@ nil,
 ["height"] = 0.5,
 },
 ["height"] = 45,
+["highlight"] = {
+["height"] = 0.5,
+["size"] = 10,
+},
 ["indicators"] = {
 ["arenaSpec"] = {
 ["anchorTo"] = "$parent",
@@ -4430,16 +4440,6 @@ nil,
 ["size"] = 20,
 },
 },
-["portrait"] = {
-["enabled"] = true,
-["type"] = "class",
-["alignment"] = "LEFT",
-["fullAfter"] = 50,
-["height"] = 0.5,
-["fullBefore"] = 0,
-["order"] = 15,
-["width"] = 0.22,
-},
 },
 ["partytargettarget"] = {
 ["text"] = {
@@ -4457,14 +4457,21 @@ nil,
 ["text"] = "[name]",
 },
 },
-["portrait"] = {
-["type"] = "3D",
-["alignment"] = "LEFT",
-["fullAfter"] = 100,
-["height"] = 0.5,
-["fullBefore"] = 0,
-["order"] = 15,
-["width"] = 0.22,
+["indicators"] = {
+["raidTarget"] = {
+["y"] = 0,
+["x"] = 0,
+["anchorTo"] = "$parent",
+["anchorPoint"] = "C",
+["size"] = 20,
+},
+["class"] = {
+["y"] = 0,
+["x"] = 0,
+["anchorTo"] = "$parent",
+["anchorPoint"] = "BL",
+["size"] = 16,
+},
 },
 ["healthBar"] = {
 ["colorType"] = "class",
@@ -4516,21 +4523,8 @@ nil,
 ["size"] = 0,
 },
 },
-["indicators"] = {
-["raidTarget"] = {
-["y"] = 0,
-["x"] = 0,
-["anchorTo"] = "$parent",
-["anchorPoint"] = "C",
-["size"] = 20,
-},
-["class"] = {
-["y"] = 0,
-["x"] = 0,
-["anchorTo"] = "$parent",
-["anchorPoint"] = "BL",
-["size"] = 16,
-},
+["highlight"] = {
+["size"] = 10,
 },
 ["altPowerBar"] = {
 ["height"] = 0.4,
@@ -4545,8 +4539,14 @@ nil,
 ["background"] = true,
 ["order"] = 20,
 },
-["highlight"] = {
-["size"] = 10,
+["portrait"] = {
+["type"] = "3D",
+["alignment"] = "LEFT",
+["fullAfter"] = 100,
+["height"] = 0.5,
+["fullBefore"] = 0,
+["order"] = 15,
+["width"] = 0.22,
 },
 },
 ["battleground"] = {
@@ -4962,10 +4962,10 @@ nil,
 ["g"] = 0.93,
 ["b"] = 0,
 },
-["healAbsorb"] = {
-["r"] = 0.68,
-["g"] = 0.47,
-["b"] = 1,
+["offline"] = {
+["r"] = 0.5,
+["g"] = 0.5,
+["b"] = 0.5,
 },
 ["aggro"] = {
 ["r"] = 0.9,
@@ -4983,10 +4983,10 @@ nil,
 ["g"] = 0.9,
 ["b"] = 0.2,
 },
-["yellow"] = {
-["r"] = 0.93,
-["g"] = 0.93,
-["b"] = 0,
+["healAbsorb"] = {
+["r"] = 0.68,
+["g"] = 0.47,
+["b"] = 1,
 },
 ["incAbsorb"] = {
 ["r"] = 0.93,
@@ -5013,10 +5013,10 @@ nil,
 ["g"] = 0.2,
 ["b"] = 0.2,
 },
-["offline"] = {
-["r"] = 0.5,
-["g"] = 0.5,
-["b"] = 0.5,
+["yellow"] = {
+["r"] = 0.93,
+["g"] = 0.93,
+["b"] = 0,
 },
 ["inc"] = {
 ["r"] = 0,
@@ -6251,7 +6251,6 @@ nil,
 ["reactionType"] = "npc",
 },
 ["hideSemiRaid"] = false,
-["attribAnchorPoint"] = "BOTTOM",
 ["text"] = {
 {
 ["text"] = "[(()afk() )][name]",
@@ -6263,6 +6262,7 @@ nil,
 ["text"] = "[(()afk() )][name]",
 },
 },
+["unitsPerColumn"] = 5,
 ["highlight"] = {
 ["height"] = 0.5,
 ["mouseover"] = true,
@@ -6276,7 +6276,7 @@ nil,
 ["height"] = 1,
 ["reactionType"] = "none",
 },
-["unitsPerColumn"] = 5,
+["attribAnchorPoint"] = "BOTTOM",
 ["altPowerBar"] = {
 ["height"] = 0.4,
 ["background"] = true,
@@ -6895,6 +6895,13 @@ nil,
 ["height"] = 1.2,
 ["reactionType"] = "none",
 },
+["emptyBar"] = {
+["order"] = 0,
+["background"] = true,
+["height"] = 1,
+["reactionType"] = "none",
+},
+["attribAnchorPoint"] = "LEFT",
 ["text"] = {
 {
 ["text"] = "[(()afk() )][name]",
@@ -6912,17 +6919,12 @@ nil,
 ["text"] = "[(()afk() )][name]",
 },
 },
-["unitsPerColumn"] = 8,
-["emptyBar"] = {
-["order"] = 0,
-["background"] = true,
-["height"] = 1,
-["reactionType"] = "none",
+["incHeal"] = {
+["cap"] = 1,
 },
-["height"] = 30,
 ["width"] = 100,
 ["maxColumns"] = 8,
-["columnSpacing"] = 5,
+["height"] = 30,
 ["altPowerBar"] = {
 ["height"] = 0.4,
 ["background"] = true,
@@ -7008,13 +7010,11 @@ nil,
 ["size"] = 22,
 },
 },
-["incHeal"] = {
-["cap"] = 1,
-},
+["columnSpacing"] = 5,
 ["healAbsorb"] = {
 ["cap"] = 1,
 },
-["attribAnchorPoint"] = "LEFT",
+["unitsPerColumn"] = 8,
 ["highlight"] = {
 ["size"] = 10,
 },
@@ -7129,16 +7129,22 @@ nil,
 },
 ["arena"] = {
 ["offset"] = 25,
-["highlight"] = {
-["height"] = 0.5,
-["size"] = 10,
-},
 ["healthBar"] = {
 ["colorType"] = "class",
 ["order"] = 10,
 ["background"] = true,
 ["height"] = 1.2,
 ["reactionType"] = "npc",
+},
+["portrait"] = {
+["enabled"] = true,
+["type"] = "class",
+["alignment"] = "LEFT",
+["fullAfter"] = 50,
+["height"] = 0.5,
+["fullBefore"] = 0,
+["order"] = 15,
+["width"] = 0.22,
 },
 ["indicators"] = {
 ["arenaSpec"] = {
@@ -7247,42 +7253,23 @@ nil,
 ["order"] = 20,
 ["background"] = true,
 },
-["portrait"] = {
-["enabled"] = true,
-["type"] = "class",
-["alignment"] = "LEFT",
-["fullAfter"] = 50,
+["highlight"] = {
 ["height"] = 0.5,
-["fullBefore"] = 0,
-["order"] = 15,
-["width"] = 0.22,
+["size"] = 10,
 },
 },
 ["focustarget"] = {
 ["enabled"] = false,
-["indicators"] = {
-["raidTarget"] = {
-["y"] = 0,
-["x"] = 0,
-["anchorTo"] = "$parent",
-["anchorPoint"] = "C",
-["size"] = 20,
-},
-["class"] = {
-["y"] = 0,
-["x"] = 0,
-["anchorTo"] = "$parent",
-["anchorPoint"] = "BL",
-["size"] = 16,
-},
-["height"] = 0.5,
-},
 ["healthBar"] = {
 ["colorType"] = "class",
 ["order"] = 10,
 ["background"] = true,
 ["height"] = 1.2,
 ["reactionType"] = "npc",
+},
+["highlight"] = {
+["height"] = 0.5,
+["size"] = 10,
 },
 ["emptyBar"] = {
 ["order"] = 0,
@@ -7376,9 +7363,22 @@ nil,
 ["order"] = 20,
 ["background"] = true,
 },
-["highlight"] = {
+["indicators"] = {
+["raidTarget"] = {
+["y"] = 0,
+["x"] = 0,
+["anchorTo"] = "$parent",
+["anchorPoint"] = "C",
+["size"] = 20,
+},
+["class"] = {
+["y"] = 0,
+["x"] = 0,
+["anchorTo"] = "$parent",
+["anchorPoint"] = "BL",
+["size"] = 16,
+},
 ["height"] = 0.5,
-["size"] = 10,
 },
 },
 ["battlegroundtargettarget"] = {
@@ -7597,25 +7597,19 @@ nil,
 ["width"] = 0.22,
 },
 },
-["pet"] = {
-["xpBar"] = {
-["height"] = 0.25,
-["background"] = true,
-["order"] = 55,
-},
-["indicators"] = {
-["raidTarget"] = {
-["y"] = 0,
-["x"] = 0,
-["anchorTo"] = "$parent",
-["anchorPoint"] = "C",
-["size"] = 20,
-},
+["targettarget"] = {
+["portrait"] = {
+["type"] = "3D",
+["alignment"] = "RIGHT",
+["fullAfter"] = 100,
 ["height"] = 0.5,
+["fullBefore"] = 0,
+["order"] = 15,
+["width"] = 0.22,
 },
-["range"] = {
-["enabled"] = true,
+["highlight"] = {
 ["height"] = 0.5,
+["size"] = 30,
 },
 ["auras"] = {
 ["height"] = 0.5,
@@ -7632,111 +7626,97 @@ nil,
 ["size"] = 16,
 },
 },
+["emptyBar"] = {
+["height"] = 1,
+["background"] = true,
+["reactionType"] = "none",
+["class"] = false,
+["backgroundColor"] = {
+["r"] = 0,
+["g"] = 0,
+["b"] = 0,
+},
+["order"] = 0,
+},
+["range"] = {
+["height"] = 0.5,
+},
+["width"] = 80,
 ["castBar"] = {
+["time"] = {
+["y"] = 0,
+["x"] = -1,
+["anchorTo"] = "$parent",
 ["enabled"] = true,
+["anchorPoint"] = "CRI",
+["size"] = 0,
+},
 ["name"] = {
 ["y"] = 0,
-["x"] = 3,
+["x"] = 1,
 ["anchorTo"] = "$parent",
 ["size"] = 0,
 ["enabled"] = true,
 ["anchorPoint"] = "CLI",
 ["rank"] = true,
 },
-["time"] = {
-["y"] = 0,
-["x"] = -3,
-["anchorTo"] = "$parent",
-["enabled"] = true,
-["anchorPoint"] = "CRI",
-["size"] = 0,
-},
-["autoHide"] = true,
-["order"] = 60,
+["order"] = 40,
 ["background"] = true,
 ["icon"] = "HIDE",
-["height"] = 1.4,
-},
-["auraIndicators"] = {
-["height"] = 0.5,
-},
-["powerBar"] = {
-["height"] = 0.3,
-["colorType"] = "type",
-["order"] = 20,
-["background"] = true,
-},
-["healthBar"] = {
-["colorType"] = "static",
-["order"] = 10,
-["background"] = true,
-["height"] = 1.2,
-["reactionType"] = "none",
-},
-["portrait"] = {
-["type"] = "3D",
-["alignment"] = "LEFT",
-["fullAfter"] = 50,
-["height"] = 0.5,
-["fullBefore"] = 0,
-["order"] = 15,
-["width"] = 0.22,
+["height"] = 0.6,
 },
 ["text"] = {
+nil,
 {
-["width"] = 2,
-},
-{
-["text"] = "[( )perhp]",
+["text"] = "[curhp]",
 },
 {
-["text"] = "",
+["text"] = "[perpp]",
 },
 {
-["text"] = "",
+["text"] = "[curpp]",
 },
-{
-["text"] = "[name]",
-},
-},
-["incAbsorb"] = {
-["enabled"] = false,
-["height"] = 0.5,
-},
-["width"] = 205,
-["fader"] = {
-["height"] = 0.5,
-},
-["incHeal"] = {
-["enabled"] = false,
-["height"] = 0.5,
 },
 ["altPowerBar"] = {
 ["height"] = 0.4,
 ["background"] = true,
 ["order"] = 100,
 },
-["combatText"] = {
-["enabled"] = false,
+["indicators"] = {
+["raidTarget"] = {
+["y"] = 11,
+["x"] = 12,
+["anchorTo"] = "$parent",
+["anchorPoint"] = "LT",
+["size"] = 24,
+},
+["class"] = {
+["y"] = 0,
+["x"] = 0,
+["anchorTo"] = "$parent",
+["anchorPoint"] = "BL",
+["size"] = 16,
+},
 ["height"] = 0.5,
 },
-["height"] = 46,
-["healAbsorb"] = {
-["enabled"] = false,
-["cap"] = 1,
+["height"] = 23,
+["auraIndicators"] = {
 ["height"] = 0.5,
 },
-["emptyBar"] = {
-["order"] = 0,
+["powerBar"] = {
+["enabled"] = false,
+["colorType"] = "type",
+["height"] = 0.6,
 ["background"] = true,
-["height"] = 1,
-["reactionType"] = "none",
+["order"] = 20,
 },
-["highlight"] = {
-["height"] = 0.5,
-["alpha"] = 1,
-["mouseover"] = true,
-["size"] = 15,
+["healthBar"] = {
+["enabled"] = false,
+["colorType"] = "class",
+["order"] = 10,
+["background"] = true,
+["height"] = 1.2,
+["reactionType"] = "none",
 },
 },
 ["bosstarget"] = {
@@ -7948,51 +7928,32 @@ nil,
 ["reactionType"] = "npc",
 },
 },
-["targettarget"] = {
-["portrait"] = {
-["type"] = "3D",
-["alignment"] = "RIGHT",
-["fullAfter"] = 100,
-["height"] = 0.5,
-["fullBefore"] = 0,
-["order"] = 15,
-["width"] = 0.22,
-},
-["highlight"] = {
-["height"] = 0.5,
-["size"] = 30,
-},
-["auras"] = {
-["height"] = 0.5,
-["debuffs"] = {
-["anchorPoint"] = "BL",
-["x"] = 0,
-["y"] = 0,
-["size"] = 16,
-},
-["buffs"] = {
-["y"] = 0,
-["x"] = 0,
-["anchorPoint"] = "BL",
-["size"] = 16,
-},
-},
-["emptyBar"] = {
-["order"] = 0,
+["pettarget"] = {
+["healthBar"] = {
+["colorType"] = "class",
+["order"] = 10,
 ["background"] = true,
-["height"] = 1,
-["class"] = false,
-["backgroundColor"] = {
-["r"] = 0,
-["g"] = 0,
-["b"] = 0,
+["height"] = 1.2,
+["reactionType"] = "npc",
 },
-["reactionType"] = "none",
+["text"] = {
+[3] = {
+["text"] = "[perpp]",
 },
-["range"] = {
-["height"] = 0.5,
+[5] = {
+["text"] = "[name]",
 },
-["width"] = 80,
+},
+["indicators"] = {
+["raidTarget"] = {
+["y"] = 0,
+["x"] = 0,
+["anchorTo"] = "$parent",
+["anchorPoint"] = "C",
+["size"] = 20,
+},
+},
+["width"] = 190,
 ["castBar"] = {
 ["time"] = {
 ["y"] = 0,
@@ -8016,58 +7977,49 @@ nil,
 ["icon"] = "HIDE",
 ["height"] = 0.6,
 },
-["text"] = {
-nil,
-{
-["text"] = "[curhp]",
-},
-{
-["text"] = "[perpp]",
-},
-{
-["text"] = "[curpp]",
-},
+["highlight"] = {
+["size"] = 10,
 },
 ["altPowerBar"] = {
 ["height"] = 0.4,
 ["background"] = true,
 ["order"] = 100,
 },
-["indicators"] = {
-["raidTarget"] = {
-["y"] = 11,
-["x"] = 12,
-["anchorTo"] = "$parent",
-["anchorPoint"] = "LT",
-["size"] = 24,
+["emptyBar"] = {
+["order"] = 0,
+["background"] = true,
+["height"] = 1,
+["reactionType"] = "none",
 },
-["class"] = {
+["height"] = 30,
+["auras"] = {
+["debuffs"] = {
+["anchorPoint"] = "BL",
+["x"] = 0,
+["y"] = 0,
+["size"] = 16,
+},
+["buffs"] = {
 ["y"] = 0,
 ["x"] = 0,
-["anchorTo"] = "$parent",
 ["anchorPoint"] = "BL",
 ["size"] = 16,
 },
-["height"] = 0.5,
-},
-["height"] = 23,
-["auraIndicators"] = {
-["height"] = 0.5,
 },
 ["powerBar"] = {
-["enabled"] = false,
+["height"] = 0.7,
 ["colorType"] = "type",
-["height"] = 0.6,
-["background"] = true,
 ["order"] = 20,
-},
-["healthBar"] = {
-["enabled"] = false,
-["colorType"] = "class",
-["order"] = 10,
 ["background"] = true,
-["height"] = 1.2,
-["reactionType"] = "none",
+},
+["portrait"] = {
+["type"] = "3D",
+["alignment"] = "LEFT",
+["fullAfter"] = 100,
+["height"] = 0.5,
+["fullBefore"] = 0,
+["order"] = 15,
+["width"] = 0.22,
 },
 },
 ["partypet"] = {
@@ -8310,6 +8262,29 @@ nil,
 ["order"] = 15,
 ["width"] = 0.22,
 },
+["emptyBar"] = {
+["order"] = 0,
+["background"] = true,
+["height"] = 1,
+["reactionType"] = "none",
+},
+["unitsPerColumn"] = 5,
+["columnSpacing"] = 5,
+["width"] = 150,
+["maxColumns"] = 1,
+["incHeal"] = {
+["cap"] = 1,
+},
+["altPowerBar"] = {
+["height"] = 0.4,
+["background"] = true,
+["order"] = 100,
+},
+["attribAnchorPoint"] = "LEFT",
+["height"] = 40,
+["healAbsorb"] = {
+["cap"] = 1,
+},
 ["text"] = {
 {
 ["text"] = "[(()afk() )][name]",
@@ -8321,29 +8296,6 @@ nil,
 ["text"] = "[(()afk() )][name]",
 },
 },
-["emptyBar"] = {
-["order"] = 0,
-["background"] = true,
-["height"] = 1,
-["reactionType"] = "none",
-},
-["incHeal"] = {
-["cap"] = 1,
-},
-["width"] = 150,
-["maxColumns"] = 1,
-["height"] = 40,
-["altPowerBar"] = {
-["height"] = 0.4,
-["background"] = true,
-["order"] = 100,
-},
-["attribAnchorPoint"] = "LEFT",
-["columnSpacing"] = 5,
-["healAbsorb"] = {
-["cap"] = 1,
-},
-["unitsPerColumn"] = 5,
 ["highlight"] = {
 ["size"] = 10,
 },
@@ -8571,16 +8523,16 @@ nil,
 ["size"] = 14,
 },
 ["emptyBar"] = {
-["reactionType"] = "none",
-["background"] = true,
 ["order"] = 0,
+["background"] = true,
+["height"] = 1,
 ["class"] = false,
 ["backgroundColor"] = {
 ["r"] = 0,
 ["g"] = 0,
 ["b"] = 0,
 },
-["height"] = 1,
+["reactionType"] = "none",
 },
 ["healthBar"] = {
 ["enabled"] = false,
@@ -8805,21 +8757,11 @@ nil,
 ["width"] = 0.22,
 },
 },
-["pettarget"] = {
-["healthBar"] = {
-["colorType"] = "class",
-["order"] = 10,
+["pet"] = {
+["xpBar"] = {
+["height"] = 0.25,
 ["background"] = true,
-["height"] = 1.2,
-["reactionType"] = "npc",
-},
-["text"] = {
-[3] = {
-["text"] = "[perpp]",
-},
-[5] = {
-["text"] = "[name]",
-},
+["order"] = 55,
 },
 ["indicators"] = {
 ["raidTarget"] = {
@@ -8829,47 +8771,14 @@ nil,
 ["anchorPoint"] = "C",
 ["size"] = 20,
 },
+["height"] = 0.5,
 },
-["width"] = 190,
-["castBar"] = {
-["time"] = {
-["y"] = 0,
-["x"] = -1,
-["anchorTo"] = "$parent",
+["range"] = {
 ["enabled"] = true,
-["anchorPoint"] = "CRI",
-["size"] = 0,
+["height"] = 0.5,
 },
-["name"] = {
-["y"] = 0,
-["x"] = 1,
-["anchorTo"] = "$parent",
-["size"] = 0,
-["enabled"] = true,
-["anchorPoint"] = "CLI",
-["rank"] = true,
-},
-["order"] = 40,
-["background"] = true,
-["icon"] = "HIDE",
-["height"] = 0.6,
-},
-["highlight"] = {
-["size"] = 10,
-},
-["altPowerBar"] = {
-["height"] = 0.4,
-["background"] = true,
-["order"] = 100,
-},
-["emptyBar"] = {
-["order"] = 0,
-["background"] = true,
-["height"] = 1,
-["reactionType"] = "none",
-},
-["height"] = 30,
 ["auras"] = {
+["height"] = 0.5,
 ["debuffs"] = {
 ["anchorPoint"] = "BL",
 ["x"] = 0,
@@ -8883,20 +8792,111 @@ nil,
 ["size"] = 16,
 },
 },
+["castBar"] = {
+["enabled"] = true,
+["name"] = {
+["y"] = 0,
+["x"] = 3,
+["anchorTo"] = "$parent",
+["size"] = 0,
+["enabled"] = true,
+["anchorPoint"] = "CLI",
+["rank"] = true,
+},
+["time"] = {
+["y"] = 0,
+["x"] = -3,
+["anchorTo"] = "$parent",
+["enabled"] = true,
+["anchorPoint"] = "CRI",
+["size"] = 0,
+},
+["autoHide"] = true,
+["order"] = 60,
+["background"] = true,
+["icon"] = "HIDE",
+["height"] = 1.4,
+},
+["auraIndicators"] = {
+["height"] = 0.5,
+},
 ["powerBar"] = {
-["height"] = 0.7,
+["height"] = 0.3,
 ["colorType"] = "type",
 ["order"] = 20,
 ["background"] = true,
 },
+["healthBar"] = {
+["colorType"] = "static",
+["order"] = 10,
+["background"] = true,
+["height"] = 1.2,
+["reactionType"] = "none",
+},
 ["portrait"] = {
 ["type"] = "3D",
 ["alignment"] = "LEFT",
-["fullAfter"] = 100,
+["fullAfter"] = 50,
 ["height"] = 0.5,
 ["fullBefore"] = 0,
 ["order"] = 15,
 ["width"] = 0.22,
+},
+["text"] = {
+{
+["width"] = 2,
+},
+{
+["text"] = "[( )perhp]",
+},
+{
+["text"] = "",
+},
+{
+["text"] = "",
+},
+{
+["text"] = "[name]",
+},
+},
+["incAbsorb"] = {
+["enabled"] = false,
+["height"] = 0.5,
+},
+["width"] = 205,
+["fader"] = {
+["height"] = 0.5,
+},
+["incHeal"] = {
+["enabled"] = false,
+["height"] = 0.5,
+},
+["altPowerBar"] = {
+["height"] = 0.4,
+["background"] = true,
+["order"] = 100,
+},
+["combatText"] = {
+["enabled"] = false,
+["height"] = 0.5,
+},
+["height"] = 46,
+["healAbsorb"] = {
+["enabled"] = false,
+["cap"] = 1,
+["height"] = 0.5,
+},
+["emptyBar"] = {
+["order"] = 0,
+["background"] = true,
+["height"] = 1,
+["reactionType"] = "none",
+},
+["highlight"] = {
+["height"] = 0.5,
+["alpha"] = 1,
+["mouseover"] = true,
+["size"] = 15,
 },
 },
 ["raidpet"] = {
@@ -8965,6 +8965,13 @@ nil,
 ["height"] = 1.2,
 ["reactionType"] = "none",
 },
+["emptyBar"] = {
+["order"] = 0,
+["background"] = true,
+["height"] = 1,
+["reactionType"] = "none",
+},
+["attribAnchorPoint"] = "LEFT",
 ["text"] = {
 nil,
 {
@@ -8980,17 +8987,12 @@ nil,
 ["text"] = "[name]",
 },
 },
-["unitsPerColumn"] = 8,
-["emptyBar"] = {
-["order"] = 0,
-["background"] = true,
-["height"] = 1,
-["reactionType"] = "none",
+["incHeal"] = {
+["cap"] = 1,
 },
-["height"] = 30,
 ["width"] = 90,
 ["maxColumns"] = 8,
-["columnSpacing"] = 5,
+["height"] = 30,
 ["altPowerBar"] = {
 ["height"] = 0.4,
 ["background"] = true,
@@ -9005,13 +9007,11 @@ nil,
 ["size"] = 20,
 },
 },
-["incHeal"] = {
-["cap"] = 1,
-},
+["columnSpacing"] = 5,
 ["healAbsorb"] = {
 ["cap"] = 1,
 },
-["attribAnchorPoint"] = "LEFT",
+["unitsPerColumn"] = 8,
 ["highlight"] = {
 ["size"] = 10,
 },
@@ -9152,12 +9152,6 @@ nil,
 ["size"] = 22,
 },
 },
-["emptyBar"] = {
-["order"] = 0,
-["background"] = true,
-["height"] = 1,
-["reactionType"] = "none",
-},
 ["text"] = {
 {
 ["text"] = "[(()afk() )][name]",
@@ -9169,23 +9163,29 @@ nil,
 ["text"] = "[(()afk() )][name]",
 },
 },
-["height"] = 40,
+["attribAnchorPoint"] = "LEFT",
+["columnSpacing"] = 5,
 ["width"] = 150,
 ["maxColumns"] = 1,
-["incHeal"] = {
-["cap"] = 1,
-},
+["height"] = 40,
 ["altPowerBar"] = {
 ["height"] = 0.4,
 ["background"] = true,
 ["order"] = 100,
 },
 ["unitsPerColumn"] = 5,
-["columnSpacing"] = 5,
+["incHeal"] = {
+["cap"] = 1,
+},
 ["healAbsorb"] = {
 ["cap"] = 1,
 },
-["attribAnchorPoint"] = "LEFT",
+["emptyBar"] = {
+["order"] = 0,
+["background"] = true,
+["height"] = 1,
+["reactionType"] = "none",
+},
 ["highlight"] = {
 ["size"] = 10,
 },
@@ -9332,16 +9332,36 @@ nil,
 },
 },
 ["battleground"] = {
-["highlight"] = {
-["height"] = 0.5,
-["size"] = 10,
-},
 ["healthBar"] = {
 ["colorType"] = "class",
 ["order"] = 10,
 ["background"] = true,
 ["height"] = 1.2,
 ["reactionType"] = "npc",
+},
+["indicators"] = {
+["raidTarget"] = {
+["y"] = 0,
+["x"] = 0,
+["anchorTo"] = "$parent",
+["anchorPoint"] = "C",
+["size"] = 20,
+},
+["class"] = {
+["y"] = 0,
+["x"] = 0,
+["anchorTo"] = "$parent",
+["anchorPoint"] = "BL",
+["size"] = 16,
+},
+["height"] = 0.5,
+["pvp"] = {
+["anchorPoint"] = "LC",
+["x"] = 16,
+["anchorTo"] = "$parent",
+["y"] = -8,
+["size"] = 40,
+},
 },
 ["portrait"] = {
 ["type"] = "class",
@@ -9433,29 +9453,9 @@ nil,
 ["order"] = 20,
 ["background"] = true,
 },
-["indicators"] = {
-["raidTarget"] = {
-["y"] = 0,
-["x"] = 0,
-["anchorTo"] = "$parent",
-["anchorPoint"] = "C",
-["size"] = 20,
-},
-["class"] = {
-["y"] = 0,
-["x"] = 0,
-["anchorTo"] = "$parent",
-["anchorPoint"] = "BL",
-["size"] = 16,
-},
+["highlight"] = {
 ["height"] = 0.5,
-["pvp"] = {
-["anchorPoint"] = "LC",
-["x"] = 16,
-["anchorTo"] = "$parent",
-["y"] = -8,
-["size"] = 40,
-},
+["size"] = 10,
 },
 },
 },
@@ -10443,7 +10443,6 @@ nil,
 ["size"] = 24,
 },
 },
-["attribAnchorPoint"] = "LEFT",
 ["text"] = {
 {
 ["text"] = "[(()afk() )][name]",
@@ -10461,28 +10460,29 @@ nil,
 ["text"] = "[(()afk() )][name]",
 },
 },
-["columnSpacing"] = 5,
-["width"] = 100,
-["maxColumns"] = 8,
-["incHeal"] = {
-["cap"] = 1,
-},
-["altPowerBar"] = {
-["height"] = 0.4,
-["background"] = true,
-["order"] = 100,
-},
-["unitsPerColumn"] = 8,
-["height"] = 30,
-["healAbsorb"] = {
-["cap"] = 1,
-},
 ["emptyBar"] = {
 ["reactionType"] = "none",
 ["background"] = true,
 ["order"] = 0,
 ["height"] = 1,
 },
+["height"] = 30,
+["width"] = 100,
+["maxColumns"] = 8,
+["columnSpacing"] = 5,
+["altPowerBar"] = {
+["height"] = 0.4,
+["background"] = true,
+["order"] = 100,
+},
+["unitsPerColumn"] = 8,
+["incHeal"] = {
+["cap"] = 1,
+},
+["healAbsorb"] = {
+["cap"] = 1,
+},
+["attribAnchorPoint"] = "LEFT",
 ["highlight"] = {
 ["size"] = 10,
 },
@@ -10840,7 +10840,7 @@ nil,
 ["size"] = 10,
 },
 ["offset"] = 23,
-["unitsPerColumn"] = 5,
+["attribAnchorPoint"] = "LEFT",
 ["healthBar"] = {
 ["colorType"] = "class",
 ["order"] = 10,
@@ -10849,6 +10849,7 @@ nil,
 ["height"] = 1.2,
 },
 ["columnSpacing"] = 30,
+["unitsPerColumn"] = 5,
 ["text"] = {
 {
 ["text"] = "[(()afk() )][name]",
@@ -10860,7 +10861,6 @@ nil,
 ["text"] = "[(()afk() )][name]",
 },
 },
-["attribAnchorPoint"] = "LEFT",
 ["altPowerBar"] = {
 ["height"] = 0.4,
 ["background"] = true,
@@ -11699,32 +11699,7 @@ nil,
 ["reactionType"] = "npc",
 ["height"] = 1.2,
 },
-["emptyBar"] = {
-["reactionType"] = "none",
-["background"] = true,
-["order"] = 0,
-["height"] = 1,
-},
-["unitsPerColumn"] = 5,
 ["attribAnchorPoint"] = "LEFT",
-["columnSpacing"] = 5,
-["width"] = 150,
-["maxColumns"] = 1,
-["incHeal"] = {
-["cap"] = 1,
-},
-["altPowerBar"] = {
-["height"] = 0.4,
-["background"] = true,
-["order"] = 100,
-},
-["highlight"] = {
-["size"] = 10,
-},
-["height"] = 40,
-["healAbsorb"] = {
-["cap"] = 1,
-},
 ["text"] = {
 {
 ["text"] = "[(()afk() )][name]",
@@ -11736,6 +11711,31 @@ nil,
 ["text"] = "[(()afk() )][name]",
 },
 },
+["emptyBar"] = {
+["reactionType"] = "none",
+["background"] = true,
+["order"] = 0,
+["height"] = 1,
+},
+["height"] = 40,
+["width"] = 150,
+["maxColumns"] = 1,
+["columnSpacing"] = 5,
+["altPowerBar"] = {
+["height"] = 0.4,
+["background"] = true,
+["order"] = 100,
+},
+["highlight"] = {
+["size"] = 10,
+},
+["incHeal"] = {
+["cap"] = 1,
+},
+["healAbsorb"] = {
+["cap"] = 1,
+},
+["unitsPerColumn"] = 5,
 ["indicators"] = {
 ["raidTarget"] = {
 ["y"] = 0,
@@ -11884,7 +11884,6 @@ nil,
 ["size"] = 20,
 },
 },
-["attribAnchorPoint"] = "LEFT",
 ["text"] = {
 nil,
 {
@@ -11900,28 +11899,29 @@ nil,
 ["text"] = "[name]",
 },
 },
-["columnSpacing"] = 5,
-["width"] = 90,
-["maxColumns"] = 8,
-["incHeal"] = {
-["cap"] = 1,
-},
-["altPowerBar"] = {
-["height"] = 0.4,
-["background"] = true,
-["order"] = 100,
-},
-["unitsPerColumn"] = 8,
-["height"] = 30,
-["healAbsorb"] = {
-["cap"] = 1,
-},
 ["emptyBar"] = {
 ["reactionType"] = "none",
 ["background"] = true,
 ["order"] = 0,
 ["height"] = 1,
 },
+["height"] = 30,
+["width"] = 90,
+["maxColumns"] = 8,
+["columnSpacing"] = 5,
+["altPowerBar"] = {
+["height"] = 0.4,
+["background"] = true,
+["order"] = 100,
+},
+["unitsPerColumn"] = 8,
+["incHeal"] = {
+["cap"] = 1,
+},
+["healAbsorb"] = {
+["cap"] = 1,
+},
+["attribAnchorPoint"] = "LEFT",
 ["highlight"] = {
 ["size"] = 10,
 },
@@ -12142,360 +12142,6 @@ nil,
 ["height"] = 1.2,
 },
 },
-["pet"] = {
-["xpBar"] = {
-["height"] = 0.25,
-["background"] = true,
-["order"] = 55,
-},
-["indicators"] = {
-["raidTarget"] = {
-["y"] = 0,
-["x"] = 0,
-["anchorTo"] = "$parent",
-["anchorPoint"] = "C",
-["size"] = 20,
-},
-["height"] = 0.5,
-},
-["range"] = {
-["height"] = 0.5,
-},
-["auras"] = {
-["height"] = 0.5,
-["debuffs"] = {
-["anchorPoint"] = "BL",
-["x"] = 0,
-["y"] = 0,
-["size"] = 16,
-},
-["buffs"] = {
-["anchorPoint"] = "BL",
-["x"] = 0,
-["y"] = 0,
-["size"] = 16,
-},
-},
-["castBar"] = {
-["time"] = {
-["enabled"] = true,
-["x"] = -1,
-["anchorTo"] = "$parent",
-["y"] = 0,
-["anchorPoint"] = "CRI",
-["size"] = 0,
-},
-["order"] = 60,
-["height"] = 0.6,
-["background"] = true,
-["icon"] = "HIDE",
-["name"] = {
-["y"] = 0,
-["x"] = 1,
-["anchorTo"] = "$parent",
-["rank"] = true,
-["anchorPoint"] = "CLI",
-["enabled"] = true,
-["size"] = 0,
-},
-},
-["auraIndicators"] = {
-["height"] = 0.5,
-},
-["powerBar"] = {
-["order"] = 20,
-["colorType"] = "type",
-["height"] = 0.7,
-["background"] = true,
-},
-["healthBar"] = {
-["colorType"] = "class",
-["order"] = 10,
-["background"] = true,
-["reactionType"] = "none",
-["height"] = 1.2,
-},
-["highlight"] = {
-["height"] = 0.5,
-["size"] = 10,
-},
-["text"] = {
-[3] = {
-["text"] = "[perpp]",
-},
-[5] = {
-["text"] = "[name]",
-},
-},
-["emptyBar"] = {
-["reactionType"] = "none",
-["background"] = true,
-["order"] = 0,
-["height"] = 1,
-},
-["width"] = 190,
-["altPowerBar"] = {
-["height"] = 0.4,
-["background"] = true,
-["order"] = 100,
-},
-["height"] = 30,
-["fader"] = {
-["height"] = 0.5,
-},
-["combatText"] = {
-["height"] = 0.5,
-},
-["incHeal"] = {
-["height"] = 0.5,
-},
-["healAbsorb"] = {
-["height"] = 0.5,
-["cap"] = 1,
-},
-["incAbsorb"] = {
-["height"] = 0.5,
-},
-["portrait"] = {
-["type"] = "3D",
-["alignment"] = "LEFT",
-["fullAfter"] = 50,
-["height"] = 0.5,
-["fullBefore"] = 0,
-["order"] = 15,
-["width"] = 0.22,
-},
-},
-["bosstarget"] = {
-["indicators"] = {
-["raidTarget"] = {
-["y"] = 0,
-["x"] = 0,
-["anchorTo"] = "$parent",
-["anchorPoint"] = "C",
-["size"] = 20,
-},
-["class"] = {
-["y"] = 0,
-["x"] = 0,
-["anchorTo"] = "$parent",
-["anchorPoint"] = "BL",
-["size"] = 16,
-},
-},
-["emptyBar"] = {
-["reactionType"] = "none",
-["background"] = true,
-["order"] = 0,
-["height"] = 1,
-},
-["highlight"] = {
-["size"] = 10,
-},
-["width"] = 90,
-["castBar"] = {
-["time"] = {
-["enabled"] = true,
-["x"] = -1,
-["anchorTo"] = "$parent",
-["y"] = 0,
-["anchorPoint"] = "CRI",
-["size"] = 0,
-},
-["order"] = 40,
-["height"] = 0.6,
-["background"] = true,
-["icon"] = "HIDE",
-["name"] = {
-["y"] = 0,
-["x"] = 1,
-["anchorTo"] = "$parent",
-["rank"] = true,
-["anchorPoint"] = "CLI",
-["enabled"] = true,
-["size"] = 0,
-},
-},
-["auras"] = {
-["buffs"] = {
-["anchorPoint"] = "BL",
-["x"] = 0,
-["y"] = 0,
-["size"] = 16,
-},
-["debuffs"] = {
-["anchorPoint"] = "BL",
-["x"] = 0,
-["y"] = 0,
-["size"] = 16,
-},
-},
-["altPowerBar"] = {
-["height"] = 0.4,
-["background"] = true,
-["order"] = 100,
-},
-["text"] = {
-nil,
-{
-["text"] = "[curhp]",
-},
-{
-["text"] = "",
-},
-{
-["text"] = "",
-},
-{
-["text"] = "[name]",
-},
-},
-["height"] = 25,
-["portrait"] = {
-["type"] = "3D",
-["alignment"] = "LEFT",
-["fullAfter"] = 100,
-["height"] = 0.5,
-["fullBefore"] = 0,
-["order"] = 15,
-["width"] = 0.22,
-},
-["powerBar"] = {
-["order"] = 20,
-["colorType"] = "type",
-["height"] = 0.6,
-["background"] = true,
-},
-["healthBar"] = {
-["colorType"] = "class",
-["order"] = 10,
-["background"] = true,
-["reactionType"] = "npc",
-["height"] = 1.2,
-},
-},
-["focustarget"] = {
-["portrait"] = {
-["type"] = "3D",
-["alignment"] = "RIGHT",
-["fullAfter"] = 100,
-["height"] = 0.5,
-["fullBefore"] = 0,
-["order"] = 15,
-["width"] = 0.22,
-},
-["highlight"] = {
-["height"] = 0.5,
-["size"] = 10,
-},
-["emptyBar"] = {
-["reactionType"] = "none",
-["background"] = true,
-["order"] = 0,
-["height"] = 1,
-},
-["auras"] = {
-["height"] = 0.5,
-["debuffs"] = {
-["anchorPoint"] = "BL",
-["x"] = 0,
-["y"] = 0,
-["size"] = 16,
-},
-["buffs"] = {
-["anchorPoint"] = "BL",
-["x"] = 0,
-["y"] = 0,
-["size"] = 16,
-},
-},
-["text"] = {
-{
-["text"] = "[(()afk() )][name]",
-},
-{
-["text"] = "[curhp]",
-},
-{
-["text"] = "",
-},
-{
-["text"] = "",
-},
-{
-["text"] = "[(()afk() )][name]",
-},
-},
-["range"] = {
-["height"] = 0.5,
-},
-["width"] = 120,
-["castBar"] = {
-["time"] = {
-["enabled"] = true,
-["x"] = -1,
-["anchorTo"] = "$parent",
-["y"] = 0,
-["anchorPoint"] = "CRI",
-["size"] = 0,
-},
-["order"] = 40,
-["height"] = 0.6,
-["background"] = true,
-["icon"] = "HIDE",
-["name"] = {
-["y"] = 0,
-["x"] = 1,
-["anchorTo"] = "$parent",
-["rank"] = true,
-["anchorPoint"] = "CLI",
-["enabled"] = true,
-["size"] = 0,
-},
-},
-["altPowerBar"] = {
-["height"] = 0.4,
-["background"] = true,
-["order"] = 100,
-},
-["fader"] = {
-["height"] = 0.5,
-},
-["indicators"] = {
-["raidTarget"] = {
-["y"] = 0,
-["x"] = 0,
-["anchorTo"] = "$parent",
-["anchorPoint"] = "C",
-["size"] = 20,
-},
-["class"] = {
-["y"] = 0,
-["x"] = 0,
-["anchorTo"] = "$parent",
-["anchorPoint"] = "BL",
-["size"] = 16,
-},
-["height"] = 0.5,
-},
-["height"] = 25,
-["auraIndicators"] = {
-["height"] = 0.5,
-},
-["powerBar"] = {
-["order"] = 20,
-["colorType"] = "type",
-["height"] = 0.6,
-["background"] = true,
-},
-["healthBar"] = {
-["colorType"] = "class",
-["order"] = 10,
-["background"] = true,
-["reactionType"] = "npc",
-["height"] = 1.2,
-},
-},
 ["targettarget"] = {
 ["portrait"] = {
 ["type"] = "3D",
@@ -12608,6 +12254,330 @@ nil,
 ["highlight"] = {
 ["height"] = 0.5,
 ["size"] = 10,
+},
+},
+["bosstarget"] = {
+["indicators"] = {
+["raidTarget"] = {
+["y"] = 0,
+["x"] = 0,
+["anchorTo"] = "$parent",
+["anchorPoint"] = "C",
+["size"] = 20,
+},
+["class"] = {
+["y"] = 0,
+["x"] = 0,
+["anchorTo"] = "$parent",
+["anchorPoint"] = "BL",
+["size"] = 16,
+},
+},
+["emptyBar"] = {
+["reactionType"] = "none",
+["background"] = true,
+["order"] = 0,
+["height"] = 1,
+},
+["highlight"] = {
+["size"] = 10,
+},
+["width"] = 90,
+["castBar"] = {
+["time"] = {
+["enabled"] = true,
+["x"] = -1,
+["anchorTo"] = "$parent",
+["y"] = 0,
+["anchorPoint"] = "CRI",
+["size"] = 0,
+},
+["order"] = 40,
+["height"] = 0.6,
+["background"] = true,
+["icon"] = "HIDE",
+["name"] = {
+["y"] = 0,
+["x"] = 1,
+["anchorTo"] = "$parent",
+["rank"] = true,
+["anchorPoint"] = "CLI",
+["enabled"] = true,
+["size"] = 0,
+},
+},
+["auras"] = {
+["buffs"] = {
+["anchorPoint"] = "BL",
+["x"] = 0,
+["y"] = 0,
+["size"] = 16,
+},
+["debuffs"] = {
+["anchorPoint"] = "BL",
+["x"] = 0,
+["y"] = 0,
+["size"] = 16,
+},
+},
+["altPowerBar"] = {
+["height"] = 0.4,
+["background"] = true,
+["order"] = 100,
+},
+["text"] = {
+nil,
+{
+["text"] = "[curhp]",
+},
+{
+["text"] = "",
+},
+{
+["text"] = "",
+},
+{
+["text"] = "[name]",
+},
+},
+["height"] = 25,
+["portrait"] = {
+["type"] = "3D",
+["alignment"] = "LEFT",
+["fullAfter"] = 100,
+["height"] = 0.5,
+["fullBefore"] = 0,
+["order"] = 15,
+["width"] = 0.22,
+},
+["powerBar"] = {
+["order"] = 20,
+["colorType"] = "type",
+["height"] = 0.6,
+["background"] = true,
+},
+["healthBar"] = {
+["colorType"] = "class",
+["order"] = 10,
+["background"] = true,
+["reactionType"] = "npc",
+["height"] = 1.2,
+},
+},
+["focustarget"] = {
+["highlight"] = {
+["height"] = 0.5,
+["size"] = 10,
+},
+["healthBar"] = {
+["colorType"] = "class",
+["order"] = 10,
+["background"] = true,
+["reactionType"] = "npc",
+["height"] = 1.2,
+},
+["emptyBar"] = {
+["reactionType"] = "none",
+["background"] = true,
+["order"] = 0,
+["height"] = 1,
+},
+["auras"] = {
+["height"] = 0.5,
+["debuffs"] = {
+["anchorPoint"] = "BL",
+["x"] = 0,
+["y"] = 0,
+["size"] = 16,
+},
+["buffs"] = {
+["anchorPoint"] = "BL",
+["x"] = 0,
+["y"] = 0,
+["size"] = 16,
+},
+},
+["text"] = {
+{
+["text"] = "[(()afk() )][name]",
+},
+{
+["text"] = "[curhp]",
+},
+{
+["text"] = "",
+},
+{
+["text"] = "",
+},
+{
+["text"] = "[(()afk() )][name]",
+},
+},
+["range"] = {
+["height"] = 0.5,
+},
+["width"] = 120,
+["castBar"] = {
+["time"] = {
+["enabled"] = true,
+["x"] = -1,
+["anchorTo"] = "$parent",
+["y"] = 0,
+["anchorPoint"] = "CRI",
+["size"] = 0,
+},
+["order"] = 40,
+["height"] = 0.6,
+["background"] = true,
+["icon"] = "HIDE",
+["name"] = {
+["y"] = 0,
+["x"] = 1,
+["anchorTo"] = "$parent",
+["rank"] = true,
+["anchorPoint"] = "CLI",
+["enabled"] = true,
+["size"] = 0,
+},
+},
+["altPowerBar"] = {
+["height"] = 0.4,
+["background"] = true,
+["order"] = 100,
+},
+["fader"] = {
+["height"] = 0.5,
+},
+["indicators"] = {
+["raidTarget"] = {
+["y"] = 0,
+["x"] = 0,
+["anchorTo"] = "$parent",
+["anchorPoint"] = "C",
+["size"] = 20,
+},
+["class"] = {
+["y"] = 0,
+["x"] = 0,
+["anchorTo"] = "$parent",
+["anchorPoint"] = "BL",
+["size"] = 16,
+},
+["height"] = 0.5,
+},
+["height"] = 25,
+["auraIndicators"] = {
+["height"] = 0.5,
+},
+["powerBar"] = {
+["order"] = 20,
+["colorType"] = "type",
+["height"] = 0.6,
+["background"] = true,
+},
+["portrait"] = {
+["type"] = "3D",
+["alignment"] = "RIGHT",
+["fullAfter"] = 100,
+["height"] = 0.5,
+["fullBefore"] = 0,
+["order"] = 15,
+["width"] = 0.22,
+},
+},
+["pettarget"] = {
+["indicators"] = {
+["raidTarget"] = {
+["y"] = 0,
+["x"] = 0,
+["anchorTo"] = "$parent",
+["anchorPoint"] = "C",
+["size"] = 20,
+},
+},
+["emptyBar"] = {
+["reactionType"] = "none",
+["background"] = true,
+["order"] = 0,
+["height"] = 1,
+},
+["highlight"] = {
+["size"] = 10,
+},
+["width"] = 190,
+["castBar"] = {
+["time"] = {
+["enabled"] = true,
+["x"] = -1,
+["anchorTo"] = "$parent",
+["y"] = 0,
+["anchorPoint"] = "CRI",
+["size"] = 0,
+},
+["order"] = 40,
+["height"] = 0.6,
+["background"] = true,
+["icon"] = "HIDE",
+["name"] = {
+["y"] = 0,
+["x"] = 1,
+["anchorTo"] = "$parent",
+["rank"] = true,
+["anchorPoint"] = "CLI",
+["enabled"] = true,
+["size"] = 0,
+},
+},
+["auras"] = {
+["buffs"] = {
+["anchorPoint"] = "BL",
+["x"] = 0,
+["y"] = 0,
+["size"] = 16,
+},
+["debuffs"] = {
+["anchorPoint"] = "BL",
+["x"] = 0,
+["y"] = 0,
+["size"] = 16,
+},
+},
+["altPowerBar"] = {
+["height"] = 0.4,
+["background"] = true,
+["order"] = 100,
+},
+["text"] = {
+[3] = {
+["text"] = "[perpp]",
+},
+[5] = {
+["text"] = "[name]",
+},
+},
+["height"] = 30,
+["portrait"] = {
+["type"] = "3D",
+["alignment"] = "LEFT",
+["fullAfter"] = 100,
+["height"] = 0.5,
+["fullBefore"] = 0,
+["order"] = 15,
+["width"] = 0.22,
+},
+["powerBar"] = {
+["order"] = 20,
+["colorType"] = "type",
+["height"] = 0.7,
+["background"] = true,
+},
+["healthBar"] = {
+["colorType"] = "class",
+["order"] = 10,
+["background"] = true,
+["reactionType"] = "npc",
+["height"] = 1.2,
 },
 },
 ["partypet"] = {
@@ -12838,18 +12808,14 @@ nil,
 ["height"] = 0.5,
 ["size"] = 10,
 },
-["incHeal"] = {
-["height"] = 0.5,
-["cap"] = 1,
-},
+["height"] = 45,
 ["healAbsorb"] = {
 ["height"] = 0.5,
 ["cap"] = 1,
 },
-["staggerBar"] = {
-["height"] = 0.3,
-["background"] = true,
-["order"] = 70,
+["incHeal"] = {
+["height"] = 0.5,
+["cap"] = 1,
 },
 ["totemBar"] = {
 ["enabled"] = true,
@@ -12897,15 +12863,15 @@ nil,
 ["size"] = 0,
 },
 },
+["priestBar"] = {
+["height"] = 0.4,
+["background"] = true,
+["order"] = 70,
+},
 ["altPowerBar"] = {
 ["height"] = 0.4,
 ["background"] = true,
 ["order"] = 100,
-},
-["fader"] = {
-["inactiveAlpha"] = 0.6,
-["height"] = 0.5,
-["combatAlpha"] = 1,
 },
 ["auraIndicators"] = {
 ["height"] = 0.5,
@@ -13112,15 +13078,19 @@ nil,
 ["size"] = 24,
 },
 },
-["priestBar"] = {
-["height"] = 0.4,
-["background"] = true,
-["order"] = 70,
+["fader"] = {
+["inactiveAlpha"] = 0.6,
+["height"] = 0.5,
+["combatAlpha"] = 1,
 },
 ["combatText"] = {
 ["height"] = 0.5,
 },
-["height"] = 45,
+["staggerBar"] = {
+["height"] = 0.3,
+["background"] = true,
+["order"] = 70,
+},
 ["shamanBar"] = {
 ["height"] = 0.4,
 ["background"] = true,
@@ -13215,7 +13185,32 @@ nil,
 ["reactionType"] = "npc",
 ["height"] = 1.2,
 },
+["emptyBar"] = {
+["reactionType"] = "none",
+["background"] = true,
+["order"] = 0,
+["height"] = 1,
+},
+["attribAnchorPoint"] = "LEFT",
 ["unitsPerColumn"] = 5,
+["incHeal"] = {
+["cap"] = 1,
+},
+["width"] = 150,
+["maxColumns"] = 1,
+["columnSpacing"] = 5,
+["altPowerBar"] = {
+["height"] = 0.4,
+["background"] = true,
+["order"] = 100,
+},
+["highlight"] = {
+["size"] = 10,
+},
+["height"] = 40,
+["healAbsorb"] = {
+["cap"] = 1,
+},
 ["text"] = {
 {
 ["text"] = "[(()afk() )][name]",
@@ -13227,31 +13222,6 @@ nil,
 ["text"] = "[(()afk() )][name]",
 },
 },
-["emptyBar"] = {
-["reactionType"] = "none",
-["background"] = true,
-["order"] = 0,
-["height"] = 1,
-},
-["columnSpacing"] = 5,
-["width"] = 150,
-["maxColumns"] = 1,
-["height"] = 40,
-["altPowerBar"] = {
-["height"] = 0.4,
-["background"] = true,
-["order"] = 100,
-},
-["highlight"] = {
-["size"] = 10,
-},
-["incHeal"] = {
-["cap"] = 1,
-},
-["healAbsorb"] = {
-["cap"] = 1,
-},
-["attribAnchorPoint"] = "LEFT",
 ["indicators"] = {
 ["raidTarget"] = {
 ["y"] = 0,
@@ -13325,7 +13295,12 @@ nil,
 },
 },
 },
-["pettarget"] = {
+["pet"] = {
+["xpBar"] = {
+["height"] = 0.25,
+["background"] = true,
+["order"] = 55,
+},
 ["indicators"] = {
 ["raidTarget"] = {
 ["y"] = 0,
@@ -13334,17 +13309,26 @@ nil,
 ["anchorPoint"] = "C",
 ["size"] = 20,
 },
+["height"] = 0.5,
 },
-["emptyBar"] = {
-["reactionType"] = "none",
-["background"] = true,
-["order"] = 0,
-["height"] = 1,
+["range"] = {
+["height"] = 0.5,
 },
-["highlight"] = {
-["size"] = 10,
+["auras"] = {
+["height"] = 0.5,
+["debuffs"] = {
+["anchorPoint"] = "BL",
+["x"] = 0,
+["y"] = 0,
+["size"] = 16,
 },
-["width"] = 190,
+["buffs"] = {
+["anchorPoint"] = "BL",
+["x"] = 0,
+["y"] = 0,
+["size"] = 16,
+},
+},
 ["castBar"] = {
 ["time"] = {
 ["enabled"] = true,
@@ -13354,7 +13338,7 @@ nil,
 ["anchorPoint"] = "CRI",
 ["size"] = 0,
 },
-["order"] = 40,
+["order"] = 60,
 ["height"] = 0.6,
 ["background"] = true,
 ["icon"] = "HIDE",
@@ -13368,42 +13352,8 @@ nil,
 ["size"] = 0,
 },
 },
-["auras"] = {
-["buffs"] = {
-["anchorPoint"] = "BL",
-["x"] = 0,
-["y"] = 0,
-["size"] = 16,
-},
-["debuffs"] = {
-["anchorPoint"] = "BL",
-["x"] = 0,
-["y"] = 0,
-["size"] = 16,
-},
-},
-["altPowerBar"] = {
-["height"] = 0.4,
-["background"] = true,
-["order"] = 100,
-},
-["text"] = {
-[3] = {
-["text"] = "[perpp]",
-},
-[5] = {
-["text"] = "[name]",
-},
-},
-["height"] = 30,
-["portrait"] = {
-["type"] = "3D",
-["alignment"] = "LEFT",
-["fullAfter"] = 100,
+["auraIndicators"] = {
 ["height"] = 0.5,
-["fullBefore"] = 0,
-["order"] = 15,
-["width"] = 0.22,
 },
 ["powerBar"] = {
 ["order"] = 20,
@@ -13415,8 +13365,58 @@ nil,
 ["colorType"] = "class",
 ["order"] = 10,
 ["background"] = true,
-["reactionType"] = "npc",
+["reactionType"] = "none",
 ["height"] = 1.2,
+},
+["highlight"] = {
+["height"] = 0.5,
+["size"] = 10,
+},
+["text"] = {
+[3] = {
+["text"] = "[perpp]",
+},
+[5] = {
+["text"] = "[name]",
+},
+},
+["emptyBar"] = {
+["reactionType"] = "none",
+["background"] = true,
+["order"] = 0,
+["height"] = 1,
+},
+["width"] = 190,
+["altPowerBar"] = {
+["height"] = 0.4,
+["background"] = true,
+["order"] = 100,
+},
+["height"] = 30,
+["fader"] = {
+["height"] = 0.5,
+},
+["combatText"] = {
+["height"] = 0.5,
+},
+["incHeal"] = {
+["height"] = 0.5,
+},
+["healAbsorb"] = {
+["height"] = 0.5,
+["cap"] = 1,
+},
+["incAbsorb"] = {
+["height"] = 0.5,
+},
+["portrait"] = {
+["type"] = "3D",
+["alignment"] = "LEFT",
+["fullAfter"] = 50,
+["height"] = 0.5,
+["fullBefore"] = 0,
+["order"] = 15,
+["width"] = 0.22,
 },
 },
 ["battlegroundpet"] = {
@@ -13762,10 +13762,6 @@ nil,
 },
 ["battleground"] = {
 ["enabled"] = true,
-["highlight"] = {
-["height"] = 0.5,
-["size"] = 10,
-},
 ["portrait"] = {
 ["type"] = "class",
 ["alignment"] = "LEFT",
@@ -13774,6 +13770,13 @@ nil,
 ["fullBefore"] = 0,
 ["order"] = 15,
 ["width"] = 0.22,
+},
+["healthBar"] = {
+["colorType"] = "class",
+["order"] = 10,
+["background"] = true,
+["reactionType"] = "npc",
+["height"] = 1.2,
 },
 ["indicators"] = {
 ["raidTarget"] = {
@@ -13880,12 +13883,9 @@ nil,
 ["height"] = 0.5,
 ["background"] = true,
 },
-["healthBar"] = {
-["colorType"] = "class",
-["order"] = 10,
-["background"] = true,
-["reactionType"] = "npc",
-["height"] = 1.2,
+["highlight"] = {
+["height"] = 0.5,
+["size"] = 10,
 },
 },
 },
@@ -13919,10 +13919,10 @@ nil,
 ["g"] = 0.93,
 ["r"] = 0.93,
 },
-["offline"] = {
-["b"] = 0.5,
-["g"] = 0.5,
-["r"] = 0.5,
+["yellow"] = {
+["b"] = 0,
+["g"] = 0.93,
+["r"] = 0.93,
 },
 ["aggro"] = {
 ["b"] = 0,
@@ -13939,10 +13939,10 @@ nil,
 ["g"] = 0.9,
 ["r"] = 0.2,
 },
-["healAbsorb"] = {
-["b"] = 1,
-["g"] = 0.47,
-["r"] = 0.68,
+["offline"] = {
+["b"] = 0.5,
+["g"] = 0.5,
+["r"] = 0.5,
 },
 ["enemyUnattack"] = {
 ["b"] = 0.2,
@@ -13969,10 +13969,10 @@ nil,
 ["g"] = 0.75,
 ["r"] = 0.93,
 },
-["yellow"] = {
-["b"] = 0,
-["g"] = 0.93,
-["r"] = 0.93,
+["healAbsorb"] = {
+["b"] = 1,
+["g"] = 0.47,
+["r"] = 0.68,
 },
 ["inc"] = {
 ["b"] = 0.23,

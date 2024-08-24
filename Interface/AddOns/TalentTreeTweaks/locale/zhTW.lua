@@ -122,14 +122,11 @@ L["Scale Talent Frame"] = "介面縮放"
 L["Search by ID"] = "以 ID 尋找"
 L["Shift + Left-Click:"] = "Shift + 左鍵："
 L["Shift + Right-Click:"] = "Shift + 右鍵："
---[[Translation missing --]]
-L["Shift Hero Talent Trees"] = "Shift Hero Talent Trees"
---[[Translation missing --]]
-L["Shifts the Hero Talent Trees to the left to avoid overlapping with the gate text."] = "Shifts the Hero Talent Trees to the left to avoid overlapping with the gate text."
+L["Shift Hero Talent Trees"] = "搬移英雄天賦樹"
+L["Shifts the Hero Talent Trees to the left to avoid overlapping with the gate text."] = "將英雄天賦樹向左移動以避免與門檻文字重疊。"
 L["Show %s Button"] = "顯示 %s 按鈕"
 L["Show a slider in Talent Tree Viewer UI"] = "在天賦模擬器顯示捲動軸"
---[[Translation missing --]]
-L["Show a slider in the spellbook UI"] = "Show a slider in the spellbook UI"
+L["Show a slider in the spellbook UI"] = "在法術書介面中顯示滑桿"
 L["Show a slider in the talent UI"] = "在天賦介面顯示捲動軸"
 L["Show an example of the mini tree for your current spec."] = "顯示目前專精的迷你樹範本。"
 L["Show Diff"] = "顯示差異"
@@ -144,8 +141,7 @@ L["Simple dots with default diff colors"] = "具有預設差異顏色的簡單�
 L["Skyriding Auto Purchaser"] = "天空騎術自動購買"
 L["Spell Icon"] = "法術圖示"
 L["Spell ID"] = "法術 ID"
---[[Translation missing --]]
-L["Spellbook Background Transparency"] = "Spellbook Background Transparency"
+L["Spellbook Background Transparency"] = "法術書背景透明度"
 L["SpellID"] = "法術ID"
 L[ [=[Talent Loadout links are improved, to allow you to use modifiers, to copy the link, import it as a loadout, open it in Talent Tree Viewer (if installed) etc.
 Optionally, it can also scan your chat for any loadout string that was sent as normal regular text.]=] ] = "天賦配置連結得到增強，允許您使用快捷鍵、來複製連結、將其導入為配置、在天賦樹查看器（如果已安裝）中打開它等。或者，它還可以掃描您的聊天中是否有任何配置字串作為正常的常規文字發送。"

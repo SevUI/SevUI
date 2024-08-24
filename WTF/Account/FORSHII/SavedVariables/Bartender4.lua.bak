@@ -438,7 +438,7 @@ Bartender4DB = {
 {
 ["flyoutDirection"] = "DOWN",
 ["showgrid"] = true,
-["version"] = 3,
+["fadeout"] = true,
 ["position"] = {
 ["growHorizontal"] = "BOTH",
 ["x"] = 0.0002143871824955568,
@@ -448,12 +448,12 @@ Bartender4DB = {
 },
 ["hidemacrotext"] = true,
 ["hideequipped"] = true,
-["fadeout"] = true,
+["fadeoutdelay"] = 0,
 ["hideborder"] = true,
 ["fadeoutalpha"] = 0,
 ["padding"] = -2,
 ["WoW10Layout"] = true,
-["fadeoutdelay"] = 0,
+["version"] = 3,
 },
 {
 ["enabled"] = false,
