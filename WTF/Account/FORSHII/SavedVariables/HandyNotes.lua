@@ -11,16 +11,16 @@ HandyNotesDB = {
 ["Sevdarkblue - Tarren Mill"] = "SevUI",
 ["Sevenruu - Tarren Mill"] = "SevUI",
 ["Nimshot - Ravencrest"] = "Nimshot - Ravencrest",
-["Sevdk - Tarren Mill"] = "SevUI",
+["Sevdh - Valdrakken"] = "Sevdh - Valdrakken",
 ["Sevdk - Valdrakken"] = "Sevdk - Valdrakken",
-["Sevdeekaytwo - Tarren Mill"] = "SevUI",
+["Sevwar - Tarren Mill"] = "SevUI",
 ["Lftwgldshare - Draenor"] = "Lftwgldshare - Draenor",
 ["Sevdk - Draenor"] = "Sevdk - Draenor",
-["Sevwar - Tarren Mill"] = "SevUI",
 ["Sevenroll - Kazzak"] = "Sevenroll - Kazzak",
+["Sevdk - Tarren Mill"] = "SevUI",
 ["Sevwartwo - Valdrakken"] = "Sevwartwo - Valdrakken",
 ["Sevensides - Tarren Mill"] = "SevUI",
-["Sevdh - Valdrakken"] = "Sevdh - Valdrakken",
+["Sevdeekaytwo - Tarren Mill"] = "SevUI",
 },
 ["profiles"] = {
 ["Sevdh - Draenor"] = {
@@ -46,27 +46,27 @@ HandyNotesDB = {
 },
 ["Nimshot - Ravencrest"] = {
 },
-["Sevdh - Valdrakken"] = {
+["Sevdh - Tarren Mill"] = {
 },
-["Sevdk - Tarren Mill"] = {
+["Sevenroll - Kazzak"] = {
 },
 ["Sevdk - Valdrakken"] = {
 },
-["Sevenroll - Kazzak"] = {
+["Sevdeekaytwo - Tarren Mill"] = {
 },
 ["Lftwgldshare - Draenor"] = {
 },
 ["Sevdk - Draenor"] = {
 },
-["Sevdeekaytwo - Tarren Mill"] = {
-},
 ["Sevwar - Tarren Mill"] = {
+},
+["Sevdk - Tarren Mill"] = {
 },
 ["Sevwartwo - Valdrakken"] = {
 },
 ["Sevensides - Tarren Mill"] = {
 },
-["Sevdh - Tarren Mill"] = {
+["Sevdh - Valdrakken"] = {
 },
 },
 }
@@ -82,16 +82,16 @@ HandyNotes_HandyNotesDB = {
 ["Sevdarkblue - Tarren Mill"] = "Sevdarkblue - Tarren Mill",
 ["Sevenruu - Tarren Mill"] = "Sevenruu - Tarren Mill",
 ["Nimshot - Ravencrest"] = "Nimshot - Ravencrest",
-["Sevdk - Tarren Mill"] = "Sevdk - Tarren Mill",
+["Sevdh - Valdrakken"] = "Sevdh - Valdrakken",
 ["Sevdk - Valdrakken"] = "Sevdk - Valdrakken",
-["Sevdeekaytwo - Tarren Mill"] = "Sevdeekaytwo - Tarren Mill",
+["Sevwar - Tarren Mill"] = "Sevwar - Tarren Mill",
 ["Lftwgldshare - Draenor"] = "Lftwgldshare - Draenor",
 ["Sevdk - Draenor"] = "Sevdk - Draenor",
-["Sevwar - Tarren Mill"] = "Sevwar - Tarren Mill",
 ["Sevenroll - Kazzak"] = "Sevenroll - Kazzak",
+["Sevdk - Tarren Mill"] = "Sevdk - Tarren Mill",
 ["Sevwartwo - Valdrakken"] = "Sevwartwo - Valdrakken",
 ["Sevensides - Tarren Mill"] = "Sevensides - Tarren Mill",
-["Sevdh - Valdrakken"] = "Sevdh - Valdrakken",
+["Sevdeekaytwo - Tarren Mill"] = "Sevdeekaytwo - Tarren Mill",
 },
 ["profiles"] = {
 ["Sevdh - Draenor"] = {
@@ -114,25 +114,25 @@ HandyNotes_HandyNotesDB = {
 },
 ["Nimshot - Ravencrest"] = {
 },
-["Sevdk - Tarren Mill"] = {
+["Sevdh - Valdrakken"] = {
 },
 ["Sevdk - Valdrakken"] = {
 },
-["Sevdeekaytwo - Tarren Mill"] = {
+["Sevwar - Tarren Mill"] = {
 },
 ["Lftwgldshare - Draenor"] = {
 },
 ["Sevdk - Draenor"] = {
 },
-["Sevwar - Tarren Mill"] = {
-},
 ["Sevenroll - Kazzak"] = {
+},
+["Sevdk - Tarren Mill"] = {
 },
 ["Sevwartwo - Valdrakken"] = {
 },
 ["Sevensides - Tarren Mill"] = {
 },
-["Sevdh - Valdrakken"] = {
+["Sevdeekaytwo - Tarren Mill"] = {
 },
 },
 }

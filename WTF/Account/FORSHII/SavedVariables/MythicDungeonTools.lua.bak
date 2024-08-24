@@ -13,19 +13,82 @@ MythicDungeonToolsDB = {
 ["Nimshot - Ravencrest"] = "Nimshot - Ravencrest",
 ["Sevenroll - Tarren Mill"] = "Sevenroll - Tarren Mill",
 ["Sevdk - Valdrakken"] = "Sevdk - Valdrakken",
-["Sevenroll - Kazzak"] = "Sevenroll - Kazzak",
+["Sevdk - Tarren Mill"] = "Sevdk - Tarren Mill",
 ["Lftwgldshare - Draenor"] = "Lftwgldshare - Draenor",
 ["Sevdk - Draenor"] = "Sevdk - Draenor",
-["Sevdeekaytwo - Tarren Mill"] = "Sevdeekaytwo - Tarren Mill",
-["Sevdk - Tarren Mill"] = "Sevdk - Tarren Mill",
+["Sevenroll - Kazzak"] = "Sevenroll - Kazzak",
+["Sevwar - Tarren Mill"] = "Sevwar - Tarren Mill",
 ["Sevwartwo - Valdrakken"] = "Sevwartwo - Valdrakken",
 ["Sevensides - Tarren Mill"] = "Sevensides - Tarren Mill",
-["Sevwar - Tarren Mill"] = "Sevwar - Tarren Mill",
+["Sevdeekaytwo - Tarren Mill"] = "Sevdeekaytwo - Tarren Mill",
 },
 ["global"] = {
 ["anchorTo"] = "CENTER",
-["currentDungeonIdx"] = 43,
-["anchorFrom"] = "CENTER",
+["colorPaletteInfo"] = {
+["customPaletteValues"] = {
+{
+1,
+1,
+1,
+},
+{
+1,
+1,
+1,
+},
+{
+1,
+1,
+1,
+},
+{
+1,
+1,
+1,
+},
+{
+1,
+1,
+1,
+},
+{
+1,
+1,
+1,
+},
+{
+1,
+1,
+1,
+},
+{
+1,
+1,
+1,
+},
+{
+1,
+1,
+1,
+},
+{
+1,
+1,
+1,
+},
+{
+1,
+1,
+1,
+},
+{
+1,
+1,
+1,
+},
+},
+},
+["currentDifficulty"] = 2,
 ["minimap"] = {
 ["minimapPos"] = 309.2608234801882,
 ["showInCompartment"] = true,
@@ -1217,29 +1280,29 @@ true,
 [18] = {
 1,
 },
-[4] = {
-},
 [9] = {
 5,
+},
+[4] = {
 },
 ["color"] = "fffb3e",
 },
 {
 ["color"] = "3eff3e",
-[7] = {
-},
 [9] = {
+},
+[7] = {
 },
 [8] = {
 },
 },
 {
 ["color"] = "ff3e9e",
-[9] = {
-1,
-},
 [7] = {
 2,
+},
+[9] = {
+1,
 },
 [8] = {
 3,
@@ -1367,13 +1430,14 @@ true,
 },
 {
 },
-[17] = {
-9,
-},
 [13] = {
 4,
 },
-[8] = {
+[17] = {
+9,
+},
+[15] = {
+6,
 },
 [5] = {
 },
@@ -1384,8 +1448,7 @@ true,
 [16] = {
 3,
 },
-[15] = {
-6,
+[8] = {
 },
 },
 {
@@ -1538,11 +1601,11 @@ nil,
 },
 [5] = {
 },
-[9] = {
-7,
-},
 [7] = {
 4,
+},
+[9] = {
+7,
 },
 ["color"] = "fffb3e",
 },
@@ -2530,18 +2593,19 @@ nil,
 ["color"] = "ff3eff",
 },
 {
-[10] = {
-1,
+[3] = {
+7,
 },
 [5] = {
 4,
 3,
 },
-[8] = {
-1,
+[15] = {
+9,
+10,
 },
-[3] = {
-7,
+[10] = {
+1,
 },
 ["color"] = "3eff9e",
 [12] = {
@@ -2551,9 +2615,8 @@ nil,
 [9] = {
 1,
 },
-[15] = {
-9,
-10,
+[8] = {
+1,
 },
 },
 {
@@ -2745,6 +2808,10 @@ nil,
 {
 ["difficulty"] = 27,
 ["week"] = 1,
+["colorPaletteInfo"] = {
+["autoColoring"] = true,
+["colorPaletteIdx"] = 4,
+},
 ["value"] = {
 ["currentPull"] = 5,
 ["currentSublevel"] = 1,
@@ -2794,11 +2861,11 @@ nil,
 },
 [10] = {
 },
-[11] = {
-},
 [3] = {
 2,
 3,
+},
+[11] = {
 },
 [2] = {
 5,
@@ -3040,10 +3107,6 @@ nil,
 {
 },
 },
-},
-["colorPaletteInfo"] = {
-["autoColoring"] = true,
-["colorPaletteIdx"] = 4,
 },
 ["text"] = "left side cookening",
 ["objects"] = {
@@ -3302,10 +3365,8 @@ true,
 [31] = {
 5,
 },
-[19] = {
-13,
-1,
-12,
+[10] = {
+9,
 },
 [38] = {
 7,
@@ -3322,8 +3383,10 @@ true,
 5,
 7,
 },
-[10] = {
-9,
+[19] = {
+13,
+1,
+12,
 },
 },
 {
@@ -3339,9 +3402,10 @@ true,
 },
 },
 {
-[14] = {
-4,
+[19] = {
+2,
 3,
+4,
 },
 [17] = {
 5,
@@ -3353,20 +3417,19 @@ true,
 [18] = {
 2,
 },
-[33] = {
-8,
-7,
-},
-[19] = {
-2,
-3,
+["color"] = "ff3e9e",
+[14] = {
 4,
+3,
 },
 [16] = {
 4,
 5,
 },
-["color"] = "ff3e9e",
+[33] = {
+8,
+7,
+},
 },
 {
 [14] = {
@@ -3440,22 +3503,22 @@ true,
 [17] = {
 9,
 },
-[16] = {
-10,
-},
-[18] = {
-8,
-},
-["color"] = "3e3eff",
-[14] = {
-9,
-},
 [23] = {
 8,
 9,
 },
 [25] = {
 1,
+},
+["color"] = "3e3eff",
+[14] = {
+9,
+},
+[16] = {
+10,
+},
+[18] = {
+8,
 },
 },
 {
@@ -3478,25 +3541,25 @@ true,
 12,
 11,
 },
-[19] = {
-10,
-11,
+[14] = {
+12,
 },
 [18] = {
 9,
 5,
 },
 ["color"] = "ff3eff",
-[14] = {
-12,
-},
-[16] = {
-8,
-12,
+[19] = {
+10,
+11,
 },
 [23] = {
 4,
 5,
+},
+[16] = {
+8,
+12,
 },
 },
 {
@@ -3776,13 +3839,11 @@ nil,
 [17] = {
 3,
 },
+[36] = {
+18,
+},
 [10] = {
 9,
-},
-[19] = {
-13,
-1,
-12,
 },
 [38] = {
 7,
@@ -3799,8 +3860,10 @@ nil,
 5,
 7,
 },
-[36] = {
-18,
+[19] = {
+13,
+1,
+12,
 },
 },
 {
@@ -3849,19 +3912,19 @@ nil,
 {
 [36] = {
 },
+[19] = {
+4,
+},
+["color"] = "3effff",
 [14] = {
 4,
 3,
 },
-["color"] = "3effff",
-[19] = {
-4,
+[23] = {
 },
 [16] = {
 5,
 4,
-},
-[23] = {
 },
 },
 {
@@ -4429,12 +4492,12 @@ nil,
 },
 {
 ["color"] = "3eff3e",
+[7] = {
+2,
+},
 [9] = {
 9,
 8,
-},
-[7] = {
-2,
 },
 [8] = {
 4,
@@ -4565,8 +4628,9 @@ nil,
 [11] = {
 4,
 },
-[19] = {
-10,
+[14] = {
+3,
+1,
 },
 [10] = {
 8,
@@ -4575,9 +4639,8 @@ nil,
 11,
 },
 ["color"] = "fffb3e",
-[14] = {
-3,
-1,
+[19] = {
+10,
 },
 [12] = {
 },
@@ -5690,6 +5753,11 @@ true,
 ["freeholdJoined"] = false,
 ["beguiling"] = 1,
 },
+["colorPaletteInfo"] = {
+["autoColoring"] = true,
+["colorPaletteIdx"] = 4,
+},
+["text"] = "Raider.IO Weekly Route - Bunten (S4)",
 ["value"] = {
 ["currentPull"] = 1,
 ["currentSublevel"] = 1,
@@ -5961,11 +6029,6 @@ nil,
 },
 },
 },
-["text"] = "Raider.IO Weekly Route - Bunten (S4)",
-["colorPaletteInfo"] = {
-["autoColoring"] = true,
-["colorPaletteIdx"] = 4,
-},
 ["uid"] = "IrmNd4JXTAX",
 },
 {
@@ -6075,14 +6138,14 @@ nil,
 },
 [27] = {
 },
-["color"] = "ff3e3e",
+[29] = {
+},
 [28] = {
 },
 [3] = {
 4,
 },
-[29] = {
-},
+["color"] = "ff3e3e",
 [4] = {
 2,
 },
@@ -6399,18 +6462,18 @@ nil,
 [28] = {
 4,
 },
+[29] = {
+3,
+},
 [22] = {
 9,
 3,
 },
-["color"] = "3effff",
 [26] = {
 },
 [30] = {
 },
-[29] = {
-3,
-},
+["color"] = "3effff",
 },
 {
 [27] = {
@@ -6722,17 +6785,17 @@ nil,
 [13] = {
 4,
 },
-[9] = {
-4,
+[16] = {
 5,
+6,
 },
 ["color"] = "ff3e9e",
 [14] = {
 3,
 },
-[16] = {
+[9] = {
+4,
 5,
-6,
 },
 [20] = {
 1,
@@ -8105,6 +8168,11 @@ true,
 ["freeholdJoined"] = false,
 ["beguiling"] = 1,
 },
+["colorPaletteInfo"] = {
+["autoColoring"] = true,
+["colorPaletteIdx"] = 4,
+},
+["text"] = "Raider.IO Weekly Route - Bunten (S4)",
 ["value"] = {
 ["currentPull"] = 1,
 ["currentSublevel"] = 1,
@@ -8378,11 +8446,6 @@ nil,
 },
 },
 },
-["text"] = "Raider.IO Weekly Route - Bunten (S4)",
-["colorPaletteInfo"] = {
-["autoColoring"] = true,
-["colorPaletteIdx"] = 4,
-},
 ["uid"] = "LD4BT20Lve6",
 },
 {
@@ -8519,6 +8582,11 @@ true,
 ["freeholdJoined"] = false,
 ["beguiling"] = 1,
 },
+["colorPaletteInfo"] = {
+["autoColoring"] = true,
+["colorPaletteIdx"] = 4,
+},
+["text"] = "Raider.IO Weekly Route - Bunten (S4)",
 ["value"] = {
 ["currentPull"] = 1,
 ["currentSublevel"] = 1,
@@ -8775,11 +8843,6 @@ nil,
 ["color"] = "3effff",
 },
 },
-},
-["text"] = "Raider.IO Weekly Route - Bunten (S4)",
-["colorPaletteInfo"] = {
-["autoColoring"] = true,
-["colorPaletteIdx"] = 4,
 },
 ["uid"] = "x)Hj9eTUBr)",
 },
@@ -9379,6 +9442,9 @@ true,
 5,
 4,
 },
+[20] = {
+2,
+},
 [17] = {
 6,
 7,
@@ -9389,9 +9455,6 @@ true,
 2,
 4,
 3,
-},
-[20] = {
-2,
 },
 ["color"] = "3eff9e",
 },
@@ -9471,7 +9534,7 @@ true,
 },
 [7] = {
 },
-[5] = {
+[23] = {
 },
 [18] = {
 7,
@@ -9479,7 +9542,7 @@ true,
 ["color"] = "ff9b3e",
 [19] = {
 },
-[23] = {
+[5] = {
 },
 [6] = {
 },
@@ -9904,6 +9967,11 @@ true,
 ["freeholdJoined"] = false,
 ["beguiling"] = 1,
 },
+["colorPaletteInfo"] = {
+["autoColoring"] = true,
+["colorPaletteIdx"] = 4,
+},
+["text"] = "Raider.IO Weekly Route - Bunten (S4)",
 ["value"] = {
 ["currentPull"] = 1,
 ["currentSublevel"] = 1,
@@ -10306,11 +10374,6 @@ nil,
 },
 },
 },
-["text"] = "Raider.IO Weekly Route - Bunten (S4)",
-["colorPaletteInfo"] = {
-["autoColoring"] = true,
-["colorPaletteIdx"] = 4,
-},
 ["uid"] = "zUVEWhEcscb",
 },
 {
@@ -10330,10 +10393,6 @@ nil,
 ["difficulty"] = 10,
 ["week"] = 1,
 ["addonVersion"] = 4034,
-["colorPaletteInfo"] = {
-["autoColoring"] = true,
-["colorPaletteIdx"] = 4,
-},
 ["value"] = {
 ["currentPull"] = 31,
 ["currentSublevel"] = 1,
@@ -10700,6 +10759,10 @@ nil,
 ["color"] = "ff9b3e",
 },
 },
+},
+["colorPaletteInfo"] = {
+["autoColoring"] = true,
+["colorPaletteIdx"] = 4,
 },
 ["text"] = "Dorki W Route",
 ["objects"] = {
@@ -11160,6 +11223,11 @@ true,
 ["freeholdJoined"] = false,
 ["beguiling"] = 1,
 },
+["colorPaletteInfo"] = {
+["autoColoring"] = true,
+["colorPaletteIdx"] = 4,
+},
+["text"] = "Raider.IO Weekly Route - Bunten (S4)",
 ["value"] = {
 ["currentPull"] = 1,
 ["currentSublevel"] = 1,
@@ -11436,11 +11504,6 @@ true,
 },
 },
 },
-["text"] = "Raider.IO Weekly Route - Bunten (S4)",
-["colorPaletteInfo"] = {
-["autoColoring"] = true,
-["colorPaletteIdx"] = 4,
-},
 ["uid"] = "NkG)gvHcSXz",
 },
 {
@@ -11591,6 +11654,11 @@ true,
 ["freeholdJoined"] = false,
 ["beguiling"] = 1,
 },
+["colorPaletteInfo"] = {
+["autoColoring"] = true,
+["colorPaletteIdx"] = 4,
+},
+["text"] = "Raider.IO Weekly Route - Bunten (S4)",
 ["value"] = {
 ["currentPull"] = 1,
 ["currentSublevel"] = 1,
@@ -11690,15 +11758,15 @@ true,
 12,
 13,
 },
-[4] = {
-3,
-4,
-5,
-},
 [7] = {
 1,
 2,
 3,
+},
+[4] = {
+3,
+4,
+5,
 },
 ["color"] = "ff3e9e",
 },
@@ -11775,11 +11843,11 @@ true,
 26,
 27,
 },
-[4] = {
-11,
-},
 [7] = {
 10,
+11,
+},
+[4] = {
 11,
 },
 ["color"] = "ff3eff",
@@ -11897,11 +11965,6 @@ true,
 ["color"] = "a1ff3e",
 },
 },
-},
-["text"] = "Raider.IO Weekly Route - Bunten (S4)",
-["colorPaletteInfo"] = {
-["autoColoring"] = true,
-["colorPaletteIdx"] = 4,
 },
 ["uid"] = "KERc9WMCL7c",
 },
@@ -12411,6 +12474,11 @@ true,
 ["freeholdJoined"] = false,
 ["beguiling"] = 1,
 },
+["colorPaletteInfo"] = {
+["autoColoring"] = true,
+["colorPaletteIdx"] = 4,
+},
+["text"] = "Raider.IO Weekly Route - Bunten (S4)",
 ["value"] = {
 ["currentPull"] = 1,
 ["currentSublevel"] = 1,
@@ -12723,11 +12791,6 @@ nil,
 ["color"] = "3eff9e",
 },
 },
-},
-["text"] = "Raider.IO Weekly Route - Bunten (S4)",
-["colorPaletteInfo"] = {
-["autoColoring"] = true,
-["colorPaletteIdx"] = 4,
 },
 ["uid"] = "AqWvvzEBkz8",
 },
@@ -13805,12 +13868,15 @@ nil,
 1,
 2,
 },
-[23] = {
-4,
+[30] = {
+2,
 },
 ["color"] = "3eff3e",
 [14] = {
 5,
+},
+[23] = {
+4,
 },
 [5] = {
 16,
@@ -13831,9 +13897,6 @@ nil,
 9,
 47,
 46,
-},
-[30] = {
-2,
 },
 },
 {
@@ -15379,12 +15442,12 @@ nil,
 5,
 },
 ["color"] = "3eff3e",
+[23] = {
+1,
+},
 [20] = {
 4,
 3,
-},
-[23] = {
-1,
 },
 },
 {
@@ -15556,6 +15619,10 @@ true,
 ["difficulty"] = 18,
 ["week"] = 1,
 ["addonVersion"] = 4203,
+["colorPaletteInfo"] = {
+["autoColoring"] = true,
+["colorPaletteIdx"] = 4,
+},
 ["value"] = {
 ["currentPull"] = 4,
 ["currentSublevel"] = 1,
@@ -15641,11 +15708,11 @@ nil,
 2,
 },
 ["color"] = "fffb3e",
-[4] = {
-},
 [7] = {
 3,
 2,
+},
+[4] = {
 },
 },
 {
@@ -15764,12 +15831,12 @@ nil,
 5,
 },
 ["color"] = "3eff9e",
-[23] = {
-1,
-},
 [20] = {
 4,
 3,
+},
+[23] = {
+1,
 },
 },
 {
@@ -15886,10 +15953,6 @@ nil,
 },
 },
 },
-["colorPaletteInfo"] = {
-["autoColoring"] = true,
-["colorPaletteIdx"] = 4,
-},
 ["text"] = "Weekly ToT",
 ["objects"] = {
 },
@@ -15901,75 +15964,12 @@ nil,
 },
 },
 },
+["currentDungeonIdx"] = 43,
 ["scale"] = 1.6099365234375,
-["colorPaletteInfo"] = {
-["customPaletteValues"] = {
-{
-1,
-1,
-1,
-},
-{
-1,
-1,
-1,
-},
-{
-1,
-1,
-1,
-},
-{
-1,
-1,
-1,
-},
-{
-1,
-1,
-1,
-},
-{
-1,
-1,
-1,
-},
-{
-1,
-1,
-1,
-},
-{
-1,
-1,
-1,
-},
-{
-1,
-1,
-1,
-},
-{
-1,
-1,
-1,
-},
-{
-1,
-1,
-1,
-},
-{
-1,
-1,
-1,
-},
-},
-},
 ["version"] = 4410,
 ["xoffset"] = -175.8403167724609,
 ["nonFullscreenScale"] = 1.6099365234375,
-["currentDifficulty"] = 2,
+["anchorFrom"] = "CENTER",
 ["yoffset"] = 127.2838973999023,
 },
 }

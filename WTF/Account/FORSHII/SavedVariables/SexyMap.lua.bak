@@ -27,23 +27,21 @@ SexyMap2DB = {
 ["showPing"] = true,
 ["showAt"] = "map",
 },
-["buttons"] = {
-["radius"] = 10,
-["lockDragging"] = false,
-["allowDragging"] = true,
-["visibilitySettings"] = {
-["MinimapZoomIn"] = "never",
-["MiniMapMailFrame"] = "always",
-["MiniMapWorldMapButton"] = "never",
-["QueueStatusMinimapButton"] = "always",
-["GarrisonLandingPageMinimapButton"] = "always",
-["MinimapZoomOut"] = "never",
-["SexyMapZoneTextButton"] = "always",
-["TimeManagerClockButton"] = "always",
+["movers"] = {
+["lockDurability"] = false,
+["lockObjectives"] = false,
+["moveDurability"] = false,
+["lockCaptureBar"] = false,
+["moveVehicle"] = false,
+["lockVehicle"] = false,
+["moverPositions"] = {
 },
-["dragPositions"] = {
-},
-["controlVisibility"] = true,
+["lockTopWidget"] = false,
+["moveBuffs"] = false,
+["moveTopWidget"] = false,
+["lockBuffs"] = false,
+["moveCaptureBar"] = false,
+["moveObjectives"] = false,
 },
 ["clock"] = {
 ["bgColor"] = {
@@ -109,21 +107,23 @@ SexyMap2DB = {
 ["xOffset"] = 0,
 ["yOffset"] = 0,
 },
-["movers"] = {
-["lockDurability"] = false,
-["lockObjectives"] = false,
-["moveDurability"] = false,
-["lockCaptureBar"] = false,
-["moveVehicle"] = false,
-["lockVehicle"] = false,
-["moverPositions"] = {
+["buttons"] = {
+["radius"] = 10,
+["lockDragging"] = false,
+["allowDragging"] = true,
+["visibilitySettings"] = {
+["MinimapZoomIn"] = "never",
+["MiniMapMailFrame"] = "always",
+["MiniMapWorldMapButton"] = "never",
+["QueueStatusMinimapButton"] = "always",
+["GarrisonLandingPageMinimapButton"] = "always",
+["MinimapZoomOut"] = "never",
+["SexyMapZoneTextButton"] = "always",
+["TimeManagerClockButton"] = "always",
 },
-["lockTopWidget"] = false,
-["moveBuffs"] = false,
-["moveTopWidget"] = false,
-["lockBuffs"] = false,
-["moveCaptureBar"] = false,
-["moveObjectives"] = false,
+["dragPositions"] = {
+},
+["controlVisibility"] = true,
 },
 },
 ["Sevenruu-Tarren Mill"] = "global",
@@ -154,21 +154,23 @@ SexyMap2DB = {
 ["showPing"] = true,
 ["showAt"] = "map",
 },
-["movers"] = {
-["lockDurability"] = false,
-["lockObjectives"] = false,
-["moveDurability"] = false,
-["lockCaptureBar"] = false,
-["moveVehicle"] = false,
-["lockVehicle"] = false,
-["moverPositions"] = {
+["buttons"] = {
+["radius"] = 10,
+["lockDragging"] = false,
+["allowDragging"] = true,
+["visibilitySettings"] = {
+["MinimapZoomIn"] = "never",
+["MiniMapMailFrame"] = "always",
+["MiniMapWorldMapButton"] = "never",
+["QueueStatusMinimapButton"] = "always",
+["GarrisonLandingPageMinimapButton"] = "always",
+["MinimapZoomOut"] = "never",
+["SexyMapZoneTextButton"] = "always",
+["TimeManagerClockButton"] = "always",
 },
-["lockTopWidget"] = false,
-["moveBuffs"] = false,
-["moveTopWidget"] = false,
-["lockBuffs"] = false,
-["moveCaptureBar"] = false,
-["moveObjectives"] = false,
+["dragPositions"] = {
+},
+["controlVisibility"] = true,
 },
 ["clock"] = {
 ["bgColor"] = {
@@ -234,23 +236,21 @@ SexyMap2DB = {
 ["xOffset"] = 0,
 ["yOffset"] = 0,
 },
-["buttons"] = {
-["radius"] = 10,
-["lockDragging"] = false,
-["allowDragging"] = true,
-["visibilitySettings"] = {
-["MinimapZoomIn"] = "never",
-["MiniMapMailFrame"] = "always",
-["MiniMapWorldMapButton"] = "never",
-["QueueStatusMinimapButton"] = "always",
-["GarrisonLandingPageMinimapButton"] = "always",
-["MinimapZoomOut"] = "never",
-["SexyMapZoneTextButton"] = "always",
-["TimeManagerClockButton"] = "always",
+["movers"] = {
+["lockDurability"] = false,
+["lockObjectives"] = false,
+["moveDurability"] = false,
+["lockCaptureBar"] = false,
+["moveVehicle"] = false,
+["lockVehicle"] = false,
+["moverPositions"] = {
 },
-["dragPositions"] = {
-},
-["controlVisibility"] = true,
+["lockTopWidget"] = false,
+["moveBuffs"] = false,
+["moveTopWidget"] = false,
+["lockBuffs"] = false,
+["moveCaptureBar"] = false,
+["moveObjectives"] = false,
 },
 },
 ["Sevenroll-Kazzak"] = {
@@ -278,14 +278,6 @@ SexyMap2DB = {
 },
 ["outline"] = "NONE",
 },
-["movers"] = {
-["lockTopWidget"] = false,
-["moveTopWidget"] = false,
-["lockCaptureBar"] = false,
-["moveCaptureBar"] = false,
-["moverPositions"] = {
-},
-},
 ["buttons"] = {
 ["radius"] = 10,
 ["lockDragging"] = false,
@@ -305,6 +297,14 @@ SexyMap2DB = {
 ["SexyMapZoneTextButton"] = "always",
 },
 ["controlVisibility"] = true,
+},
+["movers"] = {
+["lockTopWidget"] = false,
+["moveTopWidget"] = false,
+["lockCaptureBar"] = false,
+["moveCaptureBar"] = false,
+["moverPositions"] = {
+},
 },
 ["clock"] = {
 ["bgColor"] = {
@@ -432,23 +432,21 @@ SexyMap2DB = {
 ["showPing"] = true,
 ["showAt"] = "map",
 },
-["buttons"] = {
-["radius"] = 10,
-["lockDragging"] = false,
-["allowDragging"] = true,
-["visibilitySettings"] = {
-["MinimapZoomIn"] = "never",
-["MiniMapMailFrame"] = "always",
-["MiniMapWorldMapButton"] = "never",
-["QueueStatusMinimapButton"] = "always",
-["GarrisonLandingPageMinimapButton"] = "always",
-["MinimapZoomOut"] = "never",
-["SexyMapZoneTextButton"] = "always",
-["TimeManagerClockButton"] = "always",
+["movers"] = {
+["lockDurability"] = false,
+["lockObjectives"] = false,
+["moveDurability"] = false,
+["lockCaptureBar"] = false,
+["moveVehicle"] = false,
+["lockVehicle"] = false,
+["moverPositions"] = {
 },
-["dragPositions"] = {
-},
-["controlVisibility"] = true,
+["lockTopWidget"] = false,
+["moveBuffs"] = false,
+["moveTopWidget"] = false,
+["lockBuffs"] = false,
+["moveCaptureBar"] = false,
+["moveObjectives"] = false,
 },
 ["clock"] = {
 ["bgColor"] = {
@@ -514,21 +512,23 @@ SexyMap2DB = {
 ["xOffset"] = 0,
 ["yOffset"] = 0,
 },
-["movers"] = {
-["lockDurability"] = false,
-["lockObjectives"] = false,
-["moveDurability"] = false,
-["lockCaptureBar"] = false,
-["moveVehicle"] = false,
-["lockVehicle"] = false,
-["moverPositions"] = {
+["buttons"] = {
+["radius"] = 10,
+["lockDragging"] = false,
+["allowDragging"] = true,
+["visibilitySettings"] = {
+["MinimapZoomIn"] = "never",
+["MiniMapMailFrame"] = "always",
+["MiniMapWorldMapButton"] = "never",
+["QueueStatusMinimapButton"] = "always",
+["GarrisonLandingPageMinimapButton"] = "always",
+["MinimapZoomOut"] = "never",
+["SexyMapZoneTextButton"] = "always",
+["TimeManagerClockButton"] = "always",
 },
-["lockTopWidget"] = false,
-["moveBuffs"] = false,
-["moveTopWidget"] = false,
-["lockBuffs"] = false,
-["moveCaptureBar"] = false,
-["moveObjectives"] = false,
+["dragPositions"] = {
+},
+["controlVisibility"] = true,
 },
 },
 ["Sevdk-Tarren Mill"] = "global",
@@ -555,6 +555,18 @@ SexyMap2DB = {
 ["backgroundColor"] = {
 },
 },
+["movers"] = {
+["lockDurability"] = false,
+["moveTopWidget"] = false,
+["moveDurability"] = false,
+["lockCaptureBar"] = false,
+["moveVehicle"] = false,
+["lockVehicle"] = false,
+["moverPositions"] = {
+},
+["lockTopWidget"] = false,
+["moveCaptureBar"] = false,
+},
 ["buttons"] = {
 ["radius"] = 10,
 ["lockDragging"] = false,
@@ -572,18 +584,6 @@ SexyMap2DB = {
 ["dragPositions"] = {
 },
 ["controlVisibility"] = true,
-},
-["movers"] = {
-["lockDurability"] = false,
-["moveTopWidget"] = false,
-["moveDurability"] = false,
-["lockCaptureBar"] = false,
-["moveVehicle"] = false,
-["lockVehicle"] = false,
-["moverPositions"] = {
-},
-["lockTopWidget"] = false,
-["moveCaptureBar"] = false,
 },
 ["clock"] = {
 ["bgColor"] = {
@@ -706,6 +706,22 @@ SexyMap2DB = {
 ["backgroundColor"] = {
 },
 },
+["movers"] = {
+["lockDurability"] = false,
+["lockObjectives"] = false,
+["moveDurability"] = false,
+["lockCaptureBar"] = false,
+["moveVehicle"] = false,
+["lockVehicle"] = false,
+["moverPositions"] = {
+},
+["lockTopWidget"] = false,
+["moveBuffs"] = false,
+["moveTopWidget"] = false,
+["lockBuffs"] = false,
+["moveCaptureBar"] = false,
+["moveObjectives"] = false,
+},
 ["buttons"] = {
 ["radius"] = 10,
 ["lockDragging"] = false,
@@ -723,22 +739,6 @@ SexyMap2DB = {
 ["dragPositions"] = {
 },
 ["controlVisibility"] = true,
-},
-["movers"] = {
-["lockDurability"] = false,
-["lockObjectives"] = false,
-["moveDurability"] = false,
-["lockCaptureBar"] = false,
-["moveVehicle"] = false,
-["lockVehicle"] = false,
-["moverPositions"] = {
-},
-["lockTopWidget"] = false,
-["moveBuffs"] = false,
-["moveTopWidget"] = false,
-["lockBuffs"] = false,
-["moveCaptureBar"] = false,
-["moveObjectives"] = false,
 },
 ["clock"] = {
 ["bgColor"] = {
@@ -837,24 +837,17 @@ SexyMap2DB = {
 ["showPing"] = true,
 ["showAt"] = "map",
 },
-["buttons"] = {
-["radius"] = 10,
-["lockDragging"] = false,
-["allowDragging"] = true,
-["visibilitySettings"] = {
-["MinimapZoomIn"] = "never",
-["MiniMapMailFrame"] = "always",
-["MiniMapWorldMapButton"] = "never",
-["QueueStatusMinimapButton"] = "always",
-["GarrisonLandingPageMinimapButton"] = "always",
-["MinimapZoomOut"] = "never",
-["SexyMapZoneTextButton"] = "always",
-["TimeManagerClockButton"] = "always",
+["movers"] = {
+["lockDurability"] = false,
+["moveTopWidget"] = false,
+["moveDurability"] = false,
+["lockCaptureBar"] = false,
+["moveVehicle"] = false,
+["lockVehicle"] = false,
+["moverPositions"] = {
 },
-["dragPositions"] = {
-},
-["scale"] = 1,
-["controlVisibility"] = true,
+["lockTopWidget"] = false,
+["moveCaptureBar"] = false,
 },
 ["clock"] = {
 ["bgColor"] = {
@@ -946,17 +939,24 @@ SexyMap2DB = {
 ["useSecureButton"] = false,
 ["yOffset"] = 0,
 },
-["movers"] = {
-["lockDurability"] = false,
-["moveTopWidget"] = false,
-["moveDurability"] = false,
-["lockCaptureBar"] = false,
-["moveVehicle"] = false,
-["lockVehicle"] = false,
-["moverPositions"] = {
+["buttons"] = {
+["radius"] = 10,
+["lockDragging"] = false,
+["allowDragging"] = true,
+["visibilitySettings"] = {
+["MinimapZoomIn"] = "never",
+["MiniMapMailFrame"] = "always",
+["MiniMapWorldMapButton"] = "never",
+["QueueStatusMinimapButton"] = "always",
+["GarrisonLandingPageMinimapButton"] = "always",
+["MinimapZoomOut"] = "never",
+["SexyMapZoneTextButton"] = "always",
+["TimeManagerClockButton"] = "always",
 },
-["lockTopWidget"] = false,
-["moveCaptureBar"] = false,
+["dragPositions"] = {
+},
+["scale"] = 1,
+["controlVisibility"] = true,
 },
 },
 ["Sevenroll-Tarren Mill"] = "global",
@@ -989,13 +989,25 @@ SexyMap2DB = {
 ["showPing"] = true,
 ["showAt"] = "map",
 },
-["movers"] = {
-["lockTopWidget"] = false,
-["moveTopWidget"] = false,
-["lockCaptureBar"] = false,
-["moveCaptureBar"] = false,
-["moverPositions"] = {
+["buttons"] = {
+["radius"] = 10,
+["lockDragging"] = false,
+["allowDragging"] = true,
+["scale"] = 1,
+["dragPositions"] = {
 },
+["visibilitySettings"] = {
+["MinimapZoomIn"] = "never",
+["MiniMapMailFrame"] = "always",
+["MiniMapWorldMapButton"] = "never",
+["MinimapZoomOut"] = "never",
+["SexyMapZoneTextButton"] = "always",
+["GarrisonLandingPageMinimapButton"] = "always",
+["TimeManagerClockButton"] = "always",
+["CraftingOrder"] = "always",
+["AddonCompartmentFrame"] = "never",
+},
+["controlVisibility"] = true,
 },
 ["clock"] = {
 ["bgColor"] = {
@@ -1091,25 +1103,13 @@ SexyMap2DB = {
 ["b"] = 0,
 },
 },
-["buttons"] = {
-["radius"] = 10,
-["lockDragging"] = false,
-["allowDragging"] = true,
-["scale"] = 1,
-["dragPositions"] = {
+["movers"] = {
+["lockTopWidget"] = false,
+["moveTopWidget"] = false,
+["lockCaptureBar"] = false,
+["moveCaptureBar"] = false,
+["moverPositions"] = {
 },
-["visibilitySettings"] = {
-["MinimapZoomIn"] = "never",
-["MiniMapMailFrame"] = "always",
-["MiniMapWorldMapButton"] = "never",
-["MinimapZoomOut"] = "never",
-["SexyMapZoneTextButton"] = "always",
-["GarrisonLandingPageMinimapButton"] = "always",
-["TimeManagerClockButton"] = "always",
-["CraftingOrder"] = "always",
-["AddonCompartmentFrame"] = "never",
-},
-["controlVisibility"] = true,
 },
 },
 ["Sevdh-Draenor"] = {
@@ -1135,6 +1135,22 @@ SexyMap2DB = {
 ["backgroundColor"] = {
 },
 },
+["movers"] = {
+["lockDurability"] = false,
+["lockObjectives"] = false,
+["moveDurability"] = false,
+["lockCaptureBar"] = false,
+["moveVehicle"] = false,
+["lockVehicle"] = false,
+["moverPositions"] = {
+},
+["lockTopWidget"] = false,
+["moveBuffs"] = false,
+["moveTopWidget"] = false,
+["lockBuffs"] = false,
+["moveCaptureBar"] = false,
+["moveObjectives"] = false,
+},
 ["buttons"] = {
 ["radius"] = 10,
 ["lockDragging"] = false,
@@ -1152,22 +1168,6 @@ SexyMap2DB = {
 ["dragPositions"] = {
 },
 ["controlVisibility"] = true,
-},
-["movers"] = {
-["lockDurability"] = false,
-["lockObjectives"] = false,
-["moveDurability"] = false,
-["lockCaptureBar"] = false,
-["moveVehicle"] = false,
-["lockVehicle"] = false,
-["moverPositions"] = {
-},
-["lockTopWidget"] = false,
-["moveBuffs"] = false,
-["moveTopWidget"] = false,
-["lockBuffs"] = false,
-["moveCaptureBar"] = false,
-["moveObjectives"] = false,
 },
 ["clock"] = {
 ["bgColor"] = {
@@ -1284,22 +1284,6 @@ SexyMap2DB = {
 },
 ["outline"] = "NONE",
 },
-["movers"] = {
-["lockDurability"] = false,
-["lockObjectives"] = false,
-["moveDurability"] = false,
-["lockCaptureBar"] = false,
-["moveVehicle"] = false,
-["lockVehicle"] = false,
-["moverPositions"] = {
-},
-["lockTopWidget"] = false,
-["moveBuffs"] = false,
-["moveTopWidget"] = false,
-["lockBuffs"] = false,
-["moveCaptureBar"] = false,
-["moveObjectives"] = false,
-},
 ["buttons"] = {
 ["radius"] = 10,
 ["lockDragging"] = false,
@@ -1346,6 +1330,22 @@ SexyMap2DB = {
 },
 ["scale"] = 1,
 ["controlVisibility"] = true,
+},
+["movers"] = {
+["lockDurability"] = false,
+["lockObjectives"] = false,
+["moveDurability"] = false,
+["lockCaptureBar"] = false,
+["moveVehicle"] = false,
+["lockVehicle"] = false,
+["moverPositions"] = {
+},
+["lockTopWidget"] = false,
+["moveBuffs"] = false,
+["moveTopWidget"] = false,
+["lockBuffs"] = false,
+["moveCaptureBar"] = false,
+["moveObjectives"] = false,
 },
 ["clock"] = {
 ["bgColor"] = {
@@ -1459,22 +1459,6 @@ SexyMap2DB = {
 ["backgroundColor"] = {
 },
 },
-["movers"] = {
-["lockDurability"] = false,
-["lockObjectives"] = false,
-["moveDurability"] = false,
-["lockCaptureBar"] = false,
-["moveVehicle"] = false,
-["lockVehicle"] = false,
-["moverPositions"] = {
-},
-["lockTopWidget"] = false,
-["moveBuffs"] = false,
-["moveTopWidget"] = false,
-["lockBuffs"] = false,
-["moveCaptureBar"] = false,
-["moveObjectives"] = false,
-},
 ["buttons"] = {
 ["radius"] = 10,
 ["lockDragging"] = false,
@@ -1492,6 +1476,22 @@ SexyMap2DB = {
 ["dragPositions"] = {
 },
 ["controlVisibility"] = true,
+},
+["movers"] = {
+["lockDurability"] = false,
+["lockObjectives"] = false,
+["moveDurability"] = false,
+["lockCaptureBar"] = false,
+["moveVehicle"] = false,
+["lockVehicle"] = false,
+["moverPositions"] = {
+},
+["lockTopWidget"] = false,
+["moveBuffs"] = false,
+["moveTopWidget"] = false,
+["lockBuffs"] = false,
+["moveCaptureBar"] = false,
+["moveObjectives"] = false,
 },
 ["clock"] = {
 ["bgColor"] = {
@@ -1589,17 +1589,23 @@ SexyMap2DB = {
 ["showPing"] = true,
 ["showAt"] = "map",
 },
-["movers"] = {
-["lockDurability"] = false,
-["moveTopWidget"] = false,
-["moveDurability"] = false,
-["lockCaptureBar"] = false,
-["moveVehicle"] = false,
-["lockVehicle"] = false,
-["moverPositions"] = {
+["buttons"] = {
+["radius"] = 10,
+["lockDragging"] = false,
+["allowDragging"] = true,
+["visibilitySettings"] = {
+["MinimapZoomIn"] = "never",
+["MiniMapMailFrame"] = "always",
+["MiniMapWorldMapButton"] = "never",
+["QueueStatusMinimapButton"] = "always",
+["GarrisonLandingPageMinimapButton"] = "always",
+["MinimapZoomOut"] = "never",
+["SexyMapZoneTextButton"] = "always",
+["TimeManagerClockButton"] = "always",
 },
-["lockTopWidget"] = false,
-["moveCaptureBar"] = false,
+["dragPositions"] = {
+},
+["controlVisibility"] = true,
 },
 ["clock"] = {
 ["bgColor"] = {
@@ -1690,23 +1696,17 @@ SexyMap2DB = {
 ["xOffset"] = 0,
 ["yOffset"] = 0,
 },
-["buttons"] = {
-["radius"] = 10,
-["lockDragging"] = false,
-["allowDragging"] = true,
-["visibilitySettings"] = {
-["MinimapZoomIn"] = "never",
-["MiniMapMailFrame"] = "always",
-["MiniMapWorldMapButton"] = "never",
-["QueueStatusMinimapButton"] = "always",
-["GarrisonLandingPageMinimapButton"] = "always",
-["MinimapZoomOut"] = "never",
-["SexyMapZoneTextButton"] = "always",
-["TimeManagerClockButton"] = "always",
+["movers"] = {
+["lockDurability"] = false,
+["moveTopWidget"] = false,
+["moveDurability"] = false,
+["lockCaptureBar"] = false,
+["moveVehicle"] = false,
+["lockVehicle"] = false,
+["moverPositions"] = {
 },
-["dragPositions"] = {
-},
-["controlVisibility"] = true,
+["lockTopWidget"] = false,
+["moveCaptureBar"] = false,
 },
 },
 ["Sevdh-Tarren Mill"] = "global",

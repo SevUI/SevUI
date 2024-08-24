@@ -16,7 +16,7 @@ EchoRaidToolsDB = {
 ["moduleEnabled"] = false,
 ["lockNote"] = false,
 ["x"] = 50,
-["border"] = "1 pixel",
+["borderOffsetX"] = 0,
 ["width"] = 200,
 ["y"] = 50,
 ["borderSize"] = 2,
@@ -35,7 +35,7 @@ EchoRaidToolsDB = {
 0,
 0.3,
 },
-["borderOffsetX"] = 0,
+["border"] = "1 pixel",
 },
 ["Cooldowns"] = {
 ["ModuleEnabled"] = false,

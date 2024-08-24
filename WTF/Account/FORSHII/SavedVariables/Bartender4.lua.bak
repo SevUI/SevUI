@@ -438,7 +438,7 @@ Bartender4DB = {
 {
 ["flyoutDirection"] = "DOWN",
 ["showgrid"] = true,
-["fadeout"] = true,
+["version"] = 3,
 ["position"] = {
 ["growHorizontal"] = "BOTH",
 ["x"] = 0.0002143871824955568,
@@ -448,12 +448,12 @@ Bartender4DB = {
 },
 ["hidemacrotext"] = true,
 ["hideequipped"] = true,
-["fadeoutdelay"] = 0,
+["fadeout"] = true,
 ["hideborder"] = true,
 ["fadeoutalpha"] = 0,
 ["padding"] = -2,
 ["WoW10Layout"] = true,
-["version"] = 3,
+["fadeoutdelay"] = 0,
 },
 {
 ["enabled"] = false,
@@ -476,10 +476,10 @@ Bartender4DB = {
 ["point"] = "RIGHT",
 },
 ["padding"] = -3,
-["WoW10Layout"] = true,
 ["visibility"] = {
 ["always"] = true,
 },
+["WoW10Layout"] = true,
 },
 {
 ["version"] = 3,
@@ -490,11 +490,11 @@ Bartender4DB = {
 ["point"] = "RIGHT",
 },
 ["padding"] = -3,
-["WoW10Layout"] = true,
 ["visibility"] = {
 ["always"] = true,
 ["vehicle"] = true,
 },
+["WoW10Layout"] = true,
 },
 {
 ["version"] = 3,
@@ -505,10 +505,10 @@ Bartender4DB = {
 ["point"] = "RIGHT",
 },
 ["padding"] = -3,
-["WoW10Layout"] = true,
 ["visibility"] = {
 ["always"] = true,
 },
+["WoW10Layout"] = true,
 },
 {
 ["version"] = 3,
@@ -519,10 +519,10 @@ Bartender4DB = {
 ["point"] = "RIGHT",
 },
 ["padding"] = -3,
-["WoW10Layout"] = true,
 ["visibility"] = {
 ["always"] = true,
 },
+["WoW10Layout"] = true,
 },
 {
 ["version"] = 3,
@@ -1030,8 +1030,8 @@ Bartender4DB = {
 ["Sevdh - Tarren Mill"] = "SevUI2",
 ["Sevenroll - Tarren Mill"] = "SevUI2",
 ["Sevdk - Draenor"] = "SevUI",
-["Sevdk - Tarren Mill"] = "SevUI2",
 ["Sevdeekaytwo - Tarren Mill"] = "SevUI2",
+["Sevdk - Tarren Mill"] = "SevUI2",
 ["Sevwar - Tarren Mill"] = "SevUI2",
 ["Sevensides - Tarren Mill"] = "SevUI2",
 ["Lftwgldshare - Draenor"] = "Lftwgldshare - Draenor",

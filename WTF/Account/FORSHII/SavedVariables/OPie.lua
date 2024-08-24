@@ -66,45 +66,45 @@ OPie_SavedData = {
 ["save"] = true,
 },
 ["ortalsRaid"] = {
-["save"] = true,
 ["limit"] = "Sevdh-TarrenMill",
+["save"] = true,
 ["name"] = "Portals: Raid",
 },
 ["lsDungeons"] = {
 {
-["id"] = 393256,
 ["sliceToken"] = "ABuemDCLGWw",
+["id"] = 393256,
 },
 {
-["id"] = 393273,
 ["sliceToken"] = "ABuemDCLGWe",
+["id"] = 393273,
 },
 {
-["id"] = 393283,
 ["sliceToken"] = "ABuemDCLGWr",
+["id"] = 393283,
 },
 {
-["id"] = 393262,
 ["sliceToken"] = "ABuemDCLGW1",
+["id"] = 393262,
 },
 {
-["id"] = 393267,
 ["sliceToken"] = "ABuemDCLGWt",
+["id"] = 393267,
 },
 {
-["id"] = 393276,
 ["sliceToken"] = "ABuemDCLGWy",
+["id"] = 393276,
 },
 {
-["id"] = 393222,
 ["sliceToken"] = "ABuemDCLGWu",
+["id"] = 393222,
 },
 {
-["id"] = 393279,
 ["sliceToken"] = "ABuemDCLGWp",
+["id"] = 393279,
 },
-["save"] = true,
 ["name"] = "Portals: Dungeons",
+["save"] = true,
 ["limit"] = "Sevdh-TarrenMill",
 },
 ["Portals"] = {
@@ -120,8 +120,8 @@ OPie_SavedData = {
 ["sliceToken"] = "ABuemDCLGW2",
 ["embed"] = true,
 },
-["save"] = true,
 ["name"] = "Portals",
+["save"] = true,
 ["limit"] = "Sevdh-TarrenMill",
 },
 ["Phials"] = {

@@ -1,12 +1,13 @@
 local addon, ns = ...
 
 local defaultFont = GetLocale() == "ruRU" and [[Interface\AddOns\cargBags_Nivaya\media\pixel_cyr.ttf]] or [[Interface\AddOns\cargBags_Nivaya\media\pixel.ttf]]
+local sevUIFont = [[Interface\AddOns\SevUI_Utils\font\PT_Sans_Narrow.ttf]]
 
 ns.options = {
 
 filterArtifactPower = true, --set to 'false' to disable the category for items that give Artifact Power / Anima
 
-itemSlotSize = 32,	-- Size of item slots
+itemSlotSize = 36,	-- Size of item slots
 
 sizes = {
 	bags = {
@@ -25,30 +26,30 @@ sizes = {
 fonts = {
 	-- Font to use for bag captions and other strings
 	standard = {
-		defaultFont, 	-- Font path
-		8, 						-- Font Size
-		"OUTLINEMONOCHROME",	-- Flags
+		sevUIFont, 	-- Font path
+		15, 						-- Font Size
+		"OUTLINE",	-- Flags
 	},
 	
 	--Font to use for the dropdown menu
 	dropdown = {
-		defaultFont, 	-- Font path
-		10, 						-- Font Size
+		sevUIFont, 	-- Font path
+		15, 						-- Font Size
 		nil,	-- Flags
 	},
 
 	-- Font to use for durability and item level
 	itemInfo = {
-		defaultFont, 	-- Font path
-		8, 						-- Font Size
-		"OUTLINEMONOCHROME",	-- Flags
+		sevUIFont, 	-- Font path
+		15, 						-- Font Size
+		"OUTLINE",	-- Flags
 	},
 
 	-- Font to use for number of items in a stack
 	itemCount = {
-		defaultFont, 	-- Font path
-		8, 						-- Font Size
-		"OUTLINEMONOCHROME",	-- Flags
+		sevUIFont, 	-- Font path
+		15, 						-- Font Size
+		"OUTLINE",	-- Flags
 	},
 
 },

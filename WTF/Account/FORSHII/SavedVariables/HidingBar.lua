@@ -1,6 +1,6 @@
 
 HidingBarDB = {
-["tstmp"] = 1724499471,
+["tstmp"] = 1724508133,
 ["profiles"] = {
 {
 ["isDefault"] = true,
@@ -266,76 +266,76 @@ HidingBarDB = {
 },
 ["LibDBIcon10_EchoRaidTools"] = {
 true,
-["tstmp"] = 1724499471,
+["tstmp"] = 1724508133,
 },
 ["Minimap.ZoomIn"] = {
 true,
-["tstmp"] = 1724499471,
+["tstmp"] = 1724508133,
 },
 ["LibDBIcon10_FPS"] = {
 true,
-["tstmp"] = 1724499471,
+["tstmp"] = 1724508133,
 },
 ["LibDBIcon10_MythicDungeonTools"] = {
 true,
-["tstmp"] = 1724499471,
+["tstmp"] = 1724508133,
 },
 ["LibDBIcon10_BugSack"] = {
 true,
 12,
-["tstmp"] = 1724499471,
+["tstmp"] = 1724508133,
 },
 ["LibDBIcon10_SavedInstances"] = {
 true,
 29,
-["tstmp"] = 1724499471,
+["tstmp"] = 1724508133,
 },
 ["LibDBIcon10_Details"] = {
 true,
 14,
-["tstmp"] = 1724499471,
+["tstmp"] = 1724508133,
 },
 ["LibDBIcon10_Grid2"] = {
 true,
-["tstmp"] = 1724499471,
+["tstmp"] = 1724508133,
 },
 ["LibDBIcon10_Latency"] = {
 true,
-["tstmp"] = 1724499471,
+["tstmp"] = 1724508133,
 },
 ["Minimap.ZoomOut"] = {
 true,
-["tstmp"] = 1724499471,
+["tstmp"] = 1724508133,
 },
 ["LibDBIcon10_MethodRaidTools"] = {
 true,
 23,
-["tstmp"] = 1724499471,
+["tstmp"] = 1724508133,
 },
 ["LibDBIcon10_Clicked"] = {
-["tstmp"] = 1724499471,
+["tstmp"] = 1724508133,
 [2] = 13,
 },
 ["LibDBIcon10_BagSync"] = {
 true,
-["tstmp"] = 1724499471,
+["tstmp"] = 1724508133,
 },
 ["LibDBIcon10_Gold"] = {
 true,
 19,
-["tstmp"] = 1724499471,
+["tstmp"] = 1724508133,
 },
 ["LibDBIcon10_Paste"] = {
 true,
-["tstmp"] = 1724499471,
+["tstmp"] = 1724508133,
 },
 ["LibDBIcon10_ClassSpecs"] = {
-["tstmp"] = 1724499471,
+["tstmp"] = 1724508133,
 },
 ["ExpansionLandingPageMinimapButton"] = {
 false,
 [5] = true,
-["tstmp"] = 1724499471,
+["tstmp"] = 1724508133,
 },
 ["Narci_MinimapButton"] = {
 true,
@@ -346,154 +346,154 @@ true,
 },
 ["LibDBIcon10_Leatrix_Plus"] = {
 true,
-["tstmp"] = 1724499471,
+["tstmp"] = 1724508133,
 },
 ["LibDBIcon10_Masque"] = {
 true,
-["tstmp"] = 1724499471,
+["tstmp"] = 1724508133,
 },
 ["WIM3MinimapButton"] = {
 true,
-["tstmp"] = 1724499471,
+["tstmp"] = 1724508133,
 },
 ["MinimapCluster.Tracking"] = {
-["tstmp"] = 1724499471,
+["tstmp"] = 1724508133,
 },
 ["GameTimeFrame"] = {
 true,
-["tstmp"] = 1724499471,
+["tstmp"] = 1724508133,
 },
 ["LibDBIcon10_WeakAuras"] = {
 true,
 32,
-["tstmp"] = 1724499471,
+["tstmp"] = 1724508133,
 },
 ["MinimapCluster.IndicatorFrame.CraftingOrderFrame"] = {
 true,
 [5] = true,
-["tstmp"] = 1724499471,
+["tstmp"] = 1724508133,
 },
 ["MinimapCluster.IndicatorFrame.MailFrame"] = {
-["tstmp"] = 1724499471,
+["tstmp"] = 1724508133,
 [5] = true,
 },
 ["LibDBIcon10_Leatrix_Maps"] = {
 true,
-["tstmp"] = 1724499471,
+["tstmp"] = 1724508133,
 },
 ["LibDBIcon10_Raven"] = {
 true,
 28,
-["tstmp"] = 1724499471,
-},
-["LibDBIcon10_Bartender4"] = {
-true,
-["tstmp"] = 1724499471,
+["tstmp"] = 1724508133,
 },
 ["LibDBIcon10_BigWigs"] = {
 true,
 11,
-["tstmp"] = 1724499471,
+["tstmp"] = 1724508133,
+},
+["LibDBIcon10_Bartender4"] = {
+true,
+["tstmp"] = 1724508133,
 },
 ["AddonCompartmentFrame"] = {
 true,
 [5] = true,
-["tstmp"] = 1724499471,
+["tstmp"] = 1724508133,
 },
 ["LibDBIcon10_SimulationCraft"] = {
 true,
-["tstmp"] = 1724499471,
+["tstmp"] = 1724508133,
 },
 ["LibDBIcon10_DetailsStreamer"] = {
 true,
-["tstmp"] = 1724499471,
+["tstmp"] = 1724508133,
 },
 ["LibDBIcon10_TalentTreeViewer_Loader"] = {
 true,
-["tstmp"] = 1724499471,
+["tstmp"] = 1724508133,
 },
 ["LibDBIcon10_Plater"] = {
 true,
 25,
-["tstmp"] = 1724499471,
+["tstmp"] = 1724508133,
 },
 ["MinimapCluster.TrackingFrame"] = {
 ["tstmp"] = 1721244190,
 },
 ["LibDBIcon10_TipTac"] = {
 true,
-["tstmp"] = 1724499471,
+["tstmp"] = 1724508133,
 },
 },
 ["btnSettings"] = {
 ["Masque"] = {
 true,
 5,
-["tstmp"] = 1724499471,
+["tstmp"] = 1724508133,
 },
 ["Raven"] = {
 true,
 6,
-["tstmp"] = 1724499471,
+["tstmp"] = 1724508133,
 },
 ["HidingBar"] = {
 true,
-["tstmp"] = 1724499471,
+["tstmp"] = 1724508133,
 },
 ["BigWigs"] = {
 true,
 1,
-["tstmp"] = 1724499471,
+["tstmp"] = 1724508133,
 },
 ["Grid2"] = {
 true,
-["tstmp"] = 1724499471,
+["tstmp"] = 1724508133,
 },
 ["kgPanels"] = {
 true,
-["tstmp"] = 1724499471,
+["tstmp"] = 1724508133,
 },
 ["Bartender4"] = {
-["tstmp"] = 1724499471,
+["tstmp"] = 1724508133,
 },
 ["TipTac"] = {
 true,
-["tstmp"] = 1724499471,
+["tstmp"] = 1724508133,
+},
+["BagSyncLDB"] = {
+true,
+["tstmp"] = 1724508133,
 },
 ["Narcissus"] = {
 true,
 ["tstmp"] = 1724364369,
 },
-["BagSyncLDB"] = {
-true,
-["tstmp"] = 1724499471,
-},
 ["Clicked"] = {
 true,
 2,
-["tstmp"] = 1724499471,
+["tstmp"] = 1724508133,
 },
 ["TalentTreeViewer_Loader"] = {
 true,
-["tstmp"] = 1724499471,
+["tstmp"] = 1724508133,
 },
 ["SavedInstances"] = {
 true,
 7,
-["tstmp"] = 1724499471,
+["tstmp"] = 1724508133,
 },
 ["Paste"] = {
-["tstmp"] = 1724499471,
+["tstmp"] = 1724508133,
 },
 ["WeakAuras"] = {
 true,
 8,
-["tstmp"] = 1724499471,
+["tstmp"] = 1724508133,
 },
 ["MRT"] = {
 true,
 4,
-["tstmp"] = 1724499471,
+["tstmp"] = 1724508133,
 },
 },
 ["grabMinimap"] = true,

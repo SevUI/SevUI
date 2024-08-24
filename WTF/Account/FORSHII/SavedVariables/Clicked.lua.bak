@@ -17,14 +17,14 @@ ClickedDB = {
 ["Nimshot - Ravencrest"] = "HUNTER",
 ["Sevdh - Valdrakken"] = "DEMONHUNTER",
 ["Sevdk - Valdrakken"] = "DEATHKNIGHT",
-["Sevenroll - Kazzak"] = "MONK",
+["Sevdk - Tarren Mill"] = "SevUI",
 ["Lftwgldshare - Draenor"] = "MONK",
 ["Sevdk - Draenor"] = "DEATHKNIGHT",
-["Sevdeekaytwo - Tarren Mill"] = "SevUI",
-["Sevdk - Tarren Mill"] = "SevUI",
+["Sevenroll - Kazzak"] = "MONK",
+["Sevwar - Tarren Mill"] = "SevUI",
 ["Sevwartwo - Valdrakken"] = "WARRIOR",
 ["Sevensides - Tarren Mill"] = "SevUI",
-["Sevwar - Tarren Mill"] = "SevUI",
+["Sevdeekaytwo - Tarren Mill"] = "SevUI",
 },
 ["profiles"] = {
 ["HUNTER"] = {
@@ -59,7 +59,7 @@ ClickedDB = {
 ["action"] = {
 ["macroValue"] = "",
 ["macroName"] = "Run custom macro",
-["cancelForm"] = false,
+["spellValue"] = 218164,
 ["targetUnitAfterCast"] = false,
 ["auraName"] = "",
 ["itemValue"] = "",
@@ -70,7 +70,7 @@ ClickedDB = {
 ["interrupt"] = true,
 ["startAutoAttack"] = false,
 ["startPetAttack"] = false,
-["spellValue"] = 218164,
+["cancelForm"] = false,
 },
 ["keybind"] = "SHIFT-BUTTON1",
 ["integrations"] = {
@@ -151,13 +151,13 @@ ClickedDB = {
 ["value"] = true,
 ["selected"] = false,
 },
-["spellKnown"] = {
-["value"] = "Detox",
-["selected"] = true,
-},
 ["stealth"] = {
 ["value"] = true,
 ["selected"] = false,
+},
+["spellKnown"] = {
+["value"] = "Detox",
+["selected"] = true,
 },
 ["never"] = false,
 ["talent"] = {
@@ -236,7 +236,7 @@ ClickedDB = {
 ["action"] = {
 ["macroValue"] = "",
 ["macroName"] = "Run custom macro",
-["cancelForm"] = false,
+["spellValue"] = 115178,
 ["targetUnitAfterCast"] = false,
 ["auraName"] = "",
 ["itemValue"] = "",
@@ -247,7 +247,7 @@ ClickedDB = {
 ["interrupt"] = true,
 ["startAutoAttack"] = false,
 ["startPetAttack"] = false,
-["spellValue"] = 115178,
+["cancelForm"] = false,
 },
 ["keybind"] = "SHIFT-BUTTON2",
 ["integrations"] = {
@@ -327,12 +327,12 @@ ClickedDB = {
 ["value"] = true,
 ["selected"] = false,
 },
-["spellKnown"] = {
-["value"] = "",
-["selected"] = false,
-},
 ["stealth"] = {
 ["value"] = true,
+["selected"] = false,
+},
+["spellKnown"] = {
+["value"] = "",
 ["selected"] = false,
 },
 ["never"] = false,
@@ -412,7 +412,7 @@ ClickedDB = {
 ["action"] = {
 ["macroValue"] = "/focus [@mouseover,exists][@target,exists][]",
 ["macroName"] = "Focus mouseover",
-["cancelForm"] = false,
+["spellValue"] = "",
 ["targetUnitAfterCast"] = false,
 ["auraName"] = "",
 ["itemValue"] = "",
@@ -423,7 +423,7 @@ ClickedDB = {
 ["interrupt"] = false,
 ["startAutoAttack"] = false,
 ["startPetAttack"] = false,
-["spellValue"] = "",
+["cancelForm"] = false,
 },
 ["keybind"] = "SHIFT-TAB",
 ["integrations"] = {
@@ -503,12 +503,12 @@ ClickedDB = {
 ["value"] = true,
 ["selected"] = false,
 },
-["spellKnown"] = {
-["value"] = "",
-["selected"] = false,
-},
 ["stealth"] = {
 ["value"] = true,
+["selected"] = false,
+},
+["spellKnown"] = {
+["value"] = "",
 ["selected"] = false,
 },
 ["never"] = false,
@@ -587,11 +587,11 @@ ClickedDB = {
 ["type"] = 1,
 ["action"] = {
 ["macroValue"] = "/framestack",
-["cancelQueuedSpell"] = false,
-["cancelForm"] = false,
+["itemValue"] = "",
+["spellValue"] = "",
 ["targetUnitAfterCast"] = false,
 ["auraName"] = "",
-["itemValue"] = "",
+["cancelQueuedSpell"] = false,
 ["startPetAttack"] = false,
 ["macroName"] = "Framestack",
 ["convertValueToId"] = true,
@@ -599,7 +599,7 @@ ClickedDB = {
 ["interrupt"] = false,
 ["startAutoAttack"] = false,
 ["macroIcon"] = "Interface\\ICONS\\ability_hunter_snipershot",
-["spellValue"] = "",
+["cancelForm"] = false,
 },
 ["keybind"] = ";",
 ["integrations"] = {
@@ -744,12 +744,12 @@ ClickedDB = {
 ["value"] = true,
 ["selected"] = false,
 },
-["stealth"] = {
-["value"] = true,
-["selected"] = false,
-},
 ["spellKnown"] = {
 ["value"] = "",
+["selected"] = false,
+},
+["stealth"] = {
+["value"] = true,
 ["selected"] = false,
 },
 ["mounted"] = {
@@ -763,11 +763,11 @@ ClickedDB = {
 ["type"] = 1,
 ["action"] = {
 ["macroValue"] = "/kgpanels config",
-["cancelQueuedSpell"] = false,
-["cancelForm"] = false,
+["itemValue"] = "",
+["spellValue"] = "",
 ["targetUnitAfterCast"] = false,
 ["auraName"] = "",
-["itemValue"] = "",
+["cancelQueuedSpell"] = false,
 ["startPetAttack"] = false,
 ["macroName"] = "Open KGPanels config",
 ["convertValueToId"] = true,
@@ -775,7 +775,7 @@ ClickedDB = {
 ["interrupt"] = false,
 ["startAutoAttack"] = false,
 ["macroIcon"] = "Interface\\ICONS\\ability_hunter_beastwithin",
-["spellValue"] = "",
+["cancelForm"] = false,
 },
 ["keybind"] = "'",
 ["integrations"] = {
@@ -920,12 +920,12 @@ ClickedDB = {
 ["value"] = true,
 ["selected"] = false,
 },
-["stealth"] = {
-["value"] = true,
-["selected"] = false,
-},
 ["spellKnown"] = {
 ["value"] = "",
+["selected"] = false,
+},
+["stealth"] = {
+["value"] = true,
 ["selected"] = false,
 },
 ["mounted"] = {
@@ -939,11 +939,11 @@ ClickedDB = {
 ["type"] = 1,
 ["action"] = {
 ["macroValue"] = "/reload",
-["cancelQueuedSpell"] = false,
-["cancelForm"] = false,
+["itemValue"] = "",
+["spellValue"] = "",
 ["targetUnitAfterCast"] = false,
 ["auraName"] = "",
-["itemValue"] = "",
+["cancelQueuedSpell"] = false,
 ["startPetAttack"] = false,
 ["macroName"] = "Run custom macro",
 ["convertValueToId"] = true,
@@ -951,7 +951,7 @@ ClickedDB = {
 ["interrupt"] = false,
 ["startAutoAttack"] = false,
 ["macroIcon"] = "Interface\\ICONS\\inv_elemental_primal_water",
-["spellValue"] = "",
+["cancelForm"] = false,
 },
 ["keybind"] = "F9",
 ["integrations"] = {
@@ -1096,12 +1096,12 @@ ClickedDB = {
 ["value"] = true,
 ["selected"] = false,
 },
-["spellKnown"] = {
-["value"] = "",
-["selected"] = false,
-},
 ["stealth"] = {
 ["value"] = true,
+["selected"] = false,
+},
+["spellKnown"] = {
+["value"] = "",
 ["selected"] = false,
 },
 ["mounted"] = {
@@ -1115,11 +1115,11 @@ ClickedDB = {
 ["type"] = 1,
 ["action"] = {
 ["macroValue"] = "/4 asd",
-["cancelQueuedSpell"] = false,
-["cancelForm"] = false,
+["itemValue"] = "",
+["spellValue"] = "",
 ["targetUnitAfterCast"] = false,
 ["auraName"] = "",
-["itemValue"] = "",
+["cancelQueuedSpell"] = false,
 ["startPetAttack"] = false,
 ["macroName"] = "Target: Disable right-click in combat",
 ["convertValueToId"] = true,
@@ -1127,7 +1127,7 @@ ClickedDB = {
 ["interrupt"] = false,
 ["startAutoAttack"] = false,
 ["macroIcon"] = "Interface\\ICONS\\spell_chargenegative",
-["spellValue"] = "",
+["cancelForm"] = false,
 },
 ["keybind"] = "BUTTON2",
 ["integrations"] = {
@@ -1272,12 +1272,12 @@ ClickedDB = {
 ["value"] = true,
 ["selected"] = false,
 },
-["stealth"] = {
-["value"] = true,
-["selected"] = false,
-},
 ["spellKnown"] = {
 ["value"] = "",
+["selected"] = false,
+},
+["stealth"] = {
+["value"] = true,
 ["selected"] = false,
 },
 ["mounted"] = {
@@ -1291,11 +1291,11 @@ ClickedDB = {
 ["type"] = 1,
 ["action"] = {
 ["macroValue"] = "/plater",
-["cancelQueuedSpell"] = false,
-["cancelForm"] = false,
+["itemValue"] = "",
+["spellValue"] = "",
 ["targetUnitAfterCast"] = false,
 ["auraName"] = "",
-["itemValue"] = "",
+["cancelQueuedSpell"] = false,
 ["startPetAttack"] = false,
 ["macroName"] = "Open Plater config",
 ["convertValueToId"] = true,
@@ -1303,7 +1303,7 @@ ClickedDB = {
 ["interrupt"] = false,
 ["startAutoAttack"] = false,
 ["macroIcon"] = "Interface\\ICONS\\INV_Misc_QuestionMark",
-["spellValue"] = "",
+["cancelForm"] = false,
 },
 ["keybind"] = "]",
 ["integrations"] = {
@@ -1448,12 +1448,12 @@ ClickedDB = {
 ["value"] = true,
 ["selected"] = false,
 },
-["spellKnown"] = {
-["value"] = "",
-["selected"] = false,
-},
 ["stealth"] = {
 ["value"] = true,
+["selected"] = false,
+},
+["spellKnown"] = {
+["value"] = "",
 ["selected"] = false,
 },
 ["mounted"] = {
@@ -1467,11 +1467,11 @@ ClickedDB = {
 ["type"] = 1,
 ["action"] = {
 ["macroValue"] = "",
-["cancelQueuedSpell"] = true,
-["cancelForm"] = false,
+["itemValue"] = "",
+["spellValue"] = 2782,
 ["targetUnitAfterCast"] = false,
 ["auraName"] = "",
-["itemValue"] = "",
+["cancelQueuedSpell"] = true,
 ["startPetAttack"] = false,
 ["macroName"] = "Run custom macro",
 ["convertValueToId"] = true,
@@ -1479,7 +1479,7 @@ ClickedDB = {
 ["interrupt"] = false,
 ["startAutoAttack"] = false,
 ["macroIcon"] = "Interface\\ICONS\\INV_Misc_QuestionMark",
-["spellValue"] = 2782,
+["cancelForm"] = false,
 },
 ["keybind"] = "SHIFT-BUTTON1",
 ["integrations"] = {
@@ -1624,13 +1624,13 @@ ClickedDB = {
 ["value"] = true,
 ["selected"] = false,
 },
-["spellKnown"] = {
-["value"] = "Remove Corruption",
-["selected"] = true,
-},
 ["stealth"] = {
 ["value"] = true,
 ["selected"] = false,
+},
+["spellKnown"] = {
+["value"] = "Remove Corruption",
+["selected"] = true,
 },
 ["flyable"] = {
 ["value"] = true,
@@ -1644,7 +1644,7 @@ ClickedDB = {
 ["action"] = {
 ["macroValue"] = "",
 ["macroName"] = "Run custom macro",
-["cancelForm"] = false,
+["spellValue"] = 50769,
 ["targetUnitAfterCast"] = false,
 ["auraName"] = "",
 ["itemValue"] = "",
@@ -1655,7 +1655,7 @@ ClickedDB = {
 ["interrupt"] = false,
 ["startAutoAttack"] = false,
 ["startPetAttack"] = false,
-["spellValue"] = 50769,
+["cancelForm"] = false,
 },
 ["keybind"] = "SHIFT-BUTTON3",
 ["integrations"] = {
@@ -1732,13 +1732,13 @@ ClickedDB = {
 ["value"] = true,
 ["selected"] = false,
 },
-["stealth"] = {
-["value"] = true,
-["selected"] = false,
-},
 ["spellKnown"] = {
 ["value"] = "Revive",
 ["selected"] = true,
+},
+["stealth"] = {
+["value"] = true,
+["selected"] = false,
 },
 ["form"] = {
 ["single"] = 1,
@@ -1819,11 +1819,11 @@ ClickedDB = {
 ["type"] = 1,
 ["action"] = {
 ["macroName"] = "Run custom macro",
-["cancelQueuedSpell"] = true,
-["cancelForm"] = false,
+["itemValue"] = "",
+["spellValue"] = 8936,
 ["targetUnitAfterCast"] = false,
 ["auraName"] = "",
-["itemValue"] = "",
+["cancelQueuedSpell"] = true,
 ["startPetAttack"] = false,
 ["macroValue"] = "",
 ["convertValueToId"] = true,
@@ -1831,7 +1831,7 @@ ClickedDB = {
 ["interrupt"] = false,
 ["startAutoAttack"] = false,
 ["macroIcon"] = "Interface\\ICONS\\INV_Misc_QuestionMark",
-["spellValue"] = 8936,
+["cancelForm"] = false,
 },
 ["keybind"] = "SHIFT-BUTTON2",
 ["integrations"] = {
@@ -1976,13 +1976,13 @@ ClickedDB = {
 ["value"] = true,
 ["selected"] = false,
 },
-["stealth"] = {
-["value"] = true,
-["selected"] = false,
-},
 ["spellKnown"] = {
 ["value"] = "Regrowth",
 ["selected"] = true,
+},
+["stealth"] = {
+["value"] = true,
+["selected"] = false,
 },
 ["combat"] = {
 ["value"] = true,
@@ -1995,8 +1995,8 @@ ClickedDB = {
 ["type"] = 1,
 ["action"] = {
 ["macroValue"] = "",
-["cancelForm"] = true,
 ["spellValue"] = 131474,
+["cancelForm"] = true,
 ["targetUnitAfterCast"] = false,
 ["auraName"] = "",
 ["itemValue"] = "",
@@ -2153,12 +2153,12 @@ ClickedDB = {
 ["value"] = true,
 ["selected"] = false,
 },
-["spellKnown"] = {
-["value"] = "",
-["selected"] = false,
-},
 ["stealth"] = {
 ["value"] = true,
+["selected"] = false,
+},
+["spellKnown"] = {
+["value"] = "",
 ["selected"] = false,
 },
 ["flyable"] = {
@@ -2172,8 +2172,8 @@ ClickedDB = {
 ["type"] = 1,
 ["action"] = {
 ["macroValue"] = "",
-["cancelForm"] = false,
 ["spellValue"] = 391054,
+["cancelForm"] = false,
 ["targetUnitAfterCast"] = false,
 ["auraName"] = "",
 ["itemValue"] = "",
@@ -2330,12 +2330,12 @@ ClickedDB = {
 ["value"] = true,
 ["selected"] = false,
 },
-["spellKnown"] = {
-["value"] = "",
-["selected"] = false,
-},
 ["stealth"] = {
 ["value"] = true,
+["selected"] = false,
+},
+["spellKnown"] = {
+["value"] = "",
 ["selected"] = false,
 },
 ["flyable"] = {
@@ -2350,7 +2350,7 @@ ClickedDB = {
 ["action"] = {
 ["macroValue"] = "",
 ["macroName"] = "Run custom macro",
-["cancelForm"] = false,
+["spellValue"] = 213644,
 ["targetUnitAfterCast"] = false,
 ["auraName"] = "",
 ["itemValue"] = "",
@@ -2361,7 +2361,7 @@ ClickedDB = {
 ["interrupt"] = false,
 ["startAutoAttack"] = false,
 ["startPetAttack"] = false,
-["spellValue"] = 213644,
+["cancelForm"] = false,
 },
 ["keybind"] = "SHIFT-BUTTON1",
 ["integrations"] = {
@@ -2441,12 +2441,12 @@ ClickedDB = {
 ["value"] = true,
 ["selected"] = false,
 },
-["stealth"] = {
-["value"] = true,
-["selected"] = false,
-},
 ["spellKnown"] = {
 ["value"] = "",
+["selected"] = false,
+},
+["stealth"] = {
+["value"] = true,
 ["selected"] = false,
 },
 ["form"] = {
@@ -2531,7 +2531,7 @@ ClickedDB = {
 ["action"] = {
 ["macroValue"] = "",
 ["macroName"] = "Run custom macro",
-["cancelForm"] = false,
+["spellValue"] = 7328,
 ["targetUnitAfterCast"] = false,
 ["auraName"] = "",
 ["itemValue"] = "",
@@ -2542,7 +2542,7 @@ ClickedDB = {
 ["interrupt"] = false,
 ["startAutoAttack"] = false,
 ["startPetAttack"] = false,
-["spellValue"] = 7328,
+["cancelForm"] = false,
 },
 ["keybind"] = "CTRL-BUTTON2",
 ["integrations"] = {
@@ -2622,12 +2622,12 @@ ClickedDB = {
 ["value"] = true,
 ["selected"] = false,
 },
-["stealth"] = {
-["value"] = true,
-["selected"] = false,
-},
 ["spellKnown"] = {
 ["value"] = "",
+["selected"] = false,
+},
+["stealth"] = {
+["value"] = true,
 ["selected"] = false,
 },
 ["form"] = {
@@ -2707,8 +2707,8 @@ ClickedDB = {
 ["type"] = 1,
 ["action"] = {
 ["macroValue"] = "",
-["cancelForm"] = false,
 ["spellValue"] = 19750,
+["cancelForm"] = false,
 ["targetUnitAfterCast"] = false,
 ["auraName"] = "",
 ["itemValue"] = "",
@@ -2869,12 +2869,12 @@ ClickedDB = {
 ["value"] = true,
 ["selected"] = false,
 },
-["stealth"] = {
-["value"] = true,
-["selected"] = false,
-},
 ["spellKnown"] = {
 ["value"] = "",
+["selected"] = false,
+},
+["stealth"] = {
+["value"] = true,
 ["selected"] = false,
 },
 ["combat"] = {
@@ -2888,11 +2888,11 @@ ClickedDB = {
 ["type"] = 1,
 ["action"] = {
 ["macroName"] = "Run custom macro",
-["cancelForm"] = false,
 ["spellValue"] = 8936,
+["cancelForm"] = false,
 ["targetUnitAfterCast"] = false,
 ["auraName"] = "",
-["cancelQueuedSpell"] = true,
+["itemValue"] = "",
 ["macroIcon"] = "Interface\\ICONS\\INV_Misc_QuestionMark",
 ["macroValue"] = "",
 ["convertValueToId"] = true,
@@ -2900,7 +2900,7 @@ ClickedDB = {
 ["interrupt"] = false,
 ["startAutoAttack"] = false,
 ["startPetAttack"] = false,
-["itemValue"] = "",
+["cancelQueuedSpell"] = true,
 },
 ["keybind"] = "4",
 ["integrations"] = {
@@ -2977,13 +2977,13 @@ ClickedDB = {
 ["value"] = true,
 ["selected"] = false,
 },
-["spellKnown"] = {
-["value"] = "Regrowth",
-["selected"] = true,
-},
 ["stealth"] = {
 ["value"] = true,
 ["selected"] = false,
+},
+["spellKnown"] = {
+["value"] = "Regrowth",
+["selected"] = true,
 },
 ["never"] = false,
 ["talent"] = {
@@ -3065,7 +3065,7 @@ ClickedDB = {
 ["action"] = {
 ["macroValue"] = "",
 ["macroName"] = "Run custom macro",
-["cancelForm"] = false,
+["spellValue"] = 61999,
 ["targetUnitAfterCast"] = false,
 ["auraName"] = "",
 ["itemValue"] = "",
@@ -3076,7 +3076,7 @@ ClickedDB = {
 ["interrupt"] = false,
 ["startAutoAttack"] = false,
 ["startPetAttack"] = false,
-["spellValue"] = 61999,
+["cancelForm"] = false,
 },
 ["keybind"] = "CTRL-BUTTON1",
 ["integrations"] = {
@@ -3156,12 +3156,12 @@ ClickedDB = {
 ["value"] = true,
 ["selected"] = false,
 },
-["stealth"] = {
-["value"] = true,
-["selected"] = false,
-},
 ["spellKnown"] = {
 ["value"] = "",
+["selected"] = false,
+},
+["stealth"] = {
+["value"] = true,
 ["selected"] = false,
 },
 ["form"] = {
@@ -3241,11 +3241,11 @@ ClickedDB = {
 ["type"] = 1,
 ["action"] = {
 ["macroName"] = "Run custom macro",
-["itemValue"] = "",
-["spellValue"] = 8004,
+["cancelQueuedSpell"] = true,
+["cancelForm"] = false,
 ["targetUnitAfterCast"] = false,
 ["auraName"] = "",
-["cancelQueuedSpell"] = true,
+["itemValue"] = "",
 ["startPetAttack"] = false,
 ["macroValue"] = "",
 ["convertValueToId"] = true,
@@ -3253,7 +3253,7 @@ ClickedDB = {
 ["interrupt"] = false,
 ["startAutoAttack"] = false,
 ["macroIcon"] = "Interface\\ICONS\\INV_Misc_QuestionMark",
-["cancelForm"] = false,
+["spellValue"] = 8004,
 },
 ["keybind"] = "1",
 ["scope"] = 1,
@@ -3397,13 +3397,13 @@ ClickedDB = {
 ["value"] = true,
 ["selected"] = false,
 },
-["spellKnown"] = {
-["value"] = "Healing Surge",
-["selected"] = true,
-},
 ["stealth"] = {
 ["value"] = true,
 ["selected"] = false,
+},
+["spellKnown"] = {
+["value"] = "Healing Surge",
+["selected"] = true,
 },
 ["combat"] = {
 ["value"] = true,
@@ -3417,8 +3417,8 @@ ClickedDB = {
 ["type"] = 1,
 ["action"] = {
 ["macroValue"] = "",
-["spellValue"] = 2008,
 ["cancelForm"] = false,
+["spellValue"] = 2008,
 ["targetUnitAfterCast"] = false,
 ["auraName"] = "",
 ["itemValue"] = "",
@@ -3575,12 +3575,12 @@ ClickedDB = {
 ["value"] = true,
 ["selected"] = false,
 },
-["stealth"] = {
-["value"] = true,
-["selected"] = false,
-},
 ["spellKnown"] = {
 ["value"] = "",
+["selected"] = false,
+},
+["stealth"] = {
+["value"] = true,
 ["selected"] = false,
 },
 ["flyable"] = {
@@ -3594,11 +3594,11 @@ ClickedDB = {
 ["type"] = 1,
 ["action"] = {
 ["macroName"] = "Run custom macro",
-["spellValue"] = 974,
 ["cancelForm"] = false,
+["spellValue"] = 974,
 ["targetUnitAfterCast"] = false,
 ["auraName"] = "",
-["itemValue"] = "",
+["cancelQueuedSpell"] = true,
 ["macroIcon"] = "Interface\\ICONS\\INV_Misc_QuestionMark",
 ["macroValue"] = "",
 ["convertValueToId"] = true,
@@ -3606,7 +3606,7 @@ ClickedDB = {
 ["interrupt"] = false,
 ["startAutoAttack"] = false,
 ["startPetAttack"] = false,
-["cancelQueuedSpell"] = true,
+["itemValue"] = "",
 },
 ["keybind"] = "2",
 ["scope"] = 1,
@@ -3682,13 +3682,13 @@ ClickedDB = {
 ["value"] = true,
 ["selected"] = false,
 },
-["stealth"] = {
-["value"] = true,
-["selected"] = false,
-},
 ["spellKnown"] = {
 ["value"] = "Earth Shield",
 ["selected"] = true,
+},
+["stealth"] = {
+["value"] = true,
+["selected"] = false,
 },
 ["form"] = {
 ["single"] = 1,
@@ -3770,8 +3770,8 @@ ClickedDB = {
 ["type"] = 1,
 ["action"] = {
 ["macroValue"] = "",
-["spellValue"] = 77130,
 ["cancelForm"] = false,
+["spellValue"] = 77130,
 ["targetUnitAfterCast"] = false,
 ["auraName"] = "",
 ["itemValue"] = "",
@@ -3927,13 +3927,13 @@ ClickedDB = {
 ["value"] = true,
 ["selected"] = false,
 },
-["spellKnown"] = {
-["value"] = "Purify Spirit",
-["selected"] = true,
-},
 ["stealth"] = {
 ["value"] = true,
 ["selected"] = false,
+},
+["spellKnown"] = {
+["value"] = "Purify Spirit",
+["selected"] = true,
 },
 ["playerNameRealm"] = {
 ["value"] = "Sevenroll",
@@ -3947,7 +3947,7 @@ ClickedDB = {
 ["action"] = {
 ["macroValue"] = "",
 ["macroName"] = "Run custom macro",
-["spellValue"] = 974,
+["cancelForm"] = false,
 ["targetUnitAfterCast"] = false,
 ["auraName"] = "",
 ["itemValue"] = "",
@@ -3958,7 +3958,7 @@ ClickedDB = {
 ["interrupt"] = false,
 ["startAutoAttack"] = false,
 ["startPetAttack"] = false,
-["cancelForm"] = false,
+["spellValue"] = 974,
 },
 ["keybind"] = "SHIFT-MOUSEWHEELUP",
 ["scope"] = 1,
@@ -4037,12 +4037,12 @@ ClickedDB = {
 ["value"] = true,
 ["selected"] = false,
 },
-["spellKnown"] = {
-["value"] = "",
-["selected"] = false,
-},
 ["stealth"] = {
 ["value"] = true,
+["selected"] = false,
+},
+["spellKnown"] = {
+["value"] = "",
 ["selected"] = false,
 },
 ["never"] = false,
@@ -4123,8 +4123,8 @@ ClickedDB = {
 ["type"] = 1,
 ["action"] = {
 ["macroValue"] = "",
-["spellValue"] = 8004,
 ["cancelForm"] = false,
+["spellValue"] = 8004,
 ["targetUnitAfterCast"] = false,
 ["auraName"] = "",
 ["itemValue"] = "",
@@ -4281,12 +4281,12 @@ ClickedDB = {
 ["value"] = true,
 ["selected"] = false,
 },
-["spellKnown"] = {
-["value"] = "",
-["selected"] = false,
-},
 ["stealth"] = {
 ["value"] = true,
+["selected"] = false,
+},
+["spellKnown"] = {
+["value"] = "",
 ["selected"] = false,
 },
 ["combat"] = {

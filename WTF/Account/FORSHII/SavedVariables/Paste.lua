@@ -6,10 +6,10 @@ PasteDB = {
 ["Sevdh - Tarren Mill"] = "Default",
 ["Lftwgldshare - Draenor"] = "Default",
 ["Sevenroll - Tarren Mill"] = "Default",
-["Sevwar - Tarren Mill"] = "Default",
+["Sevdeekaytwo - Tarren Mill"] = "Default",
 ["Sevdk - Tarren Mill"] = "Default",
 ["Sevensides - Tarren Mill"] = "Default",
-["Sevdeekaytwo - Tarren Mill"] = "Default",
+["Sevwar - Tarren Mill"] = "Default",
 },
 ["profiles"] = {
 ["Default"] = {
