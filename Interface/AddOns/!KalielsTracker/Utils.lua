@@ -63,14 +63,7 @@ end
 
 -- Tasks
 function KT.GetNumTasks()
-    local tasksTable = GetTasksTable()
-    local numTasks = #tasksTable
-    for i = 1, #tasksTable do
-        if not QuestUtils_IsQuestWatched(tasksTable[i]) then
-            numTasks = numTasks - 1
-        end
-    end
-    return numTasks
+    return #GetTasksTable()
 end
 
 -- Recipes
@@ -230,10 +223,10 @@ function KT.GameTooltip_AddQuestRewardsToTooltip(tooltip, questID, isBonus)
                 color = isUsable and ITEM_QUALITY_COLORS[quality] or colorNotUsable
             elseif lootType == 1 then
                 -- currency
-                local name, texture, amount, currencyID, quality = GetQuestLogRewardCurrencyInfo(i, questID, true)
-                amount = FormatLargeNumber(amount)
-                text = format(BONUS_OBJECTIVE_REWARD_WITH_COUNT_FORMAT, texture, HIGHLIGHT_FONT_COLOR:WrapTextInColorCode(amount), name)
-                color = ITEM_QUALITY_COLORS[quality]
+                local currencyInfo = C_QuestLog.GetQuestRewardCurrencyInfo(questID, i, true)
+                local amount = FormatLargeNumber(currencyInfo.totalRewardAmount)
+                text = format(BONUS_OBJECTIVE_REWARD_WITH_COUNT_FORMAT, currencyInfo.texture, HIGHLIGHT_FONT_COLOR:WrapTextInColorCode(amount), currencyInfo.name)
+                color = ITEM_QUALITY_COLORS[currencyInfo.quality]
             end
             if text and color then
                 tooltip:AddLine(text, color.r, color.g, color.b)
@@ -422,6 +415,24 @@ function KT.InCombatBlocked()
         UIErrorsFrame:AddExternalErrorMessage("This operation cannot be completed during combat.")
     end
     return blocked
+end
+
+-- Icons
+local QUEST_REWARD_CONTEXT_ICONS = {
+    [Enum.QuestRewardContextFlags.FirstCompletionBonus] = "warbands-icon",
+    [Enum.QuestRewardContextFlags.RepeatCompletionBonus] = "warbands-icon",
+}
+
+function KT.GetBestQuestRewardContextIcon(questRewardContextFlags)
+    local contextIcon
+    if questRewardContextFlags then
+        if (FlagsUtil.IsSet(questRewardContextFlags, Enum.QuestRewardContextFlags.FirstCompletionBonus)) then
+            contextIcon = QUEST_REWARD_CONTEXT_ICONS[Enum.QuestRewardContextFlags.FirstCompletionBonus]
+        elseif (FlagsUtil.IsSet(questRewardContextFlags, Enum.QuestRewardContextFlags.RepeatCompletionBonus)) then
+            contextIcon = QUEST_REWARD_CONTEXT_ICONS[Enum.QuestRewardContextFlags.RepeatCompletionBonus]
+        end
+    end
+    return contextIcon
 end
 
 -- =====================================================================================================================

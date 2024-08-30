@@ -1,6 +1,6 @@
 # TalentTree Viewer (Loader)
 
-## [v2.4.10](https://github.com/NumyAddon/TalentTreeViewer/tree/v2.4.10) (2024-08-22)
-[Full Changelog](https://github.com/NumyAddon/TalentTreeViewer/compare/v2.4.9...v2.4.10) [Previous Releases](https://github.com/NumyAddon/TalentTreeViewer/releases)
+## [v2.4.11](https://github.com/NumyAddon/TalentTreeViewer/tree/v2.4.11) (2024-08-26)
+[Full Changelog](https://github.com/NumyAddon/TalentTreeViewer/compare/v2.4.10...v2.4.11) [Previous Releases](https://github.com/NumyAddon/TalentTreeViewer/releases)
 
-- Fix a rare error (closes GH#10)  
+- Update LibTalentTree to fix druid hero talents showing incorrectly (fixes #11)  

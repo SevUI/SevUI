@@ -1,21 +1,17 @@
 # Kaliel's Tracker changelog
-### 7.0.1
-- CHANGED - addon support - TomTom 4.0.3
-- CHANGED - TomTom - show POI button with and without waypoint (waypoint announcement removed)
-- CHANGED - deprecated functions in WoW 11.0.2
-- FIXED - some buttons stopped working only for some players
-- FIXED (scenario) - incorrect Scenario detection
-- FIXED - incorrect progress bar animation
-- FIXED (worldquests) - incorrect num task detection
-- FIXED (filter) - lose the focused quest when change zone with auto filter on
-### 7.0.0
-- ADDED - test of automatically tracked quests + alert with instructions for fix (inside Options)
-- ADDED (filter) - test of maximum tracked quests (25)
-- ADDED - support for WoW 11.0.2
-- CHANGED (help) - Active Patrons
-- CHANGED - addon support - ElvUI 13.74, Tukui 20.443
-- CHANGED - addon support - TomTom 4.0.1
-- CHANGED - addon support - Masque 11.0.1
-- CHANGED - addon support disabled - PetTracker
-- CHANGED - Libs
-- REMOVED (quests) - tracking override
+### 7.3.1
+- ADDED (quest) - show the Warband bonus icon on the reward in the tooltip
+- CHANGED - TomTom - minor improvements
+- FIXED (quests) - reward information in the tooltip is sometimes not displayed
+- FIXED - TomTom - green tag is not hidden when switching to Blizzard pin
+- PERFORMANCE (quests) - optimization of sorting code
+- PERFORMANCE - optimization of zone filtering code
+### 7.3.0
+- ADDED (quests) - filter support for Delves (Instance filter)
+- ADDED (scenario) - support for Delves and minor improvements (2)
+- ADDED (quests) - new tag for Delves
+- ADDED (filter) - use Shift+Click in the &quot;F&quot; menu, for incremental filtering of quests (Click only switches between groups of filters)
+- ADDED (scenario) - support for Delves and minor improvements
+- ADDED (quests) - sorting - is on map &gt; zone &gt; level &gt; title
+- CHANGED - TomTom - minor improvements
+- PERFORMANCE (achievements) - optimization of filtering code

@@ -391,11 +391,10 @@ local function OnChatMsgMonsterEmote(rareScannerButton, message, name)
 		return
 	end
 
-	-- Check for Mechagon Construction Projects
 	local mapID = C_Map.GetBestMapForUnit("player")
-	if (mapID and mapID == RSConstants.MECHAGON_MAPID) then
-		for constructionProject, npcID in pairs(private.CONSTRUCTION_PROJECTS) do
-			if (RSUtils.Contains(message, constructionProject)) then
+	if (mapID and (mapID == RSConstants.MECHAGON_MAPID or mapID == RSConstants.RINGING_DEEPS or mapID == RSConstants.AZJ_KAHET1 or mapID == RSConstants.AZJ_KAHET2 or mapID == RSConstants.AZJ_KAHET3 or mapID == RSConstants.AZJ_KAHET4)) then
+		for msg, npcID in pairs(private.MONSTER_EMOTE) do
+			if (RSUtils.Contains(message, msg)) then
 				-- Simulates vignette event
 				if (RSNpcDB.GetInternalNpcInfo(npcID) and not RSNpcDB.IsNpcKilled(npcID)) then
 					local x, y = RSNpcDB.GetInternalNpcCoordinates(npcID, mapID)
@@ -406,6 +405,8 @@ local function OnChatMsgMonsterEmote(rareScannerButton, message, name)
 			end
 		end
 	end
+	
+	-- Check for 
 end
 
 ---============================================================================

@@ -3,7 +3,7 @@
 ## Notes: View any spec's talent trees from any character. This module is only for The War Within!
 ## Author: Numy
 ## IconTexture: Interface\Addons\TalentTreeViewer\media\icon
-## Version: v2.4.10
+## Version: v2.4.11
 ## X-Curse-Project-ID: 678279
 ## RequiredDeps: Blizzard_PlayerSpells, TalentTreeViewer_Loader
 ## LoadOnDemand: 1

@@ -1,6 +1,6 @@
-## Interface: 100207
+## Interface: 110002
 ## Title: OmniCD Battle Res
-## Version: 0.0.20
+## Version: 0.0.21
 ## Author: Treebonker
 ## Notes: Battle res plugin for OmniCD
 ## X-License: All Rights Reserved

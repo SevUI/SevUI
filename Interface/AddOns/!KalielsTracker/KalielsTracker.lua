@@ -46,6 +46,7 @@ local freeIcons = {}
 local freeTags = {}
 local freeButtons = {}
 local msgPatterns = {}
+local tooltipUpdate = { questID = 0, counter = 0 }
 local combatLockdown = false
 local db, dbChar
 
@@ -57,6 +58,7 @@ KT.frame = KTF
 local OTF = KT_ObjectiveTrackerFrame
 local OTFHeader = OTF.Header
 local MawBuffs = KT_ScenarioObjectiveTracker.MawBuffsBlock.Container
+local BaseScenarioWidget
 
 --------------
 -- Internal --
@@ -88,7 +90,25 @@ local function ObjectiveTracker_Toggle()
 	OTF:ToggleCollapsed()
 end
 
-local function SetHeaders(type)
+local function HasTrackerContents()
+	local result = false
+	for _, module in ipairs(OTF.modules) do
+		if module.hasContents then
+			result = true
+			break
+		end
+	end
+	return result
+end
+
+local function ShowTrackerHeader()
+	local show = (not dbChar.collapsed and HasTrackerContents()) or db.hdrCollapsedTxt > 1
+	OTFHeader.Background:SetShown(db.hdrTrackerBgrShow and db.hdrBgr > 1 and show)
+	OTFHeader.Logo:SetShown(show)
+	OTFHeader.Text:SetShown(show)
+end
+
+local function SetHeadersStyle(type)
 	local bgrColor = db.hdrBgrColorShare and KT.borderColor or db.hdrBgrColor
 	local txtColor = db.hdrTxtColorShare and KT.borderColor or db.hdrTxtColor
 	if db.hdrBgr == 2 then
@@ -96,14 +116,11 @@ local function SetHeaders(type)
 	end
 
 	if not type or type == "background" then
-		if not db.hdrTrackerBgrShow or db.hdrBgr == 1 then
-			OTFHeader.Background:Hide()
-		elseif db.hdrBgr == 2 then
+		if db.hdrBgr == 2 then
 			OTFHeader.Background:SetAtlas("ui-questtracker-primary-objective-header", true)
 			OTFHeader.Background:SetVertexColor(1, 1, 1)
 			OTFHeader.Background:ClearAllPoints()
 			OTFHeader.Background:SetPoint("CENTER")
-			OTFHeader.Background:SetShown(not dbChar.collapsed or db.hdrCollapsedTxt == 2)
 		elseif db.hdrBgr >= 3 then
 			OTFHeader.Background:SetTexture(mediaPath.."UI-KT-HeaderBackground-"..(db.hdrBgr - 2))
 			OTFHeader.Background:SetVertexColor(bgrColor.r, bgrColor.g, bgrColor.b)
@@ -111,8 +128,8 @@ local function SetHeaders(type)
 			OTFHeader.Background:SetPoint("TOPLEFT", -20, -2)
 			OTFHeader.Background:SetPoint("TOPRIGHT", 17, -2)
 			OTFHeader.Background:SetHeight(32)
-			OTFHeader.Background:SetShown(not dbChar.collapsed or db.hdrCollapsedTxt == 2)
 		end
+		ShowTrackerHeader()
 
 		for _, header in ipairs(KT.headers) do
 			if db.hdrBgr == 1 then
@@ -297,6 +314,7 @@ local function SetFrames()
 			KT.inWorld = false
 		elseif event == "SCENARIO_UPDATE" then
 			local newStage = ...
+			KT.inInstance = IsInInstance()
 			if not C_Scenario.IsInScenario() or IsInJailersTower() == nil or IsOnGroundFloorInJailersTower() == true then
 				KT.inScenario = false
 			else
@@ -312,6 +330,7 @@ local function SetFrames()
 				KT_ObjectiveTracker_Update()]]
 			end
 		elseif event == "SCENARIO_COMPLETED" then
+			KT.inInstance = IsInInstance()
 			KT.inScenario = false
 			KT_ScenarioObjectiveTracker:MarkDirty()
 		elseif event == "QUEST_AUTOCOMPLETE" then
@@ -403,7 +422,7 @@ local function SetFrames()
 	button:SetScript("OnClick", function(self, btn)
 		if IsAltKeyDown() then
 			KT:OpenOptions()
-		elseif not KT:IsTrackerEmpty() and not KT.locked then
+		elseif HasTrackerContents() and not KT.locked then
 			KT:MinimizeButton_OnClick()
 		end
 	end)
@@ -479,7 +498,9 @@ local function SetFrames()
 	KT_ScenarioObjectiveTracker.fromBlockOffsetY = 0
 	KT_ScenarioObjectiveTracker.lineSpacing = 4
 	KT_ScenarioObjectiveTracker.ObjectivesBlock.offsetX = 40
+	KT_ScenarioObjectiveTracker.ObjectivesBlock.HeaderButton:EnableMouse(false)
 	KT_ScenarioObjectiveTracker.StageBlock.offsetX = 24
+	KT_ScenarioObjectiveTracker.ProvingGroundsBlock.offsetX = 27
 	KT_ScenarioObjectiveTracker.MawBuffsBlock.offsetX = 0
 	KT_ScenarioObjectiveTracker.TopWidgetContainerBlock.offsetX = 28
 	MawBuffs.List:SetParent(UIParent)
@@ -600,13 +621,6 @@ local function SetHooks()
 
 	-- ------------------------------------------------------------------------------------------------
 
-	local function SetTrackerHeader(show)
-		show = db.hdrCollapsedTxt > 1 or show
-		OTFHeader.Background:SetShown((db.hdrTrackerBgrShow and db.hdrBgr > 1) and show)
-		OTFHeader.Logo:SetShown(show)
-		OTFHeader.Text:SetShown(show)
-	end
-
 	local bck_OTF_Update = OTF.Update
 	function OTF:Update(dirtyUpdate)
 		if KT.stopUpdate then return end
@@ -614,7 +628,7 @@ local function SetHooks()
 		bck_OTF_Update(self, dirtyUpdate)
 
 		FixedButtonsReanchor()
-		SetTrackerHeader(not dbChar.collapsed)
+		ShowTrackerHeader()
 		KT:ToggleEmptyTracker()
 		KT:SetSize()
 	end
@@ -695,7 +709,7 @@ local function SetHooks()
 		if line.Icon and (not line.Icon.KTskinned or KT.forcedUpdate) then
 			line.Icon:SetSize(db.fontSize, db.fontSize)
 			line.Icon:ClearAllPoints()
-			line.Icon:SetPoint("TOPLEFT", round(-db.fontSize * 0.4) + (db.fontFlag == "" and 0 or 1), db.fontSize >= 18 and 1 or 0)
+			line.Icon:SetPoint("TOPLEFT", round(-db.fontSize * 0.4) + (db.fontFlag == "" and 0 or 1), 1)
 			line.Icon.KTskinned = true
 		end
 
@@ -811,8 +825,8 @@ local function SetHooks()
 		end
 	end
 
-	local function TooltipPosition(block, xOffsetLeft, yOffsetLeft, xOffsetRight, yOffsetRight)
-		if not GameTooltip:GetOwner() then
+	local function TooltipPosition(block, xOffsetLeft, yOffsetLeft, xOffsetRight, yOffsetRight, skipSetOwner)
+		if not skipSetOwner then
 			GameTooltip:SetOwner(block, "ANCHOR_NONE")
 		end
 		GameTooltip:ClearAllPoints()
@@ -837,8 +851,21 @@ local function SetHooks()
 				end
 				GameTooltip:SetHyperlink(questLink)
 				if db.tooltipShowRewards then
-					if HaveQuestRewardData(block.id) then
+					-- Check only 4 times, because some quests always return false
+					if HaveQuestRewardData(block.id) or tooltipUpdate.counter >= 4 then
+						tooltipUpdate.questID = 0
+						tooltipUpdate.counter = 0
 						KT.GameTooltip_AddQuestRewardsToTooltip(GameTooltip, block.id)
+					else
+						tooltipUpdate.questID = block.id
+						tooltipUpdate.counter = tooltipUpdate.counter + 1
+						GameTooltip:AddLine(" ")
+						GameTooltip:AddLine(KT.RETRIEVING_DATA, RED_FONT_COLOR.r, RED_FONT_COLOR.g, RED_FONT_COLOR.b)
+						C_Timer.After(0.1, function()
+							if tooltipUpdate.questID == block.id then
+								self:OnBlockHeaderEnter(block)
+							end
+						end)
 					end
 				end
 				if IsInGroup() then
@@ -873,6 +900,11 @@ local function SetHooks()
 
 	function KT_ObjectiveTrackerModuleMixin:OnBlockHeaderLeave(block)
 		if db.tooltipShow then
+			if self == KT_QuestObjectiveTracker or
+					self == KT_CampaignQuestObjectiveTracker then
+				tooltipUpdate.questID = 0
+				tooltipUpdate.counter = 0
+			end
 			GameTooltip:Hide()
 		end
 	end
@@ -898,19 +930,20 @@ local function SetHooks()
 
 			TooltipPosition(self)
 
-			if not HaveQuestRewardData(questID) then
-				GameTooltip:AddLine(RETRIEVING_DATA, RED_FONT_COLOR.r, RED_FONT_COLOR.g, RED_FONT_COLOR.b);
-				GameTooltip_SetTooltipWaitingForData(GameTooltip, true);
-			else
-				GameTooltip:SetHyperlink(questLink)
-				if db.tooltipShowRewards then
+			GameTooltip:SetHyperlink(questLink)
+			if db.tooltipShowRewards then
+				if not HaveQuestRewardData(questID) then
+					GameTooltip:AddLine(" ")
+					GameTooltip:AddLine(KT.RETRIEVING_DATA, RED_FONT_COLOR.r, RED_FONT_COLOR.g, RED_FONT_COLOR.b);
+					GameTooltip_SetTooltipWaitingForData(GameTooltip, true);
+				else
 					KT.GameTooltip_AddQuestRewardsToTooltip(GameTooltip, questID, true)
 					GameTooltip_SetTooltipWaitingForData(GameTooltip, false);
 				end
-				if db.tooltipShowID then
-					GameTooltip:AddLine(" ")
-					GameTooltip:AddDoubleLine(" ", "ID: |cffffffff"..questID)
-				end
+			end
+			if db.tooltipShowID then
+				GameTooltip:AddLine(" ")
+				GameTooltip:AddDoubleLine(" ", "ID: |cffffffff"..questID)
 			end
 
 			GameTooltip:Show();
@@ -1484,18 +1517,28 @@ local function SetHooks()
 		end
 	end)
 
+	-- WidgetSetID:
+	-- 461 ... Ember Court
+	-- 291 ... Torghast (3302, 11)
+	-- 842 ... Delves (6183, 29)
 	hooksecurefunc(KT_ScenarioObjectiveTracker.StageBlock, "UpdateStageBlock", function(self, scenarioID, scenarioType, widgetSetID, textureKit, flags, currentStage, stageName, numStages)
-		if textureKit == "jailerstower-scenario" then
+		if widgetSetID == 291 then
 			self.offsetX = 27
 			self.KTtooltipOffsetXmod = 3
+			self.KTtooltipOffsetYmod = 0
+		elseif widgetSetID == 842 then
+			self.offsetX = 17
+			self.KTtooltipOffsetXmod = -7
+			self.KTtooltipOffsetYmod = 3
 		else
 			self.offsetX = 24
 			self.KTtooltipOffsetXmod = 0
+			self.KTtooltipOffsetYmod = 0
 		end
 	end)
 
 	KT_ScenarioObjectiveTracker.StageBlock:HookScript("OnEnter", function(self)
-		TooltipPosition(self, 19, -1, -26 - self.KTtooltipOffsetXmod, -1)
+		TooltipPosition(self, 19, -1, -26 - self.KTtooltipOffsetXmod, -1 - self.KTtooltipOffsetYmod, true)
 	end)
 
 	hooksecurefunc(OTF.Header, "SetCollapsed", function(self, collapsed)
@@ -1531,6 +1574,14 @@ local function SetHooks()
 		poiButton:SetPoint("TOPRIGHT", self.HeaderText, "TOPLEFT", -7, 3)
 		poiButton:SetPingWorldMap(isWorldQuest)
 	end
+
+	hooksecurefunc(UIWidgetBaseScenarioHeaderTemplateMixin, "Setup", function(self, widgetInfo, widgetContainer)
+		if not self.KTskinned or KT.forcedUpdate then
+			self.HeaderText:SetFont(KT.font, db.fontSize + 4, db.fontFlag)  -- see KT:SetText()
+			BaseScenarioWidget = self
+			self.KTskinned = true
+		end
+	end)
 
 	-- ContentTrackingManager.lua
 	local function OnContentTrackingUpdate(self, trackableType, id, isTracked)
@@ -1600,23 +1651,31 @@ local function SetHooks()
 			if firstInstance then
 				uniqueCurrencyIDs[currencyReward.currencyID] = true;
 			end
-			local currencyInfo = { name = currencyReward.name, texture = currencyReward.texture, numItems = currencyReward.totalRewardAmount, currencyID = currencyReward.currencyID, rarity = rarity, firstInstance = firstInstance };
+			local currencyInfo = { name = currencyReward.name,
+								   texture = currencyReward.texture,
+								   numItems = currencyReward.totalRewardAmount,
+								   currencyID = currencyReward.currencyID,
+								   questRewardContextFlags = currencyReward.questRewardContextFlags,
+								   rarity = rarity,
+								   firstInstance = firstInstance,
+								};
 			if(currencyInfo.currencyID ~= ECHOS_OF_NYLOTHA_CURRENCY_ID or #currencyRewards == 1) then
 				tinsert(currencies, currencyInfo);
 			end
 		end
 
 		table.sort(currencies,
-				function(currency1, currency2)
-					if currency1.rarity ~= currency2.rarity then
-						return currency1.rarity > currency2.rarity;
-					end
-					return currency1.currencyID > currency2.currencyID;
+			function(currency1, currency2)
+				if currency1.rarity ~= currency2.rarity then
+					return currency1.rarity > currency2.rarity;
 				end
+				return currency1.currencyID > currency2.currencyID;
+			end
 		);
 
 		local addedQuestCurrencies = 0;
 		local alreadyUsedCurrencyContainerId = 0; --In the case of multiple currency containers needing to displayed, we only display the first.
+		local alreadyUsedCurrencyContainerInfo = nil;  --In the case of multiple currency containers needing to displayed, we only display the first.
 		local warModeBonus = C_PvP.GetWarModeRewardBonus();
 
 		for i, currencyInfo in ipairs(currencies) do
@@ -1634,6 +1693,7 @@ local function SetHooks()
 
 					addedQuestCurrencies = addedQuestCurrencies + 1;
 					alreadyUsedCurrencyContainerId = currencyInfo.currencyID;
+					alreadyUsedCurrencyContainerInfo = currencyInfo;
 				end
 			elseif ( tooltip ) then
 				if( alreadyUsedCurrencyContainerId ~= currencyInfo.currencyID ) then --if there's already a currency container of this same type skip it entirely
@@ -1643,6 +1703,10 @@ local function SetHooks()
 						color = { r = 1, g = 1, b = 1 }
 					else
 						text = BONUS_OBJECTIVE_REWARD_WITH_COUNT_FORMAT:format(currencyInfo.texture, currencyInfo.numItems, currencyInfo.name);
+						local contextIcon = KT.GetBestQuestRewardContextIcon(currencyInfo.questRewardContextFlags)
+						if contextIcon then
+							text = text..CreateAtlasMarkup(contextIcon, 12, 16, 3, -1)
+						end
 						color = GetColorForCurrencyReward(currencyInfo.currencyID, currencyInfo.numItems);
 					end
 					tooltip:AddLine(text, color.r, color.g, color.b)
@@ -1655,7 +1719,7 @@ local function SetHooks()
 				end
 			end
 		end
-		return addedQuestCurrencies, alreadyUsedCurrencyContainerId > 0;
+		return addedQuestCurrencies, alreadyUsedCurrencyContainerId > 0, alreadyUsedCurrencyContainerInfo;
 	end
 
 	-- SplashFrame.lua
@@ -2233,10 +2297,9 @@ end
 -- External --
 --------------
 
-function KT:MinimizeButton_OnClick(autoClick)
+function KT:MinimizeButton_OnClick()
 	PlaySound(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_ON)
 	ObjectiveTracker_Toggle()
-	self.collapsedByUser = autoClick and nil or dbChar.collapsed
 end
 
 function KT_WorldQuestPOIButton_OnClick(self)
@@ -2257,7 +2320,7 @@ function KT:SetSize()
 	end
 
 	_DBG(" - height = "..OTF.contentsHeight)
-	if not dbChar.collapsed and not self:IsTrackerEmpty() then
+	if not dbChar.collapsed and HasTrackerContents() then
 		-- width
 		KTF:SetWidth(db.width)
 
@@ -2338,7 +2401,7 @@ function KT:SetBackground()
 	KTF:SetBackdropColor(db.bgrColor.r, db.bgrColor.g, db.bgrColor.b, db.bgrColor.a)
 	KTF:SetBackdropBorderColor(self.borderColor.r, self.borderColor.g, self.borderColor.b, db.borderAlpha)
 
-	SetHeaders("background")
+	SetHeadersStyle("background")
 
 	if db.hdrBgr == 2 then
 		self.hdrBtnColor = self.TRACKER_DEFAULT_COLOR
@@ -2369,16 +2432,23 @@ function KT:SetBackground()
 	KTF.Bar.texture:SetColorTexture(self.borderColor.r, self.borderColor.g, self.borderColor.b, db.borderAlpha)
 end
 
+-- TODO: Rename function
 function KT:SetText()
 	self.font = LSM:Fetch("font", db.font)
 	testLine.Dash:SetFont(self.font, db.fontSize, db.fontFlag)
 	self.dashWidth = testLine.Dash:GetWidth() + 1
 
 	-- Headers
-	SetHeaders("text")
+	SetHeadersStyle("text")
 
 	-- Others
 	KT_ScenarioObjectiveTracker.StageBlock.Stage:SetFont(self.font, db.fontSize + 5, db.fontFlag)
+	KT_ScenarioObjectiveTracker.ProvingGroundsBlock.WaveLabel:SetFont(self.font, db.fontSize + 5, db.fontFlag)
+	KT_ScenarioObjectiveTracker.ProvingGroundsBlock.Wave:SetFont(self.font, db.fontSize + 5, db.fontFlag)
+	KT_ScenarioObjectiveTracker.ProvingGroundsBlock.StatusBar:SetStatusBarTexture(LSM:Fetch("statusbar", db.progressBar))
+	if BaseScenarioWidget then
+		BaseScenarioWidget.HeaderText:SetFont(self.font, db.fontSize + 4, db.fontFlag)  -- see UIWidgetBaseScenarioHeaderTemplateMixin:Setup
+	end
 end
 
 function KT:SetHeaderButtons(numAddButtons)
@@ -2602,6 +2672,8 @@ function KT:CreateQuestTag(level, questTag, frequency, suggestedGroup)
 			tag = "r10"
 		elseif questTag == Enum.QuestTag.Raid25 then
 			tag = "r25"
+		elseif questTag == Enum.QuestTag.Delve then
+			tag = "de"
 		elseif questTag == Enum.QuestTag.Scenario then
 			tag = "s"
 		elseif questTag == Enum.QuestTag.Account then
@@ -2648,7 +2720,7 @@ end
 
 function KT:ToggleEmptyTracker()
 	local alpha, mouse = 1, true
-	if self:IsTrackerEmpty() or self.hidden then
+	if not HasTrackerContents() or self.hidden then
 		KTF.MinimizeButton:GetNormalTexture():SetTexCoord(0, 0.5, 0.5, 0.75)
 		if db.hideEmptyTracker or self.hidden then
 			alpha = 0
@@ -2748,7 +2820,6 @@ function KT:OnInitialize()
 	self.hiddenQuestPopUps = false
 	self.stopUpdate = true
 	self.questStateStopUpdate = false
-	self.collapsedByUser = dbChar.collapsed
 	self.hidden = false
 	self.locked = false
 	self.initialized = false

@@ -1,5 +1,5 @@
 -- Clicked, a World of Warcraft keybind manager.
--- Copyright (C) 2022  Kevin Krol
+-- Copyright (C) 2024  Kevin Krol
 --
 -- This program is free software: you can redistribute it and/or modify
 -- it under the terms of the GNU General Public License as published by
@@ -20,8 +20,8 @@ local GetMouseFoci = GetMouseFoci or function() return { GetMouseFocus() } end
 --- @class ClickedInternal
 local Addon = select(2, ...)
 
---- @enum BindingType
-Addon.BindingTypes = {
+--- @enum ActionType
+Clicked.ActionType = {
 	SPELL = "SPELL",
 	ITEM = "ITEM",
 	MACRO = "MACRO",
@@ -38,8 +38,8 @@ Addon.CommandType = {
 	MACRO = "macro"
 }
 
---- @enum TargetUnits
-Addon.TargetUnits = {
+--- @enum TargetUnit
+Addon.TargetUnit = {
 	DEFAULT = "DEFAULT",
 	PLAYER = "PLAYER",
 	TARGET = "TARGET",
@@ -86,12 +86,6 @@ Addon.GroupState = {
 Addon.InteractionType = {
 	REGULAR = 1,
 	HOVERCAST = 2
-}
-
---- @enum BindingScope
-Addon.BindingScope = {
-	PROFILE = 1,
-	GLOBAL = 2
 }
 
 --- @type Binding[]
@@ -156,7 +150,7 @@ local function GetMacroSegmentFromAction(action, interactionType, isLast)
 			local key = condition.negated and negated or value
 			local macro = key
 
-			if not Addon:IsStringNilOrEmpty(condition.value) then
+			if not Addon:IsNilOrEmpty(condition.value) then
 				macro = macro .. ":" .. condition.value
 			end
 
@@ -251,20 +245,20 @@ local function ConstructAction(binding, target)
 	AppendCondition(binding.load.swimming, "swimming")
 	AppendNegatableStringCondition(binding.load.channeling, "channeling")
 
-	if Addon.EXPANSION_LEVEL >= Addon.EXPANSION.BC then
+	if Addon.EXPANSION_LEVEL >= Addon.Expansion.BC then
 		AppendCondition(binding.load.flying, "flying")
 		AppendCondition(binding.load.flyable, "flyable")
 	end
 
-	if Addon.EXPANSION_LEVEL >= Addon.EXPANSION.CATA then
+	if Addon.EXPANSION_LEVEL >= Addon.Expansion.CATA then
 		AppendNegatableStringCondition(binding.load.bonusbar, "bonusbar")
 	end
 
-	if Addon.EXPANSION_LEVEL >= Addon.EXPANSION.DF then
+	if Addon.EXPANSION_LEVEL >= Addon.Expansion.DF then
 		AppendCondition(binding.load.advancedFlyable, "advflyable")
 	end
 
-	if Addon.EXPANSION_LEVEL >= Addon.EXPANSION.TWW then
+	if Addon.EXPANSION_LEVEL >= Addon.Expansion.TWW then
 		AppendCondition(binding.load.dynamicFlying, "dynamicFlying")
 	end
 
@@ -278,7 +272,7 @@ local function ConstructAction(binding, target)
 	end
 
 	if Addon:IsRestrictedKeybind(binding.keybind) or target.unit == nil then
-		action.unit = Addon.TargetUnits.MOUSEOVER
+		action.unit = Addon.TargetUnit.MOUSEOVER
 	else
 		action.unit = target.unit
 	end
@@ -329,8 +323,8 @@ local function SortActions(actions, indexMap)
 	local function SortFunc(left, right)
 		local priority = {
 			-- 1. Mouseover targets always come first
-			{ left = left.unit, right = right.unit, value = Addon.TargetUnits.MOUSEOVER, comparison = "eq" },
-			{ left = left.unit, right = right.unit, value = Addon.TargetUnits.MOUSEOVER_TARGET, comparison = "eq"},
+			{ left = left.unit, right = right.unit, value = Addon.TargetUnit.MOUSEOVER, comparison = "eq" },
+			{ left = left.unit, right = right.unit, value = Addon.TargetUnit.MOUSEOVER_TARGET, comparison = "eq"},
 
 			-- 2. Macro conditions take presedence over actions that don't specify them explicitly
 			{ left = left.hostility, right = right.hostility, value = 0, comparison = "gt" },
@@ -351,9 +345,9 @@ local function SortActions(actions, indexMap)
 			-- 3. Any actions that do not meet any of the criteria in this list will be placed here
 
 			-- 4. The player, cursor, and default targets will always come last
-			{ left = left.unit, right = right.unit, value = Addon.TargetUnits.PLAYER, comparison = "neq" },
-			{ left = left.unit, right = right.unit, value = Addon.TargetUnits.CURSOR, comparison = "neq" },
-			{ left = left.unit, right = right.unit, value = Addon.TargetUnits.DEFAULT, comparison = "neq" }
+			{ left = left.unit, right = right.unit, value = Addon.TargetUnit.PLAYER, comparison = "neq" },
+			{ left = left.unit, right = right.unit, value = Addon.TargetUnit.CURSOR, comparison = "neq" },
+			{ left = left.unit, right = right.unit, value = Addon.TargetUnit.DEFAULT, comparison = "neq" }
 		}
 
 		for _, item in ipairs(priority) do
@@ -421,11 +415,11 @@ local function ProcessBuckets()
 
 		command.prefix, command.suffix = Addon:CreateAttributeIdentifier(command.keybind, command.hovercast)
 
-		if Addon:GetInternalBindingType(reference) == Addon.BindingTypes.MACRO then
+		if Addon:GetInternalBindingType(reference) == Clicked.ActionType.MACRO then
 			command.action = Addon.CommandType.MACRO
 			command.data = Addon:GetMacroForBindings(bindings, interactionType)
 
-			if #command.data > 255 and not macroTooLongNotified[command.data] then
+			if strlenutf8(command.data) > 255 and not macroTooLongNotified[command.data] then
 				macroTooLongNotified[command.data] = true
 
 				local message = Addon.L["The generated macro for binding '%s' is too long and will not function, please adjust your bindings."]
@@ -433,13 +427,13 @@ local function ProcessBuckets()
 
 				print(Addon:GetPrefixedAndFormattedString(message, name))
 			end
-		elseif reference.actionType == Addon.BindingTypes.UNIT_SELECT then
+		elseif reference.actionType == Clicked.ActionType.UNIT_SELECT then
 			command.action = Addon.CommandType.TARGET
 
 			if reference.load.combat.selected then
 				command.data = reference.load.combat.value
 			end
-		elseif reference.actionType == Addon.BindingTypes.UNIT_MENU then
+		elseif reference.actionType == Clicked.ActionType.UNIT_MENU then
 			command.action = Addon.CommandType.MENU
 
 			if reference.load.combat.selected then
@@ -634,7 +628,7 @@ local function ReloadBindings(delayFrame)
 
 	Clicked:ProcessActiveBindings()
 
-	Addon:BindingConfig_Redraw()
+	Addon.BindingConfig.Window:OnBindingReload()
 	Addon.KeyVisualizer:Redraw()
 end
 
@@ -649,6 +643,8 @@ end
 function Clicked:ReloadBinding(binding, full, delayFrame, ...)
 	ProcessReloadBindingArguments(binding, full, delayFrame, ...)
 	ReloadBindings(delayFrame)
+
+	Addon:UpdateLookupTable(binding)
 end
 
 --- @param full boolean
@@ -659,6 +655,8 @@ end
 function Clicked:ReloadBindings(full, delayFrame, ...)
 	ProcessReloadArguments(full, delayFrame, ...)
 	ReloadBindings(delayFrame)
+
+	Addon:UpdateLookupTable()
 end
 
 function Clicked:ProcessActiveBindings()
@@ -733,7 +731,7 @@ function Clicked:GetBindingsForUnit(unit)
 	}
 
 	-- find other unit types that is valid for this target
-	for k in pairs(Addon.TargetUnits) do
+	for k in pairs(Addon.TargetUnit) do
 		local u = Addon:GetWoWUnitFromUnit(k)
 
 		if u ~= nil and u ~= unit and UnitGUID(u) == UnitGUID(unit) then
@@ -760,7 +758,7 @@ function Clicked:GetBindingsForUnit(unit)
 	--- @param binding Binding
 	--- @return boolean
 	local function IsBindingValidForUnit(binding)
-		if binding.actionType ~= Addon.BindingTypes.SPELL and binding.actionType ~= Addon.BindingTypes.ITEM then
+		if binding.actionType ~= Clicked.ActionType.SPELL and binding.actionType ~= Clicked.ActionType.ITEM then
 			return false
 		end
 
@@ -859,7 +857,7 @@ function Addon:UpdateTalentCacheAndReloadBindings(delay, ...)
 		return
 	end
 
-	if Addon.EXPANSION_LEVEL >= Addon.EXPANSION.DF then
+	if Addon.EXPANSION_LEVEL >= Addon.Expansion.DF then
 		wipe(talentCache)
 
 		local configId = C_ClassTalents.GetActiveConfigID()
@@ -908,7 +906,7 @@ function Addon:UpdateTalentCacheAndReloadBindings(delay, ...)
 				end
 			end
 		end
-	elseif Addon.EXPANSION_LEVEL >= Addon.EXPANSION.CATA then
+	elseif Addon.EXPANSION_LEVEL >= Addon.Expansion.CATA then
 		wipe(talentCache)
 
 		for tab = 1, GetNumTalentTabs() do
@@ -1019,8 +1017,7 @@ function Addon:UpdateBindingLoadState(binding, options)
 		state.targets = Addon:IsHovercastEnabled(binding) or Addon:IsMacroCastEnabled(binding)
 
 		do
-			local value = Addon:GetBindingValue(binding)
-			state.value = value == nil or #tostring(value) > 0
+			state.value = Addon:GetBindingValue(binding) ~= nil
 		end
 	end
 
@@ -1062,7 +1059,7 @@ function Addon:UpdateBindingLoadState(binding, options)
 		state.race = ValidateTriStateLoadOption(load.race, IsRaceIndexSelected)
 	end
 
-	if Addon.EXPANSION_LEVEL >= Addon.EXPANSION.BFA then
+	if Addon.EXPANSION_LEVEL >= Addon.Expansion.BFA then
 		-- pvp talent selected
 		if ShouldPerformStateCheck("PLAYER_PVP_TALENT_UPDATE") then
 			local cache = {}
@@ -1148,11 +1145,11 @@ function Addon:UpdateBindingLoadState(binding, options)
 		end
 	end
 
-	if Addon.EXPANSION_LEVEL >= Addon.EXPANSION.CATA then
+	if Addon.EXPANSION_LEVEL >= Addon.Expansion.CATA then
 		-- specialization
 		if ShouldPerformStateCheck("PLAYER_TALENT_UPDATE") then
 			local function IsSpecializationIndexSelected(index)
-				if Addon.EXPANSION_LEVEL >= Addon.EXPANSION.MOP then
+				if Addon.EXPANSION_LEVEL >= Addon.Expansion.MOP then
 					return index == GetSpecialization()
 				else
 					return index == GetPrimaryTalentTree()
@@ -1225,7 +1222,7 @@ function Addon:UpdateBindingLoadState(binding, options)
 				return true
 			end
 
-			if Addon.EXPANSION_LEVEL >= Addon.EXPANSION.DF then
+			if Addon.EXPANSION_LEVEL >= Addon.Expansion.DF then
 				local specId = GetSpecializationInfo(GetSpecialization())
 
 				-- specId can be nil on the first PLAYER_TALENT_UPDATE event fires before PLAYER_ENTERING_WORLD fires
@@ -1261,7 +1258,7 @@ function Addon:UpdateBindingLoadState(binding, options)
 	do
 		local checks = { "PLAYER_TALENT_UPDATE", "PLAYER_LEVEL_CHANGED", "LEARNED_SPELL_IN_TAB", "TRAIT_CONFIG_CREATED", "TRAIT_CONFIG_UPDATED" }
 
-		if Addon.EXPANSION_LEVEL == Addon.EXPANSION.CLASSIC then
+		if Addon.EXPANSION_LEVEL == Addon.Expansion.CLASSIC then
 			table.insert(checks, "RUNE_UPDATED")
 			table.insert(checks, "PLAYER_EQUIPMENT_CHANGED")
 		end
@@ -1413,7 +1410,7 @@ function Addon:IsBindingValidForCurrentState(binding)
 			return false
 		end
 
-		if binding.actionType == Addon.BindingTypes.SPELL and not IsSpellKnown(id) then
+		if binding.actionType == Clicked.ActionType.SPELL and not IsSpellKnown(id) then
 			return false
 		end
 	end
@@ -1468,20 +1465,20 @@ end
 --- @param binding Binding
 --- @return string
 function Addon:GetInternalBindingType(binding)
-	if binding.actionType == Addon.BindingTypes.SPELL then
-		return Addon.BindingTypes.MACRO
+	if binding.actionType == Clicked.ActionType.SPELL then
+		return Clicked.ActionType.MACRO
 	end
 
-	if binding.actionType == Addon.BindingTypes.ITEM then
-		return Addon.BindingTypes.MACRO
+	if binding.actionType == Clicked.ActionType.ITEM then
+		return Clicked.ActionType.MACRO
 	end
 
-	if binding.actionType == Addon.BindingTypes.APPEND then
-		return Addon.BindingTypes.MACRO
+	if binding.actionType == Clicked.ActionType.APPEND then
+		return Clicked.ActionType.MACRO
 	end
 
-	if binding.actionType == Addon.BindingTypes.CANCELAURA then
-		return Addon.BindingTypes.MACRO
+	if binding.actionType == Clicked.ActionType.CANCELAURA then
+		return Clicked.ActionType.MACRO
 	end
 
 	return binding.actionType
@@ -1535,7 +1532,7 @@ function Addon:GetMacroForBindings(bindings, interactionType)
 		local cancelForm = false
 
 		for _, binding in ipairs(bindings) do
-			if binding.actionType == Addon.BindingTypes.SPELL or binding.actionType == Addon.BindingTypes.ITEM or binding.actionType == Addon.BindingTypes.CANCELAURA then
+			if binding.actionType == Clicked.ActionType.SPELL or binding.actionType == Clicked.ActionType.ITEM or binding.actionType == Clicked.ActionType.CANCELAURA then
 				if not cancelQueuedSpell and binding.action.cancelQueuedSpell then
 					cancelQueuedSpell = true
 					table.insert(lines, "/cancelqueuedspell")
@@ -1574,11 +1571,11 @@ function Addon:GetMacroForBindings(bindings, interactionType)
 		--- @param binding Binding
 		--- @return string|nil
 		local function GetPrefixForBinding(binding)
-			if binding.actionType == Addon.BindingTypes.SPELL or binding.actionType == Addon.BindingTypes.ITEM then
+			if binding.actionType == Clicked.ActionType.SPELL or binding.actionType == Clicked.ActionType.ITEM then
 				return "/cast "
 			end
 
-			if binding.actionType == Addon.BindingTypes.CANCELAURA then
+			if binding.actionType == Clicked.ActionType.CANCELAURA then
 				return "/cancelaura "
 			end
 
@@ -1629,22 +1626,22 @@ function Addon:GetMacroForBindings(bindings, interactionType)
 				local nextActionIndex = 1
 
 				for _, binding in ipairs(group) do
-					if binding.actionType == Addon.BindingTypes.SPELL or binding.actionType == Addon.BindingTypes.ITEM then
+					if binding.actionType == Clicked.ActionType.SPELL or binding.actionType == Clicked.ActionType.ITEM then
 						for _, action in ipairs(ConstructActions(binding, interactionType)) do
 							table.insert(actions[order], action)
 
 							actionsSequence[action] = nextActionIndex
 							nextActionIndex = nextActionIndex + 1
 						end
-					elseif binding.actionType == Addon.BindingTypes.MACRO then
+					elseif binding.actionType == Clicked.ActionType.MACRO then
 						local value = Addon:GetBindingValue(binding)
 						table.insert(macros[order], value)
-					elseif binding.actionType == Addon.BindingTypes.APPEND then
+					elseif binding.actionType == Clicked.ActionType.APPEND then
 						local value = Addon:GetBindingValue(binding)
 						table.insert(appends[order], value)
-					elseif binding.actionType == Addon.BindingTypes.CANCELAURA then
+					elseif binding.actionType == Clicked.ActionType.CANCELAURA then
 						local target = Addon:GetNewBindingTargetTemplate()
-						target.unit = Addon.TargetUnits.DEFAULT
+						target.unit = Addon.TargetUnit.DEFAULT
 						target.hostility = Addon.TargetHostility.ANY
 						target.vitals = Addon.TargetVitals.ANY
 
@@ -1678,7 +1675,7 @@ function Addon:GetMacroForBindings(bindings, interactionType)
 					conditions = "[" .. conditions .. "]"
 				end
 
-				if not Addon:IsStringNilOrEmpty(conditions) then
+				if not Addon:IsNilOrEmpty(conditions) then
 					table.insert(macroConditions, conditions)
 					table.insert(macroSegments, conditions .. action.ability)
 					table.insert(localSegments, conditions .. action.ability)

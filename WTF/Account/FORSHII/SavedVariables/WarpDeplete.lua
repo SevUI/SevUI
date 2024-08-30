@@ -203,32 +203,6 @@ WarpDepleteDB = {
 },
 },
 },
-[1841] = {
-[18] = {
-[9] = {
-["best"] = {
-154.2079999999987,
-449.0320000000065,
-634.252999999997,
-929.3730000000069,
-},
-["last"] = {
-154.2079999999987,
-449.0320000000065,
-634.252999999997,
-929.3730000000069,
-},
-},
-},
-[26] = {
-[9] = {
-["best"] = {
-},
-["last"] = {
-},
-},
-},
-},
 [1466] = {
 [21] = {
 [9] = {
@@ -319,6 +293,32 @@ WarpDepleteDB = {
 852.2170000000624,
 1258.475000000093,
 1963.573000000091,
+},
+},
+},
+},
+[1841] = {
+[18] = {
+[9] = {
+["best"] = {
+154.2079999999987,
+449.0320000000065,
+634.252999999997,
+929.3730000000069,
+},
+["last"] = {
+154.2079999999987,
+449.0320000000065,
+634.252999999997,
+929.3730000000069,
+},
+},
+},
+[26] = {
+[9] = {
+["best"] = {
+},
+["last"] = {
 },
 },
 },
@@ -731,6 +731,24 @@ WarpDepleteDB = {
 },
 ["Sevdeekaytwo - Tarren Mill"] = {
 ["timings"] = {
+[1763] = {
+[20] = {
+[10] = {
+["best"] = {
+754.5420000000158,
+1207.477000000014,
+96.95900000003166,
+1368.827000000048,
+},
+["last"] = {
+754.5420000000158,
+1207.477000000014,
+96.95900000003166,
+1368.827000000048,
+},
+},
+},
+},
 [1466] = {
 [20] = {
 [10] = {
@@ -763,20 +781,22 @@ WarpDepleteDB = {
 },
 },
 },
-[1763] = {
+[1862] = {
 [20] = {
 [10] = {
 ["best"] = {
-754.5420000000158,
-1207.477000000014,
-96.95900000003166,
-1368.827000000048,
+228.5420000000158,
+672.7200000000303,
+1035.625,
+1550.746000000043,
+1699.819000000018,
 },
 ["last"] = {
-754.5420000000158,
-1207.477000000014,
-96.95900000003166,
-1368.827000000048,
+228.5420000000158,
+672.7200000000303,
+1035.625,
+1550.746000000043,
+1699.819000000018,
 },
 },
 },
@@ -795,26 +815,6 @@ WarpDepleteDB = {
 643.6389999999665,
 1027.130999999819,
 1390.054000000004,
-},
-},
-},
-},
-[1862] = {
-[20] = {
-[10] = {
-["best"] = {
-228.5420000000158,
-672.7200000000303,
-1035.625,
-1550.746000000043,
-1699.819000000018,
-},
-["last"] = {
-228.5420000000158,
-672.7200000000303,
-1035.625,
-1550.746000000043,
-1699.819000000018,
 },
 },
 },
@@ -1059,6 +1059,24 @@ WarpDepleteDB = {
 },
 ["Sevensides - Tarren Mill"] = {
 ["timings"] = {
+[2519] = {
+[17] = {
+[10] = {
+["best"] = {
+523.1559999999881,
+925.4729999999981,
+236.8189999999886,
+1203.217000000004,
+},
+["last"] = {
+523.1559999999881,
+925.4729999999981,
+236.8189999999886,
+1203.217000000004,
+},
+},
+},
+},
 [1754] = {
 [20] = {
 [10] = {
@@ -1107,24 +1125,6 @@ WarpDepleteDB = {
 750.7369999999646,
 1035.079999999958,
 1469.262999999977,
-},
-},
-},
-},
-[2519] = {
-[17] = {
-[10] = {
-["best"] = {
-523.1559999999881,
-925.4729999999981,
-236.8189999999886,
-1203.217000000004,
-},
-["last"] = {
-523.1559999999881,
-925.4729999999981,
-236.8189999999886,
-1203.217000000004,
 },
 },
 },
@@ -1201,13 +1201,13 @@ WarpDepleteDB = {
 ["Sevdarkblue - Tarren Mill"] = "SevUI",
 ["Sevenruu - Tarren Mill"] = "SevUI",
 ["Nimshot - Ravencrest"] = "Default",
-["Sevdeekaytwo - Tarren Mill"] = "SevUI",
+["Sevwar - Tarren Mill"] = "SevUI",
 ["Sevdk - Valdrakken"] = "Default",
-["Sevenroll - Kazzak"] = "Default",
+["Sevdeekaytwo - Tarren Mill"] = "SevUI",
 ["Lftwgldshare - Draenor"] = "Default",
 ["Sevdk - Draenor"] = "Default",
-["Sevwar - Tarren Mill"] = "SevUI",
 ["Sevdk - Tarren Mill"] = "SevUI",
+["Sevenroll - Kazzak"] = "Default",
 ["Sevwartwo - Valdrakken"] = "Default",
 ["Sevensides - Tarren Mill"] = "SevUI",
 ["Sevenroll - Tarren Mill"] = "SevUI",
@@ -1219,26 +1219,26 @@ WarpDepleteDB = {
 ["barHeight"] = 12,
 ["objectivesFont"] = "PT Sans Narrow",
 ["forcesOverlayTexture"] = "SevSLStatus",
-["keyDetailsFont"] = "PT Sans Narrow",
-["frameX"] = -0.9998949766159058,
-["bar2Texture"] = "SevSLStatus",
-["deathsFontSize"] = 18,
 ["forcesOverlayTextureColor"] = "ffff4200",
+["frameX"] = -0.9998949766159058,
+["bar2FontSize"] = 20,
+["deathsFontSize"] = 18,
+["keyDetailsFont"] = "PT Sans Narrow",
 ["bar2Font"] = "PT Sans Narrow",
 ["forcesTexture"] = "SevSLStatus",
 ["bar1Font"] = "PT Sans Narrow",
-["forcesFontSize"] = 20,
-["keyDetailsFontSize"] = 20,
-["timerFont"] = "PT Sans Narrow",
-["forcesFont"] = "PT Sans Narrow",
 ["bar3FontSize"] = 21,
+["keyDetailsFontSize"] = 20,
+["deathsFont"] = "PT_Sans_Narrow",
+["forcesFont"] = "PT Sans Narrow",
+["forcesFontSize"] = 20,
 ["bar3Font"] = "PT Sans Narrow",
 ["bar3Texture"] = "SevSLStatus",
 ["bar1Texture"] = "SevSLStatus",
-["deathsFont"] = "PT_Sans_Narrow",
 ["frameY"] = 256.0159606933594,
+["timerFont"] = "PT Sans Narrow",
 ["bar1FontSize"] = 20,
-["bar2FontSize"] = 20,
+["bar2Texture"] = "SevSLStatus",
 ["keyFont"] = "PT Sans Narrow",
 },
 ["SevUI"] = {

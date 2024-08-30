@@ -1,11 +1,14 @@
 ------------------------------------------------------------------------
-r132 | humfras | 2024-05-29 20:17:18 +0000 (Wed, 29 May 2024) | 1 line
+r134 | humfras | 2024-08-27 12:39:39 +0000 (Tue, 27 Aug 2024) | 1 line
 Changed paths:
+   M /trunk/cargBags/base/core.lua
    M /trunk/cargBags/base/implementation.lua
-   M /trunk/cargBags/mixins/parseBags.lua
+   M /trunk/cargBags_Nivaya.lua
    M /trunk/cargBags_Nivaya.toc
+   M /trunk/cargBags_Nivaya_Vanilla.toc
    M /trunk/filters.lua
+   M /trunk/style.lua
 
-*fix Cataclysm keyring bug
+quick-fix for TWW
 ------------------------------------------------------------------------
 

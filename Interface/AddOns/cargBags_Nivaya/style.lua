@@ -9,6 +9,7 @@ local isCata = WOW_PROJECT_ID == WOW_PROJECT_CATACLYSM_CLASSIC
 local isRetail = WOW_PROJECT_ID == WOW_PROJECT_MAINLINE
 
 local isDF = select(4,GetBuildInfo()) >= 100000
+local isTWW = select(4,GetBuildInfo()) >= 110000
 local NumBagContainer = isDF and 5 or 4
 local BankContainerStartID = NumBagContainer + 1
 local MaxNumContainer = isDF and 12 or 11
@@ -25,6 +26,7 @@ local SortBags = isRetail and (SortBags or C_Container.SortBags)
 local SortBankBags = isRetail and (SortBankBags or C_Container.SortBankBags)
 local SortReagentBankBags = isRetail and (SortReagentBankBags or C_Container.SortReagentBankBags)
 local ContainerIDToInventoryID = ContainerIDToInventoryID or C_Container.ContainerIDToInventoryID
+local CloseBankFrame = CloseBankFrame or C_Bank.CloseBankFrame	
 
 local BackdropTemplate = BackdropTemplateMixin and "BackdropTemplate" or nil
 
@@ -749,6 +751,17 @@ function MyContainer:OnCreate(name, settings)
 			close:SetPoint("TOPRIGHT", 8, 8)
 			close:SetScript("OnClick", function(self) if cbNivaya:AtBank() then CloseBankFrame() else CloseAllBags() end end)
 		end
+	end
+	
+	--TWW temporary warband bank toggle
+	if isTWW and tBank then
+		local btn = CreateFrame("Button", nil, self, "UIPanelButtonTemplate")
+		btn:ClearAllPoints()
+		btn:SetPoint("TOPRIGHT", -22, 4)
+		btn:SetHeight(20)
+		btn:SetText(ACCOUNT_BANK_PANEL_TITLE)
+		btn:SetScript("OnClick", function(self) cargBags.blizzard:OnBankClosed() cargBags:HandleBankFrame(true) BankFrame:Show() BankFrameTab3:Click() end)
+		btn:SetWidth(btn.Text:GetWidth()+20)
 	end
 	
 	-- mover buttons

@@ -12,7 +12,7 @@ local strfind = string.find
 -- Generate our version variables
 --
 
-local BIGWIGS_VERSION = 355
+local BIGWIGS_VERSION = 356
 local BIGWIGS_RELEASE_STRING, BIGWIGS_VERSION_STRING
 local versionQueryString, versionResponseString = "Q^%d^%s^%d^%s", "V^%d^%s^%d^%s"
 local customGuildName = false
@@ -39,7 +39,7 @@ do
 	local ALPHA = "ALPHA"
 
 	local releaseType
-	local myGitHash = "040d7c0" -- The ZIP packager will replace this with the Git hash.
+	local myGitHash = "3d86cc4" -- The ZIP packager will replace this with the Git hash.
 	local releaseString
 	--[=[@alpha@
 	-- The following code will only be present in alpha ZIPs.
@@ -491,6 +491,7 @@ do
 		[2661] = lw_tww, -- Cinderbrew Meadery
 		[2662] = public.isRetail and {lw_tww, lw_cs} or lw_tww, -- The Dawnbreaker
 		[2669] = public.isRetail and {lw_tww, lw_cs} or lw_tww, -- City of Threads
+		[2710] = lw_tww, -- Awakening the Machine
 		--[[ LittleWigs: Delves ]]--
 		[2664] = lw_delves, -- Fungal Folly
 		[2679] = lw_delves, -- Mycomancer Cavern
@@ -1002,8 +1003,8 @@ function mod:ADDON_LOADED(addon)
 	--bwFrame:RegisterEvent("GLOBAL_MOUSE_DOWN")
 	--bwFrame:RegisterEvent("GLOBAL_MOUSE_UP")
 
-	if C_EventUtils.IsEventValid("ACTIVE_DELVE_DATA_UPDATE") then -- XXX Update me to new event
-		bwFrame:RegisterEvent("ACTIVE_DELVE_DATA_UPDATE")
+	if C_EventUtils.IsEventValid("PLAYER_MAP_CHANGED") then
+		bwFrame:RegisterEvent("PLAYER_MAP_CHANGED")
 	end
 	bwFrame:RegisterEvent("ZONE_CHANGED")
 	bwFrame:RegisterEvent("PLAYER_ENTERING_WORLD")
@@ -1726,7 +1727,7 @@ do
 		end
 
 		-- Lacking zone modules
-		if (BigWigs and BigWigs.db.profile.showZoneMessages == false) or self.isShowingZoneMessages == false then return end
+		if (BigWigs and BigWigs.db.profile.showZoneMessages == false) or mod.isShowingZoneMessages == false then return end
 		local zoneAddon = public.zoneTbl[id]
 		if type(zoneAddon) == "table" then
 			-- default to the expansion addon for current season modules
@@ -1750,8 +1751,12 @@ do
 			end
 		end
 	end
-	if public.isRetail then
-		mod.ACTIVE_DELVE_DATA_UPDATE = mod.PLAYER_ENTERING_WORLD -- XXX Update me to new event
+	function mod:PLAYER_MAP_CHANGED(oldId, newId)
+		if oldId ~= -1 then -- Skip non-delve events
+			if enableZones[newId] then
+				CTimerAfter(0, mod.PLAYER_ENTERING_WORLD) -- Unfortunately, GetInstanceInfo() is not accurate until 1 frame later
+			end
+		end
 	end
 end
 

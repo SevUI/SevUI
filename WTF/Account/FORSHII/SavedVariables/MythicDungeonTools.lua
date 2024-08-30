@@ -11,21 +11,21 @@ MythicDungeonToolsDB = {
 ["Sevdarkblue - Tarren Mill"] = "Sevdarkblue - Tarren Mill",
 ["Sevenruu - Tarren Mill"] = "Sevenruu - Tarren Mill",
 ["Nimshot - Ravencrest"] = "Nimshot - Ravencrest",
-["Sevdeekaytwo - Tarren Mill"] = "Sevdeekaytwo - Tarren Mill",
+["Sevwar - Tarren Mill"] = "Sevwar - Tarren Mill",
 ["Sevdk - Valdrakken"] = "Sevdk - Valdrakken",
-["Sevenroll - Kazzak"] = "Sevenroll - Kazzak",
+["Sevdeekaytwo - Tarren Mill"] = "Sevdeekaytwo - Tarren Mill",
 ["Lftwgldshare - Draenor"] = "Lftwgldshare - Draenor",
 ["Sevdk - Draenor"] = "Sevdk - Draenor",
-["Sevwar - Tarren Mill"] = "Sevwar - Tarren Mill",
 ["Sevdk - Tarren Mill"] = "Sevdk - Tarren Mill",
+["Sevenroll - Kazzak"] = "Sevenroll - Kazzak",
 ["Sevwartwo - Valdrakken"] = "Sevwartwo - Valdrakken",
 ["Sevensides - Tarren Mill"] = "Sevensides - Tarren Mill",
 ["Sevenroll - Tarren Mill"] = "Sevenroll - Tarren Mill",
 },
 ["global"] = {
 ["anchorTo"] = "CENTER",
-["scale"] = 1.6099365234375,
-["currentDifficulty"] = 2,
+["currentDungeonIdx"] = 43,
+["anchorFrom"] = "CENTER",
 ["minimap"] = {
 ["minimapPos"] = 309.2608234801882,
 ["showInCompartment"] = true,
@@ -1050,19 +1050,19 @@ true,
 1,
 },
 ["color"] = "fffb3e",
+[4] = {
+},
 [9] = {
 5,
-},
-[4] = {
 },
 },
 {
 ["color"] = "3eff3e",
 [8] = {
 },
-[9] = {
-},
 [7] = {
+},
+[9] = {
 },
 },
 {
@@ -1071,11 +1071,11 @@ true,
 3,
 4,
 },
-[7] = {
-2,
-},
 [9] = {
 1,
+},
+[7] = {
+2,
 },
 },
 {
@@ -1199,13 +1199,13 @@ true,
 },
 {
 },
-[8] = {
-},
-[13] = {
-4,
-},
 [15] = {
 6,
+},
+[17] = {
+9,
+},
+[8] = {
 },
 [16] = {
 3,
@@ -1216,8 +1216,8 @@ true,
 },
 [5] = {
 },
-[17] = {
-9,
+[13] = {
+4,
 },
 },
 {
@@ -1530,11 +1530,11 @@ nil,
 [5] = {
 },
 ["color"] = "fffb3e",
-[7] = {
-4,
-},
 [9] = {
 7,
+},
+[7] = {
+4,
 },
 },
 {
@@ -2410,18 +2410,18 @@ nil,
 ["color"] = "ff3eff",
 },
 {
-[8] = {
-1,
-},
-[9] = {
-1,
-},
 [15] = {
 9,
 10,
 },
-[3] = {
-7,
+[9] = {
+1,
+},
+[8] = {
+1,
+},
+[10] = {
+1,
 },
 ["color"] = "3eff9e",
 [12] = {
@@ -2432,8 +2432,8 @@ nil,
 4,
 3,
 },
-[10] = {
-1,
+[3] = {
+7,
 },
 },
 {
@@ -2746,123 +2746,6 @@ true,
 ["difficulty"] = 27,
 ["week"] = 1,
 ["uid"] = "nLconG2pKKj",
-["colorPaletteInfo"] = {
-["autoColoring"] = true,
-["colorPaletteIdx"] = 4,
-},
-["text"] = "left side cookening",
-["objects"] = {
-{
-["d"] = {
-591.3082583165092,
--219.2083538359174,
-1,
-true,
-"Kill Reanimation totem first\n\nStop Shieldbearer's Bulwark with hard CC",
-},
-["n"] = true,
-},
-{
-["d"] = {
-539.4299830734875,
--167.3107273522421,
-1,
-true,
-"Hug extremely hard left and watch out for sneaky stalker.\n\nKick Witch-doctor(especially hex)",
-},
-["n"] = true,
-},
-{
-["d"] = {
-474.6931670003875,
--216.1469173530645,
-1,
-true,
-"Kill Saurids before chaining. Saurids will murder your whole group.\n\nJump down to fight rezan after.",
-},
-["n"] = true,
-},
-{
-["d"] = {
-602.4113067566813,
--341.2894454298452,
-1,
-true,
-"Go left at start and bloodlust.\n\nAugur requires 1 important melee kick(Fiery enchant kick ASAP)\n\nConfessor requires 1 important kick(kick Bwomsamdis Mantle ASAP)\n\nAssign these 2 kicks to 2 melees ahead of time. Everyone else kicks wildfire and use aoe ccs/stops on Confessor Mending.\n\n1 Range will want to stand on the staircase ledge(or healer) and everyone else in melee.",
-},
-["n"] = true,
-},
-{
-["d"] = {
-587.5724780214881,
--355.7144332331405,
-1,
-true,
-"Around here staircase ledge.\n\nIf Juggernaut does merciless assault and there is noone on the ledge, it will murder everyone.\n\nIt can also charge if there is a pet or totem out of the pack.",
-},
-["n"] = true,
-},
-{
-["d"] = {
-515.2027945848774,
--246.7201596292453,
-1,
-true,
-"QUICK HACK ON REZAN!\n\nIf someone is being fixated by the charge, anyone in the group can use Shadowmeld to stop the fixate.\n\n\nAlso vanish/invis/feign death works for the person being targetted.\n\nTank bleed can be removed by dwarf or augmentation Cauterizing Flame(can caut every other)",
-},
-["n"] = true,
-},
-{
-["d"] = {
-534.1090104630389,
--322.3496528521675,
-1,
-true,
-"Ideally go up this way.\n\nCan pull these 2 birds into rezan or into this next pull. Be sure to stop fear, pull 1 saurid pack at a time and take it slow.",
-},
-["n"] = true,
-},
-{
-["d"] = {
-478.9023541373595,
--373.6506696132468,
-1,
-true,
-"QUICK HACK! Kick the augurs once in this pack and they will not cast anymore as long as the tank is holding them still.",
-},
-["n"] = true,
-},
-{
-["d"] = {
-469.3046158387779,
--434.8902163824932,
-1,
-true,
-"There is a ledge here that will stop the juggernauts from Merciless Assaulting just like pull 1.\n\nBe sure to be deep in the ledge and make sure to not get HEALING THREAT!",
-},
-["n"] = true,
-},
-{
-["d"] = {
-476.7143881615593,
--495.57324656567,
-1,
-true,
-"Tank boss next to add at all times and just focus down add.\n\nGRAB A BLOOD POOL 3-5 SECONDS LEFT BEFORE TRANSFUSION STARTS.",
-},
-["n"] = true,
-},
-{
-["d"] = {
-303.4713946541471,
--280.196810581101,
-1,
-true,
-"dps+healer stack and move as as group.\n\nTank keep boss slightly away from adds.",
-},
-["n"] = true,
-},
-},
 ["value"] = {
 ["currentPull"] = 5,
 ["currentSublevel"] = 1,
@@ -2924,16 +2807,16 @@ nil,
 [4] = {
 3,
 },
-[3] = {
-2,
-3,
+[11] = {
 },
 [2] = {
 5,
 },
 [12] = {
 },
-[11] = {
+[3] = {
+2,
+3,
 },
 },
 {
@@ -3158,6 +3041,123 @@ nil,
 },
 },
 },
+},
+["text"] = "left side cookening",
+["objects"] = {
+{
+["d"] = {
+591.3082583165092,
+-219.2083538359174,
+1,
+true,
+"Kill Reanimation totem first\n\nStop Shieldbearer's Bulwark with hard CC",
+},
+["n"] = true,
+},
+{
+["d"] = {
+539.4299830734875,
+-167.3107273522421,
+1,
+true,
+"Hug extremely hard left and watch out for sneaky stalker.\n\nKick Witch-doctor(especially hex)",
+},
+["n"] = true,
+},
+{
+["d"] = {
+474.6931670003875,
+-216.1469173530645,
+1,
+true,
+"Kill Saurids before chaining. Saurids will murder your whole group.\n\nJump down to fight rezan after.",
+},
+["n"] = true,
+},
+{
+["d"] = {
+602.4113067566813,
+-341.2894454298452,
+1,
+true,
+"Go left at start and bloodlust.\n\nAugur requires 1 important melee kick(Fiery enchant kick ASAP)\n\nConfessor requires 1 important kick(kick Bwomsamdis Mantle ASAP)\n\nAssign these 2 kicks to 2 melees ahead of time. Everyone else kicks wildfire and use aoe ccs/stops on Confessor Mending.\n\n1 Range will want to stand on the staircase ledge(or healer) and everyone else in melee.",
+},
+["n"] = true,
+},
+{
+["d"] = {
+587.5724780214881,
+-355.7144332331405,
+1,
+true,
+"Around here staircase ledge.\n\nIf Juggernaut does merciless assault and there is noone on the ledge, it will murder everyone.\n\nIt can also charge if there is a pet or totem out of the pack.",
+},
+["n"] = true,
+},
+{
+["d"] = {
+515.2027945848774,
+-246.7201596292453,
+1,
+true,
+"QUICK HACK ON REZAN!\n\nIf someone is being fixated by the charge, anyone in the group can use Shadowmeld to stop the fixate.\n\n\nAlso vanish/invis/feign death works for the person being targetted.\n\nTank bleed can be removed by dwarf or augmentation Cauterizing Flame(can caut every other)",
+},
+["n"] = true,
+},
+{
+["d"] = {
+534.1090104630389,
+-322.3496528521675,
+1,
+true,
+"Ideally go up this way.\n\nCan pull these 2 birds into rezan or into this next pull. Be sure to stop fear, pull 1 saurid pack at a time and take it slow.",
+},
+["n"] = true,
+},
+{
+["d"] = {
+478.9023541373595,
+-373.6506696132468,
+1,
+true,
+"QUICK HACK! Kick the augurs once in this pack and they will not cast anymore as long as the tank is holding them still.",
+},
+["n"] = true,
+},
+{
+["d"] = {
+469.3046158387779,
+-434.8902163824932,
+1,
+true,
+"There is a ledge here that will stop the juggernauts from Merciless Assaulting just like pull 1.\n\nBe sure to be deep in the ledge and make sure to not get HEALING THREAT!",
+},
+["n"] = true,
+},
+{
+["d"] = {
+476.7143881615593,
+-495.57324656567,
+1,
+true,
+"Tank boss next to add at all times and just focus down add.\n\nGRAB A BLOOD POOL 3-5 SECONDS LEFT BEFORE TRANSFUSION STARTS.",
+},
+["n"] = true,
+},
+{
+["d"] = {
+303.4713946541471,
+-280.196810581101,
+1,
+true,
+"dps+healer stack and move as as group.\n\nTank keep boss slightly away from adds.",
+},
+["n"] = true,
+},
+},
+["colorPaletteInfo"] = {
+["autoColoring"] = true,
+["colorPaletteIdx"] = 4,
 },
 },
 {
@@ -3397,13 +3397,13 @@ true,
 [17] = {
 3,
 },
+[10] = {
+9,
+},
 [19] = {
 13,
 1,
 12,
-},
-[10] = {
-9,
 },
 [38] = {
 7,
@@ -3437,10 +3437,7 @@ true,
 },
 },
 {
-[33] = {
-8,
-7,
-},
+["color"] = "ff3e9e",
 [17] = {
 5,
 4,
@@ -3451,19 +3448,22 @@ true,
 [18] = {
 2,
 },
-["color"] = "ff3e9e",
-[19] = {
-2,
-3,
+[33] = {
+8,
+7,
+},
+[14] = {
 4,
+3,
 },
 [16] = {
 4,
 5,
 },
-[14] = {
-4,
+[19] = {
+2,
 3,
+4,
 },
 },
 {
@@ -3538,22 +3538,22 @@ true,
 [17] = {
 9,
 },
-[18] = {
-8,
-},
 [25] = {
 1,
+},
+[18] = {
+8,
 },
 ["color"] = "3e3eff",
 [14] = {
 9,
 },
+[16] = {
+10,
+},
 [23] = {
 8,
 9,
-},
-[16] = {
-10,
 },
 },
 {
@@ -3576,25 +3576,25 @@ true,
 12,
 11,
 },
-[16] = {
-8,
-12,
+[23] = {
+4,
+5,
 },
 [18] = {
 9,
 5,
 },
 ["color"] = "ff3eff",
-[14] = {
-12,
-},
-[23] = {
-4,
-5,
-},
 [19] = {
 10,
 11,
+},
+[16] = {
+8,
+12,
+},
+[14] = {
+12,
 },
 },
 {
@@ -3769,13 +3769,13 @@ nil,
 [17] = {
 3,
 },
+[10] = {
+9,
+},
 [19] = {
 13,
 1,
 12,
-},
-[36] = {
-18,
 },
 [38] = {
 7,
@@ -3792,8 +3792,8 @@ nil,
 5,
 7,
 },
-[10] = {
-9,
+[36] = {
+18,
 },
 },
 {
@@ -3842,19 +3842,19 @@ nil,
 {
 [36] = {
 },
+[23] = {
+},
+["color"] = "3effff",
+[14] = {
+4,
+3,
+},
 [16] = {
 5,
 4,
 },
-["color"] = "3effff",
 [19] = {
 4,
-},
-[23] = {
-},
-[14] = {
-4,
-3,
 },
 },
 {
@@ -4534,12 +4534,12 @@ nil,
 4,
 9,
 },
-[7] = {
-2,
-},
 [9] = {
 9,
 8,
+},
+[7] = {
+2,
 },
 },
 {
@@ -4676,14 +4676,14 @@ nil,
 11,
 },
 ["color"] = "fffb3e",
-[14] = {
-3,
-1,
+[19] = {
+10,
 },
 [12] = {
 },
-[19] = {
-10,
+[14] = {
+3,
+1,
 },
 },
 {
@@ -5685,6 +5685,10 @@ true,
 },
 ["week"] = 3,
 ["uid"] = "IrmNd4JXTAX",
+["colorPaletteInfo"] = {
+["autoColoring"] = true,
+["colorPaletteIdx"] = 4,
+},
 ["value"] = {
 ["currentPull"] = 1,
 ["currentSublevel"] = 1,
@@ -5956,10 +5960,6 @@ nil,
 },
 },
 },
-["colorPaletteInfo"] = {
-["autoColoring"] = true,
-["colorPaletteIdx"] = 4,
-},
 ["text"] = "Raider.IO Weekly Route - Bunten (S4)",
 ["mdi"] = {
 ["freehold"] = 1,
@@ -6074,15 +6074,15 @@ nil,
 [3] = {
 4,
 },
-[29] = {
-},
+["color"] = "ff3e3e",
 [4] = {
 2,
 },
 [5] = {
 2,
 },
-["color"] = "ff3e3e",
+[29] = {
+},
 },
 {
 {
@@ -6390,16 +6390,16 @@ nil,
 [28] = {
 4,
 },
-["color"] = "3effff",
-[29] = {
+[22] = {
+9,
 3,
 },
+["color"] = "3effff",
 [26] = {
 },
 [30] = {
 },
-[22] = {
-9,
+[29] = {
 3,
 },
 },
@@ -6718,13 +6718,13 @@ nil,
 [14] = {
 3,
 },
-[16] = {
-5,
-6,
-},
 [9] = {
 4,
 5,
+},
+[16] = {
+5,
+6,
 },
 },
 {
@@ -8100,6 +8100,10 @@ true,
 },
 ["week"] = 3,
 ["uid"] = "LD4BT20Lve6",
+["colorPaletteInfo"] = {
+["autoColoring"] = true,
+["colorPaletteIdx"] = 4,
+},
 ["value"] = {
 ["currentPull"] = 1,
 ["currentSublevel"] = 1,
@@ -8373,10 +8377,6 @@ nil,
 },
 },
 },
-["colorPaletteInfo"] = {
-["autoColoring"] = true,
-["colorPaletteIdx"] = 4,
-},
 ["text"] = "Raider.IO Weekly Route - Bunten (S4)",
 ["mdi"] = {
 ["freehold"] = 1,
@@ -8514,6 +8514,10 @@ true,
 },
 ["week"] = 3,
 ["uid"] = "x)Hj9eTUBr)",
+["colorPaletteInfo"] = {
+["autoColoring"] = true,
+["colorPaletteIdx"] = 4,
+},
 ["value"] = {
 ["currentPull"] = 1,
 ["currentSublevel"] = 1,
@@ -8770,10 +8774,6 @@ nil,
 [3] = {
 },
 },
-},
-["colorPaletteInfo"] = {
-["autoColoring"] = true,
-["colorPaletteIdx"] = 4,
 },
 ["text"] = "Raider.IO Weekly Route - Bunten (S4)",
 ["mdi"] = {
@@ -9371,9 +9371,6 @@ true,
 4,
 },
 ["color"] = "3eff9e",
-[20] = {
-2,
-},
 [17] = {
 6,
 7,
@@ -9384,6 +9381,9 @@ true,
 2,
 4,
 3,
+},
+[20] = {
+2,
 },
 },
 {
@@ -9470,9 +9470,9 @@ true,
 ["color"] = "ff9b3e",
 [19] = {
 },
-[23] = {
-},
 [5] = {
+},
+[23] = {
 },
 },
 {
@@ -9899,6 +9899,10 @@ true,
 },
 ["week"] = 3,
 ["uid"] = "zUVEWhEcscb",
+["colorPaletteInfo"] = {
+["autoColoring"] = true,
+["colorPaletteIdx"] = 4,
+},
 ["value"] = {
 ["currentPull"] = 1,
 ["currentSublevel"] = 1,
@@ -10301,10 +10305,6 @@ nil,
 },
 },
 },
-["colorPaletteInfo"] = {
-["autoColoring"] = true,
-["colorPaletteIdx"] = 4,
-},
 ["text"] = "Raider.IO Weekly Route - Bunten (S4)",
 ["mdi"] = {
 ["freehold"] = 1,
@@ -10331,6 +10331,102 @@ nil,
 ["week"] = 1,
 ["addonVersion"] = 4034,
 ["uid"] = "0BIgalpS9cD",
+["colorPaletteInfo"] = {
+["autoColoring"] = true,
+["colorPaletteIdx"] = 4,
+},
+["text"] = "Dorki W Route",
+["objects"] = {
+{
+["n"] = true,
+["d"] = {
+284.5393519010055,
+-198.5120806317882,
+1,
+true,
+"Go left for cheat death engineering buff(@marker 2)\n\nHowever I think for early in the season just go right to be safe. You can unlock a \"shortcut\" when you wipe on 2nd boss area.",
+},
+},
+{
+["n"] = true,
+["d"] = {
+332.0834044972859,
+-123.5817874033527,
+1,
+true,
+"Cheat death orb with engineering.",
+},
+},
+{
+["n"] = true,
+["d"] = {
+330.3624239624693,
+-280.5079423264677,
+1,
+true,
+"Shortcut leads to 2nd boss.",
+},
+},
+{
+["n"] = true,
+["d"] = {
+210.2347519232265,
+-221.1539417492125,
+1,
+true,
+"Important to kick expulse from apparatus and demo shout from geomancers. You can also use any stops and it won't recast.\n\nMove away from the flurry cast to avoid bleeds.",
+},
+},
+{
+["n"] = true,
+["d"] = {
+486.5890187270794,
+-187.8764792573143,
+1,
+true,
+"Probably want to lust this boss after intermission.",
+},
+},
+{
+["n"] = true,
+["d"] = {
+477.495339583368,
+-269.8002431636509,
+1,
+true,
+"Going down to the froggers is probably faster but it's a lot scarier so just take this path instead.",
+},
+},
+{
+["d"] = {
+10,
+1,
+1,
+true,
+"ff001d",
+-8,
+},
+["t"] = {
+0.4363645616420783,
+},
+["l"] = {
+"659.5",
+"-417.4",
+"626.9",
+"-432.6",
+},
+},
+{
+["n"] = true,
+["d"] = {
+393.9427712825288,
+-522.5906864895283,
+2,
+true,
+"Frontal hurts real bad from dragon, face breath away.\n\nStop refreshing tides!",
+},
+},
+},
 ["value"] = {
 ["currentPull"] = 31,
 ["currentSublevel"] = 1,
@@ -10698,102 +10794,6 @@ nil,
 },
 },
 },
-["text"] = "Dorki W Route",
-["objects"] = {
-{
-["n"] = true,
-["d"] = {
-284.5393519010055,
--198.5120806317882,
-1,
-true,
-"Go left for cheat death engineering buff(@marker 2)\n\nHowever I think for early in the season just go right to be safe. You can unlock a \"shortcut\" when you wipe on 2nd boss area.",
-},
-},
-{
-["n"] = true,
-["d"] = {
-332.0834044972859,
--123.5817874033527,
-1,
-true,
-"Cheat death orb with engineering.",
-},
-},
-{
-["n"] = true,
-["d"] = {
-330.3624239624693,
--280.5079423264677,
-1,
-true,
-"Shortcut leads to 2nd boss.",
-},
-},
-{
-["n"] = true,
-["d"] = {
-210.2347519232265,
--221.1539417492125,
-1,
-true,
-"Important to kick expulse from apparatus and demo shout from geomancers. You can also use any stops and it won't recast.\n\nMove away from the flurry cast to avoid bleeds.",
-},
-},
-{
-["n"] = true,
-["d"] = {
-486.5890187270794,
--187.8764792573143,
-1,
-true,
-"Probably want to lust this boss after intermission.",
-},
-},
-{
-["n"] = true,
-["d"] = {
-477.495339583368,
--269.8002431636509,
-1,
-true,
-"Going down to the froggers is probably faster but it's a lot scarier so just take this path instead.",
-},
-},
-{
-["d"] = {
-10,
-1,
-1,
-true,
-"ff001d",
--8,
-},
-["t"] = {
-0.4363645616420783,
-},
-["l"] = {
-"659.5",
-"-417.4",
-"626.9",
-"-432.6",
-},
-},
-{
-["n"] = true,
-["d"] = {
-393.9427712825288,
--522.5906864895283,
-2,
-true,
-"Frontal hurts real bad from dragon, face breath away.\n\nStop refreshing tides!",
-},
-},
-},
-["colorPaletteInfo"] = {
-["autoColoring"] = true,
-["colorPaletteIdx"] = 4,
-},
 },
 {
 ["objects"] = {
@@ -11155,6 +11155,10 @@ true,
 },
 ["week"] = 3,
 ["uid"] = "NkG)gvHcSXz",
+["colorPaletteInfo"] = {
+["autoColoring"] = true,
+["colorPaletteIdx"] = 4,
+},
 ["value"] = {
 ["currentPull"] = 1,
 ["currentSublevel"] = 1,
@@ -11431,10 +11435,6 @@ true,
 },
 },
 },
-["colorPaletteInfo"] = {
-["autoColoring"] = true,
-["colorPaletteIdx"] = 4,
-},
 ["text"] = "Raider.IO Weekly Route - Bunten (S4)",
 ["mdi"] = {
 ["freehold"] = 1,
@@ -11586,6 +11586,10 @@ true,
 },
 ["week"] = 3,
 ["uid"] = "KERc9WMCL7c",
+["colorPaletteInfo"] = {
+["autoColoring"] = true,
+["colorPaletteIdx"] = 4,
+},
 ["value"] = {
 ["currentPull"] = 1,
 ["currentSublevel"] = 1,
@@ -11677,15 +11681,15 @@ true,
 13,
 },
 ["color"] = "ff3e9e",
-[7] = {
-1,
-2,
-3,
-},
 [4] = {
 3,
 4,
 5,
+},
+[7] = {
+1,
+2,
+3,
 },
 },
 {
@@ -11762,11 +11766,11 @@ true,
 27,
 },
 ["color"] = "ff3eff",
-[7] = {
-10,
+[4] = {
 11,
 },
-[4] = {
+[7] = {
+10,
 11,
 },
 },
@@ -11892,10 +11896,6 @@ true,
 [3] = {
 },
 },
-},
-["colorPaletteInfo"] = {
-["autoColoring"] = true,
-["colorPaletteIdx"] = 4,
 },
 ["text"] = "Raider.IO Weekly Route - Bunten (S4)",
 ["mdi"] = {
@@ -12406,6 +12406,10 @@ true,
 },
 ["week"] = 3,
 ["uid"] = "AqWvvzEBkz8",
+["colorPaletteInfo"] = {
+["autoColoring"] = true,
+["colorPaletteIdx"] = 4,
+},
 ["value"] = {
 ["currentPull"] = 1,
 ["currentSublevel"] = 1,
@@ -12718,10 +12722,6 @@ nil,
 [3] = {
 },
 },
-},
-["colorPaletteInfo"] = {
-["autoColoring"] = true,
-["colorPaletteIdx"] = 4,
 },
 ["text"] = "Raider.IO Weekly Route - Bunten (S4)",
 ["mdi"] = {
@@ -13934,6 +13934,13 @@ true,
 1,
 2,
 },
+[23] = {
+4,
+},
+["color"] = "3eff3e",
+[14] = {
+5,
+},
 [5] = {
 16,
 28,
@@ -13954,15 +13961,8 @@ true,
 47,
 46,
 },
-["color"] = "3eff3e",
-[14] = {
-5,
-},
 [30] = {
 2,
-},
-[23] = {
-4,
 },
 },
 {
@@ -15498,12 +15498,12 @@ nil,
 6,
 5,
 },
+[23] = {
+1,
+},
 [20] = {
 4,
 3,
-},
-[23] = {
-1,
 },
 ["color"] = "3eff3e",
 },
@@ -15557,13 +15557,6 @@ nil,
 ["week"] = 1,
 ["addonVersion"] = 4203,
 ["uid"] = "wyBlhfttLi8",
-["colorPaletteInfo"] = {
-["autoColoring"] = true,
-["colorPaletteIdx"] = 4,
-},
-["text"] = "Weekly ToT",
-["objects"] = {
-},
 ["value"] = {
 ["currentPull"] = 4,
 ["currentSublevel"] = 1,
@@ -15657,11 +15650,11 @@ nil,
 [5] = {
 2,
 },
-[4] = {
-},
 [7] = {
 3,
 2,
+},
+[4] = {
 },
 ["color"] = "fffb3e",
 },
@@ -15780,12 +15773,12 @@ nil,
 6,
 5,
 },
-[23] = {
-1,
-},
 [20] = {
 4,
 3,
+},
+[23] = {
+1,
 },
 ["color"] = "3eff9e",
 },
@@ -15894,6 +15887,13 @@ nil,
 },
 },
 },
+["text"] = "Weekly ToT",
+["objects"] = {
+},
+["colorPaletteInfo"] = {
+["autoColoring"] = true,
+["colorPaletteIdx"] = 4,
+},
 },
 {
 ["value"] = 0,
@@ -15901,6 +15901,7 @@ nil,
 },
 },
 },
+["scale"] = 1.6099365234375,
 ["colorPaletteInfo"] = {
 ["customPaletteValues"] = {
 {
@@ -15965,10 +15966,9 @@ nil,
 },
 },
 },
-["currentDungeonIdx"] = 43,
 ["version"] = 4410,
 ["xoffset"] = -175.8403167724609,
-["anchorFrom"] = "CENTER",
+["currentDifficulty"] = 2,
 ["nonFullscreenScale"] = 1.6099365234375,
 ["yoffset"] = 127.2838973999023,
 },

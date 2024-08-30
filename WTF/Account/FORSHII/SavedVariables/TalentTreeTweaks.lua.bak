@@ -43,30 +43,30 @@ TalentTreeTweaksDB = {
 ["unlockShareButton"] = true,
 },
 ["MiniTreeInTooltip"] = {
-["inactiveSubTreeAlpha"] = 0.5,
+["diffGreen"] = {
+["r"] = 0,
+["g"] = 1,
+["b"] = 0,
+},
 ["displayStyle"] = "simple-default-diff",
-["upgradedDisplayStyle"] = 1,
+["diffOrange"] = {
+["r"] = 1,
+["g"] = 1,
+["b"] = 0,
+},
 ["diffRed"] = {
 ["r"] = 1,
 ["g"] = 0,
 ["b"] = 0,
 },
 ["scale"] = 1,
-["diffGreen"] = {
-["r"] = 0,
-["g"] = 1,
-["b"] = 0,
-},
+["inactiveSubTreeAlpha"] = 0.5,
 ["diffYellow"] = {
 ["r"] = 1,
 ["g"] = 1,
 ["b"] = 1,
 },
-["diffOrange"] = {
-["r"] = 1,
-["g"] = 1,
-["b"] = 0,
-},
+["upgradedDisplayStyle"] = 1,
 },
 ["ReduceTaint"] = {
 ["disableMultiActionBarShowHide"] = true,

@@ -170,6 +170,7 @@ Bartender4DB = {
 ["padding"] = -3,
 ["visibility"] = {
 ["always"] = true,
+["vehicle"] = false,
 },
 },
 {
@@ -438,11 +439,11 @@ Bartender4DB = {
 {
 ["flyoutDirection"] = "DOWN",
 ["showgrid"] = true,
-["fadeoutdelay"] = 0,
+["fadeout"] = true,
 ["hideborder"] = true,
 ["padding"] = -2,
 ["hideequipped"] = true,
-["version"] = 3,
+["fadeoutdelay"] = 0,
 ["position"] = {
 ["growHorizontal"] = "BOTH",
 ["x"] = 0.0002143871824955568,
@@ -453,7 +454,7 @@ Bartender4DB = {
 ["fadeoutalpha"] = 0,
 ["hidemacrotext"] = true,
 ["WoW10Layout"] = true,
-["fadeout"] = true,
+["version"] = 3,
 },
 {
 ["enabled"] = false,
@@ -470,11 +471,11 @@ Bartender4DB = {
 {
 ["version"] = 3,
 ["showgrid"] = true,
-["WoW10Layout"] = true,
-["padding"] = -3,
 ["visibility"] = {
 ["always"] = true,
 },
+["padding"] = -3,
+["WoW10Layout"] = true,
 ["position"] = {
 ["y"] = 185.1676025390625,
 ["x"] = -548.2149658203125,
@@ -484,12 +485,12 @@ Bartender4DB = {
 {
 ["version"] = 3,
 ["showgrid"] = true,
-["WoW10Layout"] = true,
-["padding"] = -3,
 ["visibility"] = {
 ["always"] = true,
 ["vehicle"] = true,
 },
+["padding"] = -3,
+["WoW10Layout"] = true,
 ["position"] = {
 ["y"] = 228.1676025390625,
 ["x"] = -548.21533203125,
@@ -499,11 +500,11 @@ Bartender4DB = {
 {
 ["version"] = 3,
 ["showgrid"] = true,
-["WoW10Layout"] = true,
-["padding"] = -3,
 ["visibility"] = {
 ["always"] = true,
 },
+["padding"] = -3,
+["WoW10Layout"] = true,
 ["position"] = {
 ["y"] = 143.1676025390625,
 ["x"] = -548.2149658203125,
@@ -513,11 +514,11 @@ Bartender4DB = {
 {
 ["version"] = 3,
 ["showgrid"] = true,
-["WoW10Layout"] = true,
-["padding"] = -3,
 ["visibility"] = {
 ["always"] = true,
 },
+["padding"] = -3,
+["WoW10Layout"] = true,
 ["position"] = {
 ["y"] = 101.1678161621094,
 ["x"] = -548.2149658203125,
@@ -1031,10 +1032,10 @@ Bartender4DB = {
 ["Sevenroll - Tarren Mill"] = "SevUI2",
 ["Sevdk - Draenor"] = "SevUI",
 ["Lftwgldshare - Draenor"] = "Lftwgldshare - Draenor",
-["Sevdeekaytwo - Tarren Mill"] = "SevUI2",
+["Sevdk - Tarren Mill"] = "SevUI2",
 ["Sevwar - Tarren Mill"] = "SevUI2",
 ["Sevensides - Tarren Mill"] = "SevUI2",
-["Sevdk - Tarren Mill"] = "SevUI2",
+["Sevdeekaytwo - Tarren Mill"] = "SevUI2",
 },
 ["profiles"] = {
 ["SevUI2"] = {

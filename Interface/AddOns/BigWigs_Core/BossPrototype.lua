@@ -18,13 +18,15 @@
 -- @usage local mod, CL = BigWigs:NewBoss("Argus the Unmaker", 1712, 2031)
 
 local boss = {}
-local core
+local core, plugins
 do
 	local _, tbl =...
 	core = tbl.core
+	plugins = tbl.plugins
 	tbl.bossPrototype = boss
 end
 
+local BigWigsAPI = BigWigsAPI
 local L = BigWigsAPI:GetLocale("BigWigs: Common")
 local LibSpec = LibStub("LibSpecialization", true)
 local loader = BigWigsLoader
@@ -88,7 +90,7 @@ local updateData = function(module)
 	myGUID = UnitGUID("player")
 	hasVoice = BigWigsAPI:HasVoicePack()
 
-	local messages = core:GetPlugin("Messages", true)
+	local messages = plugins.Messages
 	if messages and not messages.db.profile.classcolor then
 		classColorMessages = false
 	else
@@ -568,6 +570,13 @@ function boss:GetLocale()
 	return self.localization
 end
 boss.NewLocale = boss.GetLocale
+
+do
+	local SetSpellRename = BigWigsAPI.SetSpellRename
+	function boss:SetSpellRename(spellId, text)
+		SetSpellRename(spellId, text)
+	end
+end
 
 --- Create a custom marking option
 -- @bool state Boolean value to represent default state
@@ -1219,7 +1228,7 @@ do
 
 			if self.privateAuraSoundOptions and not self.privateAuraSounds then
 				self.privateAuraSounds = {}
-				local soundModule = core:GetPlugin("Sounds", true)
+				local soundModule = plugins.Sounds
 				if soundModule then
 					for _, option in next, self.privateAuraSoundOptions do
 						local spellId = option[1]
@@ -3106,7 +3115,7 @@ end
 -- @param text the bar text
 -- @return the remaining duration in seconds or 0
 function boss:BarTimeLeft(text)
-	local bars = core:GetPlugin("Bars", true)
+	local bars = plugins.Bars
 	if bars then
 		return bars:GetBarTimeLeft(self, type(text) == "number" and spells[text] or text)
 	end

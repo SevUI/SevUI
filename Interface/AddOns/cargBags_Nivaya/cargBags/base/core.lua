@@ -19,7 +19,8 @@
 	class-generation, helper-functions and the Blizzard-replacement.
 ]]
 local parent, ns = ...
-local global = C_AddOns.GetAddOnMetadata(parent, 'X-cargBags')
+local GetAddOnMetadata = GetAddOnMetadata or C_AddOns.GetAddOnMetadata
+local global = GetAddOnMetadata(parent, 'X-cargBags')
 
 --- @class table
 --  @name cargBags
@@ -150,8 +151,19 @@ function cargBags:ReplaceBlizzard(name)
 	if _G.OpenAllBagsMatchingContext then OpenAllBagsMatchingContext = openAllMC end
 
 	BankFrame:SetParent(hideFrame)
-	BankFrame:UnregisterAllEvents()
+--	BankFrame:UnregisterAllEvents()
 end
+
+function cargBags:HandleBankFrame(show)
+	if show then
+		BankFrame:SetParent(UIParent)
+		--BankFrame:UnregisterAllEvents()
+	else
+		BankFrame:SetParent(hideFrame)
+		--	BankFrame:UnregisterAllEvents()
+	end
+end
+
 
 --- Flags the implementation to handle Blizzards Bag-Toggle-Functions
 --  @param implementation <Implementation>
@@ -208,6 +220,7 @@ cargBags:SetScript("OnEvent", function(self, event)
 
 		if(impl.OnBankClosed) then
 			impl:OnBankClosed()
+			cargBags:HandleBankFrame()
 		end
 	end
 end)

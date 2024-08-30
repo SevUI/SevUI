@@ -1,5 +1,5 @@
 -- Clicked, a World of Warcraft keybind manager.
--- Copyright (C) 2022  Kevin Krol
+-- Copyright (C) 2024  Kevin Krol
 --
 -- This program is free software: you can redistribute it and/or modify
 -- it under the terms of the GNU General Public License as published by
@@ -290,7 +290,7 @@ function Clicked:RegisterFrameClicks(frame, isUnitFrame)
 		return
 	end
 
-	if Addon.EXPANSION_LEVEL >= Addon.EXPANSION.DF then
+	if Addon.EXPANSION_LEVEL >= Addon.Expansion.DF then
 		if isUnitFrame then
 			frame:RegisterForClicks(Addon.db.profile.options.onKeyDown and "AnyDown" or "AnyUp")
 		else

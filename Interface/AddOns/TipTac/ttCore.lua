@@ -584,29 +584,270 @@ TT_ExtendedConfig.tipsToModify = {
 			end
 			
 			-- UIDropDownMenu
-			
-			-- HOOK: UIDropDownMenu_CreateFrames() to add the new frames
 			local last_UIDROPDOWNMENU_MAXLEVELS = 0;
 			
-			hooksecurefunc("UIDropDownMenu_CreateFrames", function(level, index)
+			local function addUIDropDownMenuFrames()
 				for i = last_UIDROPDOWNMENU_MAXLEVELS + 1, UIDROPDOWNMENU_MAXLEVELS do -- see "UIDropDownMenu.lua"
-					tt:AddModifiedTipExtended("DropDownList" .. i, {
-						applyAppearance = true,
-						applyScaling = false, -- #todo: switch applyScaling from "false" to "true", but needed more coding to consider call of SetScale() in ToggleDropDownMenu() in "UIDropDownMenu.lua"
-						applyAnchor = false
-					});
+					tt:AddModifiedTip("DropDownList" .. i);
 				end
 				
 				last_UIDROPDOWNMENU_MAXLEVELS = UIDROPDOWNMENU_MAXLEVELS;
+			end
+			
+			addUIDropDownMenuFrames();
+			
+			-- HOOK: UIDropDownMenu_CreateFrames() to add the new frames
+			hooksecurefunc("UIDropDownMenu_CreateFrames", function(level, index)
+				addUIDropDownMenuFrames();
 			end);
 			
-			-- HOOK: ToggleDropDownMenu() to reapply appearance because e.g. 1-pixel borders sometimes aren't displayed correctly
-			hooksecurefunc("ToggleDropDownMenu", function(level, value, dropDownFrame, anchorName, xOffset, yOffset, menuList, button, autoHideDelay)
-				-- reapply appearance to tip
-				local tip = _G["DropDownList" .. (level or 1)];
+			-- HOOK: ToggleDropDownMenu() to reapply appearance because e.g. 1-pixel borders sometimes aren't displayed correctly and to reapply scale
+			
+			-- reapply appearance to UIDropDownMenu
+			local function reapplyAppearanceToUIDropDownMenu(prefixName, level, value, dropDownFrame, anchorName, xOffset, yOffset, menuList, button, autoHideDelay)
+				-- check if insecure interaction with the tip is currently forbidden
+				local _level = (level or 1);
+				local tip = _G[prefixName .. (_level or 1)];
 				
+				if (tip:IsForbidden()) then
+					return;
+				end
+				
+				-- reapply appearance to tip
 				tt:SetAppearanceToTip(tip);
+				
+				-- get tip parameters
+				local frameParams = TT_CacheForFrames[tip];
+				
+				if (not frameParams) then
+					return;
+				end
+				
+				local tipParams = frameParams.config;
+				
+				-- set scale to tip not possible
+				if (not tipParams.applyAppearance) or (not tipParams.applyScaling) then
+					return;
+				end
+				
+				-- check if tip is shown
+				if (not tip:IsShown()) then
+					return;
+				end
+				
+				-- fix anchoring because of different scale, see ToggleDropDownMenu() in "UIDropDownMenu.lua"
+				local TT_UIScale = UIParent:GetEffectiveScale();
+				local tipEffectiveScale = tip:GetEffectiveScale();
+				local point, relativePoint, relativeTo;
+				
+				local function GetChild(frame, name, key)
+					if (frame[key]) then
+						return frame[key];
+					else
+						return _G[name..key];
+					end
+				end
+				
+				-- frame to anchor the dropdown menu to
+				local anchorFrame;
+				
+				-- display stuff
+				-- level specific stuff
+				if (_level == 1) then
+					-- UIDropDownMenuDelegate:SetAttribute("openmenu", dropDownFrame);
+					tip:ClearAllPoints();
+					
+					-- if there's no specified anchorName then use left side of the dropdown menu
+					if (not anchorName) then
+						-- see if the anchor was set manually using setanchor
+						if (dropDownFrame.xOffset) then
+							xOffset = dropDownFrame.xOffset;
+						end
+						if (dropDownFrame.yOffset) then
+							yOffset = dropDownFrame.yOffset;
+						end
+						if (dropDownFrame.point) then
+							point = dropDownFrame.point;
+						end
+						if (dropDownFrame.relativeTo) then
+							relativeTo = dropDownFrame.relativeTo;
+						else
+							relativeTo = GetChild(UIDROPDOWNMENU_OPEN_MENU, UIDROPDOWNMENU_OPEN_MENU:GetName(), "Left");
+						end
+						if (dropDownFrame.relativePoint) then
+							relativePoint = dropDownFrame.relativePoint;
+						end
+					elseif (anchorName == "cursor") then
+						relativeTo = nil;
+						local cursorX, cursorY = LibFroznFunctions:GetCursorPosition();
+						-- cursorX = cursorX/uiScale;
+						-- cursorY =  cursorY/uiScale;
+						
+						if (not xOffset) then
+							xOffset = 0;
+						end
+						if (not yOffset) then
+							yOffset = 0;
+						end
+						
+						xOffset = cursorX + xOffset;
+						yOffset = cursorY + yOffset;
+					else
+						-- see if the anchor was set manually using setanchor
+						if (dropDownFrame.xOffset) then
+							xOffset = dropDownFrame.xOffset;
+						end
+						if (dropDownFrame.yOffset) then
+							yOffset = dropDownFrame.yOffset;
+						end
+						if (dropDownFrame.point) then
+							point = dropDownFrame.point;
+						end
+						if (dropDownFrame.relativeTo) then
+							relativeTo = dropDownFrame.relativeTo;
+						else
+							relativeTo = anchorName;
+						end
+						if (dropDownFrame.relativePoint) then
+							relativePoint = dropDownFrame.relativePoint;
+						end
+					end
+					if (not xOffset or not yOffset) then
+						xOffset = 8;
+						yOffset = 22;
+					end
+					if (not point) then
+						point = "TOPLEFT";
+					end
+					if (not relativePoint) then
+						relativePoint = "BOTTOMLEFT";
+					end
+					-- tip:SetPoint(point, relativeTo, relativePoint, xOffset, yOffset);
+					tip:SetPoint(point, relativeTo, relativePoint, xOffset / tipEffectiveScale, yOffset / tipEffectiveScale);
+				else
+					if (not dropDownFrame) then
+						dropDownFrame = UIDROPDOWNMENU_OPEN_MENU;
+					end
+					tip:ClearAllPoints();
+					-- if this is a dropdown button, not the arrow anchor it to itself
+					if (strsub(button:GetParent():GetName(), 0, 12) == prefixName and strlen(button:GetParent():GetName()) == 13 ) then
+						anchorFrame = button;
+					else
+						anchorFrame = button:GetParent();
+					end
+					point = "TOPLEFT";
+					relativePoint = "TOPRIGHT";
+					tip:SetPoint(point, anchorFrame, relativePoint, 0, 0);
+				end
+				
+				-- hack since GetCenter() is returning coords relative to 1024x768
+				local x, y = tip:GetCenter();
+				-- hack will fix this in next revision of dropdowns
+				-- if (not x or not y) then
+					-- listFrame:Hide();
+					-- return;
+				-- end
+				
+				-- we just move level 1 enough to keep it on the screen. we don't necessarily change the anchors.
+				if (_level == 1) then
+					-- local offLeft = listFrame:GetLeft()/uiScale;
+					-- local offRight = (GetScreenWidth() - listFrame:GetRight())/uiScale;
+					-- local offTop = (GetScreenHeight() - listFrame:GetTop())/uiScale;
+					-- local offBottom = listFrame:GetBottom()/uiScale;
+					local offLeft = tip:GetLeft() * tipEffectiveScale;
+					local offRight = (GetScreenWidth() * TT_UIScale / tipEffectiveScale - tip:GetRight()) * tipEffectiveScale;
+					local offTop = (GetScreenHeight() * TT_UIScale / tipEffectiveScale - tip:GetTop()) * tipEffectiveScale;
+					local offBottom = tip:GetBottom() * tipEffectiveScale;
+					
+					local xAddOffset, yAddOffset = 0, 0;
+					if (offLeft < 0) then
+						xAddOffset = -offLeft;
+					elseif (offRight < 0) then
+						xAddOffset = offRight;
+					end
+					
+					if (offTop < 0) then
+						yAddOffset = offTop;
+					elseif (offBottom < 0) then
+						yAddOffset = -offBottom;
+					end
+					
+					tip:ClearAllPoints();
+					if (anchorName == "cursor") then
+						-- tip:SetPoint(point, relativeTo, relativePoint, xOffset + xAddOffset, yOffset + yAddOffset);
+						tip:SetPoint(point, relativeTo, relativePoint, (xOffset + xAddOffset) / tipEffectiveScale, (yOffset + yAddOffset) / tipEffectiveScale);
+					else
+						-- tip:SetPoint(point, relativeTo, relativePoint, xOffset + xAddOffset, yOffset + yAddOffset);
+						tip:SetPoint(point, relativeTo, relativePoint, (xOffset + xAddOffset) / tipEffectiveScale, (yOffset + yAddOffset) / tipEffectiveScale);
+					end
+				else
+					-- determine whether the menu is off the screen or not
+					local offscreenY, offscreenX;
+					if ((y - tip:GetHeight()/2) < 0) then
+						offscreenY = 1;
+					end
+					-- if (tip:GetRight() > GetScreenWidth()) then
+					if (tip:GetRight() * tipEffectiveScale > GetScreenWidth() * TT_UIScale / tipEffectiveScale) then
+						offscreenX = 1;
+					end
+					if (offscreenY and offscreenX) then
+						point = gsub(point, "TOP(.*)", "BOTTOM%1");
+						point = gsub(point, "(.*)LEFT", "%1RIGHT");
+						relativePoint = gsub(relativePoint, "TOP(.*)", "BOTTOM%1");
+						relativePoint = gsub(relativePoint, "(.*)RIGHT", "%1LEFT");
+						xOffset = -11;
+						yOffset = -14;
+					elseif (offscreenY) then
+						point = gsub(point, "TOP(.*)", "BOTTOM%1");
+						relativePoint = gsub(relativePoint, "TOP(.*)", "BOTTOM%1");
+						xOffset = 0;
+						yOffset = -14;
+					elseif (offscreenX) then
+						point = gsub(point, "(.*)LEFT", "%1RIGHT");
+						relativePoint = gsub(relativePoint, "(.*)RIGHT", "%1LEFT");
+						xOffset = -11;
+						yOffset = 14;
+					else
+						xOffset = 0;
+						yOffset = 14;
+					end
+					
+					tip:ClearAllPoints();
+					-- listFrame.parentLevel = tonumber(strmatch(anchorFrame:GetName(), "DropDownList(%d+)"));
+					-- listFrame.parentID = anchorFrame:GetID();
+					-- tip:SetPoint(point, anchorFrame, relativePoint, xOffset, yOffset);
+					tip:SetPoint(point, anchorFrame, relativePoint, xOffset / tipEffectiveScale, yOffset / tipEffectiveScale);
+				end
+			end
+			
+			hooksecurefunc("ToggleDropDownMenu", function(level, value, dropDownFrame, anchorName, xOffset, yOffset, menuList, button, autoHideDelay)
+				-- reapply appearance to UIDropDownMenu
+				reapplyAppearanceToUIDropDownMenu("DropDownList", level, value, dropDownFrame, anchorName, xOffset, yOffset, menuList, button, autoHideDelay);
 			end);
+			
+			-- LibDropDownMenu, e.g used by addon Broker_Everything
+			local LibDropDownMenu = LibStub:GetLibrary("LibDropDownMenu", true);
+			
+			if (LibDropDownMenu) then
+				local function addLibDropDownMenuFrame(name)
+					tt:AddModifiedTip(name);
+				end
+				
+				for i = 1, UIDROPDOWNMENU_MAXLEVELS do
+					addLibDropDownMenuFrame("LibDropDownMenu_List" .. i);
+				end
+				
+				-- HOOK: LibDropDownMenu.Create_DropDownList() to add the new frames
+				hooksecurefunc(LibDropDownMenu, "Create_DropDownList", function(name, parent, opts)
+					addLibDropDownMenuFrame(name);
+				end);
+				
+				-- HOOK: ToggleDropDownMenu() to reapply appearance because e.g. 1-pixel borders sometimes aren't displayed correctly and to reapply scale
+				hooksecurefunc(LibDropDownMenu, "ToggleDropDownMenu", function(level, value, dropDownFrame, anchorName, xOffset, yOffset, menuList, button, autoHideDelay, overrideDisplayMode)
+					-- reapply appearance to UIDropDownMenu
+					reapplyAppearanceToUIDropDownMenu("LibDropDownMenu_List", level, value, dropDownFrame, anchorName, xOffset, yOffset, menuList, button, autoHideDelay, overrideDisplayMode);
+				end);
+			end
 			
 			-- LibQTip-1.0, e.g. used by addon Broker_Location
 			local LibQTip = LibStub:GetLibrary("LibQTip-1.0", true);
@@ -862,14 +1103,15 @@ local TT_TipsToModifyFromOtherMods = {};
 -- 1st key = real frame
 --
 -- params for 1st key:
--- frameName                                   frame name, nil for anonymous frames without a parent.
--- config                                      see params from "TT_ExtendedConfig.tipsToModify"
--- originalLeftOffsetForPreventingOffScreen    original left offset for preventing additional elements from moving off-screen
--- originalRightOffsetForPreventingOffScreen   original right offset for preventing additional elements from moving off-screen
--- originalTopOffsetForPreventingOffScreen     original top offset for preventing additional elements from moving off-screen
--- originalBottomOffsetForPreventingOffScreen  original bottom offset for preventing additional elements from moving off-screen
--- currentDisplayParams                        current display parameters
--- gradient                                    optional. gradient texture for frame
+-- frameName                                       frame name, nil for anonymous frames without a parent.
+-- config                                          see params from "TT_ExtendedConfig.tipsToModify"
+-- originalOffsetsForPreventingOffScreenAvailable  original offsets for preventing additional elements from moving off-screen available
+-- originalLeftOffsetForPreventingOffScreen        original left offset for preventing additional elements from moving off-screen
+-- originalRightOffsetForPreventingOffScreen       original right offset for preventing additional elements from moving off-screen
+-- originalTopOffsetForPreventingOffScreen         original top offset for preventing additional elements from moving off-screen
+-- originalBottomOffsetForPreventingOffScreen      original bottom offset for preventing additional elements from moving off-screen
+-- currentDisplayParams                            current display parameters
+-- gradient                                        optional. gradient texture for frame
 
 -- params for 2nd key (currentDisplayParams):
 -- isSet                                         true if current display parameters are set, false otherwise.
@@ -1415,11 +1657,11 @@ function tt:SetupConfig()
 	
 	-- update default config for fonts
 	TT_DefaultConfig.fontFace, TT_DefaultConfig.fontSize, TT_DefaultConfig.fontFlags = GameFontNormal:GetFont();
-	TT_DefaultConfig.fontSize = math.floor(TT_DefaultConfig.fontSize + 0.5);
+	TT_DefaultConfig.fontSize = Round(TT_DefaultConfig.fontSize);
 	TT_DefaultConfig.fontFlags = TT_DefaultConfig.fontFlags:match("^[^,]*");
 	
 	TT_DefaultConfig.barFontFace, TT_DefaultConfig.barFontSize, TT_DefaultConfig.barFontFlags = NumberFontNormalSmall:GetFont();
-	TT_DefaultConfig.barFontSize = math.floor(TT_DefaultConfig.barFontSize + 0.5);
+	TT_DefaultConfig.barFontSize = Round(TT_DefaultConfig.barFontSize);
 	TT_DefaultConfig.barFontFlags = TT_DefaultConfig.barFontFlags:match("^[^,]*");
 
 	-- set config
@@ -1691,6 +1933,11 @@ function tt:AddTipToCache(tip, frameName, tipParams)
 		
 		if (not tipParams.noHooks) then
 			LibFroznFunctions:CallFunctionDelayed(tipParams.waitSecondsForHooking, function()
+				-- check if insecure interaction with the tip is currently forbidden
+				if (tip:IsForbidden()) then
+					return;
+				end
+				
 				tip:HookScript("OnSizeChanged", function(...)
 					-- check if insecure interaction with the tip is currently forbidden
 					if (tip:IsForbidden()) then
@@ -1716,6 +1963,11 @@ function tt:AddTipToCache(tip, frameName, tipParams)
 	
 	if (not tipParams.noHooks) then
 		LibFroznFunctions:CallFunctionDelayed(tipParams.waitSecondsForHooking, function()
+			-- check if insecure interaction with the tip is currently forbidden
+			if (tip:IsForbidden()) then
+				return;
+			end
+			
 			tip:HookScript("OnShow", function(tip)
 				tt:SetCurrentDisplayParams(tip, TT_TIP_CONTENT.unknownOnShow);
 			end);
@@ -2268,33 +2520,48 @@ function tt:SetBackdropToTip(tip)
 		tip.__MERSkin = true;
 	end
 	
-	-- extra handling of blizzard drop down list
+	-- workaround for addon AddOnSkins to prevent styling of frame
+	local isAddOnAddOnSkinsLoaded = LibFroznFunctions:IsAddOnFinishedLoading("AddOnSkins");
+	
+	if (isAddOnAddOnSkinsLoaded) then
+		tip.isSkinned = true;
+	end
+	
+	-- extra handling of blizzards UIDropDownMenu and LibDropDownMenu
 	local tipName = tip:GetName();
 	
-	if (tipName) and (tipName:match("DropDownList(%d+)")) then
-		local dropDownListBackdrop = _G[tipName.."Backdrop"];
-		local dropDownListMenuBackdrop = _G[tipName.."MenuBackdrop"];
-		
-		LibFroznFunctions:StripTextures(dropDownListBackdrop);
-		if (dropDownListBackdrop.Bg) then
-			dropDownListBackdrop.Bg:SetTexture(nil);
-			dropDownListBackdrop.Bg:SetAtlas(nil);
-		end
-		LibFroznFunctions:StripTextures(dropDownListMenuBackdrop.NineSlice);
-		
-		-- workaround for addon ElvUI to prevent applying of frame:StripTextures()
-		local isAddOnElvUILoaded = LibFroznFunctions:IsAddOnFinishedLoading("ElvUI");
-		
-		if (isAddOnElvUILoaded) then
-			tip.template = "Default";
-			dropDownListBackdrop.template = "Default";
-			dropDownListMenuBackdrop.template = "Default";
-		end
-		
-		-- workaround for addon MerathilisUI in ElvUI to prevent styling of frame
-		if (isAddOnElvUI_MerathilisUILoaded) then
-			dropDownListBackdrop.__MERSkin = true;
-			dropDownListMenuBackdrop.__MERSkin = true;
+	if (tipName) then
+		if (tipName:match("DropDownList(%d+)")) then
+			local dropDownListBackdrop = _G[tipName.."Backdrop"];
+			local dropDownListMenuBackdrop = _G[tipName.."MenuBackdrop"];
+			
+			LibFroznFunctions:StripTextures(dropDownListBackdrop);
+			if (dropDownListBackdrop.Bg) then
+				dropDownListBackdrop.Bg:SetTexture(nil);
+				dropDownListBackdrop.Bg:SetAtlas(nil);
+			end
+			LibFroznFunctions:StripTextures(dropDownListMenuBackdrop.NineSlice);
+			
+			-- workaround for addon ElvUI to prevent applying of frame:StripTextures()
+			local isAddOnElvUILoaded = LibFroznFunctions:IsAddOnFinishedLoading("ElvUI");
+			
+			if (isAddOnElvUILoaded) then
+				tip.template = "Default";
+				dropDownListBackdrop.template = "Default";
+				dropDownListMenuBackdrop.template = "Default";
+			end
+			
+			-- workaround for addon MerathilisUI in ElvUI to prevent styling of frame
+			if (isAddOnElvUI_MerathilisUILoaded) then
+				dropDownListBackdrop.__MERSkin = true;
+				dropDownListMenuBackdrop.__MERSkin = true;
+			end
+		elseif (tipName:match("LibDropDownMenu_List(%d+)")) then
+			local dropDownListBackdrop = _G[tipName.."Backdrop"];
+			local dropDownListMenuBackdrop = _G[tipName.."MenuBackdrop"];
+			
+			LibFroznFunctions:StripTextures(dropDownListBackdrop);
+			LibFroznFunctions:StripTextures(dropDownListMenuBackdrop);
 		end
 	end
 	
@@ -2456,6 +2723,11 @@ LibFroznFunctions:RegisterForGroupEvents(MOD_NAME, {
 		
 		-- HOOK: tip's OnSizeChanged to monitor size changes
 		LibFroznFunctions:CallFunctionDelayed(tipParams.waitSecondsForHooking, function()
+			-- check if insecure interaction with the tip is currently forbidden
+			if (tip:IsForbidden()) then
+				return;
+			end
+			
 			tip:HookScript("OnSizeChanged", function(tip)
 				-- check if we're currently handling size change
 				if (isHandlingSizeChange) then
@@ -2926,6 +3198,11 @@ function tt:SetClampRectInsetsToTip(tip, left, right, top, bottom)
 	
 	local currentDisplayParams = frameParams.currentDisplayParams;
 	
+	-- don't set clamp rect insets to tip if original offsets for preventing additional elements from moving off-screen aren't available
+	if (not frameParams.originalOffsetsForPreventingOffScreenAvailable) then
+		return;
+	end
+	
 	-- set current display params for preventing additional elements from moving off-screen
 	currentDisplayParams.modifiedOffsetsForPreventingOffScreen = true;
 	
@@ -2936,6 +3213,11 @@ end
 -- register for group events
 LibFroznFunctions:RegisterForGroupEvents(MOD_NAME, {
 	OnTipAddedToCache = function(self, TT_CacheForFrames, tip)
+		-- check if insecure interaction with the tip is currently forbidden
+		if (tip:IsForbidden()) then
+			return;
+		end
+		
 		-- get frame parameters
 		local frameParams = TT_CacheForFrames[tip];
 		
@@ -2944,7 +3226,12 @@ LibFroznFunctions:RegisterForGroupEvents(MOD_NAME, {
 		end
 		
 		-- set original left/right/top/bottom offset for preventing additional elements from moving off-screen
-		frameParams.originalLeftOffsetForPreventingOffScreen, frameParams.originalRightOffsetForPreventingOffScreen, frameParams.originalTopOffsetForPreventingOffScreen, frameParams.originalBottomOffsetForPreventingOffScreen = tip:GetClampRectInsets();
+		local leftOffset, rightOffset, topOffset, bottomOffset = tip:GetClampRectInsets();
+		
+		if (leftOffset) and (rightOffset) and (topOffset) and (bottomOffset) then
+			frameParams.originalOffsetsForPreventingOffScreenAvailable = true;
+			frameParams.originalLeftOffsetForPreventingOffScreen, frameParams.originalRightOffsetForPreventingOffScreen, frameParams.originalTopOffsetForPreventingOffScreen, frameParams.originalBottomOffsetForPreventingOffScreen = leftOffset, rightOffset, topOffset, bottomOffset;
+		end
 	end,
 	OnTipResetCurrentDisplayParams = function(self, TT_CacheForFrames, tip, currentDisplayParams)
 		-- get current display parameters
@@ -2957,7 +3244,7 @@ LibFroznFunctions:RegisterForGroupEvents(MOD_NAME, {
 		local currentDisplayParams = frameParams.currentDisplayParams;
 		
 		-- restore original offsets for preventing additional elements from moving off-screen
-		if (not tip:IsForbidden()) and (currentDisplayParams.modifiedOffsetsForPreventingOffScreen) then
+		if (not tip:IsForbidden()) and (not frameParams.originalOffsetsForPreventingOffScreenAvailable) and (currentDisplayParams.modifiedOffsetsForPreventingOffScreen) then
 			tip:SetClampRectInsets(frameParams.originalLeftOffsetForPreventingOffScreen, frameParams.originalRightOffsetForPreventingOffScreen, frameParams.originalTopOffsetForPreventingOffScreen, frameParams.originalBottomOffsetForPreventingOffScreen);
 		end
 		
@@ -3177,14 +3464,16 @@ function tt:GetAnchorPosition(tip)
 	-- check for other GameTooltip anchor overrides
 	if (tip == GameTooltip) then
 		-- override GameTooltip anchor for (Guild & Community) ChatFrame
-		local tipOwner = tip:GetOwner();
-		
-		if (cfg.enableAnchorOverrideCF) and (anchorFrameName == "FrameTip") and (not tip:IsForbidden()) and (LibFroznFunctions:IsFrameBackInFrameChain(tipOwner, {
-					"ChatFrame(%d+)",
-					(LibFroznFunctions:IsAddOnFinishedLoading("Blizzard_Communities") and CommunitiesFrame.Chat.MessageFrame)
-				}, 1)) then
+		if (not tip:IsForbidden()) then
+			local tipOwner = tip:GetOwner();
 			
-			return anchorFrameName, cfg.anchorOverrideCFType, cfg.anchorOverrideCFPoint;
+			if (cfg.enableAnchorOverrideCF) and (anchorFrameName == "FrameTip") and (LibFroznFunctions:IsFrameBackInFrameChain(tipOwner, {
+						"ChatFrame(%d+)",
+						(LibFroznFunctions:IsAddOnFinishedLoading("Blizzard_Communities") and CommunitiesFrame.Chat.MessageFrame)
+					}, 1)) then
+				
+				return anchorFrameName, cfg.anchorOverrideCFType, cfg.anchorOverrideCFPoint;
+			end
 		end
 	end
 	
@@ -3193,6 +3482,11 @@ end
 
 -- HOOK: tip's OnUpdate for anchoring to mouse
 function tt:AnchorTipToMouseOnUpdate(tip)
+	-- check if insecure interaction with the tip is currently forbidden
+	if (tip:IsForbidden()) then
+		return;
+	end
+	
 	tip:HookScript("OnUpdate", function(tip)
 		-- anchor tip to mouse position
 		tt:AnchorTipToMouse(tip);
@@ -3309,6 +3603,11 @@ LibFroznFunctions:RegisterForGroupEvents(MOD_NAME, {
 		
 		-- HOOK: tip's SetOwner to reset current display params for anchoring
 		LibFroznFunctions:CallFunctionDelayed(tipParams.waitSecondsForHooking, function()
+			-- check if insecure interaction with the tip is currently forbidden
+			if (tip:IsForbidden()) then
+				return;
+			end
+			
 			if (tip:GetObjectType() == "GameTooltip") then
 				hooksecurefunc(tip, "SetOwner", function(tip, owner, anchor, xOffset, yOffset)
 					tt:ResetCurrentDisplayParamsForAnchoring(tip, true);
@@ -3568,6 +3867,11 @@ end
 -- register for group events
 LibFroznFunctions:RegisterForGroupEvents(MOD_NAME, {
 	OnTipAddedToCache = function(self, TT_CacheForFrames, tip)
+		-- check if insecure interaction with the tip is currently forbidden
+		if (tip:IsForbidden()) then
+			return;
+		end
+		
 		-- only for GameTooltip tips
 		if (tip:GetObjectType() ~= "GameTooltip") then
 			return;
@@ -3626,6 +3930,11 @@ LibFroznFunctions:RegisterForGroupEvents(MOD_NAME, {
 -- register for group events
 LibFroznFunctions:RegisterForGroupEvents(MOD_NAME, {
 	OnTipAddedToCache = function(self, TT_CacheForFrames, tip)
+		-- check if insecure interaction with the tip is currently forbidden
+		if (tip:IsForbidden()) then
+			return;
+		end
+		
 		-- only for GameTooltip tips
 		if (tip:GetObjectType() ~= "GameTooltip") then
 			return;
@@ -3781,6 +4090,11 @@ LibFroznFunctions:RegisterForGroupEvents(MOD_NAME, {
 		end
 	end,
 	OnTipAddedToCache = function(self, TT_CacheForFrames, tip)
+		-- check if insecure interaction with the tip is currently forbidden
+		if (tip:IsForbidden()) then
+			return;
+		end
+		
 		-- only for GameTooltip tips
 		if (tip:GetObjectType() ~= "GameTooltip") then
 			return;
@@ -3838,15 +4152,17 @@ LibFroznFunctions:RegisterForGroupEvents(MOD_NAME, {
 		
 		if (tip == GameTooltip) then
 			if (LibFroznFunctions.hasWoWFlavor.experienceBarDockedToInterfaceBar) then
-				local tipOwner = tip:GetOwner();
-				
-				if (tipOwner == LibFroznFunctions.hasWoWFlavor.experienceBarFrame) then
-					isTipFromExpBar = true;
+				if (not tip:IsForbidden()) then
+					local tipOwner = tip:GetOwner();
+					
+					if (tipOwner == LibFroznFunctions.hasWoWFlavor.experienceBarFrame) then
+						isTipFromExpBar = true;
+					end
 				end
 			else
 				local mouseFocus = LibFroznFunctions:GetMouseFocus();
 				
-				if (LibFroznFunctions:IsFrameBackInFrameChain(mouseFocus, { LibFroznFunctions.hasWoWFlavor.experienceBarFrame }, 2)) then
+				if (mouseFocus) and (not mouseFocus:IsForbidden()) and (LibFroznFunctions:IsFrameBackInFrameChain(mouseFocus, { LibFroznFunctions.hasWoWFlavor.experienceBarFrame }, 2)) then
 					isTipFromExpBar = true;
 				end
 			end

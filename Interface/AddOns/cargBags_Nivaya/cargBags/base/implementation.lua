@@ -33,6 +33,7 @@ local GetContainerNumSlots = GetContainerNumSlots or C_Container.GetContainerNum
 local GetContainerItemLink = GetContainerItemLink or C_Container.GetContainerItemLink
 local GetContainerItemCooldown = GetContainerItemCooldown or C_Container.GetContainerItemCooldown
 local GetContainerItemEquipmentSetInfo = isRetail and (GetContainerItemEquipmentSetInfo or C_Container.GetContainerItemEquipmentSetInfo)
+local CloseBankFrame = CloseBankFrame or C_Bank.CloseBankFrame	
 
 local animaSpells = {
 	[336327] = true,

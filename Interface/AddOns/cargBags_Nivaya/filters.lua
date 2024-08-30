@@ -5,6 +5,8 @@ local isClassic = WOW_PROJECT_ID ~= WOW_PROJECT_MAINLINE
 local isCata = WOW_PROJECT_ID == WOW_PROJECT_CATACLYSM_CLASSIC
 local isRetail = WOW_PROJECT_ID == WOW_PROJECT_MAINLINE
 
+local IsAddOnLoaded = IsAddOnLoaded or C_AddOns.IsAddOnLoaded
+
 local isDF = select(4,GetBuildInfo()) >= 100000
 local NumBagContainer = isDF and 5 or 4
 local BankContainerStartID = NumBagContainer + 1
@@ -105,8 +107,8 @@ end
 -----------------------------------------
 local item2setIR = {} -- ItemRack
 local item2setOF = {} -- Outfitter
-local IR = C_AddOns.IsAddOnLoaded('ItemRack')
-local OF = C_AddOns.IsAddOnLoaded('Outfitter')
+local IR = IsAddOnLoaded('ItemRack')
+local OF = IsAddOnLoaded('Outfitter')
 local OFisInitialized = false
 
 cB_Filters.fItemSets = function(item)

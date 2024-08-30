@@ -43,30 +43,30 @@ TalentTreeTweaksDB = {
 ["unlockInCombatSpending"] = true,
 },
 ["MiniTreeInTooltip"] = {
+["upgradedDisplayStyle"] = 1,
+["displayStyle"] = "simple-default-diff",
 ["diffOrange"] = {
 ["b"] = 0,
 ["g"] = 1,
 ["r"] = 1,
 },
-["displayStyle"] = "simple-default-diff",
-["upgradedDisplayStyle"] = 1,
 ["diffRed"] = {
 ["b"] = 0,
 ["g"] = 0,
 ["r"] = 1,
 },
 ["scale"] = 1,
-["inactiveSubTreeAlpha"] = 0.5,
-["diffYellow"] = {
-["b"] = 1,
-["g"] = 1,
-["r"] = 1,
-},
 ["diffGreen"] = {
 ["b"] = 0,
 ["g"] = 1,
 ["r"] = 0,
 },
+["diffYellow"] = {
+["b"] = 1,
+["g"] = 1,
+["r"] = 1,
+},
+["inactiveSubTreeAlpha"] = 0.5,
 },
 ["ReduceTaint"] = {
 ["disableMultiActionBarShowHide"] = true,

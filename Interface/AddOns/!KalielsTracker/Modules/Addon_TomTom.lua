@@ -187,7 +187,7 @@ end
 local function SetSuperTrackedQuestWaypoint(questID, force)
 	if questID ~= superTrackedQuestID or force then
 		RemoveWaypoint(superTrackedQuestID)
-		if questID > 0 and not QuestUtils_IsQuestBonusObjective(questID) then
+		if questID > 0 then
 			AddWaypoint(questID)
 			superTrackedQuestID = questID
 		end
@@ -227,6 +227,9 @@ local function SetHooks()
 
 	-- Blizzard
 	hooksecurefunc(C_SuperTrack, "SetSuperTrackedQuestID", function(questID)
+		if QuestUtils_IsQuestBonusObjective(questID) then
+			RemoveWaypoint(superTrackedQuestID)
+		end
 		stopUpdate = questID > 0 and not QuestUtils_IsQuestWatched(questID)
 		if not stopUpdate then
 			SetSuperTrackedQuestWaypoint(questID)
@@ -235,6 +238,24 @@ local function SetHooks()
 
 	hooksecurefunc(C_SuperTrack, "ClearAllSuperTracked", function()
 		if superTrackedQuestID > 0 then
+			RemoveWaypoint(superTrackedQuestID)
+		end
+	end)
+
+	hooksecurefunc(C_SuperTrack, "SetSuperTrackedContent", function(trackableType, trackableID)
+		if superTrackedQuestID > 0 then
+			RemoveWaypoint(superTrackedQuestID)
+		end
+	end)
+
+	hooksecurefunc(C_SuperTrack, "SetSuperTrackedMapPin", function(type, typeID)
+		if superTrackedQuestID > 0 then
+			RemoveWaypoint(superTrackedQuestID)
+		end
+	end)
+
+	hooksecurefunc(C_SuperTrack, "SetSuperTrackedUserWaypoint", function(superTracked)
+		if superTracked and superTrackedQuestID > 0 then
 			RemoveWaypoint(superTrackedQuestID)
 		end
 	end)
@@ -279,7 +300,7 @@ local function SetEvents()
 	-- Update waypoint after quest objectives changed
 	KT:RegEvent("QUEST_WATCH_UPDATE", function(_, questID)
 		if questID == C_SuperTrack.GetSuperTrackedQuestID() then
-			C_Timer.After(0, function()
+			C_Timer.After(0.3, function()
 				SetSuperTrackedQuestWaypoint(questID, true)
 			end)
 		end

@@ -1,11 +1,153 @@
 
 Grid2DB = {
 ["namespaces"] = {
-["Grid2RaidDebuffs"] = {
+["Grid2Frame"] = {
 ["profiles"] = {
 ["SevUI2"] = {
-["lastSelectedModule"] = "[Custom Debuffs]",
-["defaultEJ_difficulty"] = 16,
+["fontSize"] = 16,
+["frameBorder"] = 1,
+["extraThemes"] = {
+{
+["frameHeaderWidths"] = {
+},
+["fontSize"] = 16,
+["frameHeaderHeights"] = {
+},
+["frameBorder"] = 1,
+["iconSize"] = 14,
+["mouseoverTexture"] = "Solid",
+["frameBorderDistance"] = 1,
+["frameBorderTexture"] = "1 Pixel",
+["frameHeight"] = 38,
+["frameHeaderLocks"] = {
+},
+["mouseoverColor"] = {
+["a"] = 1,
+["r"] = 0.592156862745098,
+["g"] = 1,
+["b"] = 0.9176470588235294,
+},
+["barTexture"] = "SevSLStatus",
+["frameTexture"] = "SevSLStatus",
+["frameWidths"] = {
+},
+["frameContentColor"] = {
+["a"] = 1,
+["r"] = 0,
+["g"] = 0,
+["b"] = 0,
+},
+["font"] = "PT_Sans_Narrow",
+["frameHeights"] = {
+},
+["frameBorderColor"] = {
+["a"] = 1,
+["r"] = 0.1372549086809158,
+["g"] = 0.1372549086809158,
+["b"] = 0.1372549086809158,
+},
+["mouseoverHighlight"] = true,
+["orientation"] = "HORIZONTAL",
+["frameWidth"] = 100,
+["frameColor"] = {
+["a"] = 1,
+["r"] = 0,
+["g"] = 0,
+["b"] = 0,
+},
+},
+{
+["frameHeaderWidths"] = {
+},
+["fontSize"] = 16,
+["frameHeaderHeights"] = {
+},
+["frameBorder"] = 1,
+["iconSize"] = 14,
+["mouseoverTexture"] = "Solid",
+["frameBorderDistance"] = 1,
+["displayZoomedIcons"] = true,
+["frameWidth"] = 200,
+["frameHeight"] = 38,
+["frameTexture"] = "SevSLStatus",
+["orientation"] = "HORIZONTAL",
+["barTexture"] = "SevSLStatus",
+["frameBorderColor"] = {
+["a"] = 1,
+["r"] = 0.1372549086809158,
+["g"] = 0.1372549086809158,
+["b"] = 0.1372549086809158,
+},
+["frameWidths"] = {
+},
+["mouseoverHighlight"] = true,
+["font"] = "PT_Sans_Narrow",
+["mouseoverColor"] = {
+["a"] = 1,
+["r"] = 0.592156862745098,
+["g"] = 1,
+["b"] = 0.9176470588235294,
+},
+["frameColor"] = {
+["a"] = 1,
+["b"] = 0,
+["g"] = 0,
+["r"] = 0,
+},
+["frameHeights"] = {
+},
+["frameBorderTexture"] = "1 Pixel",
+["frameHeaderLocks"] = {
+},
+["frameContentColor"] = {
+["a"] = 1,
+["b"] = 0,
+["g"] = 0,
+["r"] = 0,
+},
+},
+},
+["mouseoverTexture"] = "Solid",
+["frameHeight"] = 38,
+["barTexture"] = "SevSLStatus",
+["frameBorderTexture"] = "1 Pixel",
+["frameBorderColor"] = {
+["a"] = 1,
+["b"] = 0.1372549086809158,
+["g"] = 0.1372549086809158,
+["r"] = 0.1372549086809158,
+},
+["font"] = "PT_Sans_Narrow",
+["displayZoomedIcons"] = true,
+["orientation"] = "HORIZONTAL",
+["mouseoverHighlight"] = true,
+["frameTexture"] = "SevSLStatus",
+["frameWidth"] = 200,
+["mouseoverColor"] = {
+["b"] = 0.9176470588235294,
+["r"] = 0.592156862745098,
+},
+},
+["SevUI"] = {
+["fontSize"] = 15,
+["frameHeight"] = 30,
+["frameBorder"] = 1,
+["barTexture"] = "SevSLStatus",
+["frameBorderTexture"] = "Grid2 Pixel",
+["frameTexture"] = "SevSLStatus",
+["mouseoverColor"] = {
+["b"] = 0.9176470588235294,
+["r"] = 0.592156862745098,
+},
+["font"] = "PT_Sans_Narrow",
+["frameBorderColor"] = {
+["a"] = 1,
+},
+["orientation"] = "HORIZONTAL",
+["mouseoverHighlight"] = true,
+["mouseoverTexture"] = "Solid",
+["frameWidth"] = 100,
+["frameBorderDistance"] = 0,
 },
 },
 },
@@ -21,10 +163,10 @@ Grid2DB = {
 ["showPlayer"] = false,
 },
 ["meta"] = {
-["arena"] = true,
-["raid"] = true,
-["solo"] = true,
 ["party"] = true,
+["arena"] = true,
+["solo"] = true,
+["raid"] = true,
 },
 },
 ["Raid"] = {
@@ -35,10 +177,10 @@ Grid2DB = {
 ["unitsPerColumn"] = 5,
 },
 ["meta"] = {
-["raid"] = true,
-["party"] = true,
-["solo"] = true,
 ["arena"] = true,
+["raid"] = true,
+["solo"] = true,
+["party"] = true,
 },
 },
 },
@@ -48,10 +190,10 @@ Grid2DB = {
 ["BackgroundTexture"] = "Solid",
 ["BorderB"] = 0,
 ["layouts"] = {
-["party"] = "Party",
-["raid"] = "Raid",
-["solo"] = "None",
 ["arena"] = "Party",
+["party"] = "Party",
+["solo"] = "None",
+["raid"] = "Raid",
 },
 ["BackgroundR"] = 0.1372549086809158,
 ["FrameLock"] = true,
@@ -176,10 +318,10 @@ Grid2DB = {
 ["BackgroundTexture"] = "Solid",
 ["BorderB"] = 0,
 ["layouts"] = {
-["arena"] = "Party",
-["party"] = "Party",
-["solo"] = "None",
 ["raid"] = "Raid",
+["arena"] = "Party",
+["solo"] = "None",
+["party"] = "Party",
 },
 ["BackgroundR"] = 0.1372549086809158,
 ["ScaleSize"] = 1,
@@ -313,161 +455,19 @@ Grid2DB = {
 },
 },
 },
-["Grid2AoeHeals"] = {
+["LibDualSpec-1.0"] = {
 },
 ["Grid2Options"] = {
 },
-["Grid2Frame"] = {
+["Grid2RaidDebuffs"] = {
 ["profiles"] = {
 ["SevUI2"] = {
-["fontSize"] = 16,
-["frameBorder"] = 1,
-["extraThemes"] = {
-{
-["frameHeaderWidths"] = {
-},
-["fontSize"] = 16,
-["frameHeaderHeights"] = {
-},
-["frameBorder"] = 1,
-["iconSize"] = 14,
-["mouseoverTexture"] = "Solid",
-["frameBorderDistance"] = 1,
-["mouseoverColor"] = {
-["a"] = 1,
-["r"] = 0.592156862745098,
-["g"] = 1,
-["b"] = 0.9176470588235294,
-},
-["frameHeight"] = 38,
-["frameHeaderLocks"] = {
-},
-["frameTexture"] = "SevSLStatus",
-["barTexture"] = "SevSLStatus",
-["frameBorderTexture"] = "1 Pixel",
-["frameWidths"] = {
-},
-["frameContentColor"] = {
-["a"] = 1,
-["r"] = 0,
-["g"] = 0,
-["b"] = 0,
-},
-["font"] = "PT_Sans_Narrow",
-["frameHeights"] = {
-},
-["frameBorderColor"] = {
-["a"] = 1,
-["r"] = 0.1372549086809158,
-["g"] = 0.1372549086809158,
-["b"] = 0.1372549086809158,
-},
-["orientation"] = "HORIZONTAL",
-["mouseoverHighlight"] = true,
-["frameWidth"] = 100,
-["frameColor"] = {
-["a"] = 1,
-["r"] = 0,
-["g"] = 0,
-["b"] = 0,
-},
-},
-{
-["frameHeaderWidths"] = {
-},
-["fontSize"] = 16,
-["frameHeaderHeights"] = {
-},
-["frameBorder"] = 1,
-["iconSize"] = 14,
-["mouseoverTexture"] = "Solid",
-["frameBorderDistance"] = 1,
-["frameTexture"] = "SevSLStatus",
-["frameWidth"] = 200,
-["frameHeight"] = 38,
-["frameBorderColor"] = {
-["a"] = 1,
-["r"] = 0.1372549086809158,
-["g"] = 0.1372549086809158,
-["b"] = 0.1372549086809158,
-},
-["orientation"] = "HORIZONTAL",
-["barTexture"] = "SevSLStatus",
-["frameBorderTexture"] = "1 Pixel",
-["frameWidths"] = {
-},
-["mouseoverHighlight"] = true,
-["font"] = "PT_Sans_Narrow",
-["mouseoverColor"] = {
-["a"] = 1,
-["r"] = 0.592156862745098,
-["g"] = 1,
-["b"] = 0.9176470588235294,
-},
-["frameColor"] = {
-["a"] = 1,
-["b"] = 0,
-["g"] = 0,
-["r"] = 0,
-},
-["frameContentColor"] = {
-["a"] = 1,
-["b"] = 0,
-["g"] = 0,
-["r"] = 0,
-},
-["displayZoomedIcons"] = true,
-["frameHeaderLocks"] = {
-},
-["frameHeights"] = {
+["lastSelectedModule"] = "[Custom Debuffs]",
+["defaultEJ_difficulty"] = 16,
 },
 },
 },
-["mouseoverTexture"] = "Solid",
-["frameHeight"] = 38,
-["barTexture"] = "SevSLStatus",
-["frameBorderTexture"] = "1 Pixel",
-["displayZoomedIcons"] = true,
-["font"] = "PT_Sans_Narrow",
-["mouseoverColor"] = {
-["b"] = 0.9176470588235294,
-["r"] = 0.592156862745098,
-},
-["mouseoverHighlight"] = true,
-["orientation"] = "HORIZONTAL",
-["frameBorderColor"] = {
-["a"] = 1,
-["b"] = 0.1372549086809158,
-["g"] = 0.1372549086809158,
-["r"] = 0.1372549086809158,
-},
-["frameWidth"] = 200,
-["frameTexture"] = "SevSLStatus",
-},
-["SevUI"] = {
-["fontSize"] = 15,
-["frameHeight"] = 30,
-["frameBorder"] = 1,
-["barTexture"] = "SevSLStatus",
-["frameBorderTexture"] = "Grid2 Pixel",
-["frameTexture"] = "SevSLStatus",
-["mouseoverColor"] = {
-["b"] = 0.9176470588235294,
-["r"] = 0.592156862745098,
-},
-["font"] = "PT_Sans_Narrow",
-["frameBorderColor"] = {
-["a"] = 1,
-},
-["orientation"] = "HORIZONTAL",
-["mouseoverHighlight"] = true,
-["mouseoverTexture"] = "Solid",
-["frameWidth"] = 100,
-["frameBorderDistance"] = 0,
-},
-},
-},
-["LibDualSpec-1.0"] = {
+["Grid2AoeHeals"] = {
 },
 },
 ["profileKeys"] = {
@@ -480,13 +480,13 @@ Grid2DB = {
 ["Sevdarkblue - Tarren Mill"] = "SevUI2",
 ["Sevenruu - Tarren Mill"] = "SevUI2",
 ["Nimshot - Ravencrest"] = "Nimshot - Ravencrest",
-["Sevdeekaytwo - Tarren Mill"] = "SevUI2",
+["Sevdk - Tarren Mill"] = "SevUI",
 ["Sevdk - Valdrakken"] = "Sevdk - Valdrakken",
-["Sevenroll - Kazzak"] = "Sevenroll - Kazzak",
+["Sevdeekaytwo - Tarren Mill"] = "SevUI2",
 ["Lftwgldshare - Draenor"] = "Lftwgldshare - Draenor",
 ["Sevdk - Draenor"] = "Sevdk - Draenor",
-["Sevdk - Tarren Mill"] = "SevUI",
 ["Sevwar - Tarren Mill"] = "SevUI2",
+["Sevenroll - Kazzak"] = "Sevenroll - Kazzak",
 ["Sevwartwo - Valdrakken"] = "Sevwartwo - Valdrakken",
 ["Sevensides - Tarren Mill"] = "SevUI2",
 ["Sevenroll - Tarren Mill"] = "SevUI2",
@@ -529,14 +529,8 @@ Grid2DB = {
 ["b"] = 0,
 },
 },
-["border"] = {
-["type"] = "border",
-["color1"] = {
-["a"] = 0,
-["r"] = 0,
-["g"] = 0,
-["b"] = 0,
-},
+["alpha"] = {
+["type"] = "alpha",
 },
 ["text-down"] = {
 ["type"] = "text",
@@ -558,8 +552,14 @@ Grid2DB = {
 ["showDefault"] = true,
 ["showTooltip"] = 4,
 },
-["alpha"] = {
-["type"] = "alpha",
+["border"] = {
+["type"] = "border",
+["color1"] = {
+["a"] = 0,
+["r"] = 0,
+["g"] = 0,
+["b"] = 0,
+},
 },
 ["background"] = {
 ["type"] = "background",
@@ -625,10 +625,10 @@ Grid2DB = {
 ["textlength"] = 6,
 ["fontSize"] = 8,
 },
-["text-down-color"] = {
+["text-up-color"] = {
 ["type"] = "text-color",
 },
-["text-up-color"] = {
+["text-down-color"] = {
 ["type"] = "text-color",
 },
 ["icon-center"] = {
@@ -680,6 +680,12 @@ Grid2DB = {
 ["death"] = 95,
 ["vehicle"] = 70,
 },
+["corner-bottom-left"] = {
+["threat"] = 99,
+},
+["text-down-color"] = {
+["classcolor"] = 99,
+},
 ["text-up"] = {
 ["charmed"] = 65,
 ["feign-death"] = 96,
@@ -687,12 +693,6 @@ Grid2DB = {
 ["offline"] = 93,
 ["death"] = 95,
 ["vehicle"] = 70,
-},
-["text-down-color"] = {
-["classcolor"] = 99,
-},
-["corner-bottom-left"] = {
-["threat"] = 99,
 },
 ["icon-center"] = {
 ["ready-check"] = 150,
@@ -744,14 +744,8 @@ Grid2DB = {
 ["b"] = 0,
 },
 },
-["border"] = {
-["type"] = "border",
-["color1"] = {
-["a"] = 0,
-["r"] = 0,
-["g"] = 0,
-["b"] = 0,
-},
+["alpha"] = {
+["type"] = "alpha",
 },
 ["text-down"] = {
 ["type"] = "text",
@@ -773,8 +767,14 @@ Grid2DB = {
 ["showDefault"] = true,
 ["showTooltip"] = 4,
 },
-["alpha"] = {
-["type"] = "alpha",
+["border"] = {
+["type"] = "border",
+["color1"] = {
+["a"] = 0,
+["r"] = 0,
+["g"] = 0,
+["b"] = 0,
+},
 },
 ["background"] = {
 ["type"] = "background",
@@ -840,10 +840,10 @@ Grid2DB = {
 ["textlength"] = 6,
 ["fontSize"] = 8,
 },
-["text-down-color"] = {
+["text-up-color"] = {
 ["type"] = "text-color",
 },
-["text-up-color"] = {
+["text-down-color"] = {
 ["type"] = "text-color",
 },
 ["icon-center"] = {
@@ -895,6 +895,12 @@ Grid2DB = {
 ["death"] = 95,
 ["vehicle"] = 70,
 },
+["corner-bottom-left"] = {
+["threat"] = 99,
+},
+["text-down-color"] = {
+["classcolor"] = 99,
+},
 ["text-up"] = {
 ["charmed"] = 65,
 ["feign-death"] = 96,
@@ -902,12 +908,6 @@ Grid2DB = {
 ["offline"] = 93,
 ["death"] = 95,
 ["vehicle"] = 70,
-},
-["text-down-color"] = {
-["classcolor"] = 99,
-},
-["corner-bottom-left"] = {
-["threat"] = 99,
 },
 ["icon-center"] = {
 ["ready-check"] = 150,
@@ -1045,21 +1045,6 @@ Grid2DB = {
 ["text-down-color"] = {
 ["type"] = "text-color",
 },
-["text-up"] = {
-["type"] = "text",
-["location"] = {
-["y"] = -8,
-["relPoint"] = "TOP",
-["point"] = "TOP",
-["x"] = 0,
-},
-["level"] = 7,
-["textlength"] = 6,
-["fontSize"] = 8,
-},
-["text-up-color"] = {
-["type"] = "text-color",
-},
 ["corner-bottom-left"] = {
 ["type"] = "square",
 ["location"] = {
@@ -1076,6 +1061,21 @@ Grid2DB = {
 ["r"] = 1,
 },
 ["size"] = 5,
+},
+["text-up-color"] = {
+["type"] = "text-color",
+},
+["text-up"] = {
+["type"] = "text",
+["location"] = {
+["y"] = -8,
+["relPoint"] = "TOP",
+["point"] = "TOP",
+["x"] = 0,
+},
+["level"] = 7,
+["textlength"] = 6,
+["fontSize"] = 8,
 },
 ["heals"] = {
 ["type"] = "bar",
@@ -1249,8 +1249,14 @@ Grid2DB = {
 ["b"] = 0,
 },
 },
-["alpha"] = {
-["type"] = "alpha",
+["border"] = {
+["type"] = "border",
+["color1"] = {
+["a"] = 0,
+["r"] = 0,
+["g"] = 0,
+["b"] = 0,
+},
 },
 ["text-down"] = {
 ["type"] = "text",
@@ -1272,14 +1278,8 @@ Grid2DB = {
 ["showDefault"] = true,
 ["showTooltip"] = 4,
 },
-["border"] = {
-["type"] = "border",
-["color1"] = {
-["a"] = 0,
-["r"] = 0,
-["g"] = 0,
-["b"] = 0,
-},
+["alpha"] = {
+["type"] = "alpha",
 },
 ["background"] = {
 ["type"] = "background",
@@ -1345,10 +1345,10 @@ Grid2DB = {
 ["textlength"] = 6,
 ["fontSize"] = 8,
 },
-["text-up-color"] = {
+["text-down-color"] = {
 ["type"] = "text-color",
 },
-["text-down-color"] = {
+["text-up-color"] = {
 ["type"] = "text-color",
 },
 ["icon-center"] = {
@@ -1400,12 +1400,6 @@ Grid2DB = {
 ["death"] = 95,
 ["vehicle"] = 70,
 },
-["corner-bottom-left"] = {
-["threat"] = 99,
-},
-["text-down-color"] = {
-["classcolor"] = 99,
-},
 ["text-up"] = {
 ["charmed"] = 65,
 ["feign-death"] = 96,
@@ -1413,6 +1407,12 @@ Grid2DB = {
 ["offline"] = 93,
 ["death"] = 95,
 ["vehicle"] = 70,
+},
+["text-down-color"] = {
+["classcolor"] = 99,
+},
+["corner-bottom-left"] = {
+["threat"] = 99,
 },
 ["icon-center"] = {
 ["ready-check"] = 150,
@@ -1471,7 +1471,7 @@ Grid2DB = {
 ["opacity"] = 0.25,
 ["texture"] = "Gradient",
 },
-["text-up-color"] = {
+["text-down-color"] = {
 ["type"] = "text-color",
 },
 ["icon-right"] = {
@@ -1494,16 +1494,10 @@ Grid2DB = {
 ["showDefault"] = true,
 ["showTooltip"] = 4,
 },
-["border"] = {
-["color1"] = {
-["a"] = 0,
-["b"] = 0,
-["g"] = 0,
-["r"] = 0,
+["alpha"] = {
+["type"] = "alpha",
 },
-["type"] = "border",
-},
-["text-down-color"] = {
+["text-up-color"] = {
 ["type"] = "text-color",
 },
 ["text-up"] = {
@@ -1570,8 +1564,14 @@ Grid2DB = {
 ["background"] = {
 ["type"] = "background",
 },
-["alpha"] = {
-["type"] = "alpha",
+["border"] = {
+["color1"] = {
+["a"] = 0,
+["b"] = 0,
+["g"] = 0,
+["r"] = 0,
+},
+["type"] = "border",
 },
 ["icon-center"] = {
 ["type"] = "icon",
@@ -1817,6 +1817,21 @@ Grid2DB = {
 ["text-down-color"] = {
 ["type"] = "text-color",
 },
+["text-up"] = {
+["type"] = "text",
+["location"] = {
+["y"] = -8,
+["relPoint"] = "TOP",
+["point"] = "TOP",
+["x"] = 0,
+},
+["level"] = 7,
+["textlength"] = 6,
+["fontSize"] = 8,
+},
+["text-up-color"] = {
+["type"] = "text-color",
+},
 ["corner-bottom-left"] = {
 ["type"] = "square",
 ["location"] = {
@@ -1833,21 +1848,6 @@ Grid2DB = {
 ["r"] = 1,
 },
 ["size"] = 5,
-},
-["text-up-color"] = {
-["type"] = "text-color",
-},
-["text-up"] = {
-["type"] = "text",
-["location"] = {
-["y"] = -8,
-["relPoint"] = "TOP",
-["point"] = "TOP",
-["x"] = 0,
-},
-["level"] = 7,
-["textlength"] = 6,
-["fontSize"] = 8,
 },
 ["heals"] = {
 ["type"] = "bar",
@@ -2107,21 +2107,21 @@ Grid2DB = {
 ["health"] = {
 ["texture"] = "SevSLStatus",
 ["type"] = "bar",
-["orientation"] = "HORIZONTAL",
-["backColor"] = {
-["a"] = 1,
-["r"] = 1,
-["g"] = 0.2588235294117647,
-["b"] = 0,
-},
-["backTexture"] = "SevSLStatus",
-["level"] = 2,
 ["location"] = {
 ["y"] = 0,
 ["relPoint"] = "CENTER",
 ["point"] = "CENTER",
 ["x"] = 0,
 },
+["backColor"] = {
+["a"] = 1,
+["r"] = 1,
+["g"] = 0.2588235294117647,
+["b"] = 0,
+},
+["orientation"] = "HORIZONTAL",
+["level"] = 2,
+["backTexture"] = "SevSLStatus",
 ["color1"] = {
 ["a"] = 1,
 ["r"] = 0,
@@ -2284,9 +2284,12 @@ Grid2DB = {
 ["b"] = 0.2,
 },
 },
-["monk-stagger"] = {
+["debuff-Poison"] = {
 ["load"] = {
-["disabled"] = true,
+["playerClass"] = {
+["MONK"] = true,
+["PALADIN"] = true,
+},
 },
 },
 ["voice"] = {
@@ -2331,16 +2334,16 @@ Grid2DB = {
 ["spellName"] = "Explosive Magma",
 ["type"] = "debuff",
 ["load"] = {
-["instType"] = {
-["mythic"] = true,
-},
 ["playerClassSpec"] = {
 ["PALADIN2"] = true,
 },
+["instType"] = {
+["mythic"] = true,
+},
+["cooldown"] = 204018,
 ["instNameID"] = {
 ["Aberrus, the Shadowed Crucible"] = true,
 },
-["cooldown"] = 204018,
 },
 ["color1"] = {
 ["a"] = 1,
@@ -2400,8 +2403,8 @@ Grid2DB = {
 ["EVOKER2"] = true,
 ["PRIEST2"] = true,
 ["MONK2"] = true,
-["DRUID4"] = true,
 ["SHAMAN3"] = true,
+["DRUID4"] = true,
 },
 ["unitRole"] = {
 ["HEALER"] = true,
@@ -2471,7 +2474,7 @@ Grid2DB = {
 ["b"] = 1,
 },
 },
-["afk"] = {
+["mana"] = {
 ["load"] = {
 ["disabled"] = true,
 },
@@ -2541,11 +2544,6 @@ Grid2DB = {
 ["disabled"] = true,
 },
 },
-["banzai-threat"] = {
-["load"] = {
-["disabled"] = true,
-},
-},
 ["debuff-Curse"] = {
 ["load"] = {
 ["playerClass"] = {
@@ -2554,17 +2552,19 @@ Grid2DB = {
 },
 },
 },
+["banzai-threat"] = {
+["load"] = {
+["disabled"] = true,
+},
+},
 ["health-low"] = {
 ["load"] = {
 ["disabled"] = true,
 },
 },
-["debuff-Poison"] = {
+["monk-stagger"] = {
 ["load"] = {
-["playerClass"] = {
-["MONK"] = true,
-["PALADIN"] = true,
-},
+["disabled"] = true,
 },
 },
 ["manaalt"] = {
@@ -2578,7 +2578,7 @@ Grid2DB = {
 ["r"] = 0.9411765336990356,
 },
 },
-["mana"] = {
+["afk"] = {
 ["load"] = {
 ["disabled"] = true,
 },
@@ -2640,8 +2640,8 @@ Grid2DB = {
 ["debuff-VolcanicHeart"] = 165,
 ["debuff-Disease"] = 157,
 ["debuff-Poison"] = 158,
-["debuff-Curse"] = 162,
 ["ready-check"] = 150,
+["debuff-Curse"] = 162,
 ["raid-debuffs"] = 155,
 ["summon"] = 156,
 ["resurrection"] = 166,
@@ -2845,9 +2845,6 @@ Grid2DB = {
 ["textlength"] = 12,
 ["fontSize"] = 8,
 },
-["corner-top-left-color"] = {
-["type"] = "text-color",
-},
 ["health"] = {
 ["type"] = "bar",
 ["location"] = {
@@ -2864,6 +2861,9 @@ Grid2DB = {
 ["r"] = 0,
 },
 ["texture"] = "Gradient",
+},
+["corner-top-left-color"] = {
+["type"] = "text-color",
 },
 ["corner-bottom-left"] = {
 ["type"] = "square",
@@ -3074,10 +3074,13 @@ Grid2DB = {
 ["heals"] = {
 ["heals-incoming"] = 99,
 },
-["corner-bottom-left"] = {
-["threat"] = 99,
-["buff-HandOfSalvation-mine"] = 100,
-["buff-HandOfSalvation"] = 101,
+["text-up"] = {
+["charmed"] = 65,
+["feign-death"] = 96,
+["health-deficit"] = 50,
+["offline"] = 93,
+["vehicle"] = 70,
+["death"] = 95,
 },
 ["text-up-color"] = {
 ["charmed"] = 65,
@@ -3091,13 +3094,10 @@ Grid2DB = {
 ["buff-BeaconOfLight-mine"] = 89,
 ["buff-BeaconOfLight"] = 99,
 },
-["text-up"] = {
-["charmed"] = 65,
-["feign-death"] = 96,
-["health-deficit"] = 50,
-["offline"] = 93,
-["vehicle"] = 70,
-["death"] = 95,
+["corner-bottom-left"] = {
+["threat"] = 99,
+["buff-HandOfSalvation-mine"] = 100,
+["buff-HandOfSalvation"] = 101,
 },
 },
 ["themes"] = {
@@ -3144,14 +3144,8 @@ Grid2DB = {
 ["b"] = 0,
 },
 },
-["border"] = {
-["type"] = "border",
-["color1"] = {
-["a"] = 0,
-["r"] = 0,
-["g"] = 0,
-["b"] = 0,
-},
+["alpha"] = {
+["type"] = "alpha",
 },
 ["text-down"] = {
 ["type"] = "text",
@@ -3173,8 +3167,14 @@ Grid2DB = {
 ["showDefault"] = true,
 ["showTooltip"] = 4,
 },
-["alpha"] = {
-["type"] = "alpha",
+["border"] = {
+["type"] = "border",
+["color1"] = {
+["a"] = 0,
+["r"] = 0,
+["g"] = 0,
+["b"] = 0,
+},
 },
 ["background"] = {
 ["type"] = "background",
@@ -3240,10 +3240,10 @@ Grid2DB = {
 ["textlength"] = 6,
 ["fontSize"] = 8,
 },
-["text-down-color"] = {
+["text-up-color"] = {
 ["type"] = "text-color",
 },
-["text-up-color"] = {
+["text-down-color"] = {
 ["type"] = "text-color",
 },
 ["icon-center"] = {
@@ -3295,6 +3295,12 @@ Grid2DB = {
 ["death"] = 95,
 ["vehicle"] = 70,
 },
+["corner-bottom-left"] = {
+["threat"] = 99,
+},
+["text-down-color"] = {
+["classcolor"] = 99,
+},
 ["text-up"] = {
 ["charmed"] = 65,
 ["feign-death"] = 96,
@@ -3302,12 +3308,6 @@ Grid2DB = {
 ["offline"] = 93,
 ["death"] = 95,
 ["vehicle"] = 70,
-},
-["text-down-color"] = {
-["classcolor"] = 99,
-},
-["corner-bottom-left"] = {
-["threat"] = 99,
 },
 ["icon-center"] = {
 ["ready-check"] = 150,
@@ -3445,6 +3445,21 @@ Grid2DB = {
 ["text-down-color"] = {
 ["type"] = "text-color",
 },
+["text-up"] = {
+["type"] = "text",
+["location"] = {
+["y"] = -8,
+["relPoint"] = "TOP",
+["point"] = "TOP",
+["x"] = 0,
+},
+["level"] = 7,
+["textlength"] = 6,
+["fontSize"] = 8,
+},
+["text-up-color"] = {
+["type"] = "text-color",
+},
 ["corner-bottom-left"] = {
 ["type"] = "square",
 ["location"] = {
@@ -3461,21 +3476,6 @@ Grid2DB = {
 ["r"] = 1,
 },
 ["size"] = 5,
-},
-["text-up-color"] = {
-["type"] = "text-color",
-},
-["text-up"] = {
-["type"] = "text",
-["location"] = {
-["y"] = -8,
-["relPoint"] = "TOP",
-["point"] = "TOP",
-["x"] = 0,
-},
-["level"] = 7,
-["textlength"] = 6,
-["fontSize"] = 8,
 },
 ["heals"] = {
 ["type"] = "bar",
@@ -3630,61 +3630,11 @@ Grid2DB = {
 },
 },
 },
-["Sevdeekaytwo - Tarren Mill"] = {
-["statusMap"] = {
-["heals"] = {
-["heals-incoming"] = 99,
+["Sevdk - Tarren Mill"] = {
+["themes"] = {
+["indicators"] = {
+[0] = {
 },
-["text-down"] = {
-["name"] = 99,
-},
-["heals-color"] = {
-["classcolor"] = 99,
-},
-["icon-left"] = {
-["raid-icon-player"] = 155,
-},
-["alpha"] = {
-["offline"] = 97,
-["range"] = 99,
-["death"] = 98,
-},
-["border"] = {
-["target"] = 50,
-["health-low"] = 55,
-},
-["health-color"] = {
-["classcolor"] = 99,
-},
-["health"] = {
-["health-current"] = 99,
-},
-["text-up-color"] = {
-["charmed"] = 65,
-["feign-death"] = 96,
-["health-deficit"] = 50,
-["offline"] = 93,
-["death"] = 95,
-["vehicle"] = 70,
-},
-["corner-bottom-left"] = {
-["threat"] = 99,
-},
-["text-down-color"] = {
-["classcolor"] = 99,
-},
-["text-up"] = {
-["charmed"] = 65,
-["feign-death"] = 96,
-["health-deficit"] = 50,
-["offline"] = 93,
-["death"] = 95,
-["vehicle"] = 70,
-},
-["icon-center"] = {
-["ready-check"] = 150,
-["raid-debuffs"] = 145,
-["death"] = 155,
 },
 },
 ["versions"] = {
@@ -3723,8 +3673,14 @@ Grid2DB = {
 ["b"] = 0,
 },
 },
-["alpha"] = {
-["type"] = "alpha",
+["border"] = {
+["type"] = "border",
+["color1"] = {
+["a"] = 0,
+["r"] = 0,
+["g"] = 0,
+["b"] = 0,
+},
 },
 ["text-down"] = {
 ["type"] = "text",
@@ -3746,14 +3702,8 @@ Grid2DB = {
 ["showDefault"] = true,
 ["showTooltip"] = 4,
 },
-["border"] = {
-["type"] = "border",
-["color1"] = {
-["a"] = 0,
-["r"] = 0,
-["g"] = 0,
-["b"] = 0,
-},
+["alpha"] = {
+["type"] = "alpha",
 },
 ["background"] = {
 ["type"] = "background",
@@ -3819,10 +3769,10 @@ Grid2DB = {
 ["textlength"] = 6,
 ["fontSize"] = 8,
 },
-["text-up-color"] = {
+["text-down-color"] = {
 ["type"] = "text-color",
 },
-["text-down-color"] = {
+["text-up-color"] = {
 ["type"] = "text-color",
 },
 ["icon-center"] = {
@@ -3838,6 +3788,560 @@ Grid2DB = {
 ["size"] = 14,
 },
 },
+["statusMap"] = {
+["heals"] = {
+["heals-incoming"] = 99,
+},
+["text-down"] = {
+["name"] = 99,
+},
+["heals-color"] = {
+["classcolor"] = 99,
+},
+["icon-left"] = {
+["raid-icon-player"] = 155,
+},
+["alpha"] = {
+["offline"] = 97,
+["range"] = 99,
+["death"] = 98,
+},
+["border"] = {
+["target"] = 50,
+["health-low"] = 55,
+},
+["health-color"] = {
+["classcolor"] = 99,
+},
+["health"] = {
+["health-current"] = 99,
+},
+["text-up-color"] = {
+["charmed"] = 65,
+["feign-death"] = 96,
+["health-deficit"] = 50,
+["offline"] = 93,
+["death"] = 95,
+["vehicle"] = 70,
+},
+["text-up"] = {
+["charmed"] = 65,
+["feign-death"] = 96,
+["health-deficit"] = 50,
+["offline"] = 93,
+["death"] = 95,
+["vehicle"] = 70,
+},
+["text-down-color"] = {
+["classcolor"] = 99,
+},
+["corner-bottom-left"] = {
+["threat"] = 99,
+},
+["icon-center"] = {
+["ready-check"] = 150,
+["raid-debuffs"] = 145,
+["death"] = 155,
+},
+},
+},
+["Sevdk - Valdrakken"] = {
+["versions"] = {
+["Grid2"] = 10,
+["Grid2RaidDebuffs"] = 4,
+},
+["indicators"] = {
+["text-down"] = {
+["type"] = "text",
+["location"] = {
+["y"] = 4,
+["relPoint"] = "BOTTOM",
+["point"] = "BOTTOM",
+["x"] = 0,
+},
+["level"] = 6,
+["textlength"] = 6,
+["fontSize"] = 10,
+},
+["heals"] = {
+["type"] = "bar",
+["color1"] = {
+["a"] = 0,
+["b"] = 0,
+["g"] = 0,
+["r"] = 0,
+},
+["anchorTo"] = "health",
+["location"] = {
+["y"] = 0,
+["relPoint"] = "CENTER",
+["point"] = "CENTER",
+["x"] = 0,
+},
+["level"] = 1,
+["opacity"] = 0.25,
+["texture"] = "Gradient",
+},
+["text-down-color"] = {
+["type"] = "text-color",
+},
+["icon-right"] = {
+["type"] = "icon",
+["location"] = {
+["y"] = 0,
+["relPoint"] = "RIGHT",
+["point"] = "RIGHT",
+["x"] = 2,
+},
+["level"] = 8,
+["fontSize"] = 8,
+["size"] = 12,
+},
+["heals-color"] = {
+["type"] = "bar-color",
+},
+["tooltip"] = {
+["type"] = "tooltip",
+["showDefault"] = true,
+["showTooltip"] = 4,
+},
+["alpha"] = {
+["type"] = "alpha",
+},
+["text-up-color"] = {
+["type"] = "text-color",
+},
+["text-up"] = {
+["type"] = "text",
+["location"] = {
+["y"] = -8,
+["relPoint"] = "TOP",
+["point"] = "TOP",
+["x"] = 0,
+},
+["level"] = 7,
+["textlength"] = 6,
+["fontSize"] = 8,
+},
+["icon-left"] = {
+["type"] = "icon",
+["location"] = {
+["y"] = 0,
+["relPoint"] = "LEFT",
+["point"] = "LEFT",
+["x"] = -2,
+},
+["level"] = 8,
+["fontSize"] = 8,
+["size"] = 12,
+},
+["health"] = {
+["type"] = "bar",
+["location"] = {
+["y"] = 0,
+["relPoint"] = "CENTER",
+["point"] = "CENTER",
+["x"] = 0,
+},
+["level"] = 2,
+["color1"] = {
+["a"] = 1,
+["b"] = 0,
+["g"] = 0,
+["r"] = 0,
+},
+["texture"] = "Gradient",
+},
+["health-color"] = {
+["type"] = "bar-color",
+},
+["corner-bottom-left"] = {
+["type"] = "square",
+["location"] = {
+["y"] = 0,
+["relPoint"] = "BOTTOMLEFT",
+["point"] = "BOTTOMLEFT",
+["x"] = 0,
+},
+["level"] = 5,
+["color1"] = {
+["a"] = 1,
+["b"] = 1,
+["g"] = 1,
+["r"] = 1,
+},
+["size"] = 5,
+},
+["background"] = {
+["type"] = "background",
+},
+["border"] = {
+["color1"] = {
+["a"] = 0,
+["b"] = 0,
+["g"] = 0,
+["r"] = 0,
+},
+["type"] = "border",
+},
+["icon-center"] = {
+["type"] = "icon",
+["location"] = {
+["y"] = 0,
+["relPoint"] = "CENTER",
+["point"] = "CENTER",
+["x"] = 0,
+},
+["level"] = 8,
+["fontSize"] = 8,
+["size"] = 14,
+},
+},
+["statusMap"] = {
+["heals"] = {
+["heals-incoming"] = 99,
+},
+["text-down"] = {
+["name"] = 99,
+},
+["heals-color"] = {
+["classcolor"] = 99,
+},
+["icon-left"] = {
+["raid-icon-player"] = 155,
+},
+["alpha"] = {
+["offline"] = 97,
+["range"] = 99,
+["death"] = 98,
+},
+["border"] = {
+["target"] = 50,
+["health-low"] = 55,
+},
+["text-up"] = {
+["charmed"] = 65,
+["feign-death"] = 96,
+["health-deficit"] = 50,
+["offline"] = 93,
+["vehicle"] = 70,
+["death"] = 95,
+},
+["health"] = {
+["health-current"] = 99,
+},
+["text-down-color"] = {
+["classcolor"] = 99,
+},
+["corner-bottom-left"] = {
+["threat"] = 99,
+},
+["text-up-color"] = {
+["charmed"] = 65,
+["feign-death"] = 96,
+["health-deficit"] = 50,
+["offline"] = 93,
+["vehicle"] = 70,
+["death"] = 95,
+},
+["health-color"] = {
+["classcolor"] = 99,
+},
+["icon-center"] = {
+["ready-check"] = 150,
+["raid-debuffs"] = 155,
+["death"] = 155,
+},
+},
+},
+["Sevwar - Tarren Mill"] = {
+["indicators"] = {
+["corner-bottom-right"] = {
+["location"] = {
+["y"] = 0,
+["relPoint"] = "BOTTOMRIGHT",
+["point"] = "BOTTOMRIGHT",
+["x"] = 0,
+},
+["type"] = "square",
+["level"] = 5,
+["size"] = 5,
+},
+["text-down"] = {
+["type"] = "text",
+["location"] = {
+["y"] = 4,
+["relPoint"] = "BOTTOM",
+["point"] = "BOTTOM",
+["x"] = 0,
+},
+["level"] = 6,
+["textlength"] = 6,
+["fontSize"] = 10,
+},
+["icon-left"] = {
+["type"] = "icon",
+["location"] = {
+["y"] = 0,
+["relPoint"] = "LEFT",
+["point"] = "LEFT",
+["x"] = -2,
+},
+["level"] = 8,
+["fontSize"] = 8,
+["size"] = 12,
+},
+["border"] = {
+["type"] = "border",
+["color1"] = {
+["a"] = 0,
+["r"] = 0,
+["g"] = 0,
+["b"] = 0,
+},
+},
+["background"] = {
+["type"] = "background",
+},
+["icon-center"] = {
+["type"] = "icon",
+["location"] = {
+["y"] = 0,
+["relPoint"] = "CENTER",
+["point"] = "CENTER",
+["x"] = 0,
+},
+["level"] = 8,
+["fontSize"] = 8,
+["size"] = 14,
+},
+["health-color"] = {
+["type"] = "bar-color",
+},
+["icon-right"] = {
+["type"] = "icon",
+["location"] = {
+["y"] = 0,
+["relPoint"] = "RIGHT",
+["point"] = "RIGHT",
+["x"] = 2,
+},
+["level"] = 8,
+["fontSize"] = 8,
+["size"] = 12,
+},
+["heals-color"] = {
+["type"] = "bar-color",
+},
+["tooltip"] = {
+["type"] = "tooltip",
+["showDefault"] = true,
+["showTooltip"] = 4,
+},
+["alpha"] = {
+["type"] = "alpha",
+},
+["text-down-color"] = {
+["type"] = "text-color",
+},
+["health"] = {
+["type"] = "bar",
+["location"] = {
+["y"] = 0,
+["relPoint"] = "CENTER",
+["point"] = "CENTER",
+["x"] = 0,
+},
+["level"] = 2,
+["texture"] = "Gradient",
+["color1"] = {
+["a"] = 1,
+["r"] = 0,
+["g"] = 0,
+["b"] = 0,
+},
+},
+["heals"] = {
+["type"] = "bar",
+["texture"] = "Gradient",
+["anchorTo"] = "health",
+["location"] = {
+["y"] = 0,
+["relPoint"] = "CENTER",
+["point"] = "CENTER",
+["x"] = 0,
+},
+["level"] = 1,
+["opacity"] = 0.25,
+["color1"] = {
+["a"] = 0,
+["r"] = 0,
+["g"] = 0,
+["b"] = 0,
+},
+},
+["corner-bottom-left"] = {
+["type"] = "square",
+["location"] = {
+["y"] = 0,
+["relPoint"] = "BOTTOMLEFT",
+["point"] = "BOTTOMLEFT",
+["x"] = 0,
+},
+["level"] = 5,
+["size"] = 5,
+["color1"] = {
+["a"] = 1,
+["r"] = 1,
+["g"] = 1,
+["b"] = 1,
+},
+},
+["text-up-color"] = {
+["type"] = "text-color",
+},
+["text-up"] = {
+["type"] = "text",
+["location"] = {
+["y"] = -8,
+["relPoint"] = "TOP",
+["point"] = "TOP",
+["x"] = 0,
+},
+["level"] = 7,
+["textlength"] = 6,
+["fontSize"] = 8,
+},
+["side-bottom"] = {
+["location"] = {
+["y"] = 0,
+["relPoint"] = "BOTTOM",
+["point"] = "BOTTOM",
+["x"] = 0,
+},
+["type"] = "square",
+["level"] = 9,
+["size"] = 5,
+},
+},
+["statuses"] = {
+["buff-ShieldWall"] = {
+["spellName"] = 871,
+["type"] = "buff",
+["mine"] = true,
+["color1"] = {
+["a"] = 1,
+["r"] = 0.1,
+["g"] = 0.1,
+["b"] = 1,
+},
+},
+["buff-BattleShout"] = {
+["spellName"] = 6673,
+["type"] = "buff",
+["mine"] = true,
+["color1"] = {
+["a"] = 1,
+["r"] = 0.1,
+["g"] = 0.1,
+["b"] = 1,
+},
+},
+["buff-CommandingShout"] = {
+["spellName"] = 469,
+["type"] = "buff",
+["mine"] = true,
+["color1"] = {
+["a"] = 1,
+["r"] = 0.1,
+["g"] = 0.1,
+["b"] = 1,
+},
+},
+["buff-LastStand"] = {
+["spellName"] = 12975,
+["type"] = "buff",
+["mine"] = true,
+["color1"] = {
+["a"] = 1,
+["r"] = 0.1,
+["g"] = 0.1,
+["b"] = 1,
+},
+},
+},
+["versions"] = {
+["Grid2"] = 11,
+["Grid2RaidDebuffs"] = 4,
+},
+["statusMap"] = {
+["icon-center"] = {
+["ready-check"] = 150,
+["raid-debuffs"] = 145,
+["death"] = 155,
+},
+["heals"] = {
+["heals-incoming"] = 99,
+},
+["corner-bottom-right"] = {
+["buff-ShieldWall"] = 89,
+["buff-Vigilance"] = 99,
+["buff-LastStand"] = 99,
+},
+["icon-right"] = {
+["raid-icon-target"] = 90,
+},
+["heals-color"] = {
+["classcolor"] = 99,
+},
+["icon-left"] = {
+["raid-icon-player"] = 155,
+},
+["alpha"] = {
+["offline"] = 97,
+["range"] = 99,
+["death"] = 98,
+},
+["health-color"] = {
+["classcolor"] = 99,
+},
+["text-up-color"] = {
+["charmed"] = 65,
+["feign-death"] = 96,
+["health-deficit"] = 50,
+["offline"] = 93,
+["death"] = 95,
+["vehicle"] = 70,
+},
+["corner-bottom-left"] = {
+["threat"] = 99,
+},
+["health"] = {
+["health-current"] = 99,
+},
+["border"] = {
+["target"] = 50,
+["health-low"] = 55,
+},
+["text-up"] = {
+["charmed"] = 65,
+["feign-death"] = 96,
+["health-deficit"] = 50,
+["offline"] = 93,
+["death"] = 95,
+["vehicle"] = 70,
+},
+["text-down-color"] = {
+["classcolor"] = 99,
+},
+["text-down"] = {
+["name"] = 99,
+},
+["side-bottom"] = {
+["buff-BattleShout"] = 89,
+["buff-CommandingShout"] = 79,
+},
+},
 ["themes"] = {
 ["indicators"] = {
 [0] = {
@@ -3845,9 +4349,299 @@ Grid2DB = {
 },
 },
 },
-["Sevdk - Valdrakken"] = {
+["Lftwgldshare - Draenor"] = {
+["statuses"] = {
+["buff-LifeCocoon"] = {
+["type"] = "buff",
+["color1"] = {
+["a"] = 1,
+["b"] = 0.8,
+["g"] = 0,
+["r"] = 0.4,
+},
+["spellName"] = 116849,
+},
+["buff-EnvelopingMist-mine"] = {
+["color1"] = {
+["a"] = 1,
+["b"] = 0.2,
+["g"] = 1,
+["r"] = 0.2,
+},
+["type"] = "buff",
+["mine"] = true,
+["spellName"] = 124682,
+},
+["buff-RenewingMist-mine"] = {
+["type"] = "buff",
+["color1"] = {
+["a"] = 1,
+["b"] = 0,
+["g"] = 1,
+["r"] = 0.5,
+},
+["useSpellId"] = true,
+["mine"] = true,
+["spellName"] = 119611,
+},
+},
 ["versions"] = {
-["Grid2"] = 10,
+["Grid2"] = 12,
+["Grid2RaidDebuffs"] = 4,
+},
+["indicators"] = {
+["corner-top-left"] = {
+["location"] = {
+["y"] = 0,
+["relPoint"] = "TOPLEFT",
+["point"] = "TOPLEFT",
+["x"] = 0,
+},
+["type"] = "square",
+["level"] = 9,
+["size"] = 5,
+},
+["side-top"] = {
+["location"] = {
+["y"] = 0,
+["relPoint"] = "TOP",
+["point"] = "TOP",
+["x"] = 0,
+},
+["type"] = "square",
+["level"] = 9,
+["size"] = 5,
+},
+["text-down"] = {
+["type"] = "text",
+["location"] = {
+["y"] = 4,
+["relPoint"] = "BOTTOM",
+["point"] = "BOTTOM",
+["x"] = 0,
+},
+["level"] = 6,
+["textlength"] = 6,
+["fontSize"] = 10,
+},
+["icon-left"] = {
+["type"] = "icon",
+["location"] = {
+["y"] = 0,
+["relPoint"] = "LEFT",
+["point"] = "LEFT",
+["x"] = -2,
+},
+["level"] = 8,
+["fontSize"] = 8,
+["size"] = 12,
+},
+["border"] = {
+["color1"] = {
+["a"] = 0,
+["b"] = 0,
+["g"] = 0,
+["r"] = 0,
+},
+["type"] = "border",
+},
+["background"] = {
+["type"] = "background",
+},
+["icon-center"] = {
+["type"] = "icon",
+["location"] = {
+["y"] = 0,
+["relPoint"] = "CENTER",
+["point"] = "CENTER",
+["x"] = 0,
+},
+["level"] = 8,
+["fontSize"] = 8,
+["size"] = 14,
+},
+["health-color"] = {
+["type"] = "bar-color",
+},
+["icon-right"] = {
+["type"] = "icon",
+["location"] = {
+["y"] = 0,
+["relPoint"] = "RIGHT",
+["point"] = "RIGHT",
+["x"] = 2,
+},
+["level"] = 8,
+["fontSize"] = 8,
+["size"] = 12,
+},
+["heals-color"] = {
+["type"] = "bar-color",
+},
+["tooltip"] = {
+["type"] = "tooltip",
+["showDefault"] = true,
+["showTooltip"] = 4,
+},
+["alpha"] = {
+["type"] = "alpha",
+},
+["corner-top-right"] = {
+["location"] = {
+["y"] = 0,
+["relPoint"] = "TOPRIGHT",
+["point"] = "TOPRIGHT",
+["x"] = 0,
+},
+["type"] = "square",
+["level"] = 9,
+["size"] = 5,
+},
+["health"] = {
+["type"] = "bar",
+["location"] = {
+["y"] = 0,
+["relPoint"] = "CENTER",
+["point"] = "CENTER",
+["x"] = 0,
+},
+["level"] = 2,
+["color1"] = {
+["a"] = 1,
+["b"] = 0,
+["g"] = 0,
+["r"] = 0,
+},
+["texture"] = "Gradient",
+},
+["text-down-color"] = {
+["type"] = "text-color",
+},
+["text-up"] = {
+["type"] = "text",
+["location"] = {
+["y"] = -8,
+["relPoint"] = "TOP",
+["point"] = "TOP",
+["x"] = 0,
+},
+["level"] = 7,
+["textlength"] = 6,
+["fontSize"] = 8,
+},
+["text-up-color"] = {
+["type"] = "text-color",
+},
+["corner-bottom-left"] = {
+["type"] = "square",
+["location"] = {
+["y"] = 0,
+["relPoint"] = "BOTTOMLEFT",
+["point"] = "BOTTOMLEFT",
+["x"] = 0,
+},
+["level"] = 5,
+["color1"] = {
+["a"] = 1,
+["b"] = 1,
+["g"] = 1,
+["r"] = 1,
+},
+["size"] = 5,
+},
+["heals"] = {
+["type"] = "bar",
+["color1"] = {
+["a"] = 0,
+["b"] = 0,
+["g"] = 0,
+["r"] = 0,
+},
+["anchorTo"] = "health",
+["location"] = {
+["y"] = 0,
+["relPoint"] = "CENTER",
+["point"] = "CENTER",
+["x"] = 0,
+},
+["level"] = 1,
+["opacity"] = 0.25,
+["texture"] = "Gradient",
+},
+},
+["statusMap"] = {
+["corner-top-left"] = {
+["buff-EnvelopingMist-mine"] = 99,
+},
+["heals"] = {
+["heals-incoming"] = 99,
+},
+["side-top"] = {
+["buff-LifeCocoon"] = 99,
+},
+["text-down"] = {
+["name"] = 99,
+},
+["heals-color"] = {
+["classcolor"] = 99,
+},
+["icon-left"] = {
+["raid-icon-player"] = 155,
+},
+["alpha"] = {
+["offline"] = 97,
+["range"] = 99,
+["death"] = 98,
+},
+["corner-top-right"] = {
+["buff-RenewingMist-mine"] = 99,
+},
+["text-down-color"] = {
+["classcolor"] = 99,
+},
+["text-up"] = {
+["charmed"] = 65,
+["feign-death"] = 96,
+["health-deficit"] = 50,
+["offline"] = 93,
+["vehicle"] = 70,
+["death"] = 95,
+},
+["health"] = {
+["health-current"] = 99,
+},
+["border"] = {
+["debuff-Disease"] = 80,
+["health-low"] = 55,
+["debuff-Poison"] = 90,
+["target"] = 50,
+["debuff-Magic"] = 70,
+["debuff-Curse"] = 60,
+},
+["corner-bottom-left"] = {
+["threat"] = 99,
+},
+["text-up-color"] = {
+["charmed"] = 65,
+["feign-death"] = 96,
+["health-deficit"] = 50,
+["offline"] = 93,
+["vehicle"] = 70,
+["death"] = 95,
+},
+["health-color"] = {
+["classcolor"] = 99,
+},
+["icon-center"] = {
+["ready-check"] = 150,
+["raid-debuffs"] = 145,
+["death"] = 155,
+},
+},
+},
+["Sevdk - Draenor"] = {
+["versions"] = {
+["Grid2"] = 12,
 ["Grid2RaidDebuffs"] = 4,
 },
 ["indicators"] = {
@@ -4051,6 +4845,221 @@ Grid2DB = {
 ["ready-check"] = 150,
 ["raid-debuffs"] = 155,
 ["death"] = 155,
+},
+},
+},
+["Sevdeekaytwo - Tarren Mill"] = {
+["statusMap"] = {
+["heals"] = {
+["heals-incoming"] = 99,
+},
+["text-down"] = {
+["name"] = 99,
+},
+["heals-color"] = {
+["classcolor"] = 99,
+},
+["icon-left"] = {
+["raid-icon-player"] = 155,
+},
+["alpha"] = {
+["offline"] = 97,
+["range"] = 99,
+["death"] = 98,
+},
+["border"] = {
+["target"] = 50,
+["health-low"] = 55,
+},
+["health-color"] = {
+["classcolor"] = 99,
+},
+["health"] = {
+["health-current"] = 99,
+},
+["text-up-color"] = {
+["charmed"] = 65,
+["feign-death"] = 96,
+["health-deficit"] = 50,
+["offline"] = 93,
+["death"] = 95,
+["vehicle"] = 70,
+},
+["text-up"] = {
+["charmed"] = 65,
+["feign-death"] = 96,
+["health-deficit"] = 50,
+["offline"] = 93,
+["death"] = 95,
+["vehicle"] = 70,
+},
+["text-down-color"] = {
+["classcolor"] = 99,
+},
+["corner-bottom-left"] = {
+["threat"] = 99,
+},
+["icon-center"] = {
+["ready-check"] = 150,
+["raid-debuffs"] = 145,
+["death"] = 155,
+},
+},
+["versions"] = {
+["Grid2"] = 12,
+["Grid2RaidDebuffs"] = 4,
+},
+["indicators"] = {
+["icon-right"] = {
+["type"] = "icon",
+["location"] = {
+["y"] = 0,
+["relPoint"] = "RIGHT",
+["point"] = "RIGHT",
+["x"] = 2,
+},
+["level"] = 8,
+["fontSize"] = 8,
+["size"] = 12,
+},
+["heals"] = {
+["type"] = "bar",
+["texture"] = "Gradient",
+["anchorTo"] = "health",
+["location"] = {
+["y"] = 0,
+["relPoint"] = "CENTER",
+["point"] = "CENTER",
+["x"] = 0,
+},
+["level"] = 1,
+["opacity"] = 0.25,
+["color1"] = {
+["a"] = 0,
+["r"] = 0,
+["g"] = 0,
+["b"] = 0,
+},
+},
+["border"] = {
+["type"] = "border",
+["color1"] = {
+["a"] = 0,
+["r"] = 0,
+["g"] = 0,
+["b"] = 0,
+},
+},
+["text-down"] = {
+["type"] = "text",
+["location"] = {
+["y"] = 4,
+["relPoint"] = "BOTTOM",
+["point"] = "BOTTOM",
+["x"] = 0,
+},
+["level"] = 6,
+["textlength"] = 6,
+["fontSize"] = 10,
+},
+["heals-color"] = {
+["type"] = "bar-color",
+},
+["tooltip"] = {
+["type"] = "tooltip",
+["showDefault"] = true,
+["showTooltip"] = 4,
+},
+["alpha"] = {
+["type"] = "alpha",
+},
+["background"] = {
+["type"] = "background",
+},
+["corner-bottom-left"] = {
+["type"] = "square",
+["location"] = {
+["y"] = 0,
+["relPoint"] = "BOTTOMLEFT",
+["point"] = "BOTTOMLEFT",
+["x"] = 0,
+},
+["level"] = 5,
+["size"] = 5,
+["color1"] = {
+["a"] = 1,
+["r"] = 1,
+["g"] = 1,
+["b"] = 1,
+},
+},
+["health-color"] = {
+["type"] = "bar-color",
+},
+["health"] = {
+["type"] = "bar",
+["location"] = {
+["y"] = 0,
+["relPoint"] = "CENTER",
+["point"] = "CENTER",
+["x"] = 0,
+},
+["level"] = 2,
+["texture"] = "Gradient",
+["color1"] = {
+["a"] = 1,
+["r"] = 0,
+["g"] = 0,
+["b"] = 0,
+},
+},
+["icon-left"] = {
+["type"] = "icon",
+["location"] = {
+["y"] = 0,
+["relPoint"] = "LEFT",
+["point"] = "LEFT",
+["x"] = -2,
+},
+["level"] = 8,
+["fontSize"] = 8,
+["size"] = 12,
+},
+["text-up"] = {
+["type"] = "text",
+["location"] = {
+["y"] = -8,
+["relPoint"] = "TOP",
+["point"] = "TOP",
+["x"] = 0,
+},
+["level"] = 7,
+["textlength"] = 6,
+["fontSize"] = 8,
+},
+["text-down-color"] = {
+["type"] = "text-color",
+},
+["text-up-color"] = {
+["type"] = "text-color",
+},
+["icon-center"] = {
+["type"] = "icon",
+["location"] = {
+["y"] = 0,
+["relPoint"] = "CENTER",
+["point"] = "CENTER",
+["x"] = 0,
+},
+["level"] = 8,
+["fontSize"] = 8,
+["size"] = 14,
+},
+},
+["themes"] = {
+["indicators"] = {
+[0] = {
+},
 },
 },
 },
@@ -4261,6 +5270,18 @@ Grid2DB = {
 ["b"] = 0,
 },
 },
+["text-up"] = {
+["type"] = "text",
+["location"] = {
+["y"] = -8,
+["relPoint"] = "TOP",
+["point"] = "TOP",
+["x"] = 0,
+},
+["level"] = 7,
+["textlength"] = 6,
+["fontSize"] = 8,
+},
 ["corner-bottom-left"] = {
 ["type"] = "square",
 ["location"] = {
@@ -4277,18 +5298,6 @@ Grid2DB = {
 ["g"] = 1,
 ["b"] = 1,
 },
-},
-["text-up"] = {
-["type"] = "text",
-["location"] = {
-["y"] = -8,
-["relPoint"] = "TOP",
-["point"] = "TOP",
-["x"] = 0,
-},
-["level"] = 7,
-["textlength"] = 6,
-["fontSize"] = 8,
 },
 ["text-up-color"] = {
 ["type"] = "text-color",
@@ -4340,1015 +5349,6 @@ Grid2DB = {
 ["r"] = 0.5,
 ["g"] = 1,
 ["b"] = 0,
-},
-},
-},
-},
-["Lftwgldshare - Draenor"] = {
-["statuses"] = {
-["buff-LifeCocoon"] = {
-["type"] = "buff",
-["color1"] = {
-["a"] = 1,
-["b"] = 0.8,
-["g"] = 0,
-["r"] = 0.4,
-},
-["spellName"] = 116849,
-},
-["buff-EnvelopingMist-mine"] = {
-["color1"] = {
-["a"] = 1,
-["b"] = 0.2,
-["g"] = 1,
-["r"] = 0.2,
-},
-["type"] = "buff",
-["mine"] = true,
-["spellName"] = 124682,
-},
-["buff-RenewingMist-mine"] = {
-["type"] = "buff",
-["color1"] = {
-["a"] = 1,
-["b"] = 0,
-["g"] = 1,
-["r"] = 0.5,
-},
-["useSpellId"] = true,
-["mine"] = true,
-["spellName"] = 119611,
-},
-},
-["versions"] = {
-["Grid2"] = 12,
-["Grid2RaidDebuffs"] = 4,
-},
-["indicators"] = {
-["corner-top-left"] = {
-["location"] = {
-["y"] = 0,
-["relPoint"] = "TOPLEFT",
-["point"] = "TOPLEFT",
-["x"] = 0,
-},
-["type"] = "square",
-["level"] = 9,
-["size"] = 5,
-},
-["side-top"] = {
-["location"] = {
-["y"] = 0,
-["relPoint"] = "TOP",
-["point"] = "TOP",
-["x"] = 0,
-},
-["type"] = "square",
-["level"] = 9,
-["size"] = 5,
-},
-["text-down"] = {
-["type"] = "text",
-["location"] = {
-["y"] = 4,
-["relPoint"] = "BOTTOM",
-["point"] = "BOTTOM",
-["x"] = 0,
-},
-["level"] = 6,
-["textlength"] = 6,
-["fontSize"] = 10,
-},
-["icon-left"] = {
-["type"] = "icon",
-["location"] = {
-["y"] = 0,
-["relPoint"] = "LEFT",
-["point"] = "LEFT",
-["x"] = -2,
-},
-["level"] = 8,
-["fontSize"] = 8,
-["size"] = 12,
-},
-["border"] = {
-["color1"] = {
-["a"] = 0,
-["b"] = 0,
-["g"] = 0,
-["r"] = 0,
-},
-["type"] = "border",
-},
-["background"] = {
-["type"] = "background",
-},
-["icon-center"] = {
-["type"] = "icon",
-["location"] = {
-["y"] = 0,
-["relPoint"] = "CENTER",
-["point"] = "CENTER",
-["x"] = 0,
-},
-["level"] = 8,
-["fontSize"] = 8,
-["size"] = 14,
-},
-["health-color"] = {
-["type"] = "bar-color",
-},
-["icon-right"] = {
-["type"] = "icon",
-["location"] = {
-["y"] = 0,
-["relPoint"] = "RIGHT",
-["point"] = "RIGHT",
-["x"] = 2,
-},
-["level"] = 8,
-["fontSize"] = 8,
-["size"] = 12,
-},
-["heals-color"] = {
-["type"] = "bar-color",
-},
-["tooltip"] = {
-["type"] = "tooltip",
-["showDefault"] = true,
-["showTooltip"] = 4,
-},
-["alpha"] = {
-["type"] = "alpha",
-},
-["corner-top-right"] = {
-["location"] = {
-["y"] = 0,
-["relPoint"] = "TOPRIGHT",
-["point"] = "TOPRIGHT",
-["x"] = 0,
-},
-["type"] = "square",
-["level"] = 9,
-["size"] = 5,
-},
-["health"] = {
-["type"] = "bar",
-["location"] = {
-["y"] = 0,
-["relPoint"] = "CENTER",
-["point"] = "CENTER",
-["x"] = 0,
-},
-["level"] = 2,
-["color1"] = {
-["a"] = 1,
-["b"] = 0,
-["g"] = 0,
-["r"] = 0,
-},
-["texture"] = "Gradient",
-},
-["text-down-color"] = {
-["type"] = "text-color",
-},
-["corner-bottom-left"] = {
-["type"] = "square",
-["location"] = {
-["y"] = 0,
-["relPoint"] = "BOTTOMLEFT",
-["point"] = "BOTTOMLEFT",
-["x"] = 0,
-},
-["level"] = 5,
-["color1"] = {
-["a"] = 1,
-["b"] = 1,
-["g"] = 1,
-["r"] = 1,
-},
-["size"] = 5,
-},
-["text-up-color"] = {
-["type"] = "text-color",
-},
-["text-up"] = {
-["type"] = "text",
-["location"] = {
-["y"] = -8,
-["relPoint"] = "TOP",
-["point"] = "TOP",
-["x"] = 0,
-},
-["level"] = 7,
-["textlength"] = 6,
-["fontSize"] = 8,
-},
-["heals"] = {
-["type"] = "bar",
-["color1"] = {
-["a"] = 0,
-["b"] = 0,
-["g"] = 0,
-["r"] = 0,
-},
-["anchorTo"] = "health",
-["location"] = {
-["y"] = 0,
-["relPoint"] = "CENTER",
-["point"] = "CENTER",
-["x"] = 0,
-},
-["level"] = 1,
-["opacity"] = 0.25,
-["texture"] = "Gradient",
-},
-},
-["statusMap"] = {
-["corner-top-left"] = {
-["buff-EnvelopingMist-mine"] = 99,
-},
-["heals"] = {
-["heals-incoming"] = 99,
-},
-["side-top"] = {
-["buff-LifeCocoon"] = 99,
-},
-["text-down"] = {
-["name"] = 99,
-},
-["heals-color"] = {
-["classcolor"] = 99,
-},
-["icon-left"] = {
-["raid-icon-player"] = 155,
-},
-["alpha"] = {
-["offline"] = 97,
-["range"] = 99,
-["death"] = 98,
-},
-["corner-top-right"] = {
-["buff-RenewingMist-mine"] = 99,
-},
-["text-down-color"] = {
-["classcolor"] = 99,
-},
-["text-up"] = {
-["charmed"] = 65,
-["feign-death"] = 96,
-["health-deficit"] = 50,
-["offline"] = 93,
-["vehicle"] = 70,
-["death"] = 95,
-},
-["health"] = {
-["health-current"] = 99,
-},
-["border"] = {
-["debuff-Disease"] = 80,
-["health-low"] = 55,
-["debuff-Poison"] = 90,
-["target"] = 50,
-["debuff-Magic"] = 70,
-["debuff-Curse"] = 60,
-},
-["corner-bottom-left"] = {
-["threat"] = 99,
-},
-["text-up-color"] = {
-["charmed"] = 65,
-["feign-death"] = 96,
-["health-deficit"] = 50,
-["offline"] = 93,
-["vehicle"] = 70,
-["death"] = 95,
-},
-["health-color"] = {
-["classcolor"] = 99,
-},
-["icon-center"] = {
-["ready-check"] = 150,
-["raid-debuffs"] = 145,
-["death"] = 155,
-},
-},
-},
-["Sevdk - Draenor"] = {
-["versions"] = {
-["Grid2"] = 12,
-["Grid2RaidDebuffs"] = 4,
-},
-["indicators"] = {
-["text-down"] = {
-["type"] = "text",
-["location"] = {
-["y"] = 4,
-["relPoint"] = "BOTTOM",
-["point"] = "BOTTOM",
-["x"] = 0,
-},
-["level"] = 6,
-["textlength"] = 6,
-["fontSize"] = 10,
-},
-["heals"] = {
-["type"] = "bar",
-["color1"] = {
-["a"] = 0,
-["b"] = 0,
-["g"] = 0,
-["r"] = 0,
-},
-["anchorTo"] = "health",
-["location"] = {
-["y"] = 0,
-["relPoint"] = "CENTER",
-["point"] = "CENTER",
-["x"] = 0,
-},
-["level"] = 1,
-["opacity"] = 0.25,
-["texture"] = "Gradient",
-},
-["text-down-color"] = {
-["type"] = "text-color",
-},
-["icon-right"] = {
-["type"] = "icon",
-["location"] = {
-["y"] = 0,
-["relPoint"] = "RIGHT",
-["point"] = "RIGHT",
-["x"] = 2,
-},
-["level"] = 8,
-["fontSize"] = 8,
-["size"] = 12,
-},
-["heals-color"] = {
-["type"] = "bar-color",
-},
-["tooltip"] = {
-["type"] = "tooltip",
-["showDefault"] = true,
-["showTooltip"] = 4,
-},
-["alpha"] = {
-["type"] = "alpha",
-},
-["text-up-color"] = {
-["type"] = "text-color",
-},
-["text-up"] = {
-["type"] = "text",
-["location"] = {
-["y"] = -8,
-["relPoint"] = "TOP",
-["point"] = "TOP",
-["x"] = 0,
-},
-["level"] = 7,
-["textlength"] = 6,
-["fontSize"] = 8,
-},
-["icon-left"] = {
-["type"] = "icon",
-["location"] = {
-["y"] = 0,
-["relPoint"] = "LEFT",
-["point"] = "LEFT",
-["x"] = -2,
-},
-["level"] = 8,
-["fontSize"] = 8,
-["size"] = 12,
-},
-["health"] = {
-["type"] = "bar",
-["location"] = {
-["y"] = 0,
-["relPoint"] = "CENTER",
-["point"] = "CENTER",
-["x"] = 0,
-},
-["level"] = 2,
-["color1"] = {
-["a"] = 1,
-["b"] = 0,
-["g"] = 0,
-["r"] = 0,
-},
-["texture"] = "Gradient",
-},
-["health-color"] = {
-["type"] = "bar-color",
-},
-["corner-bottom-left"] = {
-["type"] = "square",
-["location"] = {
-["y"] = 0,
-["relPoint"] = "BOTTOMLEFT",
-["point"] = "BOTTOMLEFT",
-["x"] = 0,
-},
-["level"] = 5,
-["color1"] = {
-["a"] = 1,
-["b"] = 1,
-["g"] = 1,
-["r"] = 1,
-},
-["size"] = 5,
-},
-["background"] = {
-["type"] = "background",
-},
-["border"] = {
-["color1"] = {
-["a"] = 0,
-["b"] = 0,
-["g"] = 0,
-["r"] = 0,
-},
-["type"] = "border",
-},
-["icon-center"] = {
-["type"] = "icon",
-["location"] = {
-["y"] = 0,
-["relPoint"] = "CENTER",
-["point"] = "CENTER",
-["x"] = 0,
-},
-["level"] = 8,
-["fontSize"] = 8,
-["size"] = 14,
-},
-},
-["statusMap"] = {
-["heals"] = {
-["heals-incoming"] = 99,
-},
-["text-down"] = {
-["name"] = 99,
-},
-["heals-color"] = {
-["classcolor"] = 99,
-},
-["icon-left"] = {
-["raid-icon-player"] = 155,
-},
-["alpha"] = {
-["offline"] = 97,
-["range"] = 99,
-["death"] = 98,
-},
-["border"] = {
-["target"] = 50,
-["health-low"] = 55,
-},
-["text-up"] = {
-["charmed"] = 65,
-["feign-death"] = 96,
-["health-deficit"] = 50,
-["offline"] = 93,
-["vehicle"] = 70,
-["death"] = 95,
-},
-["health"] = {
-["health-current"] = 99,
-},
-["text-down-color"] = {
-["classcolor"] = 99,
-},
-["corner-bottom-left"] = {
-["threat"] = 99,
-},
-["text-up-color"] = {
-["charmed"] = 65,
-["feign-death"] = 96,
-["health-deficit"] = 50,
-["offline"] = 93,
-["vehicle"] = 70,
-["death"] = 95,
-},
-["health-color"] = {
-["classcolor"] = 99,
-},
-["icon-center"] = {
-["ready-check"] = 150,
-["raid-debuffs"] = 155,
-["death"] = 155,
-},
-},
-},
-["Sevdk - Tarren Mill"] = {
-["themes"] = {
-["indicators"] = {
-[0] = {
-},
-},
-},
-["versions"] = {
-["Grid2"] = 12,
-["Grid2RaidDebuffs"] = 4,
-},
-["indicators"] = {
-["icon-right"] = {
-["type"] = "icon",
-["location"] = {
-["y"] = 0,
-["relPoint"] = "RIGHT",
-["point"] = "RIGHT",
-["x"] = 2,
-},
-["level"] = 8,
-["fontSize"] = 8,
-["size"] = 12,
-},
-["heals"] = {
-["type"] = "bar",
-["texture"] = "Gradient",
-["anchorTo"] = "health",
-["location"] = {
-["y"] = 0,
-["relPoint"] = "CENTER",
-["point"] = "CENTER",
-["x"] = 0,
-},
-["level"] = 1,
-["opacity"] = 0.25,
-["color1"] = {
-["a"] = 0,
-["r"] = 0,
-["g"] = 0,
-["b"] = 0,
-},
-},
-["alpha"] = {
-["type"] = "alpha",
-},
-["text-down"] = {
-["type"] = "text",
-["location"] = {
-["y"] = 4,
-["relPoint"] = "BOTTOM",
-["point"] = "BOTTOM",
-["x"] = 0,
-},
-["level"] = 6,
-["textlength"] = 6,
-["fontSize"] = 10,
-},
-["heals-color"] = {
-["type"] = "bar-color",
-},
-["tooltip"] = {
-["type"] = "tooltip",
-["showDefault"] = true,
-["showTooltip"] = 4,
-},
-["border"] = {
-["type"] = "border",
-["color1"] = {
-["a"] = 0,
-["r"] = 0,
-["g"] = 0,
-["b"] = 0,
-},
-},
-["background"] = {
-["type"] = "background",
-},
-["corner-bottom-left"] = {
-["type"] = "square",
-["location"] = {
-["y"] = 0,
-["relPoint"] = "BOTTOMLEFT",
-["point"] = "BOTTOMLEFT",
-["x"] = 0,
-},
-["level"] = 5,
-["size"] = 5,
-["color1"] = {
-["a"] = 1,
-["r"] = 1,
-["g"] = 1,
-["b"] = 1,
-},
-},
-["health-color"] = {
-["type"] = "bar-color",
-},
-["health"] = {
-["type"] = "bar",
-["location"] = {
-["y"] = 0,
-["relPoint"] = "CENTER",
-["point"] = "CENTER",
-["x"] = 0,
-},
-["level"] = 2,
-["texture"] = "Gradient",
-["color1"] = {
-["a"] = 1,
-["r"] = 0,
-["g"] = 0,
-["b"] = 0,
-},
-},
-["icon-left"] = {
-["type"] = "icon",
-["location"] = {
-["y"] = 0,
-["relPoint"] = "LEFT",
-["point"] = "LEFT",
-["x"] = -2,
-},
-["level"] = 8,
-["fontSize"] = 8,
-["size"] = 12,
-},
-["text-up"] = {
-["type"] = "text",
-["location"] = {
-["y"] = -8,
-["relPoint"] = "TOP",
-["point"] = "TOP",
-["x"] = 0,
-},
-["level"] = 7,
-["textlength"] = 6,
-["fontSize"] = 8,
-},
-["text-up-color"] = {
-["type"] = "text-color",
-},
-["text-down-color"] = {
-["type"] = "text-color",
-},
-["icon-center"] = {
-["type"] = "icon",
-["location"] = {
-["y"] = 0,
-["relPoint"] = "CENTER",
-["point"] = "CENTER",
-["x"] = 0,
-},
-["level"] = 8,
-["fontSize"] = 8,
-["size"] = 14,
-},
-},
-["statusMap"] = {
-["heals"] = {
-["heals-incoming"] = 99,
-},
-["text-down"] = {
-["name"] = 99,
-},
-["heals-color"] = {
-["classcolor"] = 99,
-},
-["icon-left"] = {
-["raid-icon-player"] = 155,
-},
-["alpha"] = {
-["offline"] = 97,
-["range"] = 99,
-["death"] = 98,
-},
-["border"] = {
-["target"] = 50,
-["health-low"] = 55,
-},
-["health-color"] = {
-["classcolor"] = 99,
-},
-["health"] = {
-["health-current"] = 99,
-},
-["text-up-color"] = {
-["charmed"] = 65,
-["feign-death"] = 96,
-["health-deficit"] = 50,
-["offline"] = 93,
-["death"] = 95,
-["vehicle"] = 70,
-},
-["corner-bottom-left"] = {
-["threat"] = 99,
-},
-["text-down-color"] = {
-["classcolor"] = 99,
-},
-["text-up"] = {
-["charmed"] = 65,
-["feign-death"] = 96,
-["health-deficit"] = 50,
-["offline"] = 93,
-["death"] = 95,
-["vehicle"] = 70,
-},
-["icon-center"] = {
-["ready-check"] = 150,
-["raid-debuffs"] = 145,
-["death"] = 155,
-},
-},
-},
-["Sevwar - Tarren Mill"] = {
-["indicators"] = {
-["corner-bottom-right"] = {
-["location"] = {
-["y"] = 0,
-["relPoint"] = "BOTTOMRIGHT",
-["point"] = "BOTTOMRIGHT",
-["x"] = 0,
-},
-["type"] = "square",
-["level"] = 5,
-["size"] = 5,
-},
-["text-down"] = {
-["type"] = "text",
-["location"] = {
-["y"] = 4,
-["relPoint"] = "BOTTOM",
-["point"] = "BOTTOM",
-["x"] = 0,
-},
-["level"] = 6,
-["textlength"] = 6,
-["fontSize"] = 10,
-},
-["icon-left"] = {
-["type"] = "icon",
-["location"] = {
-["y"] = 0,
-["relPoint"] = "LEFT",
-["point"] = "LEFT",
-["x"] = -2,
-},
-["level"] = 8,
-["fontSize"] = 8,
-["size"] = 12,
-},
-["border"] = {
-["type"] = "border",
-["color1"] = {
-["a"] = 0,
-["r"] = 0,
-["g"] = 0,
-["b"] = 0,
-},
-},
-["background"] = {
-["type"] = "background",
-},
-["icon-center"] = {
-["type"] = "icon",
-["location"] = {
-["y"] = 0,
-["relPoint"] = "CENTER",
-["point"] = "CENTER",
-["x"] = 0,
-},
-["level"] = 8,
-["fontSize"] = 8,
-["size"] = 14,
-},
-["health-color"] = {
-["type"] = "bar-color",
-},
-["icon-right"] = {
-["type"] = "icon",
-["location"] = {
-["y"] = 0,
-["relPoint"] = "RIGHT",
-["point"] = "RIGHT",
-["x"] = 2,
-},
-["level"] = 8,
-["fontSize"] = 8,
-["size"] = 12,
-},
-["heals-color"] = {
-["type"] = "bar-color",
-},
-["tooltip"] = {
-["type"] = "tooltip",
-["showDefault"] = true,
-["showTooltip"] = 4,
-},
-["alpha"] = {
-["type"] = "alpha",
-},
-["text-down-color"] = {
-["type"] = "text-color",
-},
-["health"] = {
-["type"] = "bar",
-["location"] = {
-["y"] = 0,
-["relPoint"] = "CENTER",
-["point"] = "CENTER",
-["x"] = 0,
-},
-["level"] = 2,
-["texture"] = "Gradient",
-["color1"] = {
-["a"] = 1,
-["r"] = 0,
-["g"] = 0,
-["b"] = 0,
-},
-},
-["heals"] = {
-["type"] = "bar",
-["texture"] = "Gradient",
-["anchorTo"] = "health",
-["location"] = {
-["y"] = 0,
-["relPoint"] = "CENTER",
-["point"] = "CENTER",
-["x"] = 0,
-},
-["level"] = 1,
-["opacity"] = 0.25,
-["color1"] = {
-["a"] = 0,
-["r"] = 0,
-["g"] = 0,
-["b"] = 0,
-},
-},
-["text-up"] = {
-["type"] = "text",
-["location"] = {
-["y"] = -8,
-["relPoint"] = "TOP",
-["point"] = "TOP",
-["x"] = 0,
-},
-["level"] = 7,
-["textlength"] = 6,
-["fontSize"] = 8,
-},
-["text-up-color"] = {
-["type"] = "text-color",
-},
-["corner-bottom-left"] = {
-["type"] = "square",
-["location"] = {
-["y"] = 0,
-["relPoint"] = "BOTTOMLEFT",
-["point"] = "BOTTOMLEFT",
-["x"] = 0,
-},
-["level"] = 5,
-["size"] = 5,
-["color1"] = {
-["a"] = 1,
-["r"] = 1,
-["g"] = 1,
-["b"] = 1,
-},
-},
-["side-bottom"] = {
-["location"] = {
-["y"] = 0,
-["relPoint"] = "BOTTOM",
-["point"] = "BOTTOM",
-["x"] = 0,
-},
-["type"] = "square",
-["level"] = 9,
-["size"] = 5,
-},
-},
-["statuses"] = {
-["buff-ShieldWall"] = {
-["spellName"] = 871,
-["type"] = "buff",
-["mine"] = true,
-["color1"] = {
-["a"] = 1,
-["r"] = 0.1,
-["g"] = 0.1,
-["b"] = 1,
-},
-},
-["buff-BattleShout"] = {
-["spellName"] = 6673,
-["type"] = "buff",
-["mine"] = true,
-["color1"] = {
-["a"] = 1,
-["r"] = 0.1,
-["g"] = 0.1,
-["b"] = 1,
-},
-},
-["buff-CommandingShout"] = {
-["spellName"] = 469,
-["type"] = "buff",
-["mine"] = true,
-["color1"] = {
-["a"] = 1,
-["r"] = 0.1,
-["g"] = 0.1,
-["b"] = 1,
-},
-},
-["buff-LastStand"] = {
-["spellName"] = 12975,
-["type"] = "buff",
-["mine"] = true,
-["color1"] = {
-["a"] = 1,
-["r"] = 0.1,
-["g"] = 0.1,
-["b"] = 1,
-},
-},
-},
-["versions"] = {
-["Grid2"] = 11,
-["Grid2RaidDebuffs"] = 4,
-},
-["statusMap"] = {
-["icon-center"] = {
-["ready-check"] = 150,
-["raid-debuffs"] = 145,
-["death"] = 155,
-},
-["heals"] = {
-["heals-incoming"] = 99,
-},
-["corner-bottom-right"] = {
-["buff-ShieldWall"] = 89,
-["buff-Vigilance"] = 99,
-["buff-LastStand"] = 99,
-},
-["icon-right"] = {
-["raid-icon-target"] = 90,
-},
-["heals-color"] = {
-["classcolor"] = 99,
-},
-["icon-left"] = {
-["raid-icon-player"] = 155,
-},
-["alpha"] = {
-["offline"] = 97,
-["range"] = 99,
-["death"] = 98,
-},
-["health-color"] = {
-["classcolor"] = 99,
-},
-["text-up-color"] = {
-["charmed"] = 65,
-["feign-death"] = 96,
-["health-deficit"] = 50,
-["offline"] = 93,
-["death"] = 95,
-["vehicle"] = 70,
-},
-["corner-bottom-left"] = {
-["threat"] = 99,
-},
-["health"] = {
-["health-current"] = 99,
-},
-["border"] = {
-["target"] = 50,
-["health-low"] = 55,
-},
-["text-up"] = {
-["charmed"] = 65,
-["feign-death"] = 96,
-["health-deficit"] = 50,
-["offline"] = 93,
-["death"] = 95,
-["vehicle"] = 70,
-},
-["text-down-color"] = {
-["classcolor"] = 99,
-},
-["text-down"] = {
-["name"] = 99,
-},
-["side-bottom"] = {
-["buff-BattleShout"] = 89,
-["buff-CommandingShout"] = 79,
-},
-},
-["themes"] = {
-["indicators"] = {
-[0] = {
 },
 },
 },
@@ -5529,21 +5529,6 @@ Grid2DB = {
 ["b"] = 0,
 },
 },
-["text-up"] = {
-["type"] = "text",
-["location"] = {
-["y"] = -8,
-["relPoint"] = "TOP",
-["point"] = "TOP",
-["x"] = 0,
-},
-["level"] = 7,
-["textlength"] = 6,
-["fontSize"] = 8,
-},
-["text-up-color"] = {
-["type"] = "text-color",
-},
 ["corner-bottom-left"] = {
 ["type"] = "square",
 ["location"] = {
@@ -5560,6 +5545,21 @@ Grid2DB = {
 ["g"] = 1,
 ["b"] = 1,
 },
+},
+["text-up-color"] = {
+["type"] = "text-color",
+},
+["text-up"] = {
+["type"] = "text",
+["location"] = {
+["y"] = -8,
+["relPoint"] = "TOP",
+["point"] = "TOP",
+["x"] = 0,
+},
+["level"] = 7,
+["textlength"] = 6,
+["fontSize"] = 8,
 },
 ["side-bottom"] = {
 ["location"] = {
@@ -5777,6 +5777,9 @@ Grid2DB = {
 ["textlength"] = 12,
 ["fontSize"] = 8,
 },
+["corner-top-left-color"] = {
+["type"] = "text-color",
+},
 ["health"] = {
 ["type"] = "bar",
 ["location"] = {
@@ -5793,9 +5796,6 @@ Grid2DB = {
 ["r"] = 0,
 },
 ["texture"] = "Gradient",
-},
-["corner-top-left-color"] = {
-["type"] = "text-color",
 },
 ["corner-bottom-left"] = {
 ["type"] = "square",
@@ -5973,13 +5973,8 @@ Grid2DB = {
 ["heals"] = {
 ["heals-incoming"] = 99,
 },
-["text-up"] = {
-["charmed"] = 65,
-["feign-death"] = 96,
-["health-deficit"] = 50,
-["offline"] = 93,
-["vehicle"] = 70,
-["death"] = 95,
+["corner-bottom-left"] = {
+["threat"] = 99,
 },
 ["text-up-color"] = {
 ["charmed"] = 65,
@@ -5992,8 +5987,13 @@ Grid2DB = {
 ["corner-top-left-color"] = {
 ["buff-Lifebloom-mine"] = 99,
 },
-["corner-bottom-left"] = {
-["threat"] = 99,
+["text-up"] = {
+["charmed"] = 65,
+["feign-death"] = 96,
+["health-deficit"] = 50,
+["offline"] = 93,
+["vehicle"] = 70,
+["death"] = 95,
 },
 },
 ["themes"] = {
@@ -6143,21 +6143,21 @@ Grid2DB = {
 ["r"] = 0,
 },
 ["type"] = "bar",
-["backTexture"] = "SevSLStatus",
+["orientation"] = "HORIZONTAL",
 ["backColor"] = {
 ["a"] = 1,
 ["b"] = 0,
 ["g"] = 0.2588235294117647,
 ["r"] = 1,
 },
+["backTexture"] = "SevSLStatus",
+["level"] = 2,
 ["location"] = {
 ["y"] = 0,
 ["relPoint"] = "CENTER",
 ["point"] = "CENTER",
 ["x"] = 0,
 },
-["level"] = 2,
-["orientation"] = "HORIZONTAL",
 ["texture"] = "SevSLStatus",
 },
 ["text-up"] = {

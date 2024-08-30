@@ -3,7 +3,7 @@
 ## Notes: View any spec's talent trees from any character
 ## Author: Numy
 ## IconTexture: Interface\Addons\TalentTreeViewer_Loader\media\icon
-## Version: v2.4.10
+## Version: v2.4.11
 ## SavedVariables: TalentTreeViewerDB
 ## X-Curse-Project-ID: 678279
 ## OptionalDeps: BlizzMove

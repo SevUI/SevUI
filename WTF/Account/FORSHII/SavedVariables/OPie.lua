@@ -120,9 +120,9 @@ OPie_SavedData = {
 ["sliceToken"] = "ABuemDCLGW2",
 ["embed"] = true,
 },
-["name"] = "Portals",
-["save"] = true,
 ["limit"] = "Sevdh-TarrenMill",
+["save"] = true,
+["name"] = "Portals",
 },
 ["Phials"] = {
 {
@@ -183,16 +183,28 @@ OPie_SavedData = {
 ["sliceToken"] = "ABuecIbKYDA",
 },
 {
+["sliceToken"] = "ABueQUx65ow",
+["id"] = 460905,
+},
+{
 ["id"] = 25229,
 ["sliceToken"] = "ABuevRrapor",
+},
+{
+["sliceToken"] = "ABueQUwntzw",
+["id"] = 2108,
 },
 {
 ["sliceToken"] = "ABuevW/20Jr",
 ["id"] = 4036,
 },
 {
-["sliceToken"] = "ABuevEOERc1",
+["id"] = 2018,
+["sliceToken"] = "ABueQUrJ3mw",
+},
+{
 ["id"] = 2259,
+["sliceToken"] = "ABuevEOERc1",
 },
 {
 "toy",
@@ -249,8 +261,8 @@ OPie_SavedData = {
 },
 {
 ["sliceToken"] = "ABuevUDB88r",
-["id"] = "/mdt",
 ["icon"] = 461122,
+["id"] = "/mdt",
 },
 {
 "item",
@@ -266,6 +278,10 @@ OPie_SavedData = {
 "item",
 71153,
 ["sliceToken"] = "ABuem9ao4He",
+},
+{
+["sliceToken"] = "ABueQ8LgZIw",
+["id"] = 436854,
 },
 ["noPersistentCA"] = true,
 ["name"] = "Consumables",

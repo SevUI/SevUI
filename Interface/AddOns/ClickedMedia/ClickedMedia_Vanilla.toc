@@ -2,7 +2,7 @@
 ## Title: ClickedMedia
 ## IconTexture: Interface\Icons\inv_misc_punchcards_yellow
 ## Author: Snakybo
-## Version: 1.15.6
+## Version: 1.16.1
 ## Notes: Icon data for Clicked.
 ## Dependencies: Clicked
 ## LoadOnDemand: 1

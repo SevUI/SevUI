@@ -1,5 +1,5 @@
 -- Clicked, a World of Warcraft keybind manager.
--- Copyright (C) 2022  Kevin Krol
+-- Copyright (C) 2024  Kevin Krol
 --
 -- This program is free software: you can redistribute it and/or modify
 -- it under the terms of the GNU General Public License as published by
@@ -59,45 +59,45 @@ do
 	-- for example Pandaran has three race IDs: 24, 25, 26 for neutral, alliance and horde respectively, but we
 	-- only need to register 24 as they all have the same englishRaceName.
 
-	AddRace(1, Addon.EXPANSION.CLASSIC) -- Human
-	AddRace(2, Addon.EXPANSION.CLASSIC) -- Orc
-	AddRace(3, Addon.EXPANSION.CLASSIC) -- Dwarf
-	AddRace(4, Addon.EXPANSION.CLASSIC) -- NightElf
-	AddRace(5, Addon.EXPANSION.CLASSIC) -- Scourge
-	AddRace(6, Addon.EXPANSION.CLASSIC) -- Tauren
-	AddRace(7, Addon.EXPANSION.CLASSIC) -- Gnome
-	AddRace(8, Addon.EXPANSION.CLASSIC) -- Troll
-	AddRace(10, Addon.EXPANSION.BC) -- BloodElf
-	AddRace(11, Addon.EXPANSION.BC) -- Draenei
-	AddRace(9, Addon.EXPANSION.CATA) -- Goblin
-	AddRace(22, Addon.EXPANSION.CATA) -- Worgen
-	AddRace(24, Addon.EXPANSION.MOP) -- Pandaren
-	AddRace(27, Addon.EXPANSION.BFA) -- Nightborne
-	AddRace(28, Addon.EXPANSION.BFA) -- HighmountainTauren
-	AddRace(29, Addon.EXPANSION.BFA) -- VoidElf
-	AddRace(30, Addon.EXPANSION.BFA) -- LightforgedDraenei
-	AddRace(31, Addon.EXPANSION.BFA) -- ZandalariTroll
-	AddRace(32, Addon.EXPANSION.BFA) -- KulTiran
-	AddRace(34, Addon.EXPANSION.BFA) -- DarkIronDwarf
-	AddRace(35, Addon.EXPANSION.BFA) -- Vulpera
-	AddRace(36, Addon.EXPANSION.BFA) -- MagharOrc
-	AddRace(37, Addon.EXPANSION.BFA) -- Mechagnome
-	AddRace(52, Addon.EXPANSION.DF) -- Dracthyr
-	AddRace(84, Addon.EXPANSION.TWW) -- EarthenDwarf
+	AddRace(1, Addon.Expansion.CLASSIC) -- Human
+	AddRace(2, Addon.Expansion.CLASSIC) -- Orc
+	AddRace(3, Addon.Expansion.CLASSIC) -- Dwarf
+	AddRace(4, Addon.Expansion.CLASSIC) -- NightElf
+	AddRace(5, Addon.Expansion.CLASSIC) -- Scourge
+	AddRace(6, Addon.Expansion.CLASSIC) -- Tauren
+	AddRace(7, Addon.Expansion.CLASSIC) -- Gnome
+	AddRace(8, Addon.Expansion.CLASSIC) -- Troll
+	AddRace(10, Addon.Expansion.BC) -- BloodElf
+	AddRace(11, Addon.Expansion.BC) -- Draenei
+	AddRace(9, Addon.Expansion.CATA) -- Goblin
+	AddRace(22, Addon.Expansion.CATA) -- Worgen
+	AddRace(24, Addon.Expansion.MOP) -- Pandaren
+	AddRace(27, Addon.Expansion.BFA) -- Nightborne
+	AddRace(28, Addon.Expansion.BFA) -- HighmountainTauren
+	AddRace(29, Addon.Expansion.BFA) -- VoidElf
+	AddRace(30, Addon.Expansion.BFA) -- LightforgedDraenei
+	AddRace(31, Addon.Expansion.BFA) -- ZandalariTroll
+	AddRace(32, Addon.Expansion.BFA) -- KulTiran
+	AddRace(34, Addon.Expansion.BFA) -- DarkIronDwarf
+	AddRace(35, Addon.Expansion.BFA) -- Vulpera
+	AddRace(36, Addon.Expansion.BFA) -- MagharOrc
+	AddRace(37, Addon.Expansion.BFA) -- Mechagnome
+	AddRace(52, Addon.Expansion.DF) -- Dracthyr
+	AddRace(84, Addon.Expansion.TWW) -- EarthenDwarf
 
-	AddClass("WARRIOR", Addon.EXPANSION.CLASSIC)
-	AddClass("PALADIN", Addon.EXPANSION.CLASSIC)
-	AddClass("HUNTER", Addon.EXPANSION.CLASSIC)
-	AddClass("ROGUE", Addon.EXPANSION.CLASSIC)
-	AddClass("PRIEST", Addon.EXPANSION.CLASSIC)
-	AddClass("SHAMAN", Addon.EXPANSION.CLASSIC)
-	AddClass("MAGE", Addon.EXPANSION.CLASSIC)
-	AddClass("WARLOCK", Addon.EXPANSION.CLASSIC)
-	AddClass("DRUID", Addon.EXPANSION.CLASSIC)
-	AddClass("DEATHKNIGHT", Addon.EXPANSION.WOTLK)
-	AddClass("MONK", Addon.EXPANSION.MOP)
-	AddClass("DEMONHUNTER", Addon.EXPANSION.LEGION)
-	AddClass("EVOKER", Addon.EXPANSION.DF)
+	AddClass("WARRIOR", Addon.Expansion.CLASSIC)
+	AddClass("PALADIN", Addon.Expansion.CLASSIC)
+	AddClass("HUNTER", Addon.Expansion.CLASSIC)
+	AddClass("ROGUE", Addon.Expansion.CLASSIC)
+	AddClass("PRIEST", Addon.Expansion.CLASSIC)
+	AddClass("SHAMAN", Addon.Expansion.CLASSIC)
+	AddClass("MAGE", Addon.Expansion.CLASSIC)
+	AddClass("WARLOCK", Addon.Expansion.CLASSIC)
+	AddClass("DRUID", Addon.Expansion.CLASSIC)
+	AddClass("DEATHKNIGHT", Addon.Expansion.WOTLK)
+	AddClass("MONK", Addon.Expansion.MOP)
+	AddClass("DEMONHUNTER", Addon.Expansion.LEGION)
+	AddClass("EVOKER", Addon.Expansion.DF)
 end
 
 --- Attempt to retrieve cached talent data for the specified specialization.
@@ -133,7 +133,7 @@ local function GetTalentsForSpecialization(specId)
 					local definitionInfo = C_Traits.GetDefinitionInfo(entryInfo.definitionID)
 					local spellName = Addon:StripColorCodes(TalentUtil.GetTalentNameFromInfo(definitionInfo))
 
-					if not Addon:IsStringNilOrEmpty(spellName) then
+					if not Addon:IsNilOrEmpty(spellName) then
 						table.insert(allTalents[specId], {
 							entryId = talentId,
 							spellId = definitionInfo.spellID,
@@ -173,7 +173,7 @@ local function GetPvPTalentsForSpecialization(specId)
 		if talentId ~= nil then
 			local _, name, texture, _, _, spellId = GetPvpTalentInfoByID(talentId)
 
-			if not Addon:IsStringNilOrEmpty(name) then
+			if not Addon:IsNilOrEmpty(name) then
 				table.insert(allPvpTalents[specId], {
 					entryId = talentId,
 					spellId = spellId,
@@ -244,50 +244,50 @@ function Addon:GetLocalizedTargetUnits()
 	--- @type string[]
 	local order
 
-	items[Addon.TargetUnits.DEFAULT] = Addon.L["Default"]
-	items[Addon.TargetUnits.PLAYER] = Addon.L["Player (you)"]
-	items[Addon.TargetUnits.TARGET] = Addon.L["Target"]
-	items[Addon.TargetUnits.TARGET_OF_TARGET] = Addon.L["Target of target"]
-	items[Addon.TargetUnits.MOUSEOVER] = Addon.L["Mouseover"]
-	items[Addon.TargetUnits.MOUSEOVER_TARGET] = Addon.L["Target of mouseover"]
-	items[Addon.TargetUnits.CURSOR] = Addon.L["Cursor"]
-	items[Addon.TargetUnits.PET] = Addon.L["Pet"]
-	items[Addon.TargetUnits.PET_TARGET] = Addon.L["Pet target"]
-	items[Addon.TargetUnits.PARTY_1] = Addon.L["Party %s"]:format("1")
-	items[Addon.TargetUnits.PARTY_2] = Addon.L["Party %s"]:format("2")
-	items[Addon.TargetUnits.PARTY_3] = Addon.L["Party %s"]:format("3")
-	items[Addon.TargetUnits.PARTY_4] = Addon.L["Party %s"]:format("4")
-	items[Addon.TargetUnits.PARTY_5] = Addon.L["Party %s"]:format("5")
+	items[Addon.TargetUnit.DEFAULT] = Addon.L["Default"]
+	items[Addon.TargetUnit.PLAYER] = Addon.L["Player (you)"]
+	items[Addon.TargetUnit.TARGET] = Addon.L["Target"]
+	items[Addon.TargetUnit.TARGET_OF_TARGET] = Addon.L["Target of target"]
+	items[Addon.TargetUnit.MOUSEOVER] = Addon.L["Mouseover"]
+	items[Addon.TargetUnit.MOUSEOVER_TARGET] = Addon.L["Target of mouseover"]
+	items[Addon.TargetUnit.CURSOR] = Addon.L["Cursor"]
+	items[Addon.TargetUnit.PET] = Addon.L["Pet"]
+	items[Addon.TargetUnit.PET_TARGET] = Addon.L["Pet target"]
+	items[Addon.TargetUnit.PARTY_1] = Addon.L["Party %s"]:format("1")
+	items[Addon.TargetUnit.PARTY_2] = Addon.L["Party %s"]:format("2")
+	items[Addon.TargetUnit.PARTY_3] = Addon.L["Party %s"]:format("3")
+	items[Addon.TargetUnit.PARTY_4] = Addon.L["Party %s"]:format("4")
+	items[Addon.TargetUnit.PARTY_5] = Addon.L["Party %s"]:format("5")
 
 	order = {
-		Addon.TargetUnits.DEFAULT,
-		Addon.TargetUnits.PLAYER,
-		Addon.TargetUnits.TARGET,
-		Addon.TargetUnits.TARGET_OF_TARGET,
-		Addon.TargetUnits.MOUSEOVER,
-		Addon.TargetUnits.MOUSEOVER_TARGET,
-		Addon.TargetUnits.CURSOR,
-		Addon.TargetUnits.PET,
-		Addon.TargetUnits.PET_TARGET,
-		Addon.TargetUnits.PARTY_1,
-		Addon.TargetUnits.PARTY_2,
-		Addon.TargetUnits.PARTY_3,
-		Addon.TargetUnits.PARTY_4,
-		Addon.TargetUnits.PARTY_5
+		Addon.TargetUnit.DEFAULT,
+		Addon.TargetUnit.PLAYER,
+		Addon.TargetUnit.TARGET,
+		Addon.TargetUnit.TARGET_OF_TARGET,
+		Addon.TargetUnit.MOUSEOVER,
+		Addon.TargetUnit.MOUSEOVER_TARGET,
+		Addon.TargetUnit.CURSOR,
+		Addon.TargetUnit.PET,
+		Addon.TargetUnit.PET_TARGET,
+		Addon.TargetUnit.PARTY_1,
+		Addon.TargetUnit.PARTY_2,
+		Addon.TargetUnit.PARTY_3,
+		Addon.TargetUnit.PARTY_4,
+		Addon.TargetUnit.PARTY_5
 	}
 
-	if Addon.EXPANSION_LEVEL >= Addon.EXPANSION.BC then
-		items[Addon.TargetUnits.FOCUS] = Addon.L["Focus"]
-		table.insert(order, 7, Addon.TargetUnits.FOCUS)
+	if Addon.EXPANSION_LEVEL >= Addon.Expansion.BC then
+		items[Addon.TargetUnit.FOCUS] = Addon.L["Focus"]
+		table.insert(order, 7, Addon.TargetUnit.FOCUS)
 	end
 
-	if Addon.EXPANSION_LEVEL >= Addon.EXPANSION.CATA then
-		items[Addon.TargetUnits.ARENA_1] = Addon.L["Arena %s"]:format("1")
-		items[Addon.TargetUnits.ARENA_2] = Addon.L["Arena %s"]:format("2")
-		items[Addon.TargetUnits.ARENA_3] = Addon.L["Arena %s"]:format("3")
-		table.insert(order, Addon.TargetUnits.ARENA_1)
-		table.insert(order, Addon.TargetUnits.ARENA_2)
-		table.insert(order, Addon.TargetUnits.ARENA_3)
+	if Addon.EXPANSION_LEVEL >= Addon.Expansion.CATA then
+		items[Addon.TargetUnit.ARENA_1] = Addon.L["Arena %s"]:format("1")
+		items[Addon.TargetUnit.ARENA_2] = Addon.L["Arena %s"]:format("2")
+		items[Addon.TargetUnit.ARENA_3] = Addon.L["Arena %s"]:format("3")
+		table.insert(order, Addon.TargetUnit.ARENA_1)
+		table.insert(order, Addon.TargetUnit.ARENA_2)
+		table.insert(order, Addon.TargetUnit.ARENA_3)
 	end
 
 	return items, order
@@ -419,7 +419,7 @@ if Addon:IsGameVersionAtleast("RETAIL") then
 				local _, name, _, icon = GetSpecializationInfoByID(specId)
 				local key = specIndex
 
-				if not Addon:IsStringNilOrEmpty(name) then
+				if not Addon:IsNilOrEmpty(name) then
 					items[key] = Addon:GetTextureString(name, icon)
 					table.insert(order, key)
 				end
@@ -433,7 +433,7 @@ if Addon:IsGameVersionAtleast("RETAIL") then
 				for _, specId in pairs(specs) do
 					local _, name = GetSpecializationInfoByID(specId)
 
-					if not Addon:IsStringNilOrEmpty(name) then
+					if not Addon:IsNilOrEmpty(name) then
 						count = count + 1
 					end
 				end
@@ -572,11 +572,6 @@ if Addon:IsGameVersionAtleast("RETAIL") then
 			local specId = specializations[1]
 			local defaultForm = Addon.L["None"]
 
-			-- Balance Druid, Feral Druid, Guardian Druid, Restoration Druid, Initial Druid
-			if specId == 102 or specId == 103 or specId == 104 or specId == 105 or specId == 1447 then
-				defaultForm = Addon.L["Humanoid Form"]
-			end
-
 			do
 				local key = #order + 1
 
@@ -653,7 +648,7 @@ elseif Addon:IsGameVersionAtleast("CATA") then
 				local _, name, _, icon = GetSpecializationInfoForSpecID(spec.id)
 				local key = specIndex
 
-				if not Addon:IsStringNilOrEmpty(name) then
+				if not Addon:IsNilOrEmpty(name) then
 					items[key] = Addon:GetTextureString(name, icon)
 					table.insert(order, key)
 				end
@@ -843,7 +838,7 @@ else
 					local _, name, texture = LibTalentInfoClassic:GetTalentInfoByTab(class, tab, index)
 					local key = #order + 1
 
-					if not Addon:IsStringNilOrEmpty(name) then
+					if not Addon:IsNilOrEmpty(name) then
 						items[key] = Addon:GetTextureString(name, texture)
 						table.insert(order, key)
 					end
@@ -961,14 +956,22 @@ else
 	end
 end
 
---- @param scope BindingScope
+--- @param scope DataObjectScope
 function Addon:GetLocalizedScope(scope)
-	if scope == Addon.BindingScope.GLOBAL then
-		return Addon.L["Global bindings"]
+	if scope == Clicked.DataObjectScope.GLOBAL then
+		return Addon.L["Global"]
 	end
 
-	if scope == Addon.BindingScope.PROFILE then
-		return Addon.L["Profile specific bindings"]
+	if scope == Clicked.DataObjectScope.PROFILE then
+		local defaultProfiles = {
+			["Default"] = Addon.L["Default"],
+			[Addon.db.keys.char] = Addon.db.keys.char,
+			[Addon.db.keys.realm] = Addon.db.keys.realm,
+			[Addon.db.keys.class] = UnitClass("player")
+		}
+
+		local profile = Addon.db:GetCurrentProfile()
+		return defaultProfiles[profile] or profile
 	end
 
 	error("Unknown binding scope: " .. scope)

@@ -1,5 +1,5 @@
 -- Clicked, a World of Warcraft keybind manager.
--- Copyright (C) 2022  Kevin Krol
+-- Copyright (C) 2024  Kevin Krol
 --
 -- This program is free software: you can redistribute it and/or modify
 -- it under the terms of the GNU General Public License as published by
@@ -61,7 +61,7 @@ function AddonOptions:CreateOptionsTable()
 				type = "toggle",
 				order = 101,
 				width = "full",
-				hidden = Addon.EXPANSION_LEVEL < Addon.EXPANSION.DF,
+				hidden = Addon.EXPANSION_LEVEL < Addon.Expansion.DF,
 				set = function (_, val)
 					if val then
 						LibDBIcon:AddButtonToCompartment(Addon.L["Clicked"])

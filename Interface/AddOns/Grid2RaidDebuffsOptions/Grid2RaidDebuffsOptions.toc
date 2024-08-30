@@ -6,7 +6,7 @@
 ## Author: Michael
 ## Dependencies: Grid2, Grid2RaidDebuffs
 ## LoadOnDemand: 1
-## Version: 2.8.47
+## Version: 2.8.49
 ## IconTexture: Interface/AddOns/Grid2/media/iconsmall.tga
 
 Grid2RaidDebuffsOptions.lua

@@ -51,7 +51,7 @@ if not isRangeAvail then
 			getFriendly = function() return 116670 end -- Vivify
 		elseif playerClass == 'EVOKER' then
 			getHostile  = function() return 361469 end -- Living flame
-			getFriendly = function() return 361469 end -- Living flame
+			getFriendly = function() return 355913 end -- Emerald Blossom
 		elseif playerClass == 'WARLOCK' then
 			getHostile  = function() return 686 end   -- Shadow Bolt
 			getFriendly = function() return 20707 end -- Soulstone
@@ -158,7 +158,7 @@ local rangeSpellID = ({
 		SHAMAN  = Grid2.isClassic and 25357 or 8004,
 		PALADIN = Grid2.isClassic and 635   or 19750,
 		MONK    = 116670,
-		EVOKER  = 361469,
+		EVOKER  = 355913,
 	})[playerClass]
 local rangeSpell = rangeSpellID and GetSpellInfo(rangeSpellID)
 

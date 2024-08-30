@@ -1,5 +1,5 @@
 -- Clicked, a World of Warcraft keybind manager.
--- Copyright (C) 2022  Kevin Krol
+-- Copyright (C) 2024  Kevin Krol
 --
 -- This program is free software: you can redistribute it and/or modify
 -- it under the terms of the GNU General Public License as published by
@@ -145,7 +145,7 @@ function Addon:CreateCommandAttributes(register, command, prefix, suffix)
 	elseif command.action == Addon.CommandType.MACRO then
 		local attributeType = "type"
 
-		if Addon.EXPANSION_LEVEL >= Addon.EXPANSION.DF and not Addon.db.profile.options.onKeyDown then
+		if Addon.EXPANSION_LEVEL >= Addon.Expansion.DF and not Addon.db.profile.options.onKeyDown then
 			attributeType = "typerelease"
 		end
 

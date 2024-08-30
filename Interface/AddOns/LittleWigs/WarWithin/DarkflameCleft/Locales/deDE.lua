@@ -3,12 +3,12 @@ if not L then return end
 if L then
 	L.rank_overseer = "Unverschämter Aufseher"
 	L.lowly_moleherd = "Einfacher Maulwurfhirte"
-	--L.wandering_candle = "Wandering Candle"
-	--L.blazing_fiend = "Blazing Fiend"
+	L.wandering_candle = "Wandernde Kerze"
+	L.blazing_fiend = "Lodernder Unhold"
 	L.sootsnout = "Rußschnauze"
 	L.torchsnarl = "Fackelfletscher"
-	--L.shuffling_horror = "Shuffling Horror"
-	--L.creaky_mine_cart = "Creaky Mine Cart"
+	L.shuffling_horror = "Schlurfender Horror"
+	L.creaky_mine_cart = "Quietschende Lore"
 
 	L.minecart = "Minenloren Minigame"
 	L.hits = "Treffer"

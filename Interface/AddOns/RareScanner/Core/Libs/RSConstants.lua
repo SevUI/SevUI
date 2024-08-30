@@ -27,8 +27,8 @@ RSConstants.LOOT_ITEM_ID = nil
 -- Current versions
 ---============================================================================
 
-RSConstants.CURRENT_DB_VERSION = 142
-RSConstants.CURRENT_LOOT_DB_VERSION = 142
+RSConstants.CURRENT_DB_VERSION = 146
+RSConstants.CURRENT_LOOT_DB_VERSION = 147
 
 ---============================================================================
 -- Current maps (newer)
@@ -230,7 +230,8 @@ RSConstants.PROFILE_DEFAULTS = {
 			worldmapButton = true
 		},
 		rareFilters = {
-			defaultNpcFilterType = RSConstants.ENTITY_FILTER_ALL
+			defaultNpcFilterType = RSConstants.ENTITY_FILTER_ALL,
+			filterWeeklyRep = false
 		},
 		containerFilters = {
 			defaultContainerFilterType = RSConstants.ENTITY_FILTER_ALL
@@ -261,6 +262,7 @@ RSConstants.PROFILE_DEFAULTS = {
 			displayNotDiscoveredNpcIcons = true,
 			displayAlreadyKilledNpcIcons = false,
 			displayAlreadyKilledNpcIconsReseteable = false,
+			displayWeeklyRepNpcIcons = true,
 			displayProfessionRaresNpcIcons = true,
 			displayAchievementRaresNpcIcons = true,
 			displayMinieventsNpcIcons = { true, true, true, true, true, true, true, true, true, true, false, false, true, true, true, false, false, true, true, true },
@@ -460,6 +462,12 @@ RSConstants.THE_PRIMALIST_FUTURE = 2085
 RSConstants.ZARALEK_CAVERN = 2133
 RSConstants.COSMIC = 946
 RSConstants.AZEROTH = 947
+RSConstants.KHAZ_ALGAR = 2274
+RSConstants.RINGING_DEEPS = 2214
+RSConstants.AZJ_KAHET1 = 2255
+RSConstants.AZJ_KAHET2 = 2256
+RSConstants.AZJ_KAHET3 = 2213
+RSConstants.AZJ_KAHET4 = 2216
 
 ---============================================================================
 -- NpcIDS
@@ -519,7 +527,7 @@ RSConstants.RUMBLE_COIN_BAG = { 387696, 387697, 385961, 386138, 386139, 387695, 
 RSConstants.CONTAINERS_INFESTED_CACHE = { 339247, 339248, 339249, 339250, 339251 }
 RSConstants.CONTAINERS_JANIS_STASH = { 281176, 281365, 281381, 281388, 281390, 282647, 282668 }
 RSConstants.CONTAINERS_BLACK_EMPIRE_CACHE = { 335707, 335709, 335711, 335712, 335717, 334189, 334213, 334215, 334216, 334220, 334223 }
-RSConstants.CONTAINERS_DARKSHORE_CACHE = { 320514, 320515, 320516, 320517, 320518 }
+RSConstants.CONTAINERS_DARKSHORE_CACHE = { 320514, 320515, 320516, 320517, 320518, 319024, 319211, 319212, 319226 }
 RSConstants.CONTAINERS_INVASIVE_MAWSHROOM = { 369327, 369329, 369330, 369331, 369332 }
 RSConstants.CONTAINERS_LUNARLIGHT_POD = { 353681, 353683, 353684, 353685, 353686 }
 RSConstants.CONTAINERS_AMATHET_CACHE = { 324413, 325973, 325974, 325981, 325984 }
@@ -727,7 +735,7 @@ RSConstants.NPCS_WITH_PRE_NPCS = {
 	
 -- 156480 Next door entity inside Torghast
 -- 155660 Summons from the Depths
-RSConstants.IGNORED_VIGNETTES = { 156480, 155660, 163373, 370467, 370466, 182160, 182668, 182667, 185261, 376210, 200002, 190034, 191125, 210081, 210084, 210544, 210550, 226647, 226657, 226528, 221630 }
+RSConstants.IGNORED_VIGNETTES = { 156480, 155660, 163373, 370467, 370466, 182160, 182668, 182667, 185261, 376210, 200002, 190034, 191125, 210081, 210084, 210544, 210550, 226647, 226657, 226528, 221630, 206978, 206980, 206981 }
 RSConstants.NPCS_WITH_EVENT_VIGNETTE = { 72156, 154154, 154330, 164547, 164477, 160629, 175012, 157833, 166398, 164064, 162829, 157964, 162844, 171317, 170774, 162849, 170301, 170302, 170711, 170634, 170731, 172862, 172577, 158025, 158278, 170303, 179684, 179791, 179805, 177444, 180246, 179108, 179853, 179755, 179768, 179779, 179460, 179851, 179735, 169827, 203280, 213665 }
 RSConstants.NPCS_WITH_CONTAINER_VIGNETTE = { 179883 }
 RSConstants.CONTAINERS_WITH_NPC_VIGNETTE = { 369435, 398828 }

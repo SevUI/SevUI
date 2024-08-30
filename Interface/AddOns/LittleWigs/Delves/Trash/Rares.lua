@@ -43,6 +43,7 @@ end
 
 function mod:OnRegister()
 	self.displayName = L.rares
+	self:SetSpellRename(445781, CL.frontal_cone) -- Lava Blast (Frontal Cone)
 end
 
 local autotalk = mod:AddAutoTalkOption(true, "boss")
@@ -56,7 +57,7 @@ function mod:GetOptions()
 		415253, -- Fungal Breath
 		415250, -- Fungal Bloom
 		-- Reno Jackson
-		398749, -- Skull Cracker
+		462686, -- Skull Cracker
 		400335, -- Spike Traps
 		-- Sir Finley Mrgglton
 		461741, -- Consecration
@@ -77,10 +78,10 @@ function mod:GetOptions()
 		458099, -- Grasping Darkness
 		-- Anub'vir
 		449038, -- Impaling Spikes
-	}, {
+	},{
 		[445781] = L.stolen_loader,
 		[415253] = L.invasive_sporecap,
-		[398749] = L.reno_jackson,
+		[462686] = L.reno_jackson,
 		[461741] = L.sir_finley_mrgglton,
 		[418295] = L.treasure_wraith,
 		[458325] = L.venombite,
@@ -88,6 +89,8 @@ function mod:GetOptions()
 		[458104] = L.tala,
 		[458090] = L.velo,
 		[449038] = L.anubvir,
+	},{
+		[445781] = CL.frontal_cone, -- Lava Blast (Frontal Cone)
 	}
 end
 
@@ -106,7 +109,7 @@ function mod:OnBossEnable()
 	self:Death("InvasiveSporecapDeath", 207482)
 
 	-- Reno Jackson
-	self:Log("SPELL_CAST_START", "SkullCracker", 398749)
+	self:Log("SPELL_CAST_START", "SkullCracker", 462686)
 	self:Log("SPELL_CAST_START", "SpikeTraps", 400335)
 	self:Log("SPELL_CAST_SUCCESS", "SupplyBag", 447392) -- Reno Jackson defeated
 
@@ -170,9 +173,9 @@ do
 		if timer then
 			self:CancelTimer(timer)
 		end
-		self:Message(args.spellId, "red")
+		self:Message(args.spellId, "red", CL.frontal_cone)
 		self:PlaySound(args.spellId, "alarm")
-		self:CDBar(args.spellId, 17.0)
+		self:CDBar(args.spellId, 17.0, CL.frontal_cone)
 		timer = self:ScheduleTimer("StolenLoaderDeath", 30)
 	end
 
@@ -191,7 +194,7 @@ do
 			self:CancelTimer(timer)
 			timer = nil
 		end
-		self:StopBar(445781) -- Lava Blast
+		self:StopBar(CL.frontal_cone) -- Lava Blast
 		self:StopBar(445718) -- Magma Hammer
 	end
 end
@@ -268,7 +271,7 @@ do
 			self:CancelTimer(timer)
 			timer = nil
 		end
-		self:StopBar(398749) -- Skull Cracker
+		self:StopBar(462686) -- Skull Cracker
 		self:StopBar(400335) -- Steel Traps
 	end
 end

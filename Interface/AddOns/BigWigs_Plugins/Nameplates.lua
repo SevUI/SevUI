@@ -19,7 +19,7 @@ local FONT = media.MediaType and media.MediaType.FONT or "font"
 local nameplateIcons, iconFrameCache, nameplateTexts, textFrameCache = {}, {}, {}, {}
 local startNameplateIcon, showNameplateText
 local rearrangeNameplateIcons, rearrangeNameplateTexts
-local removeFrame, nameplateIconCascadeDelete, frameStopped
+local removeFrame, frameStopped
 
 local validFramePoints = {
 	["TOPLEFT"] = L.TOPLEFT, ["TOPRIGHT"] = L.TOPRIGHT, ["BOTTOMLEFT"] = L.BOTTOMLEFT, ["BOTTOMRIGHT"] = L.BOTTOMRIGHT,
@@ -42,7 +42,12 @@ local inverseAnchorPoint = {
 	RIGHT = "LEFT",
 	CENTER = "CENTER",
 }
-
+local glowValues = {
+	pixel = L.pixelGlow,
+	autocast = L.autocastGlow,
+	buttoncast = L.buttonGlow,
+	proc = L.procGlow,
+}
 
 local GetNamePlateForUnit = C_NamePlate.GetNamePlateForUnit
 local findUnitByGUID
@@ -80,6 +85,271 @@ local glowStopFunctions = {
 }
 
 --------------------------------------------------------------------------------
+-- Profile
+--
+
+local iconDefaults = {
+	iconGrowDirection = "LEFT",
+	iconGrowDirectionStart = "LEFT",
+	iconSpacing = 1,
+	iconWidth = 15,
+	iconHeight = 15,
+	iconOffsetX = 0,
+	iconOffsetY = 0,
+	iconCooldownNumbers = true,
+	iconFontName = "Noto Sans Regular", -- Only dealing with numbers so we can use this on all locales
+	iconFontSize = 7,
+	iconFontColor = {1, 1, 1, 1},
+	iconFontOutline = "OUTLINE",
+	iconFontMonochrome = false,
+	iconCooldownEdge = true,
+	iconCooldownSwipe = true,
+	iconCooldownInverse = false,
+	iconExpireGlow = true,
+	iconExpireGlowType = "pixel",
+	iconZoom = 0,
+	iconAspectRatio = true,
+	iconDesaturate = false,
+	iconColor = {1, 1, 1, 1},
+	iconGlowColor = {0.95, 0.95, 0.32, 1},
+	iconGlowFrequency = 0.25,
+	iconGlowPixelLines = 8,
+	iconGlowPixelLength = 4,
+	iconGlowPixelThickness = 1,
+	iconGlowAutoCastParticles = 8,
+	iconGlowAutoCastScale = 1,
+	iconGlowProcStartAnim = true,
+	iconGlowProcAnimDuration = 1,
+	iconBorder = true,
+	iconBorderSize = 1,
+	iconBorderColor = {0, 0, 0, 1},
+}
+
+local textDefaults = {
+	textGrowDirection = "UP",
+	textGrowDirectionStart = "TOP",
+	textSpacing = 0,
+	textOffsetX = 0,
+	textOffsetY = 0,
+	textFontName = plugin:GetDefaultFont(),
+	textFontSize = 18,
+	textFontColor = {1, 1, 1, 1},
+	textOutline = "THICKOUTLINE",
+	textMonochrome = false,
+	textUppercase = true,
+}
+
+plugin.defaultDB = {
+	updated = false,
+
+	-- XXX old
+	nameplateIconWidth = 15,
+	nameplateIconHeight = 15,
+	nameplateIconOffsetX = 0,
+	nameplateIconOffsetY = -4,
+	nameplateIconCooldownTimer = true,
+	nameplateIconCooldownTimerFontName = "Noto Sans Regular", -- Only dealing with numbers so we can use this on all locales
+	nameplateIconCooldownTimerFontSize = 7,
+	nameplateIconCooldownTimerFontColor = {1, 1, 1, 1},
+	nameplateIconCooldownTimerOutline = "OUTLINE",
+	nameplateIconCooldownTimerMonochrome = false,
+	nameplateIconCooldownEdge = true,
+	nameplateIconCooldownSwipe = true,
+	nameplateIconCooldownInverse = false,
+	nameplateIconExpireGlow = true,
+	nameplateIconExpireGlowType = "pixel",
+	nameplateIconZoom = 0,
+	nameplateIconAspectRatio = true,
+	nameplateIconDesaturate = false,
+	nameplateIconColor = {1, 1, 1, 1},
+	nameplateIconGlowColor = {0.95, 0.95, 0.32, 1},
+	nameplateIconBorder = true,
+	nameplateIconBorderSize = 1,
+	nameplateIconBorderColor = {0, 0, 0, 1},
+}
+for k, v in next, iconDefaults do
+	plugin.defaultDB[k] = v
+end
+for k, v in next, textDefaults do
+	plugin.defaultDB[k] = v
+end
+
+local function updateProfile()
+	db = plugin.db.profile
+
+	for k, v in next, db do
+		local defaultType = type(plugin.defaultDB[k])
+		if defaultType == "nil" then
+			db[k] = nil
+		elseif type(v) ~= defaultType then
+			db[k] = plugin.defaultDB[k]
+		end
+	end
+
+	if not db.updated then
+		db.updated = true
+		db.iconWidth = db.nameplateIconWidth
+		db.iconHeight = db.nameplateIconHeight
+		db.iconOffsetX = db.nameplateIconOffsetX
+		db.iconOffsetY = db.nameplateIconOffsetY
+		db.iconCooldownNumbers = db.nameplateIconCooldownTimer
+		db.iconFontName = db.nameplateIconCooldownTimerFontName
+		db.iconFontSize = db.nameplateIconCooldownTimerFontSize
+		db.iconFontColor = db.nameplateIconCooldownTimerFontColor
+		db.iconFontOutline = db.nameplateIconCooldownTimerOutline
+		db.iconFontMonochrome = db.nameplateIconCooldownTimerMonochrome
+		db.iconCooldownEdge = db.nameplateIconCooldownEdge
+		db.iconCooldownSwipe = db.nameplateIconCooldownSwipe
+		db.iconCooldownInverse = db.nameplateIconCooldownInverse
+		db.iconExpireGlow = db.nameplateIconExpireGlow
+		db.iconExpireGlowType = db.nameplateIconExpireGlowType
+		db.iconZoom = db.nameplateIconZoom
+		db.iconAspectRatio = db.nameplateIconAspectRatio
+		db.iconDesaturate = db.nameplateIconDesaturate
+		db.iconColor = db.nameplateIconColor
+		db.iconGlowColor = db.nameplateIconGlowColor
+		db.iconBorder = db.nameplateIconBorder
+		db.iconBorderSize = db.nameplateIconBorderSize
+		db.iconBorderColor = db.nameplateIconBorderColor
+	end
+
+	if not validGrowDirections[db.iconGrowDirection] then
+		db.iconGrowDirection = plugin.defaultDB.iconGrowDirection
+	end
+	if not validFramePoints[db.iconGrowDirectionStart] then
+		db.iconGrowDirectionStart = plugin.defaultDB.iconGrowDirectionStart
+	end
+	if db.iconSpacing < 0 or db.iconSpacing > 20 then
+		db.iconSpacing = plugin.defaultDB.iconSpacing
+	end
+	if db.iconWidth < 8 or db.iconWidth > 50 then
+		db.iconWidth = plugin.defaultDB.iconWidth
+	end
+	if db.iconHeight < 8 or db.iconHeight > 50 then
+		db.iconHeight = plugin.defaultDB.iconHeight
+	end
+	if db.iconOffsetX < -100 or db.iconOffsetX > 100 then
+		db.iconOffsetX = plugin.defaultDB.iconOffsetX
+	end
+	if db.iconOffsetY < -100 or db.iconOffsetY > 100 then
+		db.iconOffsetY = plugin.defaultDB.iconOffsetY
+	end
+	if not media:IsValid(FONT, db.iconFontName) then
+		db.iconFontName = plugin.defaultDB.iconFontName
+	end
+	if db.iconFontSize < 5 or db.iconFontSize > 200 then
+		db.iconFontSize = plugin.defaultDB.iconFontSize
+	end
+	for i = 1, 4 do
+		local n = db.iconFontColor[i]
+		if type(n) ~= "number" or n < 0 or n > 1 then
+			db.iconFontColor = plugin.defaultDB.iconFontColor
+			break -- If 1 entry is bad, reset the whole table
+		end
+	end
+	if db.iconFontOutline ~= "NONE" and db.iconFontOutline ~= "OUTLINE" and db.iconFontOutline ~= "THICKOUTLINE" then
+		db.iconFontOutline = plugin.defaultDB.iconFontOutline
+	end
+	if not glowValues[db.iconExpireGlowType] then
+		db.iconExpireGlowType = plugin.defaultDB.iconExpireGlowType
+	end
+	if db.iconGlowFrequency < -2 or db.iconGlowFrequency > 2 then
+		db.iconGlowFrequency = plugin.defaultDB.iconGlowFrequency
+	end
+	if db.iconGlowPixelLines < 1 or db.iconGlowPixelLines > 15 then
+		db.iconGlowPixelLines = plugin.defaultDB.iconGlowPixelLines
+	end
+	if db.iconGlowPixelLength < 1 or db.iconGlowPixelLength > 20 then
+		db.iconGlowPixelLength = plugin.defaultDB.iconGlowPixelLength
+	end
+	if db.iconGlowPixelThickness < 1 or db.iconGlowPixelThickness > 5 then
+		db.iconGlowPixelThickness = plugin.defaultDB.iconGlowPixelThickness
+	end
+	if db.iconGlowAutoCastParticles < 1 or db.iconGlowAutoCastParticles > 15 then
+		db.iconGlowAutoCastParticles = plugin.defaultDB.iconGlowAutoCastParticles
+	end
+	if db.iconGlowAutoCastScale < 0.5 or db.iconGlowAutoCastScale > 3 then
+		db.iconGlowAutoCastScale = plugin.defaultDB.iconGlowAutoCastScale
+	end
+	if db.iconGlowProcAnimDuration < 0.1 or db.iconGlowProcAnimDuration > 3 then
+		db.iconGlowProcAnimDuration = plugin.defaultDB.iconGlowProcAnimDuration
+	end
+	if db.iconZoom < 0 or db.iconZoom > 0.5 then
+		db.iconZoom = plugin.defaultDB.iconZoom
+	end
+	for i = 1, 4 do
+		local n = db.iconColor[i]
+		if type(n) ~= "number" or n < 0 or n > 1 then
+			db.iconColor = plugin.defaultDB.iconColor
+			break -- If 1 entry is bad, reset the whole table
+		end
+	end
+	if db.iconColor[4] < 0.3 then -- Limit lowest alpha value
+		db.iconColor = plugin.defaultDB.iconColor
+	end
+	for i = 1, 4 do
+		local n = db.iconGlowColor[i]
+		if type(n) ~= "number" or n < 0 or n > 1 then
+			db.iconGlowColor = plugin.defaultDB.iconGlowColor
+			break -- If 1 entry is bad, reset the whole table
+		end
+	end
+	if db.iconBorderSize < 1 or db.iconBorderSize > 5 then
+		db.iconBorderSize = plugin.defaultDB.iconBorderSize
+	end
+	for i = 1, 4 do
+		local n = db.iconBorderColor[i]
+		if type(n) ~= "number" or n < 0 or n > 1 then
+			db.iconBorderColor = plugin.defaultDB.iconBorderColor
+			break -- If 1 entry is bad, reset the whole table
+		end
+	end
+
+	if not validGrowDirections[db.textGrowDirection] then
+		db.textGrowDirection = plugin.defaultDB.textGrowDirection
+	end
+	if not validFramePoints[db.textGrowDirectionStart] then
+		db.textGrowDirectionStart = plugin.defaultDB.textGrowDirectionStart
+	end
+	if db.textSpacing < 0 or db.textSpacing > 20 then
+		db.textSpacing = plugin.defaultDB.textSpacing
+	end
+	if db.textOffsetX < -150 or db.textOffsetX > 150 then
+		db.textOffsetX = plugin.defaultDB.textOffsetX
+	end
+	if db.textOffsetY < -150 or db.textOffsetY > 150 then
+		db.textOffsetY = plugin.defaultDB.textOffsetY
+	end
+	if not media:IsValid(FONT, db.textFontName) then
+		db.textFontName = plugin:GetDefaultFont()
+	end
+	if db.textFontSize < 5 or db.textFontSize > 200 then
+		db.textFontSize = plugin.defaultDB.textFontSize
+	end
+	for i = 1, 4 do
+		local n = db.textFontColor[i]
+		if type(n) ~= "number" or n < 0 or n > 1 then
+			db.textFontColor = plugin.defaultDB.textFontColor
+			break -- If 1 entry is bad, reset the whole table
+		end
+	end
+	if db.textFontColor[4] < 0.3 then -- Limit lowest alpha value
+		db.textFontColor = plugin.defaultDB.textFontColor
+	end
+	if db.textOutline ~= "NONE" and db.textOutline ~= "OUTLINE" and db.textOutline ~= "THICKOUTLINE" then
+		db.textOutline = plugin.defaultDB.textOutline
+	end
+end
+
+local function setDefaults(options)
+	local defaults = options
+	for k, value in next, defaults do
+		db[k] = value
+	end
+	updateProfile()
+end
+
+--------------------------------------------------------------------------------
 -- Text Frames
 --
 
@@ -92,7 +362,7 @@ local function getTextFrame()
 
 		textFrame = CreateFrame("Frame", nil, UIParent)
 		textFrame:SetPoint("CENTER")
-		-- textFrame:SetSize(db.nameplateIconWidth, db.nameplateIconHeight)
+		-- textFrame:SetSize(db.iconWidth, db.iconHeight)
 
 		local fontString = textFrame:CreateFontString(nil, "OVERLAY")
 		fontString:SetPoint("CENTER")
@@ -116,7 +386,7 @@ local function getTextFrame()
 			flags = db.textOutline
 		end
 		self.fontString:SetFont(media:Fetch(FONT, db.textFontName), db.textFontSize, flags)
-		self.fontString:SetTextColor(unpack(db.textFontColor))
+		self.fontString:SetTextColor(db.textFontColor[1], db.textFontColor[2], db.textFontColor[3], db.textFontColor[4])
 		local w, h = self.fontString:GetWidth(), self.fontString:GetHeight()
 		self:SetSize(w, h)
 	end
@@ -175,7 +445,7 @@ local function iconLoop(updater)
 	local remaining = math.floor(iconFrame:GetRemaining() * 10 + 0.5) / 10
 	local timeToDisplay = math.ceil(remaining)
 	if timeToDisplay > 0 then
-		if db.nameplateIconCooldownTimer then
+		if db.iconCooldownNumbers then
 			iconFrame.countdownNumber:SetText(timeToDisplay)
 		end
 	else
@@ -183,8 +453,8 @@ local function iconLoop(updater)
 		iconFrame.updater:Stop()
 		if iconFrame.hideOnExpire then
 			iconFrame:StopIcon()
-		elseif db.nameplateIconExpireGlow and not iconFrame.activeGlow then
-			iconFrame:StartGlow(db.nameplateIconExpireGlowType)
+		elseif db.iconExpireGlow and not iconFrame.activeGlow then
+			iconFrame:StartGlow(db.iconExpireGlowType)
 		end
 	end
 end
@@ -198,6 +468,18 @@ local function GetBorderBackdrop(size)
 	return borderBackdrop
 end
 
+local function getGlowSettings(glowType)
+	if glowType == "pixel" then
+		return {db.iconGlowColor, db.iconGlowPixelLines, db.iconGlowFrequency, db.iconGlowPixelLength, db.iconGlowPixelThickness}
+	elseif glowType == "autocast" then
+		return {db.iconGlowColor, db.iconGlowAutoCastParticles, db.iconGlowFrequency, db.iconGlowAutoCastScale}
+	elseif glowType == "proc" then
+		return {{color = db.iconGlowColor, startAnim = db.iconGlowProcStartAnim, duration = db.iconGlowProcAnimDuration}}
+	elseif glowType == "buttoncast" then
+		return {db.iconGlowColor, db.iconGlowFrequency}
+	end
+end
+
 local function getIconFrame()
 	local iconFrame
 
@@ -206,7 +488,7 @@ local function getIconFrame()
 	else
 		iconFrame = CreateFrame("Frame", nil, UIParent)
 		iconFrame:SetPoint("CENTER")
-		iconFrame:SetSize(db.nameplateIconWidth, db.nameplateIconHeight)
+		iconFrame:SetSize(db.iconWidth, db.iconHeight)
 
 		local icon = iconFrame:CreateTexture(nil, "ARTWORK")
 		icon:SetTexture("Interface\\Icons\\INV_Misc_QuestionMark")
@@ -219,9 +501,9 @@ local function getIconFrame()
 		iconFrame.cooldown = cooldown
 		cooldown:SetAllPoints(icon)
 		cooldown:SetDrawBling(false)
-		cooldown:SetDrawEdge(db.nameplateIconCooldownEdge)
-		cooldown:SetDrawSwipe(db.nameplateIconCooldownSwipe)
-		cooldown:SetReverse(db.nameplateIconCooldownInverse)
+		cooldown:SetDrawEdge(db.iconCooldownEdge)
+		cooldown:SetDrawSwipe(db.iconCooldownSwipe)
+		cooldown:SetReverse(db.iconCooldownInverse)
 		cooldown:SetFrameLevel(100)
 		cooldown:SetHideCountdownNumbers(true) -- Blizzard
 		cooldown.noCooldownCount = true -- OmniCC
@@ -270,17 +552,17 @@ local function getIconFrame()
 		local remaining = self:GetRemaining()
 		if remaining > 0 then
 			self.cooldown:SetCooldown(startTime, fullDuration)
-			if db.nameplateIconCooldownTimer then
+			if db.iconCooldownNumbers then
 				local flags = nil
-				if db.nameplateIconCooldownTimerMonochrome and db.nameplateIconCooldownTimerOutline ~= "NONE" then
-					flags = "MONOCHROME," .. db.nameplateIconCooldownTimerOutline
-				elseif db.nameplateIconCooldownTimerMonochrome then
+				if db.iconFontMonochrome and db.iconFontOutline ~= "NONE" then
+					flags = "MONOCHROME," .. db.iconFontOutline
+				elseif db.iconFontMonochrome then
 					flags = "MONOCHROME"
-				elseif db.nameplateIconCooldownTimerOutline ~= "NONE" then
-					flags = db.nameplateIconCooldownTimerOutline
+				elseif db.iconFontOutline ~= "NONE" then
+					flags = db.iconFontOutline
 				end
-				self.countdownNumber:SetFont(media:Fetch(FONT, db.nameplateIconCooldownTimerFontName), db.nameplateIconCooldownTimerFontSize, flags)
-				self.countdownNumber:SetTextColor(unpack(db.nameplateIconCooldownTimerFontColor))
+				self.countdownNumber:SetFont(media:Fetch(FONT, db.iconFontName), db.iconFontSize, flags)
+				self.countdownNumber:SetTextColor(db.iconFontColor[1], db.iconFontColor[2], db.iconFontColor[3], db.iconFontColor[4])
 
 				local timeToDisplay = math.ceil(remaining)
 				self.countdownNumber:SetText(timeToDisplay)
@@ -304,11 +586,11 @@ local function getIconFrame()
 		self.icon:SetTexture(icon)
 		-- icon aspect ratio and zoom calcs
 		local baseZoom = 0.86 -- (0.07, 0.93, 0.07, 0.93) is the default texture coords
-		local zoom = baseZoom * (1 - db.nameplateIconZoom)
+		local zoom = baseZoom * (1 - db.iconZoom)
 		local zoomedOffset = 1 - ((1 - zoom) / 2)
 		local offsetX, offsetY = zoomedOffset, zoomedOffset
 
-		if db.nameplateIconAspectRatio then
+		if db.iconAspectRatio then
 			local width, height = self:GetSize()
 			if width > height then
 				offsetY = 1 - (1 - (height / width) * zoom) / 2
@@ -333,10 +615,10 @@ local function getIconFrame()
 		self.hideOnExpire = hideOnExpire
 	end
 
-	function iconFrame:ShowBorder(show, color, size)
+	function iconFrame:ShowBorder(show, color)
 		if show then
-			self.border:SetBackdrop(GetBorderBackdrop(db.nameplateIconBorderSize))
-			self.border:SetBackdropBorderColor(unpack(color))
+			self.border:SetBackdrop(GetBorderBackdrop(db.iconBorderSize))
+			self.border:SetBackdropBorderColor(color[1], color[2], color[3], color[4])
 			self.border:Show()
 		else
 			self.border:Hide()
@@ -346,9 +628,10 @@ local function getIconFrame()
 	function iconFrame:StartGlow(glowType)
 		self:StopGlows()
 		local glowFunction = glowFunctions[glowType]
+		local glowOptions = getGlowSettings(glowType)
 		if glowFunction then
-			self.glowTimer = C_Timer.NewTimer(0.05, function()  -- delay so the frame is shown before the glow
-				glowFunction(self, db.nameplateIconGlowColor)
+			self.glowTimer = C_Timer.NewTimer(0.05, function() -- delay so the frame is shown before the glow
+				glowFunction(self, unpack(glowOptions))
 				self.activeGlow = glowType
 			 end)
 		end
@@ -375,10 +658,10 @@ local function getIconFrame()
 
 		if remaining <= 0 then
 			self.countdownNumber:Hide()
-			if db.nameplateIconExpireGlow and not iconFrame.activeGlow then
-				self:StartGlow(db.nameplateIconExpireGlowType)
+			if db.iconExpireGlow and not iconFrame.activeGlow then
+				self:StartGlow(db.iconExpireGlowType)
 			end
-		elseif db.nameplateIconCooldownTimer then
+		elseif db.iconCooldownNumbers then
 			self.countdownNumber:Show()
 		end
 		self:Show()
@@ -403,86 +686,6 @@ local function getIconFrame()
 	return iconFrame
 end
 
-
---------------------------------------------------------------------------------
--- Profile
---
-
-local iconDefaults = {
-	iconGrowDirection = "LEFT",
-	iconGrowDirectionStart = "LEFT",
-	iconSpacing = 1,
-	nameplateIconWidth = 15,
-	nameplateIconHeight = 15,
-	nameplateIconOffsetX = 0,
-	nameplateIconOffsetY = -4,
-	nameplateIconCooldownTimer = true,
-	nameplateIconCooldownTimerFontName = "Noto Sans Regular", -- Only dealing with numbers so we can use this on all locales
-	nameplateIconCooldownTimerFontSize = 7,
-	nameplateIconCooldownTimerFontColor = {1, 1, 1, 1},
-	nameplateIconCooldownTimerOutline = "OUTLINE",
-	nameplateIconCooldownTimerMonochrome = false,
-	nameplateIconCooldownEdge = true,
-	nameplateIconCooldownSwipe = true,
-	nameplateIconCooldownInverse = false,
-	nameplateIconExpireGlow = true,
-	nameplateIconExpireGlowType = "pixel",
-	nameplateIconZoom = 0,
-	nameplateIconAspectRatio = true,
-	nameplateIconDesaturate = false,
-	nameplateIconColor = {1, 1, 1, 1},
-	nameplateIconGlowColor = {0.95, 0.95, 0.32, 1},
-	nameplateIconBorder = true,
-	nameplateIconBorderSize = 1,
-	nameplateIconBorderColor = {0, 0, 0, 1},
-}
-
-local textDefaults = {
-	textGrowDirection = "UP",
-	textGrowDirectionStart = "TOP",
-	textSpacing = 0,
-	textOffsetX = 0,
-	textOffsetY = 0,
-	textFontName = plugin:GetDefaultFont(),
-	textFontSize = 18,
-	textFontColor = {1, 1, 1, 1},
-	textOutline = "THICKOUTLINE",
-	textMonochrome = false,
-	textUppercase = true,
-}
-
-plugin.defaultDB = {}
-for k, v in next, iconDefaults do
-	plugin.defaultDB[k] = v
-end
-for k, v in next, textDefaults do
-	plugin.defaultDB[k] = v
-end
-
-local function updateProfile()
-	db = plugin.db.profile
-
-	for k, v in next, db do
-		local defaultType = type(plugin.defaultDB[k])
-		if defaultType == "nil" then
-			db[k] = nil
-		elseif type(v) ~= defaultType then
-			db[k] = plugin.defaultDB[k]
-		end
-	end
-
-	-- Add validations
-end
-
-local function setDefaults(options)
-	local defaults = options
-	local db = plugin.db.profile
-	for k, value  in next, defaults do
-		db[k] = value
-	end
-	updateProfile()
-end
-
 --------------------------------------------------------------------------------
 -- Options
 --
@@ -505,7 +708,7 @@ do
 		end
 	end
 
-	local checkCooldownTimerDisabled = function() return not db.nameplateIconCooldownTimer end
+	local checkCooldownTimerDisabled = function() return not db.iconCooldownNumbers end
 
 	local testCount = 0
 	local testIcons = {
@@ -536,7 +739,6 @@ do
 						for i = 1, 40 do
 							local unit = ("nameplate%d"):format(i)
 							if plugin:UnitGUID(unit) == guid then
-								local t = GetTime()
 								testCount = testCount + 1
 								local testNumber = (testCount%3)+1
 								local key = "test"..testNumber
@@ -552,15 +754,14 @@ do
 			},
 			testTextButton = {
 				type = "execute",
-				name = "Show Text Test", --L.testNameplateIconBtn,
-				desc = L.testNameplateIconBtn_desc,
+				name = L.testNameplateTextBtn,
+				desc = L.testNameplateTextBtn_desc,
 				func = function()
 					local guid = plugin:UnitGUID("target")
 					if guid and UnitCanAttack("player", "target") then
 						for i = 1, 40 do
 							local unit = ("nameplate%d"):format(i)
 							if plugin:UnitGUID(unit) == guid then
-								local t = GetTime()
 								testCount = testCount + 1
 								local testNumber = (testCount%3)+1
 								local key = "test"..testNumber
@@ -576,8 +777,8 @@ do
 			},
 			stopTestButton = {
 				type = "execute",
-				name = L.stopTestNameplateIconBtn,
-				desc = L.stopTestNameplateIconBtn_desc,
+				name = L.stopTestNameplateBtn,
+				desc = L.stopTestNameplateBtn_desc,
 				func = function()
 					plugin:StopModuleNameplates(nil, plugin)
 				end,
@@ -615,23 +816,23 @@ do
 						width = 1.5,
 						values = validGrowDirections,
 					},
-					nameplateIconOffsetX = {
+					iconOffsetX = {
 						type = "range",
 						name = L.positionX,
 						desc = L.positionDesc,
 						order = 4,
-						min = -50,
-						max = 50,
+						max = 100,
+						min = -100,
 						step = 1,
 						width = 1,
 					},
-					nameplateIconOffsetY = {
+					iconOffsetY = {
 						type = "range",
 						name = L.positionY,
 						desc = L.positionDesc,
 						order = 5,
-						min = -50,
-						max = 50,
+						max = 100,
+						min = -100,
 						step = 1,
 						width = 1,
 					},
@@ -650,7 +851,7 @@ do
 						name = L.icon,
 						order = 10,
 					},
-					nameplateIconWidth = {
+					iconWidth = {
 						type = "range",
 						name = L.width,
 						order = 11,
@@ -659,7 +860,7 @@ do
 						step = 1,
 						width = 1,
 					},
-					nameplateIconHeight = {
+					iconHeight = {
 						type = "range",
 						name = L.height,
 						order = 12,
@@ -668,36 +869,36 @@ do
 						step = 1,
 						width = 1,
 					},
-					nameplateIconAspectRatio = {
+					iconAspectRatio = {
 						type = "toggle",
 						name = L.keepAspectRatio,
 						desc = L.keepAspectRatioDesc,
 						order = 13,
 						width = 1,
 					},
-					nameplateIconColor = {
+					iconColor = {
 						type = "color",
 						name = L.iconColor,
 						desc = L.iconColorDesc,
 						order = 14,
 						hasAlpha = true,
 						width = 1,
-						get = function(info)
-							return unpack(plugin.db.profile.nameplateIconColor)
+						get = function()
+							return db.iconColor[1], db.iconColor[2], db.iconColor[3], db.iconColor[4]
 						end,
-						set = function(info, r, g, b, a)
-							plugin.db.profile.nameplateIconColor = {r, g, b, a}
+						set = function(_, r, g, b, a)
+							db.iconColor = {r, g, b, a < 0.3 and 0.3 or a}
 							resetNameplates()
 						end,
 					},
-					nameplateIconDesaturate = {
+					iconDesaturate = {
 						type = "toggle",
 						name = L.desaturate,
 						desc = L.desaturateDesc,
 						order = 15,
 						width = 1,
 					},
-					nameplateIconZoom = {
+					iconZoom = {
 						type = "range",
 						name = L.zoom,
 						desc = L.zoomDesc,
@@ -708,28 +909,29 @@ do
 						width = 1,
 						isPercent = true,
 					},
-					nameplateIconBorder = {
+					iconBorder = {
 						type = "toggle",
 						name = L.showBorder,
+						desc = L.showBorderDesc,
 						order = 17,
 						width = 1,
 					},
-					nameplateIconBorderColor = {
+					iconBorderColor = {
 						type = "color",
 						name = L.borderColor,
 						order = 18,
 						hasAlpha = true,
 						width = 1,
-						disabled = function() return not db.nameplateIconBorder end,
-						get = function(info)
-							return unpack(plugin.db.profile.nameplateIconBorderColor)
+						disabled = function() return not db.iconBorder end,
+						get = function()
+							return db.iconBorderColor[1], db.iconBorderColor[2], db.iconBorderColor[3], db.iconBorderColor[4]
 						end,
-						set = function(info, r, g, b, a)
-							plugin.db.profile.nameplateIconBorderColor = {r, g, b, a}
+						set = function(_, r, g, b, a)
+							db.iconBorderColor = {r, g, b, a}
 							resetNameplates()
 						end,
 					},
-					nameplateIconBorderSize = {
+					iconBorderSize = {
 						type = "range",
 						name = L.borderSize,
 						order = 19,
@@ -737,20 +939,21 @@ do
 						max = 5,
 						step = 1,
 						width = 1,
-						disabled = function() return not db.nameplateIconBorder end,
+						disabled = function() return not db.iconBorder end,
 					},
 					cooldownTimerHeader = {
 						type = "header",
 						name = L.timer,
 						order = 20,
 					},
-					nameplateIconCooldownTimer = {
+					iconCooldownNumbers = {
 						type = "toggle",
 						name = L.showTimer,
+						desc = L.showTimerDesc,
 						order = 21,
 						width = 1.4,
 					},
-					nameplateIconCooldownTimerFontName = {
+					iconFontName = {
 						type = "select",
 						name = L.font,
 						order = 22,
@@ -758,18 +961,18 @@ do
 						itemControl = "DDI-Font",
 						get = function()
 							for i, v in next, media:List(FONT) do
-								if v == db.nameplateIconCooldownTimerFontName then return i end
+								if v == db.iconFontName then return i end
 							end
 						end,
 						set = function(_, value)
 							local list = media:List(FONT)
-							db.nameplateIconCooldownTimerFontName = list[value]
+							db.iconFontName = list[value]
 							resetNameplates()
 						end,
 						width = 2,
 						disabled = checkCooldownTimerDisabled,
 					},
-					nameplateIconCooldownTimerOutline = {
+					iconFontOutline = {
 						type = "select",
 						name = L.outline,
 						order = 23,
@@ -780,21 +983,21 @@ do
 						},
 						disabled = checkCooldownTimerDisabled,
 					},
-					nameplateIconCooldownTimerFontColor = {
+					iconFontColor = {
 						type = "color",
 						name = L.fontColor,
 						hasAlpha = true,
-						get = function(info)
-							return unpack(db.nameplateIconCooldownTimerFontColor)
+						get = function()
+							return db.iconFontColor[1], db.iconFontColor[2], db.iconFontColor[3], db.iconFontColor[4]
 						end,
-						set = function(info, r, g, b, a)
-							db.nameplateIconCooldownTimerFontColor = {r, g, b, a}
+						set = function(_, r, g, b, a)
+							db.iconFontColor = {r, g, b, a}
 							resetNameplates()
 						end,
 						order = 24,
 						disabled = checkCooldownTimerDisabled,
 					},
-					nameplateIconCooldownTimerFontSize = {
+					iconFontSize = {
 						type = "range",
 						name = L.fontSize,
 						desc = L.fontSizeDesc,
@@ -802,7 +1005,7 @@ do
 						softMax = 100, max = 200, min = 5, step = 1,
 						disabled = checkCooldownTimerDisabled,
 					},
-					nameplateIconCooldownTimerMonochrome = {
+					iconFontMonochrome = {
 						type = "toggle",
 						name = L.monochrome,
 						desc = L.monochromeDesc,
@@ -814,68 +1017,157 @@ do
 						name = L.cooldown,
 						order = 30,
 					},
-					nameplateIconCooldownSwipe = {
+					iconCooldownSwipe = {
 						type = "toggle",
 						name = L.showCooldownSwipe,
+						desc = L.showCooldownSwipeDesc,
 						order = 31,
 						width = 1,
 					},
-					nameplateIconCooldownEdge =	{
+					iconCooldownEdge =	{
 						type = "toggle",
 						name = L.showCooldownEdge,
+						desc = L.showCooldownEdgeDesc,
 						order = 32,
 						width = 1,
 					},
-					nameplateIconCooldownInverse = {
+					iconCooldownInverse = {
 						type = "toggle",
 						name = L.inverse,
+						desc = L.inverseSwipeDesc,
 						order = 33,
 						width = 1,
-						disabled = function() return not db.nameplateIconCooldownSwipe end,
+						disabled = function() return not db.iconCooldownSwipe end,
 					},
 					glowHeader = {
 						type = "header",
 						name = L.iconGlow,
 						order = 40,
 					},
-					nameplateIconExpireGlow = {
+					iconExpireGlow = {
 						type = "toggle",
 						name = L.enableExpireGlow,
 						desc = L.enableExpireGlowDesc,
 						order = 41,
 						width = 1,
 					},
-					nameplateIconGlowColor = {
+					iconGlowColor = {
 						type = "color",
 						name = L.glowColor,
 						order = 42,
 						hasAlpha = true,
 						width = 1,
-						disabled = function()
-							-- proc has no glow color option
-							return not db.nameplateIconExpireGlow or db.nameplateIconExpireGlowType == "proc"
+						disabled = function() return not db.iconExpireGlow end,
+						get = function()
+							return db.iconGlowColor[1], db.iconGlowColor[2], db.iconGlowColor[3], db.iconGlowColor[4]
 						end,
-						get = function(info)
-							return unpack(plugin.db.profile.nameplateIconGlowColor)
-						end,
-						set = function(info, r, g, b, a)
-							plugin.db.profile.nameplateIconGlowColor = {r, g, b, a}
+						set = function(_, r, g, b, a)
+							db.iconGlowColor = {r, g, b, a}
 							resetNameplates()
 						end,
 					},
-					nameplateIconExpireGlowType = {
+					iconExpireGlowType = {
 						type = "select",
 						name = L.glowType,
 						desc = L.glowTypeDesc,
 						order = 43,
 						width = 1,
-						disabled = function() return not db.nameplateIconExpireGlow end,
-						values = {
-							pixel = L.pixelGlow,
-							autocast = L.autocastGlow,
-							buttoncast = L.buttonGlow,
-							proc = L.procGlow,
-						},
+						disabled = function() return not db.iconExpireGlow end,
+						values = glowValues,
+					},
+					iconGlowFrequency = {
+						type = "range",
+						name = L.speed,
+						desc = L.animation_speed_desc,
+						order = 44,
+						min = -2,
+						max = 2,
+						step = 0.05,
+						width = 1,
+						hidden = function() return db.iconExpireGlowType == "proc" end,
+						disabled = function() return not db.iconExpireGlow end,
+					},
+					iconGlowPixelLines = {
+						type = "range",
+						name = L.lines,
+						desc = L.lines_glow_desc,
+						order = 45,
+						min = 1,
+						max = 15,
+						step = 1,
+						width = 1,
+						disabled = function() return not db.iconExpireGlow end,
+						hidden = function() return db.iconExpireGlowType ~= "pixel" end,
+					},
+					iconGlowAutoCastParticles = {
+						type = "range",
+						name = L.intensity,
+						desc = L.intensity_glow_desc,
+						order = 45,
+						min = 1,
+						max = 15,
+						step = 1,
+						width = 1,
+						disabled = function() return not db.iconExpireGlow end,
+						hidden = function() return db.iconExpireGlowType ~= "autocast" end,
+					},
+					iconGlowPixelThickness = {
+						type = "range",
+						name = L.thickness,
+						desc = L.thickness_glow_desc,
+						order = 46,
+						min = 1,
+						max = 5,
+						step = 1,
+						width = 1,
+						disabled = function() return not db.iconExpireGlow end,
+						hidden = function() return db.iconExpireGlowType ~= "pixel" end,
+					},
+					iconGlowAutoCastScale = {
+						type = "range",
+						name = L.scale,
+						desc = L.scale_glow_desc,
+						order = 46,
+						min = 0.5,
+						max = 3,
+						step = 0.05,
+						width = 1,
+						isPercent = true,
+						disabled = function() return not db.iconExpireGlow end,
+						hidden = function() return db.iconExpireGlowType ~= "autocast" end,
+					},
+					iconGlowProcStartAnim = {
+						type = "toggle",
+						name = L.startAnimation,
+						desc = L.startAnimation_glow_desc,
+						order = 45,
+						width = 1,
+						disabled = function() return not db.iconExpireGlow end,
+						hidden = function() return db.iconExpireGlowType ~= "proc" end,
+					},
+					iconGlowProcAnimDuration = {
+						type = "range",
+						name = L.speed,
+						desc = L.animation_speed_desc,
+						order = 46,
+						min = 0.1,
+						max = 3,
+						step = 0.1,
+						width = 1,
+						disabled = function() return not db.iconExpireGlow end,
+						hidden = function() return db.iconExpireGlowType ~= "proc" end,
+					},
+					iconGlowPixelLength ={
+						type = "range",
+						name = L.length,
+						desc = L.length_glow_desc,
+						order = 46,
+						min = 1,
+						max = 20,
+						step = 1,
+						width = 1,
+						disabled = function() return not db.iconExpireGlow end,
+						hidden = function() return db.iconExpireGlowType ~= "pixel" end,
 					},
 					resetHeader = {
 						type = "header",
@@ -933,8 +1225,8 @@ do
 						name = L.positionX,
 						desc = L.positionDesc,
 						order = 4,
-						min = -50,
-						max = 50,
+						max = 150, softMax = 100,
+						min = -150, softMin = -100,
 						step = 1,
 						width = 1,
 					},
@@ -943,8 +1235,8 @@ do
 						name = L.positionY,
 						desc = L.positionDesc,
 						order = 5,
-						min = -50,
-						max = 50,
+						max = 150, softMax = 100,
+						min = -150, softMin = -100,
 						step = 1,
 						width = 1,
 					},
@@ -995,11 +1287,11 @@ do
 						type = "color",
 						name = L.fontColor,
 						hasAlpha = true,
-						get = function(info)
-							return unpack(db.textFontColor)
+						get = function()
+							return db.textFontColor[1], db.textFontColor[2], db.textFontColor[3], db.textFontColor[4]
 						end,
-						set = function(info, r, g, b, a)
-							db.textFontColor = {r, g, b, a}
+						set = function(_, r, g, b, a)
+							db.textFontColor = {r, g, b, a < 0.3 and 0.3 or a}
 							resetNameplates()
 						end,
 						order = 24,
@@ -1078,8 +1370,8 @@ do
 		local unitIcons = nameplateIcons[guid]
 		if unitIcons then
 			local sorted = getOrder(nameplateIcons[guid])
-			local offsetY = db.nameplateIconOffsetY
-			local offsetX = db.nameplateIconOffsetX
+			local offsetY = db.iconOffsetY
+			local offsetX = db.iconOffsetX
 			local growDirection = db.iconGrowDirection
 			local iconPoint = inverseAnchorPoint[db.iconGrowDirectionStart]
 			local nameplatePoint = db.iconGrowDirectionStart
@@ -1088,17 +1380,17 @@ do
 
 				if i > 1 then -- Only use setup offset for first icon
 					local growOffset = db.iconSpacing
-					if db.iconGrowDirection == "UP" then
-						growOffset = growOffset + db.nameplateIconHeight
+					if growDirection == "UP" then
+						growOffset = growOffset + db.iconHeight
 						offsetY = offsetY + growOffset
-					elseif db.iconGrowDirection == "DOWN" then
-						growOffset = -(growOffset + db.nameplateIconHeight)
+					elseif growDirection == "DOWN" then
+						growOffset = -(growOffset + db.iconHeight)
 						offsetY = offsetY + growOffset
-					elseif db.iconGrowDirection == "LEFT" then
-						growOffset = -(growOffset + db.nameplateIconWidth)
+					elseif growDirection == "LEFT" then
+						growOffset = -(growOffset + db.iconWidth)
 						offsetX = offsetX + growOffset
 					else -- RIGHT
-						growOffset = growOffset + db.nameplateIconWidth
+						growOffset = growOffset + db.iconWidth
 						offsetX = offsetX + growOffset
 					end
 				end
@@ -1127,13 +1419,13 @@ do
 				local w, h = text:GetSize()
 				if i > 1 then -- Only use setup offset after first icon
 					local growOffset = db.textSpacing
-					if db.textGrowDirection == "UP" then
+					if growDirection == "UP" then
 						growOffset = growOffset + h
 						offsetY = offsetY + growOffset
-					elseif db.textGrowDirection == "DOWN" then
+					elseif growDirection == "DOWN" then
 						growOffset = -(growOffset + h)
 						offsetY = offsetY + growOffset
-					elseif db.textGrowDirection == "LEFT" then
+					elseif growDirection == "LEFT" then
 						growOffset = -(growOffset + w)
 						offsetX = offsetX + growOffset
 					else -- RIGHT
@@ -1217,7 +1509,6 @@ function plugin:OnPluginEnable()
 	self:RegisterMessage("BigWigs_StopBars", "StopModuleNameplates")
 	self:RegisterMessage("BigWigs_OnBossDisable", "StopModuleNameplates")
 	self:RegisterMessage("BigWigs_OnBossWipe", "StopModuleNameplates")
-	self:RegisterMessage("BigWigs_OnPluginDisable", "StopModuleNameplates")
 	self:RegisterMessage("BigWigs_ProfileUpdate", updateProfile)
 
 	self:RegisterEvent("NAME_PLATE_UNIT_ADDED")
@@ -1321,22 +1612,22 @@ end
 
 local function createNameplateIcon(module, guid, key, length, icon, hideOnExpire)
 	local iconFrame = getIconFrame()
-	local width = db.nameplateIconWidth
-	local height = db.nameplateIconHeight
+	local width = db.iconWidth
+	local height = db.iconHeight
 
 	iconFrame:SetSize(width, height)
 	iconFrame:Set("bigwigs:key", key)
 	iconFrame:Set("bigwigs:unitGUID", guid)
 	iconFrame:SetHideOnExpire(hideOnExpire)
-	iconFrame:ShowBorder(db.nameplateIconBorder, db.nameplateIconBorderColor)
+	iconFrame:ShowBorder(db.iconBorder, db.iconBorderColor)
 
 	iconFrame:SetIcon(icon)
-	iconFrame:SetIconColor(unpack(db.nameplateIconColor))
-	iconFrame:SetDesaturated(db.nameplateIconDesaturate)
+	iconFrame:SetIconColor(db.iconColor[1], db.iconColor[2], db.iconColor[3], db.iconColor[4])
+	iconFrame:SetDesaturated(db.iconDesaturate)
 
-	iconFrame.cooldown:SetDrawEdge(db.nameplateIconCooldownEdge)
-	iconFrame.cooldown:SetDrawSwipe(db.nameplateIconCooldownSwipe)
-	iconFrame.cooldown:SetReverse(db.nameplateIconCooldownInverse)
+	iconFrame.cooldown:SetDrawEdge(db.iconCooldownEdge)
+	iconFrame.cooldown:SetDrawSwipe(db.iconCooldownSwipe)
+	iconFrame.cooldown:SetReverse(db.iconCooldownInverse)
 
 	iconFrame:SetDuration(length)
 	iconFrame:Start()
@@ -1344,7 +1635,7 @@ local function createNameplateIcon(module, guid, key, length, icon, hideOnExpire
 	return iconFrame
 end
 
-local function getLenght(length)
+local function getLength(length)
 	local time = GetTime()
 	local expirationTime, timerDuration
 	if type(length) == "table" then
@@ -1359,13 +1650,13 @@ end
 
 function startNameplateIcon(module, guid, key, length, icon, hideOnExpire)
 	local time = GetTime()
-    local expirationTime, timerDuration = getLenght(length)
+	local expirationTime, timerDuration = getLength(length)
 
-    local currentIcon = nameplateIcons[guid] and nameplateIcons[guid][key]
-    if currentIcon and currentIcon.exp < time and timerDuration <= 0 then
+	local currentIcon = nameplateIcons[guid] and nameplateIcons[guid][key]
+	if currentIcon and currentIcon.exp < time and timerDuration <= 0 then
 		-- Avoid restarting an already expired icon and its animations if the timer is 0 or less
-        return
-    end
+		return
+	end
 
 	plugin:StopNameplate(nil, module, guid, key)
 
@@ -1395,7 +1686,7 @@ end
 function showNameplateText(module, guid, key, length, text, hideOnExpire)
 	plugin:StopNameplate(nil, module, guid, key, text)
 	local time = GetTime()
-    local expirationTime, timerDuration = getLenght(length)
+	local expirationTime, timerDuration = getLength(length)
 
 	nameplateTexts[guid] = nameplateTexts[guid] or {}
 	local textInfo = {

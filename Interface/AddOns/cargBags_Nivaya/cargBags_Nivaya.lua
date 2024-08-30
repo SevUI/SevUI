@@ -5,6 +5,7 @@ local isClassic = WOW_PROJECT_ID ~= WOW_PROJECT_MAINLINE
 local isRetail = WOW_PROJECT_ID == WOW_PROJECT_MAINLINE
 
 local GetContainerNumSlots = GetContainerNumSlots or C_Container.GetContainerNumSlots
+local IsAddOnLoaded = IsAddOnLoaded or C_AddOns.IsAddOnLoaded
 
 local isDF = select(4,GetBuildInfo()) >= 100000
 local NumBagContainer = isDF and 5 or 4
@@ -183,7 +184,7 @@ local optDefaults = {
 -- Those are internal settings, don't touch them at all:
 local defaults = {}
 
-local ItemSetCaption = (C_AddOns.IsAddOnLoaded('ItemRack') and "ItemRack ") or (C_AddOns.IsAddOnLoaded('Outfitter') and "Outfitter ") or "Item "
+local ItemSetCaption = (IsAddOnLoaded('ItemRack') and "ItemRack ") or (IsAddOnLoaded('Outfitter') and "Outfitter ") or "Item "
 local bankOpenState = false
 
 function cbNivaya:ShowBags(...)

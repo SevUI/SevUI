@@ -1,7 +1,7 @@
 
 ClickedDB = {
 ["global"] = {
-["version"] = 10,
+["version"] = 11,
 ["nextUid"] = 25,
 },
 ["profileKeys"] = {
@@ -17,14 +17,14 @@ ClickedDB = {
 ["Nimshot - Ravencrest"] = "HUNTER",
 ["Sevdh - Valdrakken"] = "DEMONHUNTER",
 ["Sevdk - Valdrakken"] = "DEATHKNIGHT",
-["Sevdk - Tarren Mill"] = "SevUI",
+["Sevenroll - Kazzak"] = "MONK",
 ["Lftwgldshare - Draenor"] = "MONK",
 ["Sevdk - Draenor"] = "DEATHKNIGHT",
-["Sevenroll - Kazzak"] = "MONK",
-["Sevwar - Tarren Mill"] = "SevUI",
+["Sevdeekaytwo - Tarren Mill"] = "SevUI",
+["Sevdk - Tarren Mill"] = "SevUI",
 ["Sevwartwo - Valdrakken"] = "WARRIOR",
 ["Sevensides - Tarren Mill"] = "SevUI",
-["Sevdeekaytwo - Tarren Mill"] = "SevUI",
+["Sevwar - Tarren Mill"] = "SevUI",
 },
 ["profiles"] = {
 ["HUNTER"] = {
@@ -55,11 +55,147 @@ ClickedDB = {
 },
 ["bindings"] = {
 {
+["load"] = {
+["playerNameRealm"] = {
+["value"] = "Sevenroll",
+["selected"] = false,
+},
+["combat"] = {
+["value"] = true,
+["selected"] = false,
+},
+["instanceType"] = {
+["single"] = "NONE",
+["selected"] = 0,
+["multiple"] = {
+"NONE",
+},
+},
+["class"] = {
+["single"] = "MONK",
+["selected"] = 1,
+["multiple"] = {
+"MONK",
+},
+},
+["advancedFlyable"] = {
+["value"] = true,
+["selected"] = false,
+},
+["playerInGroup"] = {
+["value"] = "",
+["selected"] = false,
+},
+["race"] = {
+["single"] = "BloodElf",
+["selected"] = 0,
+["multiple"] = {
+"BloodElf",
+},
+},
+["specialization"] = {
+["single"] = 1,
+["selected"] = 0,
+["multiple"] = {
+1,
+},
+},
+["bonusbar"] = {
+["value"] = "",
+["selected"] = false,
+["negated"] = false,
+},
+["equipped"] = {
+["value"] = "",
+["selected"] = false,
+},
+["mounted"] = {
+["value"] = true,
+["selected"] = false,
+},
+["spellKnown"] = {
+["value"] = "Detox",
+["selected"] = true,
+},
+["stealth"] = {
+["value"] = true,
+["selected"] = false,
+},
+["never"] = false,
+["talent"] = {
+["selected"] = false,
+["entries"] = {
+{
+["operation"] = "AND",
+["value"] = "",
+},
+},
+},
+["zoneName"] = {
+["value"] = "",
+["selected"] = false,
+},
+["form"] = {
+["single"] = 1,
+["selected"] = 0,
+["negated"] = false,
+["multiple"] = {
+1,
+},
+},
+["pet"] = {
+["value"] = true,
+["selected"] = false,
+},
+["swimming"] = {
+["value"] = true,
+["selected"] = false,
+},
+["pvpTalent"] = {
+["selected"] = false,
+["entries"] = {
+{
+["operation"] = "AND",
+["negated"] = false,
+["value"] = "",
+},
+},
+},
+["channeling"] = {
+["value"] = "",
+["selected"] = false,
+["negated"] = false,
+},
+["outdoors"] = {
+["value"] = true,
+["selected"] = false,
+},
+["inGroup"] = {
+["value"] = "IN_GROUP_PARTY_OR_RAID",
+["selected"] = false,
+},
+["dynamicFlying"] = {
+["value"] = true,
+["selected"] = false,
+},
+["warMode"] = {
+["value"] = true,
+["selected"] = false,
+},
+["flyable"] = {
+["value"] = true,
+["selected"] = false,
+},
+["flying"] = {
+["value"] = true,
+["selected"] = false,
+},
+},
 ["type"] = 1,
 ["action"] = {
 ["macroValue"] = "",
 ["macroName"] = "Run custom macro",
-["spellValue"] = 218164,
+["cancelForm"] = false,
 ["targetUnitAfterCast"] = false,
 ["auraName"] = "",
 ["itemValue"] = "",
@@ -70,12 +206,11 @@ ClickedDB = {
 ["interrupt"] = true,
 ["startAutoAttack"] = false,
 ["startPetAttack"] = false,
-["cancelForm"] = false,
+["spellValue"] = 218164,
 },
 ["keybind"] = "SHIFT-BUTTON1",
-["integrations"] = {
-["weakauras"] = "CbzYG1K(1Oj",
-},
+["scope"] = 1,
+["actionType"] = "SPELL",
 ["targets"] = {
 ["regular"] = {
 {
@@ -92,15 +227,16 @@ ClickedDB = {
 ["hovercastEnabled"] = true,
 },
 ["uid"] = 1,
-["actionType"] = "SPELL",
+},
+{
 ["load"] = {
 ["playerNameRealm"] = {
 ["value"] = "Sevenroll",
 ["selected"] = false,
 },
 ["combat"] = {
-["value"] = true,
-["selected"] = false,
+["value"] = false,
+["selected"] = true,
 },
 ["instanceType"] = {
 ["single"] = "NONE",
@@ -151,13 +287,13 @@ ClickedDB = {
 ["value"] = true,
 ["selected"] = false,
 },
+["spellKnown"] = {
+["value"] = "",
+["selected"] = false,
+},
 ["stealth"] = {
 ["value"] = true,
 ["selected"] = false,
-},
-["spellKnown"] = {
-["value"] = "Detox",
-["selected"] = true,
 },
 ["never"] = false,
 ["talent"] = {
@@ -229,14 +365,11 @@ ClickedDB = {
 ["selected"] = false,
 },
 },
-["scope"] = 1,
-},
-{
 ["type"] = 1,
 ["action"] = {
 ["macroValue"] = "",
 ["macroName"] = "Run custom macro",
-["spellValue"] = 115178,
+["cancelForm"] = false,
 ["targetUnitAfterCast"] = false,
 ["auraName"] = "",
 ["itemValue"] = "",
@@ -247,11 +380,11 @@ ClickedDB = {
 ["interrupt"] = true,
 ["startAutoAttack"] = false,
 ["startPetAttack"] = false,
-["cancelForm"] = false,
+["spellValue"] = 115178,
 },
 ["keybind"] = "SHIFT-BUTTON2",
-["integrations"] = {
-},
+["scope"] = 1,
+["actionType"] = "SPELL",
 ["targets"] = {
 ["regular"] = {
 {
@@ -268,15 +401,16 @@ ClickedDB = {
 ["hovercastEnabled"] = true,
 },
 ["uid"] = 2,
-["actionType"] = "SPELL",
+},
+{
 ["load"] = {
 ["playerNameRealm"] = {
 ["value"] = "Sevenroll",
 ["selected"] = false,
 },
 ["combat"] = {
-["value"] = false,
-["selected"] = true,
+["value"] = true,
+["selected"] = false,
 },
 ["instanceType"] = {
 ["single"] = "NONE",
@@ -287,7 +421,7 @@ ClickedDB = {
 },
 ["class"] = {
 ["single"] = "MONK",
-["selected"] = 1,
+["selected"] = 0,
 ["multiple"] = {
 "MONK",
 },
@@ -327,12 +461,12 @@ ClickedDB = {
 ["value"] = true,
 ["selected"] = false,
 },
-["stealth"] = {
-["value"] = true,
-["selected"] = false,
-},
 ["spellKnown"] = {
 ["value"] = "",
+["selected"] = false,
+},
+["stealth"] = {
+["value"] = true,
 ["selected"] = false,
 },
 ["never"] = false,
@@ -405,14 +539,11 @@ ClickedDB = {
 ["selected"] = false,
 },
 },
-["scope"] = 1,
-},
-{
 ["type"] = 1,
 ["action"] = {
 ["macroValue"] = "/focus [@mouseover,exists][@target,exists][]",
 ["macroName"] = "Focus mouseover",
-["spellValue"] = "",
+["cancelForm"] = false,
 ["targetUnitAfterCast"] = false,
 ["auraName"] = "",
 ["itemValue"] = "",
@@ -423,11 +554,11 @@ ClickedDB = {
 ["interrupt"] = false,
 ["startAutoAttack"] = false,
 ["startPetAttack"] = false,
-["cancelForm"] = false,
+["spellValue"] = "",
 },
 ["keybind"] = "SHIFT-TAB",
-["integrations"] = {
-},
+["scope"] = 1,
+["actionType"] = "MACRO",
 ["targets"] = {
 ["regular"] = {
 {
@@ -444,15 +575,16 @@ ClickedDB = {
 ["hovercastEnabled"] = false,
 },
 ["uid"] = 3,
-["actionType"] = "MACRO",
+},
+{
 ["load"] = {
 ["playerNameRealm"] = {
 ["value"] = "Sevenroll",
 ["selected"] = false,
 },
 ["combat"] = {
-["value"] = true,
-["selected"] = false,
+["value"] = false,
+["selected"] = true,
 },
 ["instanceType"] = {
 ["single"] = "NONE",
@@ -499,19 +631,26 @@ ClickedDB = {
 ["value"] = "",
 ["selected"] = false,
 },
-["mounted"] = {
+["flying"] = {
 ["value"] = true,
 ["selected"] = false,
 },
-["stealth"] = {
+["flyable"] = {
 ["value"] = true,
 ["selected"] = false,
 },
-["spellKnown"] = {
-["value"] = "",
+["warMode"] = {
+["value"] = true,
 ["selected"] = false,
 },
-["never"] = false,
+["form"] = {
+["single"] = 1,
+["selected"] = 0,
+["negated"] = false,
+["multiple"] = {
+1,
+},
+},
 ["talent"] = {
 ["selected"] = false,
 ["entries"] = {
@@ -525,14 +664,7 @@ ClickedDB = {
 ["value"] = "",
 ["selected"] = false,
 },
-["form"] = {
-["single"] = 1,
-["selected"] = 0,
-["negated"] = false,
-["multiple"] = {
-1,
-},
-},
+["never"] = false,
 ["pet"] = {
 ["value"] = true,
 ["selected"] = false,
@@ -568,30 +700,27 @@ ClickedDB = {
 ["value"] = true,
 ["selected"] = false,
 },
-["warMode"] = {
+["stealth"] = {
 ["value"] = true,
 ["selected"] = false,
 },
-["flyable"] = {
+["spellKnown"] = {
+["value"] = "",
+["selected"] = false,
+},
+["mounted"] = {
 ["value"] = true,
 ["selected"] = false,
 },
-["flying"] = {
-["value"] = true,
-["selected"] = false,
 },
-},
-["scope"] = 1,
-},
-{
 ["type"] = 1,
 ["action"] = {
 ["macroValue"] = "/framestack",
-["itemValue"] = "",
-["spellValue"] = "",
+["cancelQueuedSpell"] = false,
+["cancelForm"] = false,
 ["targetUnitAfterCast"] = false,
 ["auraName"] = "",
-["cancelQueuedSpell"] = false,
+["itemValue"] = "",
 ["startPetAttack"] = false,
 ["macroName"] = "Framestack",
 ["convertValueToId"] = true,
@@ -599,11 +728,11 @@ ClickedDB = {
 ["interrupt"] = false,
 ["startAutoAttack"] = false,
 ["macroIcon"] = "Interface\\ICONS\\ability_hunter_snipershot",
-["cancelForm"] = false,
+["spellValue"] = "",
 },
 ["keybind"] = ";",
-["integrations"] = {
-},
+["scope"] = 1,
+["actionType"] = "MACRO",
 ["targets"] = {
 ["hovercastEnabled"] = false,
 ["regularEnabled"] = true,
@@ -620,15 +749,16 @@ ClickedDB = {
 },
 },
 ["uid"] = 4,
-["actionType"] = "MACRO",
+},
+{
 ["load"] = {
 ["playerNameRealm"] = {
 ["value"] = "Sevenroll",
 ["selected"] = false,
 },
 ["combat"] = {
-["value"] = false,
-["selected"] = true,
+["value"] = true,
+["selected"] = false,
 },
 ["instanceType"] = {
 ["single"] = "NONE",
@@ -744,12 +874,12 @@ ClickedDB = {
 ["value"] = true,
 ["selected"] = false,
 },
-["spellKnown"] = {
-["value"] = "",
-["selected"] = false,
-},
 ["stealth"] = {
 ["value"] = true,
+["selected"] = false,
+},
+["spellKnown"] = {
+["value"] = "",
 ["selected"] = false,
 },
 ["mounted"] = {
@@ -757,17 +887,14 @@ ClickedDB = {
 ["selected"] = false,
 },
 },
-["scope"] = 1,
-},
-{
 ["type"] = 1,
 ["action"] = {
 ["macroValue"] = "/kgpanels config",
-["itemValue"] = "",
-["spellValue"] = "",
+["cancelQueuedSpell"] = false,
+["cancelForm"] = false,
 ["targetUnitAfterCast"] = false,
 ["auraName"] = "",
-["cancelQueuedSpell"] = false,
+["itemValue"] = "",
 ["startPetAttack"] = false,
 ["macroName"] = "Open KGPanels config",
 ["convertValueToId"] = true,
@@ -775,11 +902,11 @@ ClickedDB = {
 ["interrupt"] = false,
 ["startAutoAttack"] = false,
 ["macroIcon"] = "Interface\\ICONS\\ability_hunter_beastwithin",
-["cancelForm"] = false,
+["spellValue"] = "",
 },
 ["keybind"] = "'",
-["integrations"] = {
-},
+["scope"] = 1,
+["actionType"] = "MACRO",
 ["targets"] = {
 ["hovercastEnabled"] = false,
 ["regularEnabled"] = true,
@@ -796,7 +923,8 @@ ClickedDB = {
 },
 },
 ["uid"] = 5,
-["actionType"] = "MACRO",
+},
+{
 ["load"] = {
 ["playerNameRealm"] = {
 ["value"] = "Sevenroll",
@@ -863,14 +991,7 @@ ClickedDB = {
 ["value"] = true,
 ["selected"] = false,
 },
-["form"] = {
-["single"] = 1,
-["selected"] = 0,
-["negated"] = false,
-["multiple"] = {
-1,
-},
-},
+["never"] = false,
 ["talent"] = {
 ["selected"] = false,
 ["entries"] = {
@@ -884,7 +1005,14 @@ ClickedDB = {
 ["value"] = "",
 ["selected"] = false,
 },
-["never"] = false,
+["form"] = {
+["single"] = 1,
+["selected"] = 0,
+["negated"] = false,
+["multiple"] = {
+1,
+},
+},
 ["pet"] = {
 ["value"] = true,
 ["selected"] = false,
@@ -933,17 +1061,14 @@ ClickedDB = {
 ["selected"] = false,
 },
 },
-["scope"] = 1,
-},
-{
 ["type"] = 1,
 ["action"] = {
 ["macroValue"] = "/reload",
-["itemValue"] = "",
-["spellValue"] = "",
+["cancelQueuedSpell"] = false,
+["cancelForm"] = false,
 ["targetUnitAfterCast"] = false,
 ["auraName"] = "",
-["cancelQueuedSpell"] = false,
+["itemValue"] = "",
 ["startPetAttack"] = false,
 ["macroName"] = "Run custom macro",
 ["convertValueToId"] = true,
@@ -951,11 +1076,11 @@ ClickedDB = {
 ["interrupt"] = false,
 ["startAutoAttack"] = false,
 ["macroIcon"] = "Interface\\ICONS\\inv_elemental_primal_water",
-["cancelForm"] = false,
+["spellValue"] = "",
 },
 ["keybind"] = "F9",
-["integrations"] = {
-},
+["scope"] = 1,
+["actionType"] = "MACRO",
 ["targets"] = {
 ["hovercastEnabled"] = false,
 ["regularEnabled"] = true,
@@ -972,183 +1097,8 @@ ClickedDB = {
 },
 },
 ["uid"] = 6,
-["actionType"] = "MACRO",
-["load"] = {
-["playerNameRealm"] = {
-["value"] = "Sevenroll",
-["selected"] = false,
-},
-["combat"] = {
-["value"] = true,
-["selected"] = false,
-},
-["instanceType"] = {
-["single"] = "NONE",
-["selected"] = 0,
-["multiple"] = {
-"NONE",
-},
-},
-["class"] = {
-["single"] = "MONK",
-["selected"] = 0,
-["multiple"] = {
-"MONK",
-},
-},
-["advancedFlyable"] = {
-["value"] = true,
-["selected"] = false,
-},
-["playerInGroup"] = {
-["value"] = "",
-["selected"] = false,
-},
-["race"] = {
-["single"] = "BloodElf",
-["selected"] = 0,
-["multiple"] = {
-"BloodElf",
-},
-},
-["specialization"] = {
-["single"] = 1,
-["selected"] = 0,
-["multiple"] = {
-1,
-},
-},
-["bonusbar"] = {
-["value"] = "",
-["selected"] = false,
-["negated"] = false,
-},
-["equipped"] = {
-["value"] = "",
-["selected"] = false,
-},
-["flying"] = {
-["value"] = true,
-["selected"] = false,
-},
-["flyable"] = {
-["value"] = true,
-["selected"] = false,
-},
-["warMode"] = {
-["value"] = true,
-["selected"] = false,
-},
-["never"] = false,
-["talent"] = {
-["selected"] = false,
-["entries"] = {
-{
-["operation"] = "AND",
-["value"] = "",
-},
-},
-},
-["zoneName"] = {
-["value"] = "",
-["selected"] = false,
-},
-["form"] = {
-["single"] = 1,
-["selected"] = 0,
-["negated"] = false,
-["multiple"] = {
-1,
-},
-},
-["pet"] = {
-["value"] = true,
-["selected"] = false,
-},
-["swimming"] = {
-["value"] = true,
-["selected"] = false,
-},
-["pvpTalent"] = {
-["selected"] = false,
-["entries"] = {
-{
-["operation"] = "AND",
-["negated"] = false,
-["value"] = "",
-},
-},
-},
-["channeling"] = {
-["value"] = "",
-["selected"] = false,
-["negated"] = false,
-},
-["outdoors"] = {
-["value"] = true,
-["selected"] = false,
-},
-["inGroup"] = {
-["value"] = "IN_GROUP_PARTY_OR_RAID",
-["selected"] = false,
-},
-["dynamicFlying"] = {
-["value"] = true,
-["selected"] = false,
-},
-["stealth"] = {
-["value"] = true,
-["selected"] = false,
-},
-["spellKnown"] = {
-["value"] = "",
-["selected"] = false,
-},
-["mounted"] = {
-["value"] = true,
-["selected"] = false,
-},
-},
-["scope"] = 1,
 },
 {
-["type"] = 1,
-["action"] = {
-["macroValue"] = "/4 asd",
-["itemValue"] = "",
-["spellValue"] = "",
-["targetUnitAfterCast"] = false,
-["auraName"] = "",
-["cancelQueuedSpell"] = false,
-["startPetAttack"] = false,
-["macroName"] = "Target: Disable right-click in combat",
-["convertValueToId"] = true,
-["executionOrder"] = 1,
-["interrupt"] = false,
-["startAutoAttack"] = false,
-["macroIcon"] = "Interface\\ICONS\\spell_chargenegative",
-["cancelForm"] = false,
-},
-["keybind"] = "BUTTON2",
-["integrations"] = {
-},
-["targets"] = {
-["hovercastEnabled"] = true,
-["regularEnabled"] = false,
-["hovercast"] = {
-["vitals"] = "ANY",
-["hostility"] = "ANY",
-},
-["regular"] = {
-{
-["vitals"] = "ANY",
-["hostility"] = "ANY",
-["unit"] = "DEFAULT",
-},
-},
-},
-["uid"] = 7,
-["actionType"] = "UNIT_MENU",
 ["load"] = {
 ["playerNameRealm"] = {
 ["value"] = "Sevenroll",
@@ -1272,12 +1222,12 @@ ClickedDB = {
 ["value"] = true,
 ["selected"] = false,
 },
-["spellKnown"] = {
-["value"] = "",
-["selected"] = false,
-},
 ["stealth"] = {
 ["value"] = true,
+["selected"] = false,
+},
+["spellKnown"] = {
+["value"] = "",
 ["selected"] = false,
 },
 ["mounted"] = {
@@ -1285,32 +1235,29 @@ ClickedDB = {
 ["selected"] = false,
 },
 },
-["scope"] = 1,
-},
-{
 ["type"] = 1,
 ["action"] = {
-["macroValue"] = "/plater",
-["itemValue"] = "",
-["spellValue"] = "",
+["macroValue"] = "/4 asd",
+["cancelQueuedSpell"] = false,
+["cancelForm"] = false,
 ["targetUnitAfterCast"] = false,
 ["auraName"] = "",
-["cancelQueuedSpell"] = false,
+["itemValue"] = "",
 ["startPetAttack"] = false,
-["macroName"] = "Open Plater config",
+["macroName"] = "Target: Disable right-click in combat",
 ["convertValueToId"] = true,
 ["executionOrder"] = 1,
 ["interrupt"] = false,
 ["startAutoAttack"] = false,
-["macroIcon"] = "Interface\\ICONS\\INV_Misc_QuestionMark",
-["cancelForm"] = false,
+["macroIcon"] = "Interface\\ICONS\\spell_chargenegative",
+["spellValue"] = "",
 },
-["keybind"] = "]",
-["integrations"] = {
-},
+["keybind"] = "BUTTON2",
+["scope"] = 1,
+["actionType"] = "UNIT_MENU",
 ["targets"] = {
-["hovercastEnabled"] = false,
-["regularEnabled"] = true,
+["hovercastEnabled"] = true,
+["regularEnabled"] = false,
 ["hovercast"] = {
 ["vitals"] = "ANY",
 ["hostility"] = "ANY",
@@ -1323,8 +1270,9 @@ ClickedDB = {
 },
 },
 },
-["uid"] = 8,
-["actionType"] = "MACRO",
+["uid"] = 7,
+},
+{
 ["load"] = {
 ["playerNameRealm"] = {
 ["value"] = "Sevenroll",
@@ -1448,12 +1396,12 @@ ClickedDB = {
 ["value"] = true,
 ["selected"] = false,
 },
-["stealth"] = {
-["value"] = true,
-["selected"] = false,
-},
 ["spellKnown"] = {
 ["value"] = "",
+["selected"] = false,
+},
+["stealth"] = {
+["value"] = true,
 ["selected"] = false,
 },
 ["mounted"] = {
@@ -1461,17 +1409,188 @@ ClickedDB = {
 ["selected"] = false,
 },
 },
+["type"] = 1,
+["action"] = {
+["macroValue"] = "/plater",
+["cancelQueuedSpell"] = false,
+["cancelForm"] = false,
+["targetUnitAfterCast"] = false,
+["auraName"] = "",
+["itemValue"] = "",
+["startPetAttack"] = false,
+["macroName"] = "Open Plater config",
+["convertValueToId"] = true,
+["executionOrder"] = 1,
+["interrupt"] = false,
+["startAutoAttack"] = false,
+["macroIcon"] = "Interface\\ICONS\\INV_Misc_QuestionMark",
+["spellValue"] = "",
+},
+["keybind"] = "]",
 ["scope"] = 1,
+["actionType"] = "MACRO",
+["targets"] = {
+["hovercastEnabled"] = false,
+["regularEnabled"] = true,
+["hovercast"] = {
+["vitals"] = "ANY",
+["hostility"] = "ANY",
+},
+["regular"] = {
+{
+["vitals"] = "ANY",
+["hostility"] = "ANY",
+["unit"] = "DEFAULT",
+},
+},
+},
+["uid"] = 8,
 },
 {
+["load"] = {
+["playerNameRealm"] = {
+["value"] = "Sevensides",
+["selected"] = false,
+},
+["combat"] = {
+["value"] = true,
+["selected"] = false,
+},
+["instanceType"] = {
+["single"] = "NONE",
+["selected"] = 0,
+["multiple"] = {
+"NONE",
+},
+},
+["class"] = {
+["single"] = "DRUID",
+["selected"] = 1,
+["multiple"] = {
+"DRUID",
+},
+},
+["advancedFlyable"] = {
+["value"] = true,
+["selected"] = false,
+},
+["playerInGroup"] = {
+["value"] = "",
+["selected"] = false,
+},
+["race"] = {
+["single"] = "Tauren",
+["selected"] = 0,
+["multiple"] = {
+"Tauren",
+},
+},
+["specialization"] = {
+["single"] = 3,
+["selected"] = 0,
+["multiple"] = {
+3,
+},
+},
+["bonusbar"] = {
+["value"] = "",
+["selected"] = false,
+["negated"] = false,
+},
+["equipped"] = {
+["value"] = "",
+["selected"] = false,
+},
+["mounted"] = {
+["value"] = true,
+["selected"] = false,
+},
+["flying"] = {
+["value"] = true,
+["selected"] = false,
+},
+["warMode"] = {
+["value"] = true,
+["selected"] = false,
+},
+["never"] = false,
+["talent"] = {
+["selected"] = false,
+["entries"] = {
+{
+["operation"] = "AND",
+["value"] = "",
+},
+},
+},
+["zoneName"] = {
+["value"] = "",
+["selected"] = false,
+},
+["form"] = {
+["single"] = 1,
+["selected"] = 0,
+["negated"] = false,
+["multiple"] = {
+1,
+},
+},
+["pet"] = {
+["value"] = true,
+["selected"] = false,
+},
+["swimming"] = {
+["value"] = true,
+["selected"] = false,
+},
+["pvpTalent"] = {
+["selected"] = false,
+["entries"] = {
+{
+["operation"] = "AND",
+["negated"] = false,
+["value"] = "",
+},
+},
+},
+["channeling"] = {
+["value"] = "",
+["selected"] = false,
+["negated"] = false,
+},
+["outdoors"] = {
+["value"] = true,
+["selected"] = false,
+},
+["inGroup"] = {
+["value"] = "IN_GROUP_PARTY_OR_RAID",
+["selected"] = false,
+},
+["dynamicFlying"] = {
+["value"] = true,
+["selected"] = false,
+},
+["spellKnown"] = {
+["value"] = "Remove Corruption",
+["selected"] = true,
+},
+["stealth"] = {
+["value"] = true,
+["selected"] = false,
+},
+["flyable"] = {
+["value"] = true,
+["selected"] = false,
+},
+},
 ["type"] = 1,
 ["action"] = {
 ["macroValue"] = "",
-["itemValue"] = "",
-["spellValue"] = 2782,
+["cancelQueuedSpell"] = true,
+["cancelForm"] = false,
 ["targetUnitAfterCast"] = false,
 ["auraName"] = "",
-["cancelQueuedSpell"] = true,
+["itemValue"] = "",
 ["startPetAttack"] = false,
 ["macroName"] = "Run custom macro",
 ["convertValueToId"] = true,
@@ -1479,11 +1598,11 @@ ClickedDB = {
 ["interrupt"] = false,
 ["startAutoAttack"] = false,
 ["macroIcon"] = "Interface\\ICONS\\INV_Misc_QuestionMark",
-["cancelForm"] = false,
+["spellValue"] = 2782,
 },
 ["keybind"] = "SHIFT-BUTTON1",
-["integrations"] = {
-},
+["scope"] = 1,
+["actionType"] = "SPELL",
 ["targets"] = {
 ["hovercastEnabled"] = true,
 ["regularEnabled"] = false,
@@ -1500,13 +1619,14 @@ ClickedDB = {
 },
 },
 ["uid"] = 9,
-["actionType"] = "SPELL",
+},
+{
 ["load"] = {
 ["playerNameRealm"] = {
 ["value"] = "Sevensides",
 ["selected"] = false,
 },
-["combat"] = {
+["flyable"] = {
 ["value"] = true,
 ["selected"] = false,
 },
@@ -1532,12 +1652,9 @@ ClickedDB = {
 ["value"] = "",
 ["selected"] = false,
 },
-["race"] = {
-["single"] = "Tauren",
-["selected"] = 0,
-["multiple"] = {
-"Tauren",
-},
+["flying"] = {
+["value"] = true,
+["selected"] = false,
 },
 ["specialization"] = {
 ["single"] = 3,
@@ -1559,15 +1676,22 @@ ClickedDB = {
 ["value"] = true,
 ["selected"] = false,
 },
-["flying"] = {
+["stealth"] = {
 ["value"] = true,
 ["selected"] = false,
 },
-["warMode"] = {
-["value"] = true,
-["selected"] = false,
+["spellKnown"] = {
+["value"] = "Revive",
+["selected"] = true,
 },
-["never"] = false,
+["form"] = {
+["single"] = 1,
+["selected"] = 0,
+["negated"] = false,
+["multiple"] = {
+1,
+},
+},
 ["talent"] = {
 ["selected"] = false,
 ["entries"] = {
@@ -1581,14 +1705,7 @@ ClickedDB = {
 ["value"] = "",
 ["selected"] = false,
 },
-["form"] = {
-["single"] = 1,
-["selected"] = 0,
-["negated"] = false,
-["multiple"] = {
-1,
-},
-},
+["never"] = false,
 ["pet"] = {
 ["value"] = true,
 ["selected"] = false,
@@ -1624,27 +1741,27 @@ ClickedDB = {
 ["value"] = true,
 ["selected"] = false,
 },
-["stealth"] = {
+["warMode"] = {
 ["value"] = true,
 ["selected"] = false,
 },
-["spellKnown"] = {
-["value"] = "Remove Corruption",
-["selected"] = true,
-},
-["flyable"] = {
+["combat"] = {
 ["value"] = true,
 ["selected"] = false,
 },
+["race"] = {
+["single"] = "Tauren",
+["selected"] = 0,
+["multiple"] = {
+"Tauren",
 },
-["scope"] = 1,
 },
-{
+},
 ["type"] = 1,
 ["action"] = {
 ["macroValue"] = "",
 ["macroName"] = "Run custom macro",
-["spellValue"] = 50769,
+["cancelForm"] = false,
 ["targetUnitAfterCast"] = false,
 ["auraName"] = "",
 ["itemValue"] = "",
@@ -1655,11 +1772,11 @@ ClickedDB = {
 ["interrupt"] = false,
 ["startAutoAttack"] = false,
 ["startPetAttack"] = false,
-["cancelForm"] = false,
+["spellValue"] = 50769,
 },
 ["keybind"] = "SHIFT-BUTTON3",
-["integrations"] = {
-},
+["scope"] = 1,
+["actionType"] = "SPELL",
 ["targets"] = {
 ["regular"] = {
 {
@@ -1676,7 +1793,8 @@ ClickedDB = {
 ["hovercastEnabled"] = true,
 },
 ["uid"] = 10,
-["actionType"] = "SPELL",
+},
+{
 ["load"] = {
 ["playerNameRealm"] = {
 ["value"] = "Sevensides",
@@ -1714,7 +1832,7 @@ ClickedDB = {
 },
 ["specialization"] = {
 ["single"] = 3,
-["selected"] = 0,
+["selected"] = 1,
 ["multiple"] = {
 3,
 },
@@ -1732,11 +1850,14 @@ ClickedDB = {
 ["value"] = true,
 ["selected"] = false,
 },
-["spellKnown"] = {
-["value"] = "Revive",
-["selected"] = true,
+["race"] = {
+["single"] = "Tauren",
+["selected"] = 0,
+["multiple"] = {
+"Tauren",
 },
-["stealth"] = {
+},
+["warMode"] = {
 ["value"] = true,
 ["selected"] = false,
 },
@@ -1797,33 +1918,27 @@ ClickedDB = {
 ["value"] = true,
 ["selected"] = false,
 },
-["warMode"] = {
+["stealth"] = {
 ["value"] = true,
 ["selected"] = false,
+},
+["spellKnown"] = {
+["value"] = "Regrowth",
+["selected"] = true,
 },
 ["combat"] = {
 ["value"] = true,
 ["selected"] = false,
 },
-["race"] = {
-["single"] = "Tauren",
-["selected"] = 0,
-["multiple"] = {
-"Tauren",
 },
-},
-},
-["scope"] = 1,
-},
-{
 ["type"] = 1,
 ["action"] = {
 ["macroName"] = "Run custom macro",
-["itemValue"] = "",
-["spellValue"] = 8936,
+["cancelQueuedSpell"] = true,
+["cancelForm"] = false,
 ["targetUnitAfterCast"] = false,
 ["auraName"] = "",
-["cancelQueuedSpell"] = true,
+["itemValue"] = "",
 ["startPetAttack"] = false,
 ["macroValue"] = "",
 ["convertValueToId"] = true,
@@ -1831,11 +1946,11 @@ ClickedDB = {
 ["interrupt"] = false,
 ["startAutoAttack"] = false,
 ["macroIcon"] = "Interface\\ICONS\\INV_Misc_QuestionMark",
-["cancelForm"] = false,
+["spellValue"] = 8936,
 },
 ["keybind"] = "SHIFT-BUTTON2",
-["integrations"] = {
-},
+["scope"] = 1,
+["actionType"] = "SPELL",
 ["targets"] = {
 ["hovercastEnabled"] = true,
 ["regularEnabled"] = false,
@@ -1852,183 +1967,8 @@ ClickedDB = {
 },
 },
 ["uid"] = 11,
-["actionType"] = "SPELL",
-["load"] = {
-["playerNameRealm"] = {
-["value"] = "Sevensides",
-["selected"] = false,
-},
-["flyable"] = {
-["value"] = true,
-["selected"] = false,
-},
-["instanceType"] = {
-["single"] = "NONE",
-["selected"] = 0,
-["multiple"] = {
-"NONE",
-},
-},
-["class"] = {
-["single"] = "DRUID",
-["selected"] = 1,
-["multiple"] = {
-"DRUID",
-},
-},
-["advancedFlyable"] = {
-["value"] = true,
-["selected"] = false,
-},
-["playerInGroup"] = {
-["value"] = "",
-["selected"] = false,
-},
-["flying"] = {
-["value"] = true,
-["selected"] = false,
-},
-["specialization"] = {
-["single"] = 3,
-["selected"] = 1,
-["multiple"] = {
-3,
-},
-},
-["bonusbar"] = {
-["value"] = "",
-["selected"] = false,
-["negated"] = false,
-},
-["equipped"] = {
-["value"] = "",
-["selected"] = false,
-},
-["mounted"] = {
-["value"] = true,
-["selected"] = false,
-},
-["race"] = {
-["single"] = "Tauren",
-["selected"] = 0,
-["multiple"] = {
-"Tauren",
-},
-},
-["warMode"] = {
-["value"] = true,
-["selected"] = false,
-},
-["form"] = {
-["single"] = 1,
-["selected"] = 0,
-["negated"] = false,
-["multiple"] = {
-1,
-},
-},
-["talent"] = {
-["selected"] = false,
-["entries"] = {
-{
-["operation"] = "AND",
-["value"] = "",
-},
-},
-},
-["zoneName"] = {
-["value"] = "",
-["selected"] = false,
-},
-["never"] = false,
-["pet"] = {
-["value"] = true,
-["selected"] = false,
-},
-["swimming"] = {
-["value"] = true,
-["selected"] = false,
-},
-["pvpTalent"] = {
-["selected"] = false,
-["entries"] = {
-{
-["operation"] = "AND",
-["negated"] = false,
-["value"] = "",
-},
-},
-},
-["channeling"] = {
-["value"] = "",
-["selected"] = false,
-["negated"] = false,
-},
-["outdoors"] = {
-["value"] = true,
-["selected"] = false,
-},
-["inGroup"] = {
-["value"] = "IN_GROUP_PARTY_OR_RAID",
-["selected"] = false,
-},
-["dynamicFlying"] = {
-["value"] = true,
-["selected"] = false,
-},
-["spellKnown"] = {
-["value"] = "Regrowth",
-["selected"] = true,
-},
-["stealth"] = {
-["value"] = true,
-["selected"] = false,
-},
-["combat"] = {
-["value"] = true,
-["selected"] = false,
-},
-},
-["scope"] = 1,
 },
 {
-["type"] = 1,
-["action"] = {
-["macroValue"] = "",
-["spellValue"] = 131474,
-["cancelForm"] = true,
-["targetUnitAfterCast"] = false,
-["auraName"] = "",
-["itemValue"] = "",
-["startPetAttack"] = false,
-["cancelQueuedSpell"] = true,
-["convertValueToId"] = true,
-["executionOrder"] = 1,
-["interrupt"] = true,
-["startAutoAttack"] = false,
-["macroIcon"] = "Interface\\ICONS\\INV_Misc_QuestionMark",
-["macroName"] = "Run custom macro",
-},
-["keybind"] = "F7",
-["integrations"] = {
-},
-["targets"] = {
-["hovercastEnabled"] = false,
-["regularEnabled"] = true,
-["hovercast"] = {
-["vitals"] = "ANY",
-["hostility"] = "ANY",
-},
-["regular"] = {
-{
-["vitals"] = "ANY",
-["hostility"] = "ANY",
-["unit"] = "DEFAULT",
-},
-},
-},
-["uid"] = 12,
-["actionType"] = "SPELL",
 ["load"] = {
 ["playerNameRealm"] = {
 ["value"] = "Sevdh",
@@ -2153,12 +2093,12 @@ ClickedDB = {
 ["value"] = true,
 ["selected"] = false,
 },
-["stealth"] = {
-["value"] = true,
-["selected"] = false,
-},
 ["spellKnown"] = {
 ["value"] = "",
+["selected"] = false,
+},
+["stealth"] = {
+["value"] = true,
 ["selected"] = false,
 },
 ["flyable"] = {
@@ -2166,35 +2106,32 @@ ClickedDB = {
 ["selected"] = false,
 },
 },
-["scope"] = 1,
-},
-{
 ["type"] = 1,
 ["action"] = {
 ["macroValue"] = "",
-["spellValue"] = 391054,
-["cancelForm"] = false,
+["cancelForm"] = true,
+["spellValue"] = 131474,
 ["targetUnitAfterCast"] = false,
 ["auraName"] = "",
 ["itemValue"] = "",
 ["startPetAttack"] = false,
-["cancelQueuedSpell"] = false,
+["cancelQueuedSpell"] = true,
 ["convertValueToId"] = true,
 ["executionOrder"] = 1,
-["interrupt"] = false,
+["interrupt"] = true,
 ["startAutoAttack"] = false,
 ["macroIcon"] = "Interface\\ICONS\\INV_Misc_QuestionMark",
 ["macroName"] = "Run custom macro",
 },
-["keybind"] = "CTRL-BUTTON1",
-["integrations"] = {
-},
+["keybind"] = "F7",
+["scope"] = 1,
+["actionType"] = "SPELL",
 ["targets"] = {
-["hovercastEnabled"] = true,
-["regularEnabled"] = false,
+["hovercastEnabled"] = false,
+["regularEnabled"] = true,
 ["hovercast"] = {
-["vitals"] = "DEAD",
-["hostility"] = "HELP",
+["vitals"] = "ANY",
+["hostility"] = "ANY",
 },
 ["regular"] = {
 {
@@ -2204,8 +2141,9 @@ ClickedDB = {
 },
 },
 },
-["uid"] = 13,
-["actionType"] = "SPELL",
+["uid"] = 12,
+},
+{
 ["load"] = {
 ["playerNameRealm"] = {
 ["value"] = "Sevenruu",
@@ -2330,12 +2268,12 @@ ClickedDB = {
 ["value"] = true,
 ["selected"] = false,
 },
-["stealth"] = {
-["value"] = true,
-["selected"] = false,
-},
 ["spellKnown"] = {
 ["value"] = "",
+["selected"] = false,
+},
+["stealth"] = {
+["value"] = true,
 ["selected"] = false,
 },
 ["flyable"] = {
@@ -2343,46 +2281,44 @@ ClickedDB = {
 ["selected"] = false,
 },
 },
-["scope"] = 1,
-},
-{
 ["type"] = 1,
 ["action"] = {
 ["macroValue"] = "",
-["macroName"] = "Run custom macro",
-["spellValue"] = 213644,
+["cancelForm"] = false,
+["spellValue"] = 391054,
 ["targetUnitAfterCast"] = false,
 ["auraName"] = "",
 ["itemValue"] = "",
-["macroIcon"] = "Interface\\ICONS\\INV_Misc_QuestionMark",
-["cancelQueuedSpell"] = true,
+["startPetAttack"] = false,
+["cancelQueuedSpell"] = false,
 ["convertValueToId"] = true,
 ["executionOrder"] = 1,
 ["interrupt"] = false,
 ["startAutoAttack"] = false,
-["startPetAttack"] = false,
-["cancelForm"] = false,
+["macroIcon"] = "Interface\\ICONS\\INV_Misc_QuestionMark",
+["macroName"] = "Run custom macro",
 },
-["keybind"] = "SHIFT-BUTTON1",
-["integrations"] = {
-},
+["keybind"] = "CTRL-BUTTON1",
+["scope"] = 1,
+["actionType"] = "SPELL",
 ["targets"] = {
+["hovercastEnabled"] = true,
+["regularEnabled"] = false,
+["hovercast"] = {
+["vitals"] = "DEAD",
+["hostility"] = "HELP",
+},
 ["regular"] = {
 {
 ["vitals"] = "ANY",
-["unit"] = "DEFAULT",
 ["hostility"] = "ANY",
+["unit"] = "DEFAULT",
 },
 },
-["regularEnabled"] = false,
-["hovercast"] = {
-["hostility"] = "HELP",
-["vitals"] = "ALIVE",
 },
-["hovercastEnabled"] = true,
+["uid"] = 13,
 },
-["uid"] = 14,
-["actionType"] = "SPELL",
+{
 ["load"] = {
 ["playerNameRealm"] = {
 ["value"] = "Sevenruu",
@@ -2441,12 +2377,12 @@ ClickedDB = {
 ["value"] = true,
 ["selected"] = false,
 },
-["spellKnown"] = {
-["value"] = "",
-["selected"] = false,
-},
 ["stealth"] = {
 ["value"] = true,
+["selected"] = false,
+},
+["spellKnown"] = {
+["value"] = "",
 ["selected"] = false,
 },
 ["form"] = {
@@ -2524,29 +2460,26 @@ ClickedDB = {
 ["selected"] = false,
 },
 },
-["scope"] = 1,
-},
-{
 ["type"] = 1,
 ["action"] = {
 ["macroValue"] = "",
 ["macroName"] = "Run custom macro",
-["spellValue"] = 7328,
+["cancelForm"] = false,
 ["targetUnitAfterCast"] = false,
 ["auraName"] = "",
 ["itemValue"] = "",
 ["macroIcon"] = "Interface\\ICONS\\INV_Misc_QuestionMark",
-["cancelQueuedSpell"] = false,
+["cancelQueuedSpell"] = true,
 ["convertValueToId"] = true,
 ["executionOrder"] = 1,
 ["interrupt"] = false,
 ["startAutoAttack"] = false,
 ["startPetAttack"] = false,
-["cancelForm"] = false,
+["spellValue"] = 213644,
 },
-["keybind"] = "CTRL-BUTTON2",
-["integrations"] = {
-},
+["keybind"] = "SHIFT-BUTTON1",
+["scope"] = 1,
+["actionType"] = "SPELL",
 ["targets"] = {
 ["regular"] = {
 {
@@ -2558,12 +2491,13 @@ ClickedDB = {
 ["regularEnabled"] = false,
 ["hovercast"] = {
 ["hostility"] = "HELP",
-["vitals"] = "DEAD",
+["vitals"] = "ALIVE",
 },
 ["hovercastEnabled"] = true,
 },
-["uid"] = 15,
-["actionType"] = "SPELL",
+["uid"] = 14,
+},
+{
 ["load"] = {
 ["playerNameRealm"] = {
 ["value"] = "Sevenruu",
@@ -2622,12 +2556,12 @@ ClickedDB = {
 ["value"] = true,
 ["selected"] = false,
 },
-["spellKnown"] = {
-["value"] = "",
-["selected"] = false,
-},
 ["stealth"] = {
 ["value"] = true,
+["selected"] = false,
+},
+["spellKnown"] = {
+["value"] = "",
 ["selected"] = false,
 },
 ["form"] = {
@@ -2701,46 +2635,44 @@ ClickedDB = {
 ["selected"] = false,
 },
 },
-["scope"] = 1,
-},
-{
 ["type"] = 1,
 ["action"] = {
 ["macroValue"] = "",
-["spellValue"] = 19750,
+["macroName"] = "Run custom macro",
 ["cancelForm"] = false,
 ["targetUnitAfterCast"] = false,
 ["auraName"] = "",
 ["itemValue"] = "",
-["startPetAttack"] = false,
-["cancelQueuedSpell"] = true,
+["macroIcon"] = "Interface\\ICONS\\INV_Misc_QuestionMark",
+["cancelQueuedSpell"] = false,
 ["convertValueToId"] = true,
 ["executionOrder"] = 1,
 ["interrupt"] = false,
 ["startAutoAttack"] = false,
-["macroIcon"] = "Interface\\ICONS\\INV_Misc_QuestionMark",
-["macroName"] = "Run custom macro",
+["startPetAttack"] = false,
+["spellValue"] = 7328,
 },
-["keybind"] = "SHIFT-BUTTON2",
-["integrations"] = {
-},
+["keybind"] = "CTRL-BUTTON2",
+["scope"] = 1,
+["actionType"] = "SPELL",
 ["targets"] = {
-["hovercastEnabled"] = true,
-["regularEnabled"] = false,
-["hovercast"] = {
-["vitals"] = "ALIVE",
-["hostility"] = "HELP",
-},
 ["regular"] = {
 {
 ["vitals"] = "ANY",
-["hostility"] = "ANY",
 ["unit"] = "DEFAULT",
+["hostility"] = "ANY",
 },
 },
+["regularEnabled"] = false,
+["hovercast"] = {
+["hostility"] = "HELP",
+["vitals"] = "DEAD",
 },
-["uid"] = 16,
-["actionType"] = "SPELL",
+["hovercastEnabled"] = true,
+},
+["uid"] = 15,
+},
+{
 ["load"] = {
 ["playerNameRealm"] = {
 ["value"] = "Sevenruu",
@@ -2869,12 +2801,12 @@ ClickedDB = {
 ["value"] = true,
 ["selected"] = false,
 },
-["spellKnown"] = {
-["value"] = "",
-["selected"] = false,
-},
 ["stealth"] = {
 ["value"] = true,
+["selected"] = false,
+},
+["spellKnown"] = {
+["value"] = "",
 ["selected"] = false,
 },
 ["combat"] = {
@@ -2882,46 +2814,44 @@ ClickedDB = {
 ["selected"] = false,
 },
 },
-["scope"] = 1,
-},
-{
 ["type"] = 1,
 ["action"] = {
-["macroName"] = "Run custom macro",
-["spellValue"] = 8936,
+["macroValue"] = "",
 ["cancelForm"] = false,
+["spellValue"] = 19750,
 ["targetUnitAfterCast"] = false,
 ["auraName"] = "",
 ["itemValue"] = "",
-["macroIcon"] = "Interface\\ICONS\\INV_Misc_QuestionMark",
-["macroValue"] = "",
+["startPetAttack"] = false,
+["cancelQueuedSpell"] = true,
 ["convertValueToId"] = true,
 ["executionOrder"] = 1,
 ["interrupt"] = false,
 ["startAutoAttack"] = false,
-["startPetAttack"] = false,
-["cancelQueuedSpell"] = true,
+["macroIcon"] = "Interface\\ICONS\\INV_Misc_QuestionMark",
+["macroName"] = "Run custom macro",
 },
-["keybind"] = "4",
-["integrations"] = {
-},
+["keybind"] = "SHIFT-BUTTON2",
+["scope"] = 1,
+["actionType"] = "SPELL",
 ["targets"] = {
-["regular"] = {
-{
-["vitals"] = "ALIVE",
-["unit"] = "MOUSEOVER",
-["hostility"] = "HELP",
-},
-},
+["hovercastEnabled"] = true,
 ["regularEnabled"] = false,
 ["hovercast"] = {
-["hostility"] = "HELP",
 ["vitals"] = "ALIVE",
+["hostility"] = "HELP",
 },
-["hovercastEnabled"] = true,
+["regular"] = {
+{
+["vitals"] = "ANY",
+["hostility"] = "ANY",
+["unit"] = "DEFAULT",
 },
-["uid"] = 17,
-["actionType"] = "SPELL",
+},
+},
+["uid"] = 16,
+},
+{
 ["load"] = {
 ["playerNameRealm"] = {
 ["value"] = "Sevensides",
@@ -2977,13 +2907,13 @@ ClickedDB = {
 ["value"] = true,
 ["selected"] = false,
 },
-["stealth"] = {
-["value"] = true,
-["selected"] = false,
-},
 ["spellKnown"] = {
 ["value"] = "Regrowth",
 ["selected"] = true,
+},
+["stealth"] = {
+["value"] = true,
+["selected"] = false,
 },
 ["never"] = false,
 ["talent"] = {
@@ -3058,46 +2988,44 @@ ClickedDB = {
 },
 },
 },
-["scope"] = 1,
-},
-{
 ["type"] = 1,
 ["action"] = {
-["macroValue"] = "",
 ["macroName"] = "Run custom macro",
-["spellValue"] = 61999,
+["cancelForm"] = false,
+["spellValue"] = 8936,
 ["targetUnitAfterCast"] = false,
 ["auraName"] = "",
-["itemValue"] = "",
+["cancelQueuedSpell"] = true,
 ["macroIcon"] = "Interface\\ICONS\\INV_Misc_QuestionMark",
-["cancelQueuedSpell"] = false,
+["macroValue"] = "",
 ["convertValueToId"] = true,
 ["executionOrder"] = 1,
 ["interrupt"] = false,
 ["startAutoAttack"] = false,
 ["startPetAttack"] = false,
-["cancelForm"] = false,
+["itemValue"] = "",
 },
-["keybind"] = "CTRL-BUTTON1",
-["integrations"] = {
-},
+["keybind"] = "4",
+["scope"] = 1,
+["actionType"] = "SPELL",
 ["targets"] = {
 ["regular"] = {
 {
-["vitals"] = "ANY",
-["unit"] = "DEFAULT",
-["hostility"] = "ANY",
+["vitals"] = "ALIVE",
+["unit"] = "MOUSEOVER",
+["hostility"] = "HELP",
 },
 },
 ["regularEnabled"] = false,
 ["hovercast"] = {
 ["hostility"] = "HELP",
-["vitals"] = "DEAD",
+["vitals"] = "ALIVE",
 },
 ["hovercastEnabled"] = true,
 },
-["uid"] = 18,
-["actionType"] = "SPELL",
+["uid"] = 17,
+},
+{
 ["load"] = {
 ["playerNameRealm"] = {
 ["value"] = "Sevenruu",
@@ -3156,12 +3084,12 @@ ClickedDB = {
 ["value"] = true,
 ["selected"] = false,
 },
-["spellKnown"] = {
-["value"] = "",
-["selected"] = false,
-},
 ["stealth"] = {
 ["value"] = true,
+["selected"] = false,
+},
+["spellKnown"] = {
+["value"] = "",
 ["selected"] = false,
 },
 ["form"] = {
@@ -3235,45 +3163,44 @@ ClickedDB = {
 ["selected"] = false,
 },
 },
-["scope"] = 1,
-},
-{
 ["type"] = 1,
 ["action"] = {
+["macroValue"] = "",
 ["macroName"] = "Run custom macro",
-["cancelQueuedSpell"] = true,
 ["cancelForm"] = false,
 ["targetUnitAfterCast"] = false,
 ["auraName"] = "",
 ["itemValue"] = "",
-["startPetAttack"] = false,
-["macroValue"] = "",
+["macroIcon"] = "Interface\\ICONS\\INV_Misc_QuestionMark",
+["cancelQueuedSpell"] = false,
 ["convertValueToId"] = true,
 ["executionOrder"] = 1,
 ["interrupt"] = false,
 ["startAutoAttack"] = false,
-["macroIcon"] = "Interface\\ICONS\\INV_Misc_QuestionMark",
-["spellValue"] = 8004,
+["startPetAttack"] = false,
+["spellValue"] = 61999,
 },
-["keybind"] = "1",
+["keybind"] = "CTRL-BUTTON1",
 ["scope"] = 1,
+["actionType"] = "SPELL",
 ["targets"] = {
-["hovercastEnabled"] = true,
-["regularEnabled"] = false,
-["hovercast"] = {
-["vitals"] = "ALIVE",
-["hostility"] = "HELP",
-},
 ["regular"] = {
 {
-["vitals"] = "ALIVE",
+["vitals"] = "ANY",
+["unit"] = "DEFAULT",
+["hostility"] = "ANY",
+},
+},
+["regularEnabled"] = false,
+["hovercast"] = {
 ["hostility"] = "HELP",
-["unit"] = "MOUSEOVER",
+["vitals"] = "DEAD",
 },
+["hovercastEnabled"] = true,
 },
+["uid"] = 18,
 },
-["uid"] = 19,
-["actionType"] = "SPELL",
+{
 ["load"] = {
 ["playerNameRealm"] = {
 ["value"] = "Sevensides",
@@ -3397,60 +3324,57 @@ ClickedDB = {
 ["value"] = true,
 ["selected"] = false,
 },
-["stealth"] = {
-["value"] = true,
-["selected"] = false,
-},
 ["spellKnown"] = {
 ["value"] = "Healing Surge",
 ["selected"] = true,
+},
+["stealth"] = {
+["value"] = true,
+["selected"] = false,
 },
 ["combat"] = {
 ["value"] = true,
 ["selected"] = false,
 },
 },
-["integrations"] = {
-},
-},
-{
 ["type"] = 1,
 ["action"] = {
-["macroValue"] = "",
-["cancelForm"] = false,
-["spellValue"] = 2008,
+["macroName"] = "Run custom macro",
+["itemValue"] = "",
+["spellValue"] = 8004,
 ["targetUnitAfterCast"] = false,
 ["auraName"] = "",
-["itemValue"] = "",
+["cancelQueuedSpell"] = true,
 ["startPetAttack"] = false,
-["cancelQueuedSpell"] = false,
+["macroValue"] = "",
 ["convertValueToId"] = true,
 ["executionOrder"] = 1,
 ["interrupt"] = false,
 ["startAutoAttack"] = false,
 ["macroIcon"] = "Interface\\ICONS\\INV_Misc_QuestionMark",
-["macroName"] = "Run custom macro",
+["cancelForm"] = false,
 },
-["keybind"] = "CTRL-BUTTON2",
-["integrations"] = {
-},
+["keybind"] = "1",
+["scope"] = 1,
+["actionType"] = "SPELL",
 ["targets"] = {
 ["hovercastEnabled"] = true,
 ["regularEnabled"] = false,
 ["hovercast"] = {
-["vitals"] = "DEAD",
+["vitals"] = "ALIVE",
 ["hostility"] = "HELP",
 },
 ["regular"] = {
 {
-["vitals"] = "ANY",
-["hostility"] = "ANY",
-["unit"] = "DEFAULT",
+["vitals"] = "ALIVE",
+["hostility"] = "HELP",
+["unit"] = "MOUSEOVER",
 },
 },
 },
-["uid"] = 20,
-["actionType"] = "SPELL",
+["uid"] = 19,
+},
+{
 ["load"] = {
 ["playerNameRealm"] = {
 ["value"] = "Sevenruu",
@@ -3575,12 +3499,12 @@ ClickedDB = {
 ["value"] = true,
 ["selected"] = false,
 },
-["spellKnown"] = {
-["value"] = "",
-["selected"] = false,
-},
 ["stealth"] = {
 ["value"] = true,
+["selected"] = false,
+},
+["spellKnown"] = {
+["value"] = "",
 ["selected"] = false,
 },
 ["flyable"] = {
@@ -3588,45 +3512,44 @@ ClickedDB = {
 ["selected"] = false,
 },
 },
-["scope"] = 1,
-},
-{
 ["type"] = 1,
 ["action"] = {
-["macroName"] = "Run custom macro",
+["macroValue"] = "",
+["spellValue"] = 2008,
 ["cancelForm"] = false,
-["spellValue"] = 974,
 ["targetUnitAfterCast"] = false,
 ["auraName"] = "",
-["cancelQueuedSpell"] = true,
-["macroIcon"] = "Interface\\ICONS\\INV_Misc_QuestionMark",
-["macroValue"] = "",
+["itemValue"] = "",
+["startPetAttack"] = false,
+["cancelQueuedSpell"] = false,
 ["convertValueToId"] = true,
 ["executionOrder"] = 1,
 ["interrupt"] = false,
 ["startAutoAttack"] = false,
-["startPetAttack"] = false,
-["itemValue"] = "",
+["macroIcon"] = "Interface\\ICONS\\INV_Misc_QuestionMark",
+["macroName"] = "Run custom macro",
 },
-["keybind"] = "2",
+["keybind"] = "CTRL-BUTTON2",
 ["scope"] = 1,
+["actionType"] = "SPELL",
 ["targets"] = {
-["regular"] = {
-{
-["vitals"] = "ALIVE",
-["unit"] = "MOUSEOVER",
-["hostility"] = "HELP",
-},
-},
+["hovercastEnabled"] = true,
 ["regularEnabled"] = false,
 ["hovercast"] = {
+["vitals"] = "DEAD",
 ["hostility"] = "HELP",
-["vitals"] = "ALIVE",
 },
-["hovercastEnabled"] = true,
+["regular"] = {
+{
+["vitals"] = "ANY",
+["hostility"] = "ANY",
+["unit"] = "DEFAULT",
 },
-["uid"] = 21,
-["actionType"] = "SPELL",
+},
+},
+["uid"] = 20,
+},
+{
 ["load"] = {
 ["playerNameRealm"] = {
 ["value"] = "Sevensides",
@@ -3682,13 +3605,13 @@ ClickedDB = {
 ["value"] = true,
 ["selected"] = false,
 },
-["spellKnown"] = {
-["value"] = "Earth Shield",
-["selected"] = true,
-},
 ["stealth"] = {
 ["value"] = true,
 ["selected"] = false,
+},
+["spellKnown"] = {
+["value"] = "Earth Shield",
+["selected"] = true,
 },
 ["form"] = {
 ["single"] = 1,
@@ -3763,47 +3686,44 @@ ClickedDB = {
 },
 },
 },
-["integrations"] = {
-},
-},
-{
 ["type"] = 1,
 ["action"] = {
-["macroValue"] = "",
+["macroName"] = "Run custom macro",
+["spellValue"] = 974,
 ["cancelForm"] = false,
-["spellValue"] = 77130,
 ["targetUnitAfterCast"] = false,
 ["auraName"] = "",
 ["itemValue"] = "",
-["startPetAttack"] = false,
-["cancelQueuedSpell"] = true,
+["macroIcon"] = "Interface\\ICONS\\INV_Misc_QuestionMark",
+["macroValue"] = "",
 ["convertValueToId"] = true,
 ["executionOrder"] = 1,
-["interrupt"] = true,
+["interrupt"] = false,
 ["startAutoAttack"] = false,
-["macroIcon"] = "Interface\\ICONS\\INV_Misc_QuestionMark",
-["macroName"] = "Run custom macro",
+["startPetAttack"] = false,
+["cancelQueuedSpell"] = true,
 },
-["keybind"] = "SHIFT-BUTTON1",
-["integrations"] = {
-},
+["keybind"] = "2",
+["scope"] = 1,
+["actionType"] = "SPELL",
 ["targets"] = {
-["hovercastEnabled"] = true,
-["regularEnabled"] = false,
-["hovercast"] = {
-["vitals"] = "ALIVE",
-["hostility"] = "HELP",
-},
 ["regular"] = {
 {
 ["vitals"] = "ALIVE",
-["hostility"] = "HELP",
 ["unit"] = "MOUSEOVER",
+["hostility"] = "HELP",
 },
 },
+["regularEnabled"] = false,
+["hovercast"] = {
+["hostility"] = "HELP",
+["vitals"] = "ALIVE",
 },
-["uid"] = 22,
-["actionType"] = "SPELL",
+["hovercastEnabled"] = true,
+},
+["uid"] = 21,
+},
+{
 ["load"] = {
 ["mounted"] = {
 ["value"] = true,
@@ -3927,27 +3847,199 @@ ClickedDB = {
 ["value"] = true,
 ["selected"] = false,
 },
-["stealth"] = {
-["value"] = true,
-["selected"] = false,
-},
 ["spellKnown"] = {
 ["value"] = "Purify Spirit",
 ["selected"] = true,
+},
+["stealth"] = {
+["value"] = true,
+["selected"] = false,
 },
 ["playerNameRealm"] = {
 ["value"] = "Sevenroll",
 ["selected"] = false,
 },
 },
+["type"] = 1,
+["action"] = {
+["macroValue"] = "",
+["spellValue"] = 77130,
+["cancelForm"] = false,
+["targetUnitAfterCast"] = false,
+["auraName"] = "",
+["itemValue"] = "",
+["startPetAttack"] = false,
+["cancelQueuedSpell"] = true,
+["convertValueToId"] = true,
+["executionOrder"] = 1,
+["interrupt"] = true,
+["startAutoAttack"] = false,
+["macroIcon"] = "Interface\\ICONS\\INV_Misc_QuestionMark",
+["macroName"] = "Run custom macro",
+},
+["keybind"] = "SHIFT-BUTTON1",
 ["scope"] = 1,
+["actionType"] = "SPELL",
+["targets"] = {
+["hovercastEnabled"] = true,
+["regularEnabled"] = false,
+["hovercast"] = {
+["vitals"] = "ALIVE",
+["hostility"] = "HELP",
+},
+["regular"] = {
+{
+["vitals"] = "ALIVE",
+["hostility"] = "HELP",
+["unit"] = "MOUSEOVER",
+},
+},
+},
+["uid"] = 22,
 },
 {
+["load"] = {
+["playerNameRealm"] = {
+["value"] = "Sevdarkblue",
+["selected"] = false,
+},
+["combat"] = {
+["value"] = true,
+["selected"] = false,
+},
+["instanceType"] = {
+["single"] = "NONE",
+["selected"] = 0,
+["multiple"] = {
+"NONE",
+},
+},
+["class"] = {
+["single"] = "SHAMAN",
+["selected"] = 0,
+["multiple"] = {
+"SHAMAN",
+},
+},
+["advancedFlyable"] = {
+["value"] = true,
+["selected"] = false,
+},
+["playerInGroup"] = {
+["value"] = "",
+["selected"] = false,
+},
+["race"] = {
+["single"] = "Goblin",
+["selected"] = 0,
+["multiple"] = {
+"Goblin",
+},
+},
+["specialization"] = {
+["single"] = 2,
+["selected"] = 1,
+["multiple"] = {
+2,
+},
+},
+["bonusbar"] = {
+["value"] = "",
+["selected"] = false,
+["negated"] = false,
+},
+["equipped"] = {
+["value"] = "",
+["selected"] = false,
+},
+["mounted"] = {
+["value"] = true,
+["selected"] = false,
+},
+["spellKnown"] = {
+["value"] = "",
+["selected"] = false,
+},
+["stealth"] = {
+["value"] = true,
+["selected"] = false,
+},
+["never"] = false,
+["talent"] = {
+["selected"] = false,
+["entries"] = {
+{
+["operation"] = "AND",
+["negated"] = false,
+["value"] = "",
+},
+},
+},
+["zoneName"] = {
+["value"] = "",
+["selected"] = false,
+},
+["form"] = {
+["single"] = 1,
+["selected"] = 0,
+["negated"] = false,
+["multiple"] = {
+1,
+},
+},
+["pet"] = {
+["value"] = true,
+["selected"] = false,
+},
+["swimming"] = {
+["value"] = true,
+["selected"] = false,
+},
+["pvpTalent"] = {
+["selected"] = false,
+["entries"] = {
+{
+["operation"] = "AND",
+["negated"] = false,
+["value"] = "",
+},
+},
+},
+["channeling"] = {
+["value"] = "",
+["selected"] = false,
+["negated"] = false,
+},
+["outdoors"] = {
+["value"] = true,
+["selected"] = false,
+},
+["inGroup"] = {
+["value"] = "IN_GROUP_PARTY_OR_RAID",
+["selected"] = false,
+},
+["dynamicFlying"] = {
+["value"] = true,
+["selected"] = false,
+},
+["warMode"] = {
+["value"] = true,
+["selected"] = false,
+},
+["flyable"] = {
+["value"] = true,
+["selected"] = false,
+},
+["flying"] = {
+["value"] = true,
+["selected"] = false,
+},
+},
 ["type"] = 1,
 ["action"] = {
 ["macroValue"] = "",
 ["macroName"] = "Run custom macro",
-["cancelForm"] = false,
+["spellValue"] = 974,
 ["targetUnitAfterCast"] = false,
 ["auraName"] = "",
 ["itemValue"] = "",
@@ -3958,10 +4050,11 @@ ClickedDB = {
 ["interrupt"] = false,
 ["startAutoAttack"] = false,
 ["startPetAttack"] = false,
-["spellValue"] = 974,
+["cancelForm"] = false,
 },
 ["keybind"] = "SHIFT-MOUSEWHEELUP",
 ["scope"] = 1,
+["actionType"] = "SPELL",
 ["targets"] = {
 ["regular"] = {
 {
@@ -3978,13 +4071,14 @@ ClickedDB = {
 ["hovercastEnabled"] = false,
 },
 ["uid"] = 23,
-["actionType"] = "SPELL",
+},
+{
 ["load"] = {
 ["playerNameRealm"] = {
 ["value"] = "Sevdarkblue",
 ["selected"] = false,
 },
-["combat"] = {
+["flyable"] = {
 ["value"] = true,
 ["selected"] = false,
 },
@@ -4010,12 +4104,9 @@ ClickedDB = {
 ["value"] = "",
 ["selected"] = false,
 },
-["race"] = {
-["single"] = "Goblin",
-["selected"] = 0,
-["multiple"] = {
-"Goblin",
-},
+["flying"] = {
+["value"] = true,
+["selected"] = false,
 },
 ["specialization"] = {
 ["single"] = 2,
@@ -4037,17 +4128,19 @@ ClickedDB = {
 ["value"] = true,
 ["selected"] = false,
 },
-["stealth"] = {
-["value"] = true,
-["selected"] = false,
+["race"] = {
+["single"] = "Goblin",
+["selected"] = 0,
+["multiple"] = {
+"Goblin",
 },
-["spellKnown"] = {
-["value"] = "",
+},
+["warMode"] = {
+["value"] = true,
 ["selected"] = false,
 },
 ["never"] = false,
 ["talent"] = {
-["selected"] = false,
 ["entries"] = {
 {
 ["operation"] = "AND",
@@ -4055,6 +4148,7 @@ ClickedDB = {
 ["value"] = "",
 },
 },
+["selected"] = false,
 },
 ["zoneName"] = {
 ["value"] = "",
@@ -4077,7 +4171,6 @@ ClickedDB = {
 ["selected"] = false,
 },
 ["pvpTalent"] = {
-["selected"] = false,
 ["entries"] = {
 {
 ["operation"] = "AND",
@@ -4085,6 +4178,7 @@ ClickedDB = {
 ["value"] = "",
 },
 },
+["selected"] = false,
 },
 ["channeling"] = {
 ["value"] = "",
@@ -4103,28 +4197,24 @@ ClickedDB = {
 ["value"] = true,
 ["selected"] = false,
 },
-["warMode"] = {
+["spellKnown"] = {
+["value"] = "",
+["selected"] = false,
+},
+["stealth"] = {
 ["value"] = true,
 ["selected"] = false,
 },
-["flyable"] = {
-["value"] = true,
-["selected"] = false,
-},
-["flying"] = {
+["combat"] = {
 ["value"] = true,
 ["selected"] = false,
 },
 },
-["integrations"] = {
-},
-},
-{
 ["type"] = 1,
 ["action"] = {
 ["macroValue"] = "",
-["cancelForm"] = false,
 ["spellValue"] = 8004,
+["cancelForm"] = false,
 ["targetUnitAfterCast"] = false,
 ["auraName"] = "",
 ["itemValue"] = "",
@@ -4138,8 +4228,8 @@ ClickedDB = {
 ["macroName"] = "Run custom macro",
 },
 ["keybind"] = "SHIFT-MOUSEWHEELDOWN",
-["integrations"] = {
-},
+["scope"] = 1,
+["actionType"] = "SPELL",
 ["targets"] = {
 ["hovercastEnabled"] = false,
 ["regularEnabled"] = true,
@@ -4156,148 +4246,9 @@ ClickedDB = {
 },
 },
 ["uid"] = 24,
-["actionType"] = "SPELL",
-["load"] = {
-["playerNameRealm"] = {
-["value"] = "Sevdarkblue",
-["selected"] = false,
-},
-["flyable"] = {
-["value"] = true,
-["selected"] = false,
-},
-["instanceType"] = {
-["single"] = "NONE",
-["selected"] = 0,
-["multiple"] = {
-"NONE",
 },
 },
-["class"] = {
-["single"] = "SHAMAN",
-["selected"] = 0,
-["multiple"] = {
-"SHAMAN",
-},
-},
-["advancedFlyable"] = {
-["value"] = true,
-["selected"] = false,
-},
-["playerInGroup"] = {
-["value"] = "",
-["selected"] = false,
-},
-["flying"] = {
-["value"] = true,
-["selected"] = false,
-},
-["specialization"] = {
-["single"] = 2,
-["selected"] = 1,
-["multiple"] = {
-2,
-},
-},
-["bonusbar"] = {
-["value"] = "",
-["selected"] = false,
-["negated"] = false,
-},
-["equipped"] = {
-["value"] = "",
-["selected"] = false,
-},
-["mounted"] = {
-["value"] = true,
-["selected"] = false,
-},
-["race"] = {
-["single"] = "Goblin",
-["selected"] = 0,
-["multiple"] = {
-"Goblin",
-},
-},
-["warMode"] = {
-["value"] = true,
-["selected"] = false,
-},
-["never"] = false,
-["talent"] = {
-["entries"] = {
-{
-["operation"] = "AND",
-["negated"] = false,
-["value"] = "",
-},
-},
-["selected"] = false,
-},
-["zoneName"] = {
-["value"] = "",
-["selected"] = false,
-},
-["form"] = {
-["single"] = 1,
-["selected"] = 0,
-["negated"] = false,
-["multiple"] = {
-1,
-},
-},
-["pet"] = {
-["value"] = true,
-["selected"] = false,
-},
-["swimming"] = {
-["value"] = true,
-["selected"] = false,
-},
-["pvpTalent"] = {
-["entries"] = {
-{
-["operation"] = "AND",
-["negated"] = false,
-["value"] = "",
-},
-},
-["selected"] = false,
-},
-["channeling"] = {
-["value"] = "",
-["selected"] = false,
-["negated"] = false,
-},
-["outdoors"] = {
-["value"] = true,
-["selected"] = false,
-},
-["inGroup"] = {
-["value"] = "IN_GROUP_PARTY_OR_RAID",
-["selected"] = false,
-},
-["dynamicFlying"] = {
-["value"] = true,
-["selected"] = false,
-},
-["stealth"] = {
-["value"] = true,
-["selected"] = false,
-},
-["spellKnown"] = {
-["value"] = "",
-["selected"] = false,
-},
-["combat"] = {
-["value"] = true,
-["selected"] = false,
-},
-},
-["scope"] = 1,
-},
-},
-["version"] = 10,
+["version"] = 11,
 },
 ["PALADIN"] = {
 ["version"] = 2,
